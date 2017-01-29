@@ -1,6 +1,6 @@
 package lab_1;
 
-public class ParallelPi extends Thread {
+public class PiCalculations extends Thread {
 
     static int STEP_NUM;
 
@@ -38,7 +38,7 @@ public class ParallelPi extends Thread {
         }
 
         System.out.println("Steps: " + STEP_NUM + " Threads: " + THREADS_NUM);
-        ParallelPi obj = new ParallelPi();
+        PiCalculations obj = new PiCalculations();
 
         float seqTime = seqPi();
         float paralelTime = obj.paralelPi();
