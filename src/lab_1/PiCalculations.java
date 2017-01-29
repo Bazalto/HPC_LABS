@@ -99,22 +99,7 @@ public class PiCalculations extends Thread {
         startThreads(THREADS);
         joinThreads(THREADS);
 
-//        PiThread thread1 = new PiThread();
-//        thread1.begin = 0;
-//        thread1.end = STEP_NUM / 2;
-//
-//        PiThread thread2 = new PiThread();
-//        thread2.begin = STEP_NUM / 2;
-//        thread2.end = STEP_NUM;
-//
-//        thread1.start();
-//        thread2.start();
-//
-//        thread1.join();
-//        thread2.join();
-
         long endTime = System.currentTimeMillis();
-
         double threadsSum = 0;
         for (PiThread thread :
                 THREADS) {
@@ -123,7 +108,6 @@ public class PiCalculations extends Thread {
 
         double pi = STEP_VALUE * threadsSum;
         long timeElapsed = endTime - startTime;
-
         System.out.println("        Paralel | " + pi + " | " + timeElapsed);
 
         return timeElapsed;
@@ -131,7 +115,6 @@ public class PiCalculations extends Thread {
 
     static long seqPi() {
         long startTime = System.currentTimeMillis();
-
         double sum = 0.0;
 
         for (int i = 0; i < STEP_NUM; i++) {
@@ -140,12 +123,10 @@ public class PiCalculations extends Thread {
         }
 
         double pi = STEP_VALUE * sum;
-
         long endTime = System.currentTimeMillis();
         long timeElapsed = endTime - startTime;
 
         System.out.println("        Sequent | " + pi + " | " + timeElapsed);
-
 
         return timeElapsed;
     }
