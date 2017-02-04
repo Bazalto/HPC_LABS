@@ -1,30 +1,42 @@
 package lab_3;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.util.concurrent.BlockingQueue;
 
 public class Producer implements Runnable {
 
+    public static int totalID = 0;
     private final BlockingQueue sharedQueue;
+    private final BlockingQueue filesQueue;
+    private final ProducerConsumerExample pce;
+    private final int producerID;
 
-    Producer(BlockingQueue sharedQueue) {
+    Producer(ProducerConsumerExample pce, BlockingQueue sharedQueue, BlockingQueue filesQueue) {
+        this.pce = pce;
         this.sharedQueue = sharedQueue;
+        this.filesQueue = filesQueue;
+        producerID = totalID++;
     }
 
     @Override
-    public void run() {
-        File folder = new File("texts/");
-        System.out.println(folder.isDirectory()?"Dir":"non");
-        File[] listOfFiles = folder.listFiles();
-        if (listOfFiles==null) {
-            System.out.println("Texts is empty");
-            return;
-        }
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile()) {
-                System.out.println("Producer opens " + listOfFiles[i].getName());
+    public synchronized void run() {
+        File file;
+        while ((file = (File) filesQueue.poll()) != null) {
+            if (file.isFile()) {
+//                System.out.println("Producer #" + producerID + " got " + file.getName() + " file");
+                try {
+                    BufferedReader reader = new BufferedReader(new FileReader(file));
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        sharedQueue.put(line);
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
         }
-
+        pce.setReadingData(false);
     }
 }
