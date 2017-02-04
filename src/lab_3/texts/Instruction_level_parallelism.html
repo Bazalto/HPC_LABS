@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Instruction_level_parallelism by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Instruction-level parallelism - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="http://en.wikipedia.org/wiki/android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Instruction-level_parallelism" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="http://en.wikipedia.org/wiki/Instruction-level_parallelism" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Instruction-level_parallelism" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Instruction-level_parallelism","wgTitle":"Instruction-level parallelism","wgCurRevisionId":625558705,"wgRevisionId":625558705,"wgArticleId":245960,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Instruction processing","Parallel computing"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Instruction-level_parallelism","wgRelevantArticleId":245960,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Instruction_level_parallelism","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":[],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgInternalRedirectTargetUrl":"/wiki/Instruction-level_parallelism","wgWikibaseItemId":"Q2714055"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Instruction-level_parallelism skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Instruction-level parallelism</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"><span class="mw-redirectedfrom">  (Redirected from <a href="http://en.wikipedia.org/w/index.php?title=Instruction_level_parallelism&amp;redirect=no" title="Instruction level parallelism">Instruction level parallelism</a>)</span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Instruction-level parallelism</b> (ILP) is a measure of how many of the <a href="http://en.wikipedia.org/wiki/Instruction_set" title="Instruction set">operations</a> in a <a href="http://en.wikipedia.org/wiki/Computer_program" title="Computer program">computer program</a> can be performed simultaneously. The potential overlap among instructions is called instruction level parallelism.</p>
+<p>There are two approaches to instruction level parallelism:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Computer_hardware" title="Computer hardware">Hardware</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Software" title="Software">Software</a></li>
+</ul>
+<p>Hardware level works upon <a href="http://en.wikipedia.org/wiki/Dynamic_parallelism" title="Dynamic parallelism" class="mw-redirect">dynamic parallelism</a> whereas, the software level works on <a href="http://en.wikipedia.org/w/index.php?title=Static_parallelism&amp;action=edit&amp;redlink=1" class="new" title="Static parallelism (page does not exist)">static parallelism</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup> The <a href="http://en.wikipedia.org/wiki/Pentium" title="Pentium">Pentium</a> processor works on the dynamic sequence of parallel execution but the <a href="http://en.wikipedia.org/wiki/Itanium" title="Itanium">Itanium</a> processor works on the static level parallelism.</p>
+<p>Consider the following program:</p>
+<ol>
+<li>e = a + b</li>
+<li>f = c + d</li>
+<li>m = e * f</li>
+</ol>
+<p>Operation 3 depends on the results of operations 1 and 2, so it cannot be calculated until both of them are completed. However, operations 1 and 2 do not depend on any other operation, so they can be calculated simultaneously. If we assume that each operation can be completed in one unit of time then these three instructions can be completed in a total of two units of time, giving an ILP of 3/2.</p>
+<p>A goal of <a href="http://en.wikipedia.org/wiki/Compiler" title="Compiler">compiler</a> and <a href="http://en.wikipedia.org/wiki/Central_processing_unit" title="Central processing unit">processor</a> designers is to identify and take advantage of as much ILP as possible. Ordinary programs are typically written under a sequential execution model where instructions execute one after the other and in the order specified by the programmer. ILP allows the compiler and the processor to overlap the execution of multiple instructions or even to change the order in which instructions are executed.</p>
+<p>How much ILP exists in programs is very application specific. In certain fields, such as graphics and scientific computing the amount can be very large. However, workloads such as <a href="http://en.wikipedia.org/wiki/Cryptography" title="Cryptography">cryptography</a> may exhibit much less parallelism.</p>
+<p>Micro-architectural techniques that are used to exploit ILP include:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Instruction_pipelining" title="Instruction pipelining" class="mw-redirect">Instruction pipelining</a> where the execution of multiple instructions can be partially overlapped.</li>
+<li><a href="http://en.wikipedia.org/wiki/Superscalar" title="Superscalar">Superscalar</a> execution, <a href="http://en.wikipedia.org/wiki/Very_long_instruction_word" title="Very long instruction word">VLIW</a>, and the closely related <a href="http://en.wikipedia.org/wiki/Explicitly_parallel_instruction_computing" title="Explicitly parallel instruction computing">explicitly parallel instruction computing</a> concepts, in which multiple <a href="http://en.wikipedia.org/wiki/Execution_unit" title="Execution unit">execution units</a> are used to execute multiple instructions in parallel.</li>
+<li><a href="http://en.wikipedia.org/wiki/Out-of-order_execution" title="Out-of-order execution">Out-of-order execution</a> where instructions execute in any order that does not violate data dependencies. Note that this technique is independent of both pipelining and superscalar. Current implementations of out-of-order execution <a href="http://en.wikipedia.org/wiki/Run_time_(program_lifecycle_phase)" title="Run time (program lifecycle phase)">dynamically</a> (i.e., while the program is executing and without any help from the compiler) extract ILP from ordinary programs. An alternative is to extract this parallelism at <a href="http://en.wikipedia.org/wiki/Compile_time" title="Compile time">compile time</a> and somehow convey this information to the hardware. Due to the complexity of scaling the out-of-order execution technique, the industry has re-examined <a href="http://en.wikipedia.org/wiki/Instruction_set" title="Instruction set">instruction sets</a> which explicitly encode multiple independent operations per instruction.</li>
+<li><a href="http://en.wikipedia.org/wiki/Register_renaming" title="Register renaming">Register renaming</a> which refers to a technique used to avoid unnecessary serialization of program operations imposed by the reuse of registers by those operations, used to enable out-of-order execution.</li>
+<li><a href="http://en.wikipedia.org/wiki/Speculative_execution" title="Speculative execution">Speculative execution</a> which allow the execution of complete instructions or parts of instructions before being certain whether this execution should take place. A commonly used form of speculative execution is control flow speculation where instructions past a control flow instruction (e.g., a branch) are executed before the target of the control flow instruction is determined. Several other forms of speculative execution have been proposed and are in use including speculative execution driven by <a href="http://en.wikipedia.org/w/index.php?title=Value_prediction&amp;action=edit&amp;redlink=1" class="new" title="Value prediction (page does not exist)">value prediction</a>, <a href="http://en.wikipedia.org/wiki/Memory_dependence_prediction" title="Memory dependence prediction">memory dependence prediction</a> and <a href="http://en.wikipedia.org/w/index.php?title=Cache_latency_prediction&amp;action=edit&amp;redlink=1" class="new" title="Cache latency prediction (page does not exist)">cache latency prediction</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/Branch_prediction" title="Branch prediction" class="mw-redirect">Branch prediction</a> which is used to avoid stalling for control dependencies to be resolved. Branch prediction is used with speculative execution.</li>
+</ul>
+<p><a href="http://en.wikipedia.org/wiki/Dataflow_architecture" title="Dataflow architecture">Dataflow architectures</a> are another class of architectures where ILP is explicitly specified, for a recent example see the <a href="http://en.wikipedia.org/wiki/TRIPS_architecture" title="TRIPS architecture">TRIPS architecture</a>.</p>
+<p>In recent years, ILP techniques have been used to provide performance improvements in spite of the growing disparity between processor operating frequencies and memory access times (early ILP designs such as the <a href="http://en.wikipedia.org/wiki/IBM_System/360" title="IBM System/360">IBM System/360</a> Model 91 used ILP techniques to overcome the limitations imposed by a relatively small register file). Presently, a cache miss penalty to main memory costs several hundreds of CPU cycles. While in principle it is possible to use ILP to tolerate even such memory latencies the associated resource and power dissipation costs are disproportionate. Moreover, the complexity and often the latency of the underlying hardware structures results in reduced operating frequency further reducing any benefits. Hence, the aforementioned techniques prove inadequate to keep the CPU from stalling for the off-chip data. Instead, the industry is heading towards exploiting higher levels of parallelism that can be exploited through techniques such as <a href="http://en.wikipedia.org/wiki/Multiprocessing" title="Multiprocessing">multiprocessing</a> and <a href="http://en.wikipedia.org/wiki/Multithreading_(computer_architecture)" title="Multithreading (computer architecture)">multithreading</a>. <sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>2<span>]</span></a></sup></p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;action=edit&amp;section=1" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Data_dependency" title="Data dependency">Data dependency</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Memory-level_parallelism" title="Memory-level parallelism">Memory-level parallelism</a> (MLP)</li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;action=edit&amp;section=2" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><span class="citation book">Hennessy, John L.; Patterson, David A. <i>Computer Architecture: A Quantitative Approach</i>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AInstruction-level+parallelism&amp;rft.aufirst=John+L.&amp;rft.au=Hennessy%2C+John+L.&amp;rft.aulast=Hennessy&amp;rft.au=Patterson%2C+David+A.&amp;rft.btitle=Computer+Architecture%3A+A+Quantitative+Approach&amp;rft.genre=book&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.csl.cornell.edu/~sam/papers/cf04.pdf">Reflections of the Memory Wall</a></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;action=edit&amp;section=3" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://homes.cs.ru.ac.za/philip/Publications/Techreports/2002/Reports/memory-wall-survey.pdf">Approaches to addressing the Memory Wall</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.wired.com/wired/archive/4.08/geek.html">Wired magazine article that refers to the above paper</a></li>
+</ul>
+<table class="navbox" style="border-spacing:0">
+<tr>
+<td style="padding:2px">
+<table class="nowraplinks hlist collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="http://en.wikipedia.org/wiki/Template:Parallel_computing" title="Template:Parallel computing"><span title="View this template" style=";;background:none transparent;border:none;">v</span></a></li>
+<li class="nv-talk"><a href="http://en.wikipedia.org/wiki/Template_talk:Parallel_computing" title="Template talk:Parallel computing"><span title="Discuss this template" style=";;background:none transparent;border:none;">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="http://en.wikipedia.org/w/index.php?title=Template:Parallel_computing&amp;action=edit"><span title="Edit this template" style=";;background:none transparent;border:none;">e</span></a></li>
+</ul>
+</div>
+<div style="font-size:110%"><a href="http://en.wikipedia.org/wiki/Parallel_computing" title="Parallel computing">Parallel computing</a></div>
+</th>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">General</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Cloud_computing" title="Cloud computing">Cloud computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/High-performance_computing" title="High-performance computing" class="mw-redirect">High-performance computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Computer_cluster" title="Computer cluster">Cluster computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Distributed_computing" title="Distributed computing">Distributed computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Grid_computing" title="Grid computing">Grid computing</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Levels</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Bit-level_parallelism" title="Bit-level parallelism">Bit</a></li>
+<li><strong class="selflink">Instruction</strong></li>
+<li><a href="http://en.wikipedia.org/wiki/Data_parallelism" title="Data parallelism">Data</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Memory-level_parallelism" title="Memory-level parallelism">Memory</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Task_parallelism" title="Task parallelism">Task</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Multithreading_(computer_architecture)" title="Multithreading (computer architecture)">Multithreading</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Temporal_multithreading" title="Temporal multithreading">Temporal multithreading</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Simultaneous_multithreading" title="Simultaneous multithreading">Simultaneous multithreading</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Hyper-threading" title="Hyper-threading">Hyper-threading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Theory</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Amdahl%27s_law" title="Amdahl's law">Amdahl's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Gustafson%27s_law" title="Gustafson's law">Gustafson's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cost_efficiency" title="Cost efficiency">Cost efficiency</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Karp–Flatt_metric" title="Karp–Flatt metric">Karp–Flatt metric</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_slowdown" title="Parallel slowdown">slowdown</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Speedup" title="Speedup">speedup</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Elements</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Process_(computing)" title="Process (computing)">Process</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Thread_(computing)" title="Thread (computing)">Thread</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Fiber_(computer_science)" title="Fiber (computer science)">Fiber</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_random-access_machine" title="Parallel random-access machine">PRAM</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Instruction_window" title="Instruction window">Instruction window</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Coordination</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Multiprocessing" title="Multiprocessing">Multiprocessing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Memory_coherence" title="Memory coherence">Memory coherency</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cache_coherence" title="Cache coherence">Cache coherency</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cache_invalidation" title="Cache invalidation">Cache invalidation</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Barrier_(computer_science)" title="Barrier (computer science)">Barrier</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Synchronization_(computer_science)" title="Synchronization (computer science)">Synchronization</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Application_checkpointing" title="Application checkpointing">Application checkpointing</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Computer_programming" title="Computer programming">Programming</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_programming_model" title="Parallel programming model">Models</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Implicit_parallelism" title="Implicit parallelism">Implicit parallelism</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Explicit_parallelism" title="Explicit parallelism">Explicit parallelism</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Concurrency_(computer_science)" title="Concurrency (computer science)">Concurrency</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Flynn%27s_taxonomy" title="Flynn's taxonomy">Flynn's taxonomy</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/SISD" title="SISD">SISD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/SIMD" title="SIMD">SIMD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/MISD" title="MISD">MISD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/MIMD" title="MIMD">MIMD</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/SPMD" title="SPMD">SPMD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Thread_(computing)" title="Thread (computing)">Thread</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Non-blocking_algorithm" title="Non-blocking algorithm">Non-blocking algorithm</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Computer_hardware" title="Computer hardware">Hardware</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Multiprocessor" title="Multiprocessor" class="mw-redirect">Multiprocessor</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Symmetric_multiprocessing" title="Symmetric multiprocessing">Symmetric</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Asymmetric_multiprocessing" title="Asymmetric multiprocessing">Asymmetric</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Semiconductor_memory" title="Semiconductor memory">Memory</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Non-uniform_memory_access" title="Non-uniform memory access">NUMA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cache-only_memory_architecture" title="Cache-only memory architecture">COMA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Distributed_memory" title="Distributed memory">distributed</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Shared_memory" title="Shared memory">shared</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Distributed_shared_memory" title="Distributed shared memory">distributed shared</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Massively_parallel_(computing)" title="Massively parallel (computing)">MPP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Superscalar" title="Superscalar">Superscalar</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Vector_processor" title="Vector processor">Vector processor</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Supercomputer" title="Supercomputer">Supercomputer</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Beowulf_cluster" title="Beowulf cluster">Beowulf cluster</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Application_programming_interface" title="Application programming interface">APIs</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Ateji_PX" title="Ateji PX">Ateji PX</a></li>
+<li><a href="http://en.wikipedia.org/wiki/POSIX_Threads" title="POSIX Threads">POSIX Threads</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenMP" title="OpenMP">OpenMP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenHMPP" title="OpenHMPP">OpenHMPP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenACC" title="OpenACC">OpenACC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_Virtual_Machine" title="Parallel Virtual Machine">PVM</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface">MPI</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Unified_Parallel_C" title="Unified Parallel C">UPC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Threading_Building_Blocks" title="Threading Building Blocks">TBB</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Boost_(C++_libraries)#Multithreading_.E2.80.93_Boost.Thread" title="Boost (C++ libraries)">Boost.Thread</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Global_Arrays" title="Global Arrays">Global Arrays</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Charm++" title="Charm++">Charm++</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cilk" title="Cilk">Cilk</a>/<a href="http://en.wikipedia.org/wiki/Cilk_Plus" title="Cilk Plus">Cilk Plus</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Coarray_Fortran" title="Coarray Fortran">Coarray Fortran</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenCL" title="OpenCL">OpenCL</a></li>
+<li><a href="http://en.wikipedia.org/wiki/CUDA" title="CUDA">CUDA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Dryad_(programming)" title="Dryad (programming)">Dryad</a></li>
+<li><a href="http://en.wikipedia.org/wiki/C++_AMP" title="C++ AMP">C++ AMP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_LINQ" title="Parallel LINQ" class="mw-redirect">PLINQ</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_Extensions#Task_Parallel_Library" title="Parallel Extensions">TPL</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Problems</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Embarrassingly_parallel" title="Embarrassingly parallel">Embarrassingly parallel</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Software_lockout" title="Software lockout">Software lockout</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Scalability" title="Scalability">Scalability</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Race_condition#Computing" title="Race condition">Race condition</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">Deadlock</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deadlock#Livelock" title="Deadlock">Livelock</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Resource_starvation" title="Resource starvation">Starvation</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deterministic_algorithm" title="Deterministic algorithm">Deterministic algorithm</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_slowdown" title="Parallel slowdown">Parallel slowdown</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<td class="navbox-abovebelow" colspan="2">
+<div>
+<ul>
+<li><img alt="Category" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/16px-Folder_Hexagonal_Icon.svg.png" width="16" height="14" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/24px-Folder_Hexagonal_Icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/32px-Folder_Hexagonal_Icon.svg.png 2x" data-file-width="36" data-file-height="31" />&#160;<a href="http://en.wikipedia.org/wiki/Category:Parallel_computing" title="Category:Parallel computing">Category: parallel computing</a></li>
+<li><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/12px-Commons-logo.svg.png" width="12" height="16" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/18px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/24px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376" /> Media related to <a href="http://commons.wikimedia.org/wiki/Category:parallel_computing" class="extiw" title="commons:Category:parallel computing">parallel computing</a> at Wikimedia Commons</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="navbox" style="border-spacing:0">
+<tr>
+<td style="padding:2px">
+<table class="nowraplinks collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="http://en.wikipedia.org/wiki/Template:CPU_technologies" title="Template:CPU technologies"><span title="View this template" style=";;background:none transparent;border:none;">v</span></a></li>
+<li class="nv-talk"><a href="http://en.wikipedia.org/wiki/Template_talk:CPU_technologies" title="Template talk:CPU technologies"><span title="Discuss this template" style=";;background:none transparent;border:none;">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="http://en.wikipedia.org/w/index.php?title=Template:CPU_technologies&amp;action=edit"><span title="Edit this template" style=";;background:none transparent;border:none;">e</span></a></li>
+</ul>
+</div>
+<div style="font-size:110%"><a href="http://en.wikipedia.org/wiki/Central_processing_unit" title="Central processing unit">CPU technologies</a></div>
+</th>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Computer_architecture" title="Computer architecture">Architecture</a></th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Harvard_architecture" title="Harvard architecture">Harvard</a> (<a href="http://en.wikipedia.org/wiki/Modified_Harvard_architecture" title="Modified Harvard architecture">Modified Harvard</a>)</li>
+<li><a href="http://en.wikipedia.org/wiki/Von_Neumann_architecture" title="Von Neumann architecture">von Neumann</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Dataflow_architecture" title="Dataflow architecture">Dataflow</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Transport_triggered_architecture" title="Transport triggered architecture">TTA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Comparison_of_instruction_set_architectures" title="Comparison of instruction set architectures">Comparison</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Instruction_set" title="Instruction set">Instruction set</a></th>
+<td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Application-specific_instruction-set_processor" title="Application-specific instruction-set processor">ASIP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Complex_instruction_set_computing" title="Complex instruction set computing">CISC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Explicit_Data_Graph_Execution" title="Explicit Data Graph Execution">EDGE</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Explicitly_parallel_instruction_computing" title="Explicitly parallel instruction computing">EPIC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Minimal_instruction_set_computer" title="Minimal instruction set computer">MISC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/One_instruction_set_computer" title="One instruction set computer">OISC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Reduced_instruction_set_computing" title="Reduced instruction set computing">RISC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Very_long_instruction_word" title="Very long instruction word">VLIW</a></li>
+<li><a href="http://en.wikipedia.org/wiki/No_instruction_set_computing" title="No instruction set computing">NISC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Zero_instruction_set_computer" title="Zero instruction set computer">ZISC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/TRIPS_architecture" title="TRIPS architecture">TRIPS</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Word_(computer_architecture)" title="Word (computer architecture)">Word size</a></th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/1-bit_architecture" title="1-bit architecture">1-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/4-bit" title="4-bit">4-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/8-bit" title="8-bit">8-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Word_(computer_architecture)#Table_of_word_sizes" title="Word (computer architecture)">9-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Ferranti_Mercury" title="Ferranti Mercury">10-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/12-bit" title="12-bit">12-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Apollo_Guidance_Computer" title="Apollo Guidance Computer">15-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/16-bit" title="16-bit">16-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/18-bit" title="18-bit">18-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Z3_(computer)" title="Z3 (computer)">22-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/24-bit" title="24-bit">24-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/UNIVAC_III" title="UNIVAC III">25-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Saturn_Launch_Vehicle_Digital_Computer" title="Saturn Launch Vehicle Digital Computer">26-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/D-17B" title="D-17B">27-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/31-bit" title="31-bit">31-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/32-bit" title="32-bit">32-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/ZEBRA_(computer)" title="ZEBRA (computer)">33-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Fast_Universal_Digital_Computer_M-2" title="Fast Universal Digital Computer M-2">34-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/36-bit" title="36-bit">36-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Word_(computer_architecture)#Table_of_word_sizes" title="Word (computer architecture)">39-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/IAS_machine" title="IAS machine">40-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/48-bit" title="48-bit">48-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Atanasoff–Berry_computer" title="Atanasoff–Berry computer">50-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/60-bit" title="60-bit">60-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/64-bit_computing" title="64-bit computing">64-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/128-bit" title="128-bit">128-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/256-bit" title="256-bit">256-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/512-bit" title="512-bit">512-bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Word_(computer_architecture)#Variable_word_architectures" title="Word (computer architecture)">variable</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Instruction_cycle" title="Instruction cycle">Execution</a></th>
+<td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Instruction_pipeline" title="Instruction pipeline">Instruction pipelining</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Bubble_(computing)" title="Bubble (computing)">Bubble</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Operand_forwarding" title="Operand forwarding">Operand forwarding</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Out-of-order_execution" title="Out-of-order execution">Out-of-order execution</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Register_renaming" title="Register renaming">Register renaming</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Speculative_execution" title="Speculative execution">Speculative execution</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Branch_predictor" title="Branch predictor">Branch predictor</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Memory_dependence_prediction" title="Memory dependence prediction">Memory dependence prediction</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Hazard_(computer_architecture)" title="Hazard (computer architecture)">Hazards</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Parallel_computing" title="Parallel computing">Parallel level</a></th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Bit-level_parallelism" title="Bit-level parallelism">Bit</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Bit-serial_architecture" title="Bit-serial architecture">Bit-serial</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Word_(computer_architecture)" title="Word (computer architecture)">Word</a></li>
+</ul>
+</li>
+<li><strong class="selflink">Instruction</strong>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Scalar_processor" title="Scalar processor">Scalar</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Superscalar" title="Superscalar">Superscalar</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Data_parallelism" title="Data parallelism">Data</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Vector_processor" title="Vector processor">Vector</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Memory-level_parallelism" title="Memory-level parallelism">Memory</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Task_parallelism" title="Task parallelism">Task</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Thread_(computing)" title="Thread (computing)">Thread</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Multithreading_(computer_architecture)" title="Multithreading (computer architecture)">Multithreading</a></th>
+<td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Temporal_multithreading" title="Temporal multithreading">Temporal multithreading</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Simultaneous_multithreading" title="Simultaneous multithreading">Simultaneous multithreading</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Hyper-threading" title="Hyper-threading">Hyper-threading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Flynn%27s_taxonomy" title="Flynn's taxonomy">Flynn's taxonomy</a></th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/SISD" title="SISD">SISD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/SIMD" title="SIMD">SIMD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/MISD" title="MISD">MISD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/MIMD" title="MIMD">MIMD</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/SPMD" title="SPMD">SPMD</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Addressing_mode" title="Addressing mode">Addressing mode</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Types</th>
+<td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Digital_signal_processor" title="Digital signal processor">Digital signal processor</a> (DSP)</li>
+<li><a href="http://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units" title="General-purpose computing on graphics processing units">GPGPU</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Microcontroller" title="Microcontroller">Microcontroller</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Physics_processing_unit" title="Physics processing unit">Physics processing unit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/System_on_a_chip" title="System on a chip">System on a chip</a> (SoC)</li>
+<li><a href="http://en.wikipedia.org/wiki/Cellular_architecture" title="Cellular architecture">Cellular</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Components</th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Address_generation_unit" title="Address generation unit">Address generation unit</a> (AGU)</li>
+<li><a href="http://en.wikipedia.org/wiki/Arithmetic_logic_unit" title="Arithmetic logic unit">Arithmetic logic unit</a> (ALU)</li>
+<li><a href="http://en.wikipedia.org/wiki/Barrel_shifter" title="Barrel shifter">Barrel shifter</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Floating-point_unit" title="Floating-point unit">Floating-point unit</a> (FPU)</li>
+<li><a href="http://en.wikipedia.org/wiki/Back-side_bus" title="Back-side bus">Back-side bus</a></li>
+<li>(<a href="http://en.wikipedia.org/wiki/Multiplexer" title="Multiplexer">Multiplexer</a>, <a href="http://en.wikipedia.org/wiki/Demultiplexer" title="Demultiplexer" class="mw-redirect">Demultiplexer</a>)</li>
+<li><a href="http://en.wikipedia.org/wiki/Processor_register" title="Processor register">Registers</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Memory_management_unit" title="Memory management unit">Memory management unit</a> (MMU)</li>
+<li><a href="http://en.wikipedia.org/wiki/Translation_lookaside_buffer" title="Translation lookaside buffer">Translation lookaside buffer</a> (TLB)</li>
+<li><a href="http://en.wikipedia.org/wiki/CPU_cache" title="CPU cache">Cache</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Register_file" title="Register file">Register file</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Microcode" title="Microcode">Microcode</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Control_unit" title="Control unit">Control unit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Clock_rate" title="Clock rate">Clock rate</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Power_management" title="Power management">Power<br />
+management</a></th>
+<td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Advanced_Power_Management" title="Advanced Power Management">APM</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface" title="Advanced Configuration and Power Interface">ACPI</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Dynamic_frequency_scaling" title="Dynamic frequency scaling">Dynamic frequency scaling</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Dynamic_voltage_scaling" title="Dynamic voltage scaling">Dynamic voltage scaling</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Clock_gating" title="Clock gating">Clock gating</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">CPU hardware <a href="http://en.wikipedia.org/wiki/Computer_security" title="Computer security">security</a></th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/NX_bit" title="NX bit">NX bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Hardware_restriction" title="Hardware restriction">Hardware restriction</a> (<a href="http://en.wikipedia.org/wiki/Firmware" title="Firmware">firmware</a>)</li>
+<li><a href="http://en.wikipedia.org/wiki/Trusted_Execution_Technology" title="Trusted Execution Technology">Trusted Execution Technology</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Secure_cryptoprocessor" title="Secure cryptoprocessor">Secure cryptoprocessor</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Hardware_security_module" title="Hardware security module">Hardware security module</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Hengzhi_chip" title="Hengzhi chip">Hengzhi chip</a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1242
+CPU time usage: 0.129 seconds
+Real time usage: 0.165 seconds
+Preprocessor visited node count: 547/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 45037/2097152 bytes
+Template argument size: 158/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 4/500
+Lua time usage: 0.027/10.000 seconds
+Lua memory usage: 1.37 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  175.037      1 - -total
+ 22.31%   39.045      2 - Template:Navbox
+ 20.56%   35.983      1 - Template:Reflist
+ 19.38%   33.916      1 - Template:Parallel_Computing
+ 17.44%   30.518      1 - Template:Cite_book
+  8.14%   14.248      1 - Template:CPU_technologies
+  4.03%    7.051      1 - Template:Commonscat-inline
+  3.31%    5.796      1 - Template:Category-inline
+  2.46%    4.308      1 - Template:Sister-inline
+  2.38%    4.172      1 - Template:Icon
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:245960-0!*!0!!*!4!* and timestamp 20141215015802 and revision id 625558705
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;oldid=625558705">http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;oldid=625558705</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Instruction_processing" title="Category:Instruction processing">Instruction processing</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Parallel_computing" title="Category:Parallel computing">Parallel computing</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Instruction-level+parallelism&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Instruction-level+parallelism" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Instruction-level_parallelism"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Instruction-level_parallelism"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Instruction-level_parallelism" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://en.wikipedia.org/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://en.wikipedia.org/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Instruction-level_parallelism" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Instruction-level_parallelism" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;oldid=625558705" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q2714055" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Instruction-level_parallelism&amp;id=625558705" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Instruction-level+parallelism">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Instruction-level+parallelism&amp;oldid=625558705&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ar"><a href="http://ar.wikipedia.org/wiki/توازي_على_مستوى_التعليمة" title="توازي على مستوى التعليمة – Arabic" lang="ar" hreflang="ar">العربية</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="http://it.wikipedia.org/wiki/Instruction_level_parallelism" title="Instruction level parallelism – Italian" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/命令レベルの並列性" title="命令レベルの並列性 – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Instruction_Level_Parallelism" title="Instruction Level Parallelism – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Параллелизм_на_уровне_команд" title="Параллелизм на уровне команд – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-simple"><a href="http://simple.wikipedia.org/wiki/Instruction_level_parallelism" title="Instruction level parallelism – Simple English" lang="simple" hreflang="simple">Simple English</a></li>
+													<li class="interlanguage-link interwiki-sr"><a href="http://sr.wikipedia.org/wiki/Паралелизам_на_нивоу_наредбе" title="Паралелизам на нивоу наредбе – Serbian" lang="sr" hreflang="sr">Српски / srpski</a></li>
+													<li class="interlanguage-link interwiki-tr"><a href="http://tr.wikipedia.org/wiki/Komut_seviyesi_paralellik" title="Komut seviyesi paralellik – Turkish" lang="tr" hreflang="tr">Türkçe</a></li>
+													<li class="interlanguage-link interwiki-zh"><a href="http://zh.wikipedia.org/wiki/指令層級平行" title="指令層級平行 – Chinese" lang="zh" hreflang="zh">中文</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="http://en.wikipedia.org/wiki/edit" href="http://www.wikidata.org/wiki/Q2714055#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 14 September 2014 at 19:36.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Instruction-level_parallelism&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":124,"wgHostname":"mw1080"});
+}</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Instruction_level_parallelism by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:48 GMT -->
+</html>

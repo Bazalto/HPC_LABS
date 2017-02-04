@@ -1,0 +1,1106 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>OpenMP - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/OpenMP" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=OpenMP&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="/w/index.php?title=OpenMP&amp;action=edit" />
+<link rel="apple-touch-icon" href="//bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="//bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="/wiki/OpenMP" />
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/OpenMP" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.geshi.language.bash%2Cc%2Ccpp%2Cfortran%7Cext.geshi.local%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"OpenMP","wgTitle":"OpenMP","wgCurRevisionId":637781387,"wgRevisionId":637781387,"wgArticleId":381842,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["All articles with unsourced statements","Articles with unsourced statements from December 2014","Articles needing more detailed references","Articles with too many examples","Fortran","C programming language family","Parallel computing","Application programming interfaces"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"OpenMP","wgRelevantArticleId":381842,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["en-us"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q496579"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-OpenMP skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">OpenMP</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="infobox vevent" style="width:22em">
+<caption class="summary">OpenMP</caption>
+<tr>
+<td colspan="2" style="text-align:center"><a href="/wiki/File:Openmp.png" class="image" title="OpenMP logo"><img alt="OpenMP logo" src="//upload.wikimedia.org/wikipedia/en/thumb/2/27/Openmp.png/180px-Openmp.png" width="180" height="65" srcset="//upload.wikimedia.org/wikipedia/en/2/27/Openmp.png 1.5x, //upload.wikimedia.org/wikipedia/en/2/27/Openmp.png 2x" data-file-width="200" data-file-height="72" /></a></td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;white-space: nowrap;"><a href="/wiki/Software_design" title="Software design">Original author(s)</a></th>
+<td>OpenMP Architecture Review Board<sup id="cite_ref-Board_1-0" class="reference"><a href="#cite_note-Board-1"><span>[</span>1<span>]</span></a></sup></td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;white-space: nowrap;"><a href="/wiki/Software_developer" title="Software developer">Developer(s)</a></th>
+<td>OpenMP Architecture Review Board<sup id="cite_ref-Board_1-1" class="reference"><a href="#cite_note-Board-1"><span>[</span>1<span>]</span></a></sup></td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;white-space: nowrap;"><a href="/wiki/Software_release_life_cycle" title="Software release life cycle">Stable release</a></th>
+<td>4.0<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>2<span>]</span></a></sup> / July&#160;23, 2013<span class="noprint">; 16 months ago</span><span style="display:none">&#160;(<span class="bday dtstart published updated">2013-07-23</span>)</span></td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;white-space: nowrap;"><a href="/wiki/Operating_system" title="Operating system">Operating system</a></th>
+<td><a href="/wiki/Cross-platform" title="Cross-platform">Cross-platform</a></td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;white-space: nowrap;"><a href="/wiki/Computing_platform" title="Computing platform">Platform</a></th>
+<td>Cross-platform</td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;white-space: nowrap;"><a href="/wiki/List_of_software_categories" title="List of software categories">Type</a></th>
+<td>Extension to <a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, and <a href="/wiki/Fortran" title="Fortran">Fortran</a>; <a href="/wiki/Application_programming_interface" title="Application programming interface">API</a></td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;white-space: nowrap;"><a href="/wiki/Software_license" title="Software license">License</a></th>
+<td>Various<sup id="cite_ref-openmp.org_3-0" class="reference"><a href="#cite_note-openmp.org-3"><span>[</span>3<span>]</span></a></sup></td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;white-space: nowrap;">Website</th>
+<td><span class="url"><a rel="nofollow" class="external text" href="http://openmp.org">openmp<wbr />.org</a></span></td>
+</tr>
+</table>
+<p><b>OpenMP</b> (<b>Open</b> <b>M</b>ulti-<b>P</b>rocessing) is an <a href="/wiki/Application_programming_interface" title="Application programming interface">API</a> that supports multi-platform <a href="/wiki/Shared_memory" title="Shared memory">shared memory</a> <a href="/wiki/Multiprocessing" title="Multiprocessing">multiprocessing</a> programming in <a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, and <a href="/wiki/Fortran" title="Fortran">Fortran</a>,<sup id="cite_ref-OSConcepts_4-0" class="reference"><a href="#cite_note-OSConcepts-4"><span>[</span>4<span>]</span></a></sup> on most <a href="/wiki/Processor_architecture" title="Processor architecture" class="mw-redirect">processor architectures</a> and <a href="/wiki/Operating_system" title="Operating system">operating systems</a>, including <a href="/wiki/Solaris_(operating_system)" title="Solaris (operating system)">Solaris</a>, <a href="/wiki/IBM_AIX" title="IBM AIX">AIX</a>, <a href="/wiki/HP-UX" title="HP-UX">HP-UX</a>, <a href="/wiki/Linux" title="Linux">Linux</a>, <a href="/wiki/Mac_OS_X" title="Mac OS X" class="mw-redirect">Mac OS X</a>, and <a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a> platforms. It consists of a set of <a href="/wiki/Compiler_directive" title="Compiler directive" class="mw-redirect">compiler directives</a>, <a href="/wiki/Library_(computing)" title="Library (computing)">library routines</a>, and <a href="/wiki/Environment_variable" title="Environment variable">environment variables</a> that influence run-time behavior.<sup id="cite_ref-openmp.org_3-1" class="reference"><a href="#cite_note-openmp.org-3"><span>[</span>3<span>]</span></a></sup><sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>5<span>]</span></a></sup><sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>6<span>]</span></a></sup></p>
+<p>OpenMP is managed by the <a href="/wiki/Nonprofit_organization" title="Nonprofit organization">nonprofit</a> technology <a href="/wiki/Consortium" title="Consortium">consortium</a> <i>OpenMP Architecture Review Board</i> (or <i>OpenMP ARB</i>), jointly defined by a group of major computer hardware and software vendors, including <a href="/wiki/AMD" title="AMD" class="mw-redirect">AMD</a>, <a href="/wiki/IBM" title="IBM">IBM</a>, <a href="/wiki/Intel" title="Intel">Intel</a>, <a href="/wiki/Cray" title="Cray">Cray</a>, <a href="/wiki/HP" title="HP" class="mw-redirect">HP</a>, <a href="/wiki/Fujitsu" title="Fujitsu">Fujitsu</a>, <a href="/wiki/Nvidia" title="Nvidia">Nvidia</a>, <a href="/wiki/NEC" title="NEC">NEC</a>, <a href="/wiki/Red_Hat" title="Red Hat">Red Hat</a>, <a href="/wiki/Texas_Instruments" title="Texas Instruments">Texas Instruments</a>, <a href="/wiki/Oracle_Corporation" title="Oracle Corporation">Oracle Corporation</a>, and more.<sup id="cite_ref-Board_1-2" class="reference"><a href="#cite_note-Board-1"><span>[</span>1<span>]</span></a></sup></p>
+<p>OpenMP uses a <a href="/wiki/Software_portability" title="Software portability">portable</a>, scalable model that gives <a href="/wiki/Programmer" title="Programmer">programmers</a> a simple and flexible interface for developing parallel applications for platforms ranging from the standard <a href="/wiki/Desktop_computer" title="Desktop computer">desktop computer</a> to the <a href="/wiki/Supercomputer" title="Supercomputer">supercomputer</a>.</p>
+<p>An application built with the hybrid model of <a href="/wiki/Parallel_programming" title="Parallel programming" class="mw-redirect">parallel programming</a> can run on a <a href="/wiki/Computer_cluster" title="Computer cluster">computer cluster</a> using both OpenMP and <a href="/wiki/Message_Passing_Interface" title="Message Passing Interface">Message Passing Interface</a> (MPI), or more transparently through the use of OpenMP extensions<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (December 2014)">citation needed</span></a></i>]</sup> for non-shared memory systems.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#History"><span class="tocnumber">2</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#The_core_elements"><span class="tocnumber">3</span> <span class="toctext">The core elements</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Thread_creation"><span class="tocnumber">3.1</span> <span class="toctext">Thread creation</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Work-sharing_constructs"><span class="tocnumber">3.2</span> <span class="toctext">Work-sharing constructs</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#OpenMP_clauses"><span class="tocnumber">3.3</span> <span class="toctext">OpenMP clauses</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#Data_sharing_attribute_clauses"><span class="tocnumber">3.3.1</span> <span class="toctext">Data sharing attribute clauses</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Synchronization_clauses"><span class="tocnumber">3.3.2</span> <span class="toctext">Synchronization clauses</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Scheduling_clauses"><span class="tocnumber">3.3.3</span> <span class="toctext">Scheduling clauses</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#IF_control"><span class="tocnumber">3.3.4</span> <span class="toctext">IF control</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Initialization"><span class="tocnumber">3.3.5</span> <span class="toctext">Initialization</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Data_copying"><span class="tocnumber">3.3.6</span> <span class="toctext">Data copying</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Reduction"><span class="tocnumber">3.3.7</span> <span class="toctext">Reduction</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Others"><span class="tocnumber">3.3.8</span> <span class="toctext">Others</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="#User-level_runtime_routines"><span class="tocnumber">3.4</span> <span class="toctext">User-level runtime routines</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Environment_variables"><span class="tocnumber">3.5</span> <span class="toctext">Environment variables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Sample_programs"><span class="tocnumber">4</span> <span class="toctext">Sample programs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Hello_World"><span class="tocnumber">4.1</span> <span class="toctext">Hello World</span></a>
+<ul>
+<li class="toclevel-3 tocsection-19"><a href="#C"><span class="tocnumber">4.1.1</span> <span class="toctext">C</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#C.2B.2B"><span class="tocnumber">4.1.2</span> <span class="toctext">C++</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#Fortran_77"><span class="tocnumber">4.1.3</span> <span class="toctext">Fortran 77</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#Fortran_90_free_form"><span class="tocnumber">4.1.4</span> <span class="toctext">Fortran 90 free form</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-23"><a href="#Clauses_in_work-sharing_constructs_.28in_C.2FC.2B.2B.29"><span class="tocnumber">4.2</span> <span class="toctext">Clauses in work-sharing constructs (in C/C++)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Implementations"><span class="tocnumber">5</span> <span class="toctext">Implementations</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#Pros_and_cons"><span class="tocnumber">6</span> <span class="toctext">Pros and cons</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="#Performance_expectations"><span class="tocnumber">7</span> <span class="toctext">Performance expectations</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#Thread_affinity"><span class="tocnumber">8</span> <span class="toctext">Thread affinity</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="#Benchmarks"><span class="tocnumber">9</span> <span class="toctext">Benchmarks</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="#Learning_resources_online"><span class="tocnumber">10</span> <span class="toctext">Learning resources online</span></a></li>
+<li class="toclevel-1 tocsection-30"><a href="#See_also"><span class="tocnumber">11</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-31"><a href="#References"><span class="tocnumber">12</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-32"><a href="#Further_reading"><span class="tocnumber">13</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-33"><a href="#External_links"><span class="tocnumber">14</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Introduction">Introduction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=1" title="Edit section: Introduction">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:452px;"><a href="/wiki/File:Fork_join.svg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Fork_join.svg/450px-Fork_join.svg.png" width="450" height="187" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Fork_join.svg/675px-Fork_join.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Fork_join.svg/900px-Fork_join.svg.png 2x" data-file-width="1040" data-file-height="433" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Fork_join.svg" class="internal" title="Enlarge"></a></div>
+An illustration of <a href="/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">multithreading</a> where the master thread forks off a number of threads which execute blocks of code in parallel.</div>
+</div>
+</div>
+<div class="hatnote boilerplate seealso">See also: <a href="/wiki/Fork%E2%80%93join_model" title="Fork–join model">Fork–join model</a></div>
+<p>OpenMP is an implementation of <a href="/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">multithreading</a>, a method of parallelizing whereby a master <i>thread</i> (a series of instructions executed consecutively) <i>forks</i> a specified number of slave <i>threads</i> and the system divides a task among them. The threads then run concurrently, with the <a href="/wiki/Runtime_environment" title="Runtime environment" class="mw-redirect">runtime environment</a> allocating threads to different processors.</p>
+<p>The section of code that is meant to run in parallel is marked accordingly, with a <a href="/wiki/Preprocessor_directive" title="Preprocessor directive" class="mw-redirect">preprocessor directive</a> that will cause the threads to form before the section is executed.<sup id="cite_ref-OSConcepts_4-1" class="reference"><a href="#cite_note-OSConcepts-4"><span>[</span>4<span>]</span></a></sup> Each thread has an <i>id</i> attached to it which can be obtained using a <a href="/wiki/Function_(computer_science)" title="Function (computer science)" class="mw-redirect">function</a> (called <code>omp_get_thread_num()</code>). The thread id is an integer, and the master thread has an id of <i>0</i>. After the execution of the parallelized code, the threads <i>join</i> back into the master thread, which continues onward to the end of the program.</p>
+<p>By default, each thread executes the parallelized section of code independently. <i>Work-sharing constructs</i> can be used to divide a task among the threads so that each thread executes its allocated part of the code. Both <a href="/wiki/Task_parallelism" title="Task parallelism">task parallelism</a> and <a href="/wiki/Data_parallelism" title="Data parallelism">data parallelism</a> can be achieved using OpenMP in this way.</p>
+<p>The runtime environment allocates threads to processors depending on usage, machine load and other factors. The runtime environment can assign the number of threads based on <a href="/wiki/Environment_variables" title="Environment variables" class="mw-redirect">environment variables</a>, or the code can do so using functions. The OpenMP functions are included in a <a href="/wiki/Header_file" title="Header file" class="mw-redirect">header file</a> labelled <tt>omp.h</tt> in <a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>/<a href="/wiki/C%2B%2B" title="C++">C++</a>.</p>
+<h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=2" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The OpenMP Architecture Review Board (ARB) published its first API specifications, OpenMP for Fortran 1.0, in October 1997. October the following year they released the C/C++ standard. 2000 saw version 2.0 of the Fortran specifications with version 2.0 of the C/C++ specifications being released in 2002. Version 2.5 is a combined C/C++/Fortran specification that was released in 2005.</p>
+<p>Version 3.0 was released in May 2008. Included in the new features in 3.0 is the concept of <i>tasks</i> and the <i>task</i> construct.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>7<span>]</span></a></sup></p>
+<p>Version 3.1 of the OpenMP specification was released July 9, 2011.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>8<span>]</span></a></sup></p>
+<p>Version 4.0 of the specification was released in July 2013.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>9<span>]</span></a></sup> It adds or improves the following features: support for <a href="/wiki/Hardware_acceleration" title="Hardware acceleration">accelerators</a>; <a href="/wiki/Linearizability" title="Linearizability">atomics</a>; error handling; <a href="/wiki/Processor_affinity" title="Processor affinity">thread affinity</a>; tasking extensions; user defined <a href="/wiki/Fold_(higher-order_function)" title="Fold (higher-order function)">reduction</a>; <a href="/wiki/SIMD" title="SIMD">SIMD</a> support; <a href="/wiki/Fortran_2003" title="Fortran 2003" class="mw-redirect">Fortran 2003</a> support.<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>10<span>]</span></a></sup><sup class="noprint Inline-Template" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citing_sources#What_information_to_include" title="Wikipedia:Citing sources"><span title="A more detailed citation is required.">full citation needed</span></a></i>]</sup></p>
+<h2><span class="mw-headline" id="The_core_elements">The core elements</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=3" title="Edit section: The core elements">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:532px;"><a href="/wiki/File:OpenMP_language_extensions.svg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/9b/OpenMP_language_extensions.svg/530px-OpenMP_language_extensions.svg.png" width="530" height="245" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/9b/OpenMP_language_extensions.svg/795px-OpenMP_language_extensions.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/9b/OpenMP_language_extensions.svg/1060px-OpenMP_language_extensions.svg.png 2x" data-file-width="944" data-file-height="436" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:OpenMP_language_extensions.svg" class="internal" title="Enlarge"></a></div>
+Chart of OpenMP constructs.</div>
+</div>
+</div>
+</div>
+<p>The core elements of OpenMP are the constructs for thread creation, workload distribution (work sharing), data-environment management, thread synchronization, user-level runtime routines and environment variables.</p>
+<p>In C/C++, OpenMP uses <a href="/wiki/C_preprocessor#Compiler-specific_preprocessor_features" title="C preprocessor">#pragmas</a>. The OpenMP specific pragmas are listed below.</p>
+<h3><span class="mw-headline" id="Thread_creation">Thread creation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=4" title="Edit section: Thread creation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The pragma <i>omp parallel</i> is used to fork additional threads to carry out the work enclosed in the construct in parallel. The original thread will be denoted as <i>master thread</i> with thread ID 0.</p>
+<p>Example (C program): Display "Hello, world." using multiple threads.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+<span class="co2">#include &lt;stdio.h&gt;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="co2">#pragma omp parallel</span>
+    <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"Hello, world.<span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy0">;</span>
+  <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Use flag -fopenmp to compile using GCC:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="bash source-bash">
+<pre class="de1">
+<span class="co4">$</span><span class="kw2">gcc</span> <span class="re5">-fopenmp</span> hello.c <span class="re5">-o</span> hello
+</pre></div>
+</div>
+<p>Output on a computer with two cores, and thus two threads:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="bash source-bash">
+<pre class="de1">
+Hello, world.
+Hello, world.
+</pre></div>
+</div>
+<p>However, the output may also be garbled because of the <a href="/wiki/Race_condition" title="Race condition">race condition</a> caused from the two threads sharing the <a href="/wiki/Standard_output" title="Standard output" class="mw-redirect">standard output</a>.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="bash source-bash">
+<pre class="de1">
+Hello, wHello, woorld.
+rld.
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Work-sharing_constructs">Work-sharing constructs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=5" title="Edit section: Work-sharing constructs">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Used to specify how to assign independent work to one or all of the threads.</p>
+<ul>
+<li><i>omp for</i> or <i>omp do</i>: used to split up loop iterations among the threads, also called loop constructs.</li>
+<li><i>sections</i>: assigning consecutive but independent code blocks to different threads</li>
+<li><i>single</i>: specifying a code block that is executed by only one thread, a barrier is implied in the end</li>
+<li><i>master</i>: similar to single, but the code block will be executed by the master thread only and no barrier implied in the end.</li>
+</ul>
+<p>Example: initialize the value of a large array in parallel, using each thread to do part of the work</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+<span class="kw4">int</span> main<span class="br0">(</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">[</span><span class="br0">]</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw4">const</span> <span class="kw4">int</span> N <span class="sy0">=</span> <span class="nu0">100000</span><span class="sy0">;</span>
+    <span class="kw4">int</span> i<span class="sy0">,</span> a<span class="br0">[</span>N<span class="br0">]</span><span class="sy0">;</span>
+ 
+    <span class="co2">#pragma omp parallel for</span>
+    <span class="kw1">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> N<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">)</span>
+        a<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">=</span> <span class="nu0">2</span> <span class="sy0">*</span> i<span class="sy0">;</span>
+ 
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="OpenMP_clauses">OpenMP clauses</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=6" title="Edit section: OpenMP clauses">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Since OpenMP is a shared memory programming model, most variables in OpenMP code are visible to all threads by default. But sometimes private variables are necessary to avoid <a href="/wiki/Race_condition" title="Race condition">race conditions</a> and there is a need to pass values between the sequential part and the parallel region (the code block executed in parallel), so data environment management is introduced as <i>data sharing attribute clauses</i> by appending them to the OpenMP directive. The different types of clauses are</p>
+<h4><span class="mw-headline" id="Data_sharing_attribute_clauses">Data sharing attribute clauses</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=7" title="Edit section: Data sharing attribute clauses">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li><i>shared</i>: the data within a parallel region is shared, which means visible and accessible by all threads simultaneously. By default, all variables in the work sharing region are shared except the loop iteration counter.</li>
+<li><i>private</i>: the data within a parallel region is private to each thread, which means each thread will have a local copy and use it as a temporary variable. A private variable is not initialized and the value is not maintained for use outside the parallel region. By default, the loop iteration counters in the OpenMP loop constructs are private.</li>
+<li><i>default</i>: allows the programmer to state that the default data scoping within a parallel region will be either <i>shared</i>, or <i>none</i> for C/C++, or <i>shared</i>, <i>firstprivate</i>, <i>private</i>, or <i>none</i> for Fortran. The <i>none</i> option forces the programmer to declare each variable in the parallel region using the data sharing attribute clauses.</li>
+<li><i>firstprivate</i>: like <i>private</i> except initialized to original value.</li>
+<li><i>lastprivate</i>: like <i>private</i> except original value is updated after construct.</li>
+<li><i>reduction</i>: a safe way of joining work from all threads after construct.</li>
+</ul>
+<h4><span class="mw-headline" id="Synchronization_clauses">Synchronization clauses</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=8" title="Edit section: Synchronization clauses">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li><i>critical</i>: the enclosed code block will be executed by only one thread at a time, and not simultaneously executed by multiple threads. It is often used to protect shared data from <a href="/wiki/Race_condition" title="Race condition">race conditions</a>.</li>
+<li><i>atomic</i>: the memory update (write, or read-modify-write) in the next instruction will be performed atomically. It does not make the entire statement atomic; only the memory update is atomic. A compiler might use special hardware instructions for better performance than when using <i>critical</i>.</li>
+<li><i>ordered</i>: the structured block is executed in the order in which iterations would be executed in a sequential loop</li>
+<li><i>barrier</i>: each thread waits until all of the other threads of a team have reached this point. A work-sharing construct has an implicit barrier synchronization at the end.</li>
+<li><i>nowait</i>: specifies that threads completing assigned work can proceed without waiting for all threads in the team to finish. In the absence of this clause, threads encounter a barrier synchronization at the end of the work sharing construct.</li>
+</ul>
+<h4><span class="mw-headline" id="Scheduling_clauses">Scheduling clauses</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=9" title="Edit section: Scheduling clauses">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li><i>schedule(type, chunk)</i>: This is useful if the work sharing construct is a do-loop or for-loop. The iteration(s) in the work sharing construct are assigned to threads according to the scheduling method defined by this clause. The three types of scheduling are:</li>
+</ul>
+<ol>
+<li><i>static</i>: Here, all the threads are allocated iterations before they execute the loop iterations. The iterations are divided among threads equally by default. However, specifying an integer for the parameter <i>chunk</i> will allocate chunk number of contiguous iterations to a particular thread.</li>
+<li><i>dynamic</i>: Here, some of the iterations are allocated to a smaller number of threads. Once a particular thread finishes its allocated iteration, it returns to get another one from the iterations that are left. The parameter <i>chunk</i> defines the number of contiguous iterations that are allocated to a thread at a time.</li>
+<li><i>guided</i>: A large chunk of contiguous iterations are allocated to each thread dynamically (as above). The chunk size decreases exponentially with each successive allocation to a minimum size specified in the parameter <i>chunk</i></li>
+</ol>
+<h4><span class="mw-headline" id="IF_control">IF control</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=10" title="Edit section: IF control">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li><i>if</i>: This will cause the threads to parallelize the task only if a condition is met. Otherwise the code block executes serially.</li>
+</ul>
+<h4><span class="mw-headline" id="Initialization">Initialization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=11" title="Edit section: Initialization">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li><i>firstprivate</i>: the data is private to each thread, but initialized using the value of the variable using the same name from the master thread.</li>
+<li><i>lastprivate</i>: the data is private to each thread. The value of this private data will be copied to a global variable using the same name outside the parallel region if current iteration is the last iteration in the parallelized loop. A variable can be both <i>firstprivate</i> and <i>lastprivate</i>.</li>
+<li><i>threadprivate</i>: The data is a global data, but it is private in each parallel region during the runtime. The difference between <i>threadprivate</i> and <i>private</i> is the global scope associated with threadprivate and the preserved value across parallel regions.</li>
+</ul>
+<h4><span class="mw-headline" id="Data_copying">Data copying</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=12" title="Edit section: Data copying">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li><i>copyin</i>: similar to <i>firstprivate</i> for <i>private</i> variables, <i>threadprivate</i> variables are not initialized, unless using <i>copyin</i> to pass the value from the corresponding global variables. No <i>copyout</i> is needed because the value of a threadprivate variable is maintained throughout the execution of the whole program.</li>
+<li><i>copyprivate</i>: used with <i>single</i> to support the copying of data values from private objects on one thread (the <i>single</i> thread) to the corresponding objects on other threads in the team.</li>
+</ul>
+<h4><span class="mw-headline" id="Reduction">Reduction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=13" title="Edit section: Reduction">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li><i>reduction(operator | intrinsic&#160;: list)</i>: the variable has a local copy in each thread, but the values of the local copies will be summarized (reduced) into a global shared variable. This is very useful if a particular operation (specified in <i>operator</i> for this particular clause) on a datatype that runs iteratively so that its value at a particular iteration depends on its value at a prior iteration. Basically, the steps that lead up to the operational increment are parallelized, but the threads gather up and wait before updating the datatype, then increments the datatype in order so as to avoid racing condition. This would be required in parallelizing <a href="/wiki/Numerical_integration" title="Numerical integration">numerical integration</a> of functions and <a href="/wiki/Differential_equation" title="Differential equation">differential equations</a>, as a common example.</li>
+</ul>
+<h4><span class="mw-headline" id="Others">Others</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=14" title="Edit section: Others">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li><i>flush</i>: The value of this variable is restored from the register to the memory for using this value outside of a parallel part</li>
+<li><i>master</i>: Executed only by the master thread (the thread which forked off all the others during the execution of the OpenMP directive). No implicit barrier; other team members (threads) not required to reach.</li>
+</ul>
+<h3><span class="mw-headline" id="User-level_runtime_routines">User-level runtime routines</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=15" title="Edit section: User-level runtime routines">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Used to modify/check the number of threads, detect if the execution context is in a parallel region, how many processors in current system, set/unset locks, timing functions, etc.</p>
+<h3><span class="mw-headline" id="Environment_variables">Environment variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=16" title="Edit section: Environment variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A method to alter the execution features of OpenMP applications. Used to control loop iterations scheduling, default number of threads, etc. For example <i>OMP_NUM_THREADS</i> is used to specify number of threads for an application.</p>
+<h2><span class="mw-headline" id="Sample_programs">Sample programs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=17" title="Edit section: Sample programs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="metadata plainlinks ambox ambox-content" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/60px-Ambox_important.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/80px-Ambox_important.svg.png 2x" data-file-width="40" data-file-height="40" /></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>may contain excessive, poor, or irrelevant examples</b>. <span class="hide-when-compact">Please <a class="external text" href="//en.wikipedia.org/w/index.php?title=OpenMP&amp;action=edit">improve the article</a> by adding more descriptive text and removing less pertinent examples. See Wikipedia's <a href="/wiki/Wikipedia:Guide_to_writing_better_articles" title="Wikipedia:Guide to writing better articles" class="mw-redirect">guide to writing better articles</a> for further suggestions.</span> <small><i>(April 2011)</i></small></span></td>
+</tr>
+</table>
+<p>In this section, some sample programs are provided to illustrate the concepts explained above.</p>
+<h3><span class="mw-headline" id="Hello_World">Hello World</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=18" title="Edit section: Hello World">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A basic program that exercises the <i>parallel</i>, <i>private</i> and <i>barrier</i> directives, and the functions <code>omp_get_thread_num</code> and <code>omp_get_num_threads</code> (not to be confused).</p>
+<h4><span class="mw-headline" id="C">C</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=19" title="Edit section: C">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>This <a href="/wiki/C_(programming_language)" title="C (programming language)">C</a> program can be compiled using gcc-4.4 with the flag -fopenmp</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+<span class="co2">#include &lt;omp.h&gt;</span>
+<span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#include &lt;stdlib.h&gt;</span>
+ 
+<span class="kw4">int</span> main <span class="br0">(</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">[</span><span class="br0">]</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw4">int</span> th_id<span class="sy0">,</span> nthreads<span class="sy0">;</span>
+  <span class="co2">#pragma omp parallel private(th_id)</span>
+  <span class="br0">{</span>
+    th_id <span class="sy0">=</span> omp_get_thread_num<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"Hello World from thread %d<span class="es1">\n</span>"</span><span class="sy0">,</span> th_id<span class="br0">)</span><span class="sy0">;</span>
+    <span class="co2">#pragma omp barrier</span>
+    <span class="kw1">if</span> <span class="br0">(</span> th_id <span class="sy0">==</span> <span class="nu0">0</span> <span class="br0">)</span> <span class="br0">{</span>
+      nthreads <span class="sy0">=</span> omp_get_num_threads<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+      <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"There are %d threads<span class="es1">\n</span>"</span><span class="sy0">,</span>nthreads<span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+  <span class="kw1">return</span> EXIT_SUCCESS<span class="sy0">;</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h4><span class="mw-headline" id="C.2B.2B">C++</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=20" title="Edit section: C++">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>This <a href="/wiki/C%2B%2B" title="C++">C++</a> program can be compiled using GCC: g++ -Wall -fopenmp test.cpp<br />
+NOTE: The IOstreams library is not thread-safe. Therefore, for instance, <i>cout</i> calls must be executed in critical areas or by only one thread (e.g. masterthread).</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="cpp source-cpp">
+<pre class="de1">
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+ 
+<span class="co2">#include &lt;omp.h&gt;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="kw4">int</span> argc, <span class="kw4">char</span> <span class="sy2">*</span>argv<span class="br0">[</span><span class="br0">]</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw4">int</span> th_id, nthreads<span class="sy4">;</span>
+  <span class="co2">#pragma omp parallel private(th_id) shared(nthreads)</span>
+  <span class="br0">{</span>
+    th_id <span class="sy1">=</span> omp_get_thread_num<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co2">#pragma omp critical</span>
+    <span class="br0">{</span>
+      <span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"Hello World from thread "</span> <span class="sy1">&lt;&lt;</span> th_id <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="co2">#pragma omp barrier</span>
+ 
+    <span class="co2">#pragma omp master</span>
+    <span class="br0">{</span>
+      nthreads <span class="sy1">=</span> omp_get_num_threads<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"There are "</span> <span class="sy1">&lt;&lt;</span> nthreads <span class="sy1">&lt;&lt;</span> <span class="st0">" threads"</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h4><span class="mw-headline" id="Fortran_77">Fortran 77</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=21" title="Edit section: Fortran 77">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Here is a <a href="/wiki/Fortran_77" title="Fortran 77" class="mw-redirect">Fortran 77</a> version.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="fortran source-fortran">
+<pre class="de1">
+      <span class="kw1">PROGRAM</span> HELLO
+      <span class="kw3">INTEGER</span> ID, NTHRDS
+      <span class="kw3">INTEGER</span> OMP_GET_THREAD_NUM, OMP_GET_NUM_THREADS
+<span class="co1">C$OMP PARALLEL PRIVATE(ID)</span>
+      ID <span class="sy0">=</span> OMP_GET_THREAD_NUM<span class="br0">(</span><span class="br0">)</span>
+      PRINT <span class="sy0">*</span>, <span class="st0">'HELLO WORLD FROM THREAD'</span>, ID
+<span class="co1">C$OMP BARRIER</span>
+      <span class="kw1">IF</span> <span class="br0">(</span> ID <span class="kw2">.<span class="me1">EQ</span>.</span> <span class="nu0">0</span> <span class="br0">)</span> <span class="kw1">THEN</span>
+        NTHRDS <span class="sy0">=</span> OMP_GET_NUM_THREADS<span class="br0">(</span><span class="br0">)</span>
+        PRINT <span class="sy0">*</span>, <span class="st0">'THERE ARE'</span>, NTHRDS, <span class="st0">'THREADS'</span>
+      <span class="kw1">END</span> <span class="kw1">IF</span>
+<span class="co1">C$OMP END PARALLEL</span>
+      <span class="kw1">END</span>
+</pre></div>
+</div>
+<h4><span class="mw-headline" id="Fortran_90_free_form">Fortran 90 free form</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=22" title="Edit section: Fortran 90 free form">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Here is a <a href="/wiki/Fortran_90" title="Fortran 90" class="mw-redirect">Fortran 90</a> <a href="/wiki/Free-form_language" title="Free-form language">free form</a> version.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="fortran source-fortran">
+<pre class="de1">
+ <span class="kw1">program</span> hello90
+ <span class="kw3">use</span> omp_lib
+ <span class="kw3">integer</span><span class="sy0">::</span> <span class="me2">id</span>, nthreads
+   <span class="co1">!$omp parallel private(id)</span>
+   id <span class="sy0">=</span> omp_get_thread_num<span class="br0">(</span><span class="br0">)</span>
+   write <span class="br0">(</span><span class="sy0">*</span>,<span class="sy0">*</span><span class="br0">)</span> <span class="st0">'Hello World from thread'</span>, id
+   <span class="co1">!$omp barrier</span>
+   <span class="kw1">if</span> <span class="br0">(</span> id <span class="sy0">==</span> <span class="nu0">0</span> <span class="br0">)</span> <span class="kw1">then</span>
+     nthreads <span class="sy0">=</span> omp_get_num_threads<span class="br0">(</span><span class="br0">)</span>
+     write <span class="br0">(</span><span class="sy0">*</span>,<span class="sy0">*</span><span class="br0">)</span> <span class="st0">'There are'</span>, nthreads, <span class="st0">'threads'</span>
+   <span class="kw1">end</span> <span class="kw1">if</span>
+   <span class="co1">!$omp end parallel</span>
+ <span class="kw1">end</span> <span class="kw1">program</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Clauses_in_work-sharing_constructs_.28in_C.2FC.2B.2B.29">Clauses in work-sharing constructs (in C/C++)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=23" title="Edit section: Clauses in work-sharing constructs (in C/C++)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The application of some OpenMP clauses are illustrated in the simple examples in this section. The piece of code below updates the elements of an array <i>b</i> by performing a simple operation on the elements of an array <i>a</i>. The parallelization is done by the OpenMP directive <i>#pragma omp</i>. The scheduling of tasks is dynamic. Notice how the iteration counters <i>j</i> and <i>k</i> have to be made private, whereas the primary iteration counter <i>i</i> is private by default. The task of running through <i>i</i> is divided among multiple threads, and each thread creates its own versions of <i>j</i> and <i>k</i> in its <a href="/w/index.php?title=Execution_stack&amp;action=edit&amp;redlink=1" class="new" title="Execution stack (page does not exist)">execution stack</a>, thus doing the full task allocated to it and updating the allocated part of the array <i>b</i> at the same time as the other threads.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+ <span class="co2">#define CHUNKSIZE 1 /*defines the chunk size as 1 contiguous iteration*/</span>
+ <span class="coMULTI">/*forks off the threads*/</span>
+ <span class="co2">#pragma omp parallel private(j,k) </span>
+ <span class="br0">{</span>
+  <span class="coMULTI">/*Starts the work sharing construct*/</span>
+  <span class="co2">#pragma omp for schedule(dynamic, CHUNKSIZE)</span>
+  <span class="kw1">for</span><span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">2</span><span class="sy0">;</span> i <span class="sy0">&lt;=</span> N<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">)</span>
+     <span class="kw1">for</span><span class="br0">(</span>j <span class="sy0">=</span> <span class="nu0">2</span><span class="sy0">;</span> j <span class="sy0">&lt;=</span> i<span class="sy0">;</span> j<span class="sy0">++</span><span class="br0">)</span>
+        <span class="kw1">for</span><span class="br0">(</span>k <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span> k <span class="sy0">&lt;=</span> M<span class="sy0">;</span> k<span class="sy0">++</span><span class="br0">)</span>
+           b<span class="br0">[</span>i<span class="br0">]</span><span class="br0">[</span>j<span class="br0">]</span> <span class="sy0">+=</span> a<span class="br0">[</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">[</span>j<span class="br0">]</span><span class="sy0">/</span>k <span class="sy0">+</span> a<span class="br0">[</span>i<span class="sy0">+</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">[</span>j<span class="br0">]</span><span class="sy0">/</span>k<span class="sy0">;</span>
+ <span class="br0">}</span>
+</pre></div>
+</div>
+<p>The next piece of code is a common usage of the <i>reduction</i> clause to calculate reduced sums. Here, we add up all the elements of an array <i>a</i> with an <i>i</i>-dependent weight using a for loop, which we parallelize using OpenMP directives and reduction clause. The scheduling is kept static.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+ <span class="co2">#define N 10000 /*size of a*/</span>
+ <span class="kw4">void</span> calculate<span class="br0">(</span><span class="kw4">long</span> <span class="sy0">*</span><span class="br0">)</span><span class="sy0">;</span> <span class="coMULTI">/*The function that calculates the elements of a*/</span>
+ <span class="kw4">int</span> i<span class="sy0">;</span>
+ <span class="kw4">long</span> w<span class="sy0">;</span>
+ <span class="kw4">long</span> a<span class="br0">[</span>N<span class="br0">]</span><span class="sy0">;</span>
+ calculate<span class="br0">(</span>a<span class="br0">)</span><span class="sy0">;</span>
+ <span class="kw4">long</span> sum <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+ <span class="coMULTI">/*forks off the threads and starts the work-sharing construct*/</span>
+ <span class="co2">#pragma omp parallel for private(w) reduction(+:sum) schedule(static,1)</span>
+ <span class="kw1">for</span><span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> N<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      w <span class="sy0">=</span> i<span class="sy0">*</span>i<span class="sy0">;</span>
+      sum <span class="sy0">=</span> sum <span class="sy0">+</span> w<span class="sy0">*</span>a<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+ <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"<span class="es1">\n</span> %li"</span><span class="sy0">,</span>sum<span class="br0">)</span><span class="sy0">;</span>
+</pre></div>
+</div>
+<p>An equivalent, less elegant, implementation of the above code is to create a local sum variable for each thread ("loc_sum"), and make a protected update of the global variable <i>sum</i> at the end of the process, through the directive <i>critical</i>. Note that this protection is critical, as explained <a rel="nofollow" class="external text" href="https://computing.llnl.gov/tutorials/openMP/#Synchronization">elsewhere</a>.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+ ...
+ <span class="kw4">long</span> sum <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">,</span> loc_sum<span class="sy0">;</span>
+ <span class="coMULTI">/*forks off the threads and starts the work-sharing construct*/</span>
+ <span class="co2">#pragma omp parallel private(w,loc_sum)</span>
+ <span class="br0">{</span>
+   loc_sum <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+   <span class="co2">#pragma omp for schedule(static,1)</span>
+   <span class="kw1">for</span><span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> N<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">)</span>
+     <span class="br0">{</span>
+       w <span class="sy0">=</span> i<span class="sy0">*</span>i<span class="sy0">;</span>
+       loc_sum <span class="sy0">=</span> loc_sum <span class="sy0">+</span> w<span class="sy0">*</span>a<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">;</span>
+     <span class="br0">}</span>
+   <span class="co2">#pragma omp critical</span>
+   sum <span class="sy0">=</span> sum <span class="sy0">+</span> loc_sum<span class="sy0">;</span>
+ <span class="br0">}</span>
+ <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"<span class="es1">\n</span> %li"</span><span class="sy0">,</span>sum<span class="br0">)</span><span class="sy0">;</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Implementations">Implementations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=24" title="Edit section: Implementations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>OpenMP has been implemented in many commercial compilers. For instance, Visual C++ 2005, 2008, 2010, 2012 and 2013 support it (OpenMP 2.0, in Professional, Team System, Premium and Ultimate editions<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span>[</span>11<span>]</span></a></sup><sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span>[</span>12<span>]</span></a></sup><sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span>[</span>13<span>]</span></a></sup>), as well as <a href="/wiki/Intel_Parallel_Studio" title="Intel Parallel Studio">Intel Parallel Studio</a> for various processors.<sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span>[</span>14<span>]</span></a></sup> <a href="/wiki/Oracle_Solaris_Studio" title="Oracle Solaris Studio">Oracle Solaris Studio</a> compilers and tools support the latest <a rel="nofollow" class="external text" href="http://openmp.org/wp/openmp-specifications/">OpenMP specifications</a> with productivity enhancements for Solaris OS (UltraSPARC and x86/x64) and Linux platforms. The Fortran, C and C++ compilers from <a rel="nofollow" class="external text" href="http://www.pgroup.com">The Portland Group</a> also support OpenMP 2.5. <a href="/wiki/GNU_Compiler_Collection" title="GNU Compiler Collection">GCC</a> has also supported OpenMP since version 4.2.</p>
+<p>Compilers with an implementation of OpenMP 3.0:</p>
+<ul>
+<li>GCC 4.3.1</li>
+<li>Mercurium compiler</li>
+<li>Intel Fortran and C/C++ versions 11.0 and 11.1 compilers, Intel C/C++ and Fortran Composer XE 2011 and Intel Parallel Studio.</li>
+<li>IBM XL C/C++ compiler<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span>[</span>15<span>]</span></a></sup></li>
+<li>Sun Studio 12 update 1 has a full implementation of OpenMP 3.0<sup id="cite_ref-16" class="reference"><a href="#cite_note-16"><span>[</span>16<span>]</span></a></sup></li>
+</ul>
+<p>Several compilers support OpenMP 3.1:</p>
+<ul>
+<li>GCC 4.7<sup id="cite_ref-17" class="reference"><a href="#cite_note-17"><span>[</span>17<span>]</span></a></sup></li>
+<li>Intel Fortran and C/C++ compilers 12.1<sup id="cite_ref-18" class="reference"><a href="#cite_note-18"><span>[</span>18<span>]</span></a></sup></li>
+</ul>
+<p>Compilers supporting OpenMP 4.0:</p>
+<ul>
+<li>GCC 4.9.0 for C/C++, GCC 4.9.1 for Fortran<sup id="cite_ref-19" class="reference"><a href="#cite_note-19"><span>[</span>19<span>]</span></a></sup><sup id="cite_ref-20" class="reference"><a href="#cite_note-20"><span>[</span>20<span>]</span></a></sup></li>
+<li>Intel Fortran and C/C++ compilers 15.0<sup id="cite_ref-21" class="reference"><a href="#cite_note-21"><span>[</span>21<span>]</span></a></sup></li>
+</ul>
+<p><a href="/wiki/Automatic_parallelization" title="Automatic parallelization">Auto-parallelizing</a> compilers that generates source code annotated with OpenMP directives:</p>
+<ul>
+<li>iPat/OMP</li>
+<li><a href="/w/index.php?title=Parallware&amp;action=edit&amp;redlink=1" class="new" title="Parallware (page does not exist)">Parallware</a></li>
+<li>PLUTO</li>
+<li><a href="/wiki/ROSE_(compiler_framework)" title="ROSE (compiler framework)">ROSE (compiler framework)</a></li>
+<li>S2P by KPIT Cummins Infosystems Ltd.</li>
+</ul>
+<h2><span class="mw-headline" id="Pros_and_cons">Pros and cons</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=25" title="Edit section: Pros and cons">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Pros:</p>
+<ul>
+<li>Portable multithreading code (in C/C++ and other languages, one typically has to call platform-specific primitives in order to get multithreading).</li>
+<li>Simple: need not deal with message passing as <a href="/wiki/Message_Passing_Interface" title="Message Passing Interface">MPI</a> does.</li>
+<li>Data layout and decomposition is handled automatically by directives.</li>
+<li>Scalability comparable to <a href="/wiki/Message_Passing_Interface" title="Message Passing Interface">MPI</a> on shared-memory systems.<sup id="cite_ref-22" class="reference"><a href="#cite_note-22"><span>[</span>22<span>]</span></a></sup></li>
+<li>Incremental parallelism: can work on one part of the program at one time, no dramatic change to code is needed.</li>
+<li>Unified code for both serial and parallel applications: OpenMP constructs are treated as comments when sequential compilers are used.</li>
+<li>Original (serial) code statements need not, in general, be modified when parallelized with OpenMP. This reduces the chance of inadvertently introducing bugs.</li>
+<li>Both <a href="/wiki/Coarse-grained" title="Coarse-grained" class="mw-redirect">coarse-grained</a> and <a href="/wiki/Fine-grained" title="Fine-grained" class="mw-redirect">fine-grained</a> parallelism are possible.</li>
+<li>In irregular multi-physics applications which do not adhere solely to the <a href="/wiki/SPMD" title="SPMD">SPMD</a> mode of computation, as encountered in tightly coupled fluid-particulate systems, the flexibility of OpenMP can have a big performance advantage over <a href="/wiki/Message_Passing_Interface" title="Message Passing Interface">MPI</a>.<sup id="cite_ref-23" class="reference"><a href="#cite_note-23"><span>[</span>23<span>]</span></a></sup><sup id="cite_ref-24" class="reference"><a href="#cite_note-24"><span>[</span>24<span>]</span></a></sup></li>
+<li>Can be used on various accelerators such as <a href="/wiki/GPGPU" title="GPGPU" class="mw-redirect">GPGPU</a>.<sup id="cite_ref-25" class="reference"><a href="#cite_note-25"><span>[</span>25<span>]</span></a></sup></li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Risk of introducing difficult to debug synchronization bugs and <a href="/wiki/Race_condition" title="Race condition">race conditions</a>.<sup id="cite_ref-26" class="reference"><a href="#cite_note-26"><span>[</span>26<span>]</span></a></sup><sup id="cite_ref-27" class="reference"><a href="#cite_note-27"><span>[</span>27<span>]</span></a></sup></li>
+<li>Currently only runs efficiently in shared-memory multiprocessor platforms (see however Intel's <a rel="nofollow" class="external text" href="http://software.intel.com/en-us/articles/cluster-openmp-for-intel-compilers">Cluster OpenMP</a> and other <a href="/wiki/Distributed_shared_memory" title="Distributed shared memory">distributed shared memory</a> platforms).</li>
+<li>Requires a compiler that supports OpenMP.</li>
+<li>Scalability is limited by memory architecture.</li>
+<li>No support for <a href="/wiki/Compare-and-swap" title="Compare-and-swap">compare-and-swap</a>.<sup id="cite_ref-28" class="reference"><a href="#cite_note-28"><span>[</span>28<span>]</span></a></sup></li>
+<li>Reliable error handling is missing.</li>
+<li>Lacks fine-grained mechanisms to control thread-processor mapping.</li>
+<li>High chance of accidentally writing <a href="/wiki/False_sharing" title="False sharing">false sharing</a> code.</li>
+<li>Multithreaded Executables often incur longer startup times than single threaded applications, therefore if the running time of the program is short enough there may be no advantage to making it multithreaded.</li>
+</ul>
+<h2><span class="mw-headline" id="Performance_expectations">Performance expectations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=26" title="Edit section: Performance expectations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>One might expect to get an <i>N</i> times <a href="/wiki/Speedup" title="Speedup">speedup</a> when running a program parallelized using OpenMP on a <i>N</i> processor platform. However, this seldom occurs for these reasons:</p>
+<ul>
+<li>When a dependency exists, a process must wait until the data it depends on is computed.</li>
+<li>When multiple processes share a non-parallel proof resource (like a file to write in), their requests are executed sequentially. Therefore each thread must wait until the other thread releases the resource.</li>
+<li>A large part of the program may not be parallelized by OpenMP, which means that the theoretical upper limit of speedup is limited according to <a href="/wiki/Amdahl%27s_law" title="Amdahl's law">Amdahl's law</a>.</li>
+<li>N processors in a <a href="/wiki/Symmetric_multiprocessing" title="Symmetric multiprocessing">symmetric multiprocessing</a> (SMP) may have N times the computation power, but the <a href="/wiki/Memory_bandwidth" title="Memory bandwidth">memory bandwidth</a> usually does not scale up N times. Quite often, the original memory path is shared by multiple processors and performance degradation may be observed when they compete for the shared memory bandwidth.</li>
+<li>Many other common problems affecting the final speedup in parallel computing also apply to OpenMP, like <a href="/wiki/Load_balancing_(computing)" title="Load balancing (computing)">load balancing</a> and synchronization overhead.</li>
+</ul>
+<h2><span class="mw-headline" id="Thread_affinity">Thread affinity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=27" title="Edit section: Thread affinity">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Some vendors recommend setting the <a href="/wiki/Processor_affinity" title="Processor affinity">processor affinity</a> on OpenMP threads to associate them with particular processor cores.<sup id="cite_ref-29" class="reference"><a href="#cite_note-29"><span>[</span>29<span>]</span></a></sup><sup id="cite_ref-30" class="reference"><a href="#cite_note-30"><span>[</span>30<span>]</span></a></sup><sup id="cite_ref-31" class="reference"><a href="#cite_note-31"><span>[</span>31<span>]</span></a></sup> This minimizes thread migration and context-switching cost among cores. It also improves the data locality and reduces the cache-coherency traffic among the cores (or processors).</p>
+<h2><span class="mw-headline" id="Benchmarks">Benchmarks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=28" title="Edit section: Benchmarks">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>There are some public domain OpenMP benchmarks for users to try.</p>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.nas.nasa.gov/Resources/Software/npb.html">NAS parallel benchmark</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.cs.uh.edu/~openuh/download/">OpenMP validation suite</a></li>
+<li><a rel="nofollow" class="external text" href="http://sourceforge.net/projects/ompscr/">OpenMP source code repository</a></li>
+<li><a rel="nofollow" class="external text" href="http://www2.epcc.ed.ac.uk/computing/research_activities/openmpbench/openmp_index.html">EPCC OpenMP Microbenchmarks</a></li>
+</ul>
+<h2><span class="mw-headline" id="Learning_resources_online">Learning resources online</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=29" title="Edit section: Learning resources online">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.llnl.gov/computing/tutorials/openMP/">Tutorial</a> on llnl.gov</li>
+<li><a rel="nofollow" class="external text" href="http://www.nersc.gov/nusers/help/tutorials/openmp">Reference/tutorial page</a> on nersc.gov</li>
+<li><a rel="nofollow" class="external text" href="http://www.citutor.org/login.php?course=24">Tutorial in CI-Tutor</a></li>
+</ul>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=30" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="div-col columns column-width" style="-moz-column-width: 25em; -webkit-column-width: 25em; column-width: 25em;">
+<ul>
+<li><a href="/wiki/Cilk" title="Cilk">Cilk</a> and <a href="/wiki/Cilk_Plus" title="Cilk Plus">Cilk Plus</a></li>
+<li><a href="/wiki/Message_Passing_Interface" title="Message Passing Interface">Message Passing Interface</a></li>
+<li><a href="/wiki/Concurrency_(computer_science)" title="Concurrency (computer science)">Concurrency (computer science)</a></li>
+<li><a href="/wiki/Heterogeneous_System_Architecture" title="Heterogeneous System Architecture">Heterogeneous System Architecture</a></li>
+<li><a href="/wiki/Parallel_computing" title="Parallel computing">Parallel computing</a></li>
+<li><a href="/wiki/Parallel_programming_model" title="Parallel programming model">Parallel programming model</a></li>
+<li><a href="/wiki/POSIX_Threads" title="POSIX Threads">POSIX Threads</a></li>
+<li><a href="/wiki/Unified_Parallel_C" title="Unified Parallel C">Unified Parallel C</a></li>
+<li><a href="/wiki/X10_(programming_language)" title="X10 (programming language)">X10 (programming language)</a></li>
+<li><a href="/wiki/Parallel_Virtual_Machine" title="Parallel Virtual Machine">Parallel Virtual Machine</a></li>
+<li><a href="/wiki/Bulk_synchronous_parallel" title="Bulk synchronous parallel">Bulk synchronous parallel</a></li>
+<li><a href="/wiki/Grand_Central_Dispatch" title="Grand Central Dispatch">Grand Central Dispatch</a>&#160;–  comparable technology for <a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, and <a href="/wiki/Objective-C" title="Objective-C">Objective-C</a> by <a href="/wiki/Apple_Inc" title="Apple Inc" class="mw-redirect">Apple</a></li>
+<li><a href="/wiki/Partitioned_global_address_space" title="Partitioned global address space">Partitioned global address space</a></li>
+<li><a href="/wiki/GPGPU" title="GPGPU" class="mw-redirect">GPGPU</a></li>
+<li><a href="/wiki/CUDA" title="CUDA">CUDA</a>&#160;–  Nvidia</li>
+<li><a href="/wiki/AMD_FireStream" title="AMD FireStream">AMD FireStream</a></li>
+<li><a href="/wiki/Octopiler" title="Octopiler">Octopiler</a></li>
+<li><a href="/wiki/OpenCL" title="OpenCL">OpenCL</a>&#160;–  Standard supported by Apple, Nvidia, Intel, IBM, AMD/ATI and many others.</li>
+<li><a href="/wiki/OpenACC" title="OpenACC">OpenACC</a>&#160;–  a standard for GPU acceleration, which is planned to be merged into openMP</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=31" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist columns references-column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-Board-1"><span class="mw-cite-backlink">^ <a href="#cite_ref-Board_1-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Board_1-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-Board_1-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://openmp.org/wp/about-openmp/">"About the OpenMP ARB and"</a>. OpenMP.org. 2013-07-11<span class="reference-accessdate">. Retrieved <span class="nowrap">2013-08-14</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=About+the+OpenMP+ARB+and&amp;rft.date=2013-07-11&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fopenmp.org%2Fwp%2Fabout-openmp%2F&amp;rft.pub=OpenMP.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://openmp.org/wp/2013/07/openmp-40/">OpenMP 4.0 Specification Released</a></span></li>
+<li id="cite_note-openmp.org-3"><span class="mw-cite-backlink">^ <a href="#cite_ref-openmp.org_3-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-openmp.org_3-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://openmp.org/wp/openmp-compilers/">"OpenMP Compilers"</a>. OpenMP.org. 2013-04-10<span class="reference-accessdate">. Retrieved <span class="nowrap">2013-08-14</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=OpenMP+Compilers&amp;rft.date=2013-04-10&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fopenmp.org%2Fwp%2Fopenmp-compilers%2F&amp;rft.pub=OpenMP.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-OSConcepts-4"><span class="mw-cite-backlink">^ <a href="#cite_ref-OSConcepts_4-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-OSConcepts_4-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation book">Gagne, Abraham Silberschatz, Peter Baer Galvin, Greg. <i>Operating system concepts</i> (9th ed.). Hoboken, N.J.: Wiley. pp.&#160;181–182. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/9781118063330" title="Special:BookSources/9781118063330">9781118063330</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.aufirst=Abraham+Silberschatz%2C+Peter+Baer+Galvin%2C+Greg&amp;rft.au=Gagne%2C+Abraham+Silberschatz%2C+Peter+Baer+Galvin%2C+Greg&amp;rft.aulast=Gagne&amp;rft.btitle=Operating+system+concepts&amp;rft.edition=9th&amp;rft.genre=book&amp;rft.isbn=9781118063330&amp;rft.pages=181-182&amp;rft.place=Hoboken%2C+N.J.&amp;rft.pub=Wiley&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://openmp.org/wp/2008/10/openmp-tutorial-at-supercomputing-2008/">OpenMP Tutorial at Supercomputing 2008</a></span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://openmp.org/wp/2009/04/download-book-examples-and-discuss/">Using OpenMP - Portable Shared Memory Parallel Programming - Download Book Examples and Discuss</a></span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.openmp.org/mp-documents/spec30.pdf">"OpenMP Application Program Interface, Version 3.0"</a>. openmp.org. May 2008<span class="reference-accessdate">. Retrieved <span class="nowrap">2014-02-06</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=OpenMP+Application+Program+Interface%2C+Version+3.0&amp;rft.date=May+2008&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.openmp.org%2Fmp-documents%2Fspec30.pdf&amp;rft.pub=openmp.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.openmp.org/mp-documents/OpenMP3.1.pdf">"OpenMP Application Program Interface, Version 3.1"</a>. openmp.org. July 2011<span class="reference-accessdate">. Retrieved <span class="nowrap">2014-02-06</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=OpenMP+Application+Program+Interface%2C+Version+3.1&amp;rft.date=July+2011&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.openmp.org%2Fmp-documents%2FOpenMP3.1.pdf&amp;rft.pub=openmp.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://openmp.org/wp/openmp-40-api-released/">"OpenMP 4.0 API Released"</a>. OpenMP.org. 2013-07-26<span class="reference-accessdate">. Retrieved <span class="nowrap">2013-08-14</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=OpenMP+4.0+API+Released&amp;rft.date=2013-07-26&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fopenmp.org%2Fwp%2Fopenmp-40-api-released%2F&amp;rft.pub=OpenMP.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf">"OpenMP Application Program Interface, Version 4.0"</a>. openmp.org. July 2013<span class="reference-accessdate">. Retrieved <span class="nowrap">2014-02-06</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=OpenMP+Application+Program+Interface%2C+Version+4.0&amp;rft.date=July+2013&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.openmp.org%2Fmp-documents%2FOpenMP4.0.0.pdf&amp;rft.pub=openmp.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://msdn2.microsoft.com/en-us/library/hs24szh9(vs.80).aspx">Visual C++ Editions, Visual Studio 2005</a></span></li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-12">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://msdn2.microsoft.com/en-us/library/hs24szh9(vs.90).aspx">Visual C++ Editions, Visual Studio 2008</a></span></li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://msdn2.microsoft.com/en-us/library/hs24szh9(vs.100).aspx">Visual C++ Editions, Visual Studio 2010</a></span></li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14">^</a></b></span> <span class="reference-text">David Worthington, <a rel="nofollow" class="external text" href="http://www.sdtimes.com/intel_addresses_development_life_cycle_with_parallel_studio/about_intel_and_multicore/33497">"Intel addresses development life cycle with Parallel Studio"</a>, SDTimes, 26 May 2009 (accessed 28 May 2009)</span></li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www-01.ibm.com/software/awdtools/xlcpp/linux/features/?S_CMP=rnav">"XL C/C++ for Linux Features"</a>, (accessed 9 June 2009)</span></li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-16">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://developers.sun.com/sunstudio/features/">"Oracle Technology Network for Java Developers | Oracle Technology Network | Oracle"</a>. Developers.sun.com<span class="reference-accessdate">. Retrieved <span class="nowrap">2013-08-14</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=Oracle+Technology+Network+for+Java+Developers+%26%23124%3B+Oracle+Technology+Network+%26%23124%3B+Oracle&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fdevelopers.sun.com%2Fsunstudio%2Ffeatures%2F&amp;rft.pub=Developers.sun.com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-17">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://gcc.gnu.org/wiki/openmp">"openmp - GCC Wiki"</a>. Gcc.gnu.org. 2013-07-30<span class="reference-accessdate">. Retrieved <span class="nowrap">2013-08-14</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=openmp+-+GCC+Wiki&amp;rft.date=2013-07-30&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fgcc.gnu.org%2Fwiki%2Fopenmp&amp;rft.pub=Gcc.gnu.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><b><a href="#cite_ref-18">^</a></b></span> <span class="reference-text"><span class="citation web">Submitted by Patrick Kennedy... on Fri, 09/02/2011 - 11:28 (2011-09-06). <a rel="nofollow" class="external text" href="http://software.intel.com/en-us/articles/intel-c-and-fortran-compilers-now-support-the-openmp-31-specification/">"Intel® C++ and Fortran Compilers now support the OpenMP* 3.1 Specification | Intel® Developer Zone"</a>. Software.intel.com<span class="reference-accessdate">. Retrieved <span class="nowrap">2013-08-14</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.aulast=Submitted+by+Patrick+Kennedy...+on+Fri%2C+09%2F02%2F2011+-+11%3A28&amp;rft.au=Submitted+by+Patrick+Kennedy...+on+Fri%2C+09%2F02%2F2011+-+11%3A28&amp;rft.btitle=Intel%C2%AE+C%2B%2B+and+Fortran+Compilers+now+support+the+OpenMP%2A+3.1+Specification+%26%23124%3B+Intel%C2%AE+Developer+Zone&amp;rft.date=2011-09-06&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fsoftware.intel.com%2Fen-us%2Farticles%2Fintel-c-and-fortran-compilers-now-support-the-openmp-31-specification%2F&amp;rft.pub=Software.intel.com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><b><a href="#cite_ref-19">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://www.gnu.org/software/gcc/gcc-4.9/changes.html">"GCC 4.9 Release Series - Changes"</a>. www.gnu.org.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=GCC+4.9+Release+Series+-+Changes&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fwww.gnu.org%2Fsoftware%2Fgcc%2Fgcc-4.9%2Fchanges.html&amp;rft.pub=www.gnu.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><b><a href="#cite_ref-20">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://gcc.gnu.org/wiki/openmp">"openmp - GCC Wiki"</a>. Gcc.gnu.org. 2013-07-30<span class="reference-accessdate">. Retrieved <span class="nowrap">2013-08-14</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=openmp+-+GCC+Wiki&amp;rft.date=2013-07-30&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fgcc.gnu.org%2Fwiki%2Fopenmp&amp;rft.pub=Gcc.gnu.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><b><a href="#cite_ref-21">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://software.intel.com/en-us/articles/openmp-40-features-in-intel-compiler-150">"OpenMP* 4.0 Features in Intel Compiler 15.0"</a>. Software.intel.com.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=OpenMP%2A+4.0+Features+in+Intel+Compiler+15.0&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fsoftware.intel.com%2Fen-us%2Farticles%2Fopenmp-40-features-in-intel-compiler-150&amp;rft.pub=Software.intel.com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><b><a href="#cite_ref-22">^</a></b></span> <span class="reference-text"><span class="citation journal">Amritkar, Amit; Tafti, Danesh; Liu, Rui; Kufrin, Rick; Chapman, Barbara (2012). "OpenMP parallelism for fluid and fluid-particulate systems". <i>Parallel Computing</i> <b>38</b> (9): 501. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016%2Fj.parco.2012.05.005">10.1016/j.parco.2012.05.005</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.atitle=OpenMP+parallelism+for+fluid+and+fluid-particulate+systems&amp;rft.au=Amritkar%2C+Amit&amp;rft.au=Chapman%2C+Barbara&amp;rft.aufirst=Amit&amp;rft.au=Kufrin%2C+Rick&amp;rft.aulast=Amritkar&amp;rft.au=Liu%2C+Rui&amp;rft.au=Tafti%2C+Danesh&amp;rft.date=2012&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1016%2Fj.parco.2012.05.005&amp;rft.issue=9&amp;rft.jtitle=Parallel+Computing&amp;rft.pages=501&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=38" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><b><a href="#cite_ref-23">^</a></b></span> <span class="reference-text"><span class="citation journal">Amritkar, Amit; Tafti, Danesh; Liu, Rui; Kufrin, Rick; Chapman, Barbara (2012). "OpenMP parallelism for fluid and fluid-particulate systems". <i>Parallel Computing</i> <b>38</b> (9): 501. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016%2Fj.parco.2012.05.005">10.1016/j.parco.2012.05.005</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.atitle=OpenMP+parallelism+for+fluid+and+fluid-particulate+systems&amp;rft.au=Amritkar%2C+Amit&amp;rft.au=Chapman%2C+Barbara&amp;rft.aufirst=Amit&amp;rft.au=Kufrin%2C+Rick&amp;rft.aulast=Amritkar&amp;rft.au=Liu%2C+Rui&amp;rft.au=Tafti%2C+Danesh&amp;rft.date=2012&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1016%2Fj.parco.2012.05.005&amp;rft.issue=9&amp;rft.jtitle=Parallel+Computing&amp;rft.pages=501&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=38" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><b><a href="#cite_ref-24">^</a></b></span> <span class="reference-text"><span class="citation journal">Amritkar, Amit; Deb, Surya; Tafti, Danesh (2014). "Efficient parallel CFD-DEM simulations using OpenMP". <i>Journal of Computational Physics</i> <b>256</b>: 501. <a href="/wiki/Bibcode" title="Bibcode">Bibcode</a>:<a rel="nofollow" class="external text" href="http://adsabs.harvard.edu/abs/2014JCoPh.256..501A">2014JCoPh.256..501A</a>. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016%2Fj.jcp.2013.09.007">10.1016/j.jcp.2013.09.007</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.atitle=Efficient+parallel+CFD-DEM+simulations+using+OpenMP&amp;rft.au=Amritkar%2C+Amit&amp;rft.au=Deb%2C+Surya&amp;rft.aufirst=Amit&amp;rft.aulast=Amritkar&amp;rft.au=Tafti%2C+Danesh&amp;rft.date=2014&amp;rft.genre=article&amp;rft_id=info%3Abibcode%2F2014JCoPh.256..501A&amp;rft_id=info%3Adoi%2F10.1016%2Fj.jcp.2013.09.007&amp;rft.jtitle=Journal+of+Computational+Physics&amp;rft.pages=501&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=256" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><b><a href="#cite_ref-25">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://openmp.org/openmp-faq.html#Accel">Frequently Asked Questions on OpenMP</a></span></li>
+<li id="cite_note-26"><span class="mw-cite-backlink"><b><a href="#cite_ref-26">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://developers.sun.com/solaris/articles/cpp_race.html">Detecting and Avoiding OpenMP Race Conditions in C++</a></span></li>
+<li id="cite_note-27"><span class="mw-cite-backlink"><b><a href="#cite_ref-27">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://software.intel.com/en-us/articles/32-openmp-traps-for-c-developers">Alexey Kolosov, Evgeniy Ryzhkov, Andrey Karpov 32 OpenMP traps for C++ developers</a></span></li>
+<li id="cite_note-28"><span class="mw-cite-backlink"><b><a href="#cite_ref-28">^</a></b></span> <span class="reference-text">Stephen Blair-Chappell, Intel Corporation, Becoming a Parallel Programming Expert in Nine Minutes, presentation on <a href="/wiki/ACCU_(organisation)" title="ACCU (organisation)">ACCU</a> 2010 conference</span></li>
+<li id="cite_note-29"><span class="mw-cite-backlink"><b><a href="#cite_ref-29">^</a></b></span> <span class="reference-text"><span class="citation journal">Chen, Yurong (2007-11-15). <a rel="nofollow" class="external text" href="http://www.intel.com/technology/itj/2007/v11i4/8-video/4-methodology.htm">"Multi-Core Software"</a>. <i>Intel Technology Journal</i> (Intel) <b>11</b> (4). <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1535%2Fitj.1104.08">10.1535/itj.1104.08</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.atitle=Multi-Core+Software&amp;rft.au=Chen%2C+Yurong&amp;rft.aufirst=Yurong&amp;rft.aulast=Chen&amp;rft.date=2007-11-15&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.intel.com%2Ftechnology%2Fitj%2F2007%2Fv11i4%2F8-video%2F4-methodology.htm&amp;rft_id=info%3Adoi%2F10.1535%2Fitj.1104.08&amp;rft.issue=4&amp;rft.jtitle=Intel+Technology+Journal&amp;rft.pub=Intel&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=11" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-30"><span class="mw-cite-backlink"><b><a href="#cite_ref-30">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.spec.org/omp/results/res2008q1/omp2001-20080128-00288.html">"OMPM2001 Result"</a>. SPEC. 2008-01-28.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=OMPM2001+Result&amp;rft.date=2008-01-28&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.spec.org%2Fomp%2Fresults%2Fres2008q1%2Fomp2001-20080128-00288.html&amp;rft.pub=SPEC&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-31"><span class="mw-cite-backlink"><b><a href="#cite_ref-31">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.spec.org/omp/results/res2003q2/omp2001-20030401-00079.html">"OMPM2001 Result"</a>. SPEC. 2003-04-01.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AOpenMP&amp;rft.btitle=OMPM2001+Result&amp;rft.date=2003-04-01&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.spec.org%2Fomp%2Fresults%2Fres2003q2%2Fomp2001-20030401-00079.html&amp;rft.pub=SPEC&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="Further_reading">Further reading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=32" title="Edit section: Further reading">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="div-col columns column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em;">
+<ul>
+<li>Quinn Michael J, <cite>Parallel Programming in C with MPI and OpenMP</cite> McGraw-Hill Inc. 2004. <a href="/wiki/Special:BookSources/0070582017" class="internal mw-magiclink-isbn">ISBN 0-07-058201-7</a></li>
+<li>R. Chandra, R. Menon, L. Dagum, D. Kohr, D. Maydan, J. McDonald, <cite>Parallel Programming in OpenMP.</cite> Morgan Kaufmann, 2000. <a href="/wiki/Special:BookSources/1558606718" class="internal mw-magiclink-isbn">ISBN 1-55860-671-8</a></li>
+<li>R. Eigenmann (Editor), M. Voss (Editor), <cite>OpenMP Shared Memory Parallel Programming: International Workshop on OpenMP Applications and Tools, WOMPAT 2001, West Lafayette, IN, USA, July 30–31, 2001.</cite> (Lecture Notes in Computer Science). Springer 2001. <a href="/wiki/Special:BookSources/354042346X" class="internal mw-magiclink-isbn">ISBN 3-540-42346-X</a></li>
+<li>B. Chapman, G. Jost, R. van der Pas, D.J. Kuck (foreword), <cite>Using OpenMP: Portable Shared Memory Parallel Programming.</cite> The MIT Press (October 31, 2007). <a href="/wiki/Special:BookSources/0262533022" class="internal mw-magiclink-isbn">ISBN 0-262-53302-2</a></li>
+<li>Parallel Processing via MPI &amp; OpenMP, M. Firuziaan, O. Nommensen. Linux Enterprise, 10/2002</li>
+<li><a rel="nofollow" class="external text" href="http://msdn.microsoft.com/msdnmag/issues/05/10/OpenMP/default.aspx">MSDN Magazine article on OpenMP</a></li>
+<li><a rel="nofollow" class="external text" href="http://openmp.org/mp-documents/omp-hands-on-SC08.pdf">SC08 OpenMP Tutorial</a> (PDF) - Hands-On Introduction to OpenMP, Mattson and Meadows, from SC08 (Austin)</li>
+<li><a rel="nofollow" class="external text" href="http://openmp.org/wp/openmp-specifications/">OpenMP Specifications</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.openmp.org/presentations/miguel/F95_OpenMPv1_v2.pdf">Parallel Programming in Fortran 95 using OpenMP</a> (PDF)</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=OpenMP&amp;action=edit&amp;section=33" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><span class="official website"><span class="url"><a rel="nofollow" class="external text" href="http://www.openmp.org">Official website</a></span></span> , includes the latest OpenMP specifications, links to resources, and a lively set of forums where questions about OpenMP can be asked and are answered by the experts and implementors.</li>
+<li><a rel="nofollow" class="external text" href="http://gcc.gnu.org/projects/gomp">GOMP</a> is <a href="/wiki/GNU_Compiler_Collection" title="GNU Compiler Collection">GCC</a>'s OpenMP implementation, part of GCC</li>
+<li><a rel="nofollow" class="external text" href="http://domino.research.ibm.com/comm/research_projects.nsf/pages/cellcompiler.index.html">IBM Octopiler</a> with OpenMP support</li>
+<li><a rel="nofollow" class="external text" href="https://computing.llnl.gov/tutorials/openMP/">Blaise Barney, Lawrence Livermore National Laboratory site on OpenMP</a></li>
+<li><a rel="nofollow" class="external text" href="https://sourceforge.net/projects/redlib/">ompca, an application in REDLIB project for the interactive symbolic model-checker of C/C++ programs with OpenMP directives</a></li>
+<li><a rel="nofollow" class="external text" href="http://geco.mines.edu/workshop/aug2010/slides/thu/hybrid.pdf">Combining OpenMP and MPI</a> (PDF)</li>
+<li><a rel="nofollow" class="external text" href="http://www.slac.stanford.edu/comp/unix/farm/mpi_and_openmp.html">Mixing MPI and OpenMP</a></li>
+</ul>
+<table class="navbox" style="border-spacing:0">
+<tr>
+<td style="padding:2px">
+<table class="nowraplinks hlist collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="/wiki/Template:Parallel_computing" title="Template:Parallel computing"><span title="View this template" style=";;background:none transparent;border:none;">v</span></a></li>
+<li class="nv-talk"><a href="/wiki/Template_talk:Parallel_computing" title="Template talk:Parallel computing"><span title="Discuss this template" style=";;background:none transparent;border:none;">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Parallel_computing&amp;action=edit"><span title="Edit this template" style=";;background:none transparent;border:none;">e</span></a></li>
+</ul>
+</div>
+<div style="font-size:110%"><a href="/wiki/Parallel_computing" title="Parallel computing">Parallel computing</a></div>
+</th>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">General</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Cloud_computing" title="Cloud computing">Cloud computing</a></li>
+<li><a href="/wiki/High-performance_computing" title="High-performance computing" class="mw-redirect">High-performance computing</a></li>
+<li><a href="/wiki/Computer_cluster" title="Computer cluster">Cluster computing</a></li>
+<li><a href="/wiki/Distributed_computing" title="Distributed computing">Distributed computing</a></li>
+<li><a href="/wiki/Grid_computing" title="Grid computing">Grid computing</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Levels</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Bit-level_parallelism" title="Bit-level parallelism">Bit</a></li>
+<li><a href="/wiki/Instruction-level_parallelism" title="Instruction-level parallelism">Instruction</a></li>
+<li><a href="/wiki/Data_parallelism" title="Data parallelism">Data</a></li>
+<li><a href="/wiki/Memory-level_parallelism" title="Memory-level parallelism">Memory</a></li>
+<li><a href="/wiki/Task_parallelism" title="Task parallelism">Task</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Multithreading_(computer_architecture)" title="Multithreading (computer architecture)">Multithreading</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Temporal_multithreading" title="Temporal multithreading">Temporal multithreading</a></li>
+<li><a href="/wiki/Simultaneous_multithreading" title="Simultaneous multithreading">Simultaneous multithreading</a>
+<ul>
+<li><a href="/wiki/Hyper-threading" title="Hyper-threading">Hyper-threading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Theory</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Amdahl%27s_law" title="Amdahl's law">Amdahl's law</a></li>
+<li><a href="/wiki/Gustafson%27s_law" title="Gustafson's law">Gustafson's law</a></li>
+<li><a href="/wiki/Cost_efficiency" title="Cost efficiency">Cost efficiency</a></li>
+<li><a href="/wiki/Karp%E2%80%93Flatt_metric" title="Karp–Flatt metric">Karp–Flatt metric</a></li>
+<li><a href="/wiki/Parallel_slowdown" title="Parallel slowdown">slowdown</a></li>
+<li><a href="/wiki/Speedup" title="Speedup">speedup</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Elements</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Process_(computing)" title="Process (computing)">Process</a></li>
+<li><a href="/wiki/Thread_(computing)" title="Thread (computing)">Thread</a></li>
+<li><a href="/wiki/Fiber_(computer_science)" title="Fiber (computer science)">Fiber</a></li>
+<li><a href="/wiki/Parallel_random-access_machine" title="Parallel random-access machine">PRAM</a></li>
+<li><a href="/wiki/Instruction_window" title="Instruction window">Instruction window</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Coordination</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Multiprocessing" title="Multiprocessing">Multiprocessing</a></li>
+<li><a href="/wiki/Memory_coherence" title="Memory coherence">Memory coherency</a></li>
+<li><a href="/wiki/Cache_coherence" title="Cache coherence">Cache coherency</a></li>
+<li><a href="/wiki/Cache_invalidation" title="Cache invalidation">Cache invalidation</a></li>
+<li><a href="/wiki/Barrier_(computer_science)" title="Barrier (computer science)">Barrier</a></li>
+<li><a href="/wiki/Synchronization_(computer_science)" title="Synchronization (computer science)">Synchronization</a></li>
+<li><a href="/wiki/Application_checkpointing" title="Application checkpointing">Application checkpointing</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Computer_programming" title="Computer programming">Programming</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Parallel_programming_model" title="Parallel programming model">Models</a>
+<ul>
+<li><a href="/wiki/Implicit_parallelism" title="Implicit parallelism">Implicit parallelism</a></li>
+<li><a href="/wiki/Explicit_parallelism" title="Explicit parallelism">Explicit parallelism</a></li>
+<li><a href="/wiki/Concurrency_(computer_science)" title="Concurrency (computer science)">Concurrency</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Flynn%27s_taxonomy" title="Flynn's taxonomy">Flynn's taxonomy</a>
+<ul>
+<li><a href="/wiki/SISD" title="SISD">SISD</a></li>
+<li><a href="/wiki/SIMD" title="SIMD">SIMD</a></li>
+<li><a href="/wiki/MISD" title="MISD">MISD</a></li>
+<li><a href="/wiki/MIMD" title="MIMD">MIMD</a>
+<ul>
+<li><a href="/wiki/SPMD" title="SPMD">SPMD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/wiki/Thread_(computing)" title="Thread (computing)">Thread</a></li>
+<li><a href="/wiki/Non-blocking_algorithm" title="Non-blocking algorithm">Non-blocking algorithm</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Computer_hardware" title="Computer hardware">Hardware</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Multiprocessor" title="Multiprocessor" class="mw-redirect">Multiprocessor</a>
+<ul>
+<li><a href="/wiki/Symmetric_multiprocessing" title="Symmetric multiprocessing">Symmetric</a></li>
+<li><a href="/wiki/Asymmetric_multiprocessing" title="Asymmetric multiprocessing">Asymmetric</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Semiconductor_memory" title="Semiconductor memory">Memory</a>
+<ul>
+<li><a href="/wiki/Non-uniform_memory_access" title="Non-uniform memory access">NUMA</a></li>
+<li><a href="/wiki/Cache-only_memory_architecture" title="Cache-only memory architecture">COMA</a></li>
+<li><a href="/wiki/Distributed_memory" title="Distributed memory">distributed</a></li>
+<li><a href="/wiki/Shared_memory" title="Shared memory">shared</a></li>
+<li><a href="/wiki/Distributed_shared_memory" title="Distributed shared memory">distributed shared</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Massively_parallel_(computing)" title="Massively parallel (computing)">MPP</a></li>
+<li><a href="/wiki/Superscalar" title="Superscalar">Superscalar</a></li>
+<li><a href="/wiki/Vector_processor" title="Vector processor">Vector processor</a></li>
+<li><a href="/wiki/Supercomputer" title="Supercomputer">Supercomputer</a></li>
+<li><a href="/wiki/Beowulf_cluster" title="Beowulf cluster">Beowulf cluster</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Application_programming_interface" title="Application programming interface">APIs</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Ateji_PX" title="Ateji PX">Ateji PX</a></li>
+<li><a href="/wiki/POSIX_Threads" title="POSIX Threads">POSIX Threads</a></li>
+<li><strong class="selflink">OpenMP</strong></li>
+<li><a href="/wiki/OpenHMPP" title="OpenHMPP">OpenHMPP</a></li>
+<li><a href="/wiki/OpenACC" title="OpenACC">OpenACC</a></li>
+<li><a href="/wiki/Parallel_Virtual_Machine" title="Parallel Virtual Machine">PVM</a></li>
+<li><a href="/wiki/Message_Passing_Interface" title="Message Passing Interface">MPI</a></li>
+<li><a href="/wiki/Unified_Parallel_C" title="Unified Parallel C">UPC</a></li>
+<li><a href="/wiki/Threading_Building_Blocks" title="Threading Building Blocks">TBB</a></li>
+<li><a href="/wiki/Boost_(C%2B%2B_libraries)#Multithreading_.E2.80.93_Boost.Thread" title="Boost (C++ libraries)">Boost.Thread</a></li>
+<li><a href="/wiki/Global_Arrays" title="Global Arrays">Global Arrays</a></li>
+<li><a href="/wiki/Charm%2B%2B" title="Charm++">Charm++</a></li>
+<li><a href="/wiki/Cilk" title="Cilk">Cilk</a>/<a href="/wiki/Cilk_Plus" title="Cilk Plus">Cilk Plus</a></li>
+<li><a href="/wiki/Coarray_Fortran" title="Coarray Fortran">Coarray Fortran</a></li>
+<li><a href="/wiki/OpenCL" title="OpenCL">OpenCL</a></li>
+<li><a href="/wiki/CUDA" title="CUDA">CUDA</a></li>
+<li><a href="/wiki/Dryad_(programming)" title="Dryad (programming)">Dryad</a></li>
+<li><a href="/wiki/C%2B%2B_AMP" title="C++ AMP">C++ AMP</a></li>
+<li><a href="/wiki/Parallel_LINQ" title="Parallel LINQ" class="mw-redirect">PLINQ</a></li>
+<li><a href="/wiki/Parallel_Extensions#Task_Parallel_Library" title="Parallel Extensions">TPL</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Problems</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Embarrassingly_parallel" title="Embarrassingly parallel">Embarrassingly parallel</a></li>
+<li><a href="/wiki/Software_lockout" title="Software lockout">Software lockout</a></li>
+<li><a href="/wiki/Scalability" title="Scalability">Scalability</a></li>
+<li><a href="/wiki/Race_condition#Computing" title="Race condition">Race condition</a></li>
+<li><a href="/wiki/Deadlock" title="Deadlock">Deadlock</a></li>
+<li><a href="/wiki/Deadlock#Livelock" title="Deadlock">Livelock</a></li>
+<li><a href="/wiki/Resource_starvation" title="Resource starvation">Starvation</a></li>
+<li><a href="/wiki/Deterministic_algorithm" title="Deterministic algorithm">Deterministic algorithm</a></li>
+<li><a href="/wiki/Parallel_slowdown" title="Parallel slowdown">Parallel slowdown</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<td class="navbox-abovebelow" colspan="2">
+<div>
+<ul>
+<li><img alt="Category" src="//upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/16px-Folder_Hexagonal_Icon.svg.png" width="16" height="14" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/24px-Folder_Hexagonal_Icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/32px-Folder_Hexagonal_Icon.svg.png 2x" data-file-width="36" data-file-height="31" />&#160;<a href="/wiki/Category:Parallel_computing" title="Category:Parallel computing">Category: parallel computing</a></li>
+<li><img alt="" src="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/12px-Commons-logo.svg.png" width="12" height="16" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/18px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/24px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376" /> Media related to <a href="//commons.wikimedia.org/wiki/Category:parallel_computing" class="extiw" title="commons:Category:parallel computing">parallel computing</a> at Wikimedia Commons</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1003
+CPU time usage: 1.892 seconds
+Real time usage: 2.060 seconds
+Preprocessor visited node count: 2504/1000000
+Preprocessor generated node count: 12900/1500000
+Post‐expand include size: 61139/2097152 bytes
+Template argument size: 2157/2097152 bytes
+Highest expansion depth: 19/40
+Expensive parser function count: 6/500
+Lua time usage: 0.199/10.000 seconds
+Lua memory usage: 4.41 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1193.963      1 - -total
+ 28.10%  335.560      1 - Template:Infobox_software
+ 27.48%  328.128      1 - Template:Infobox
+ 23.46%  280.091      1 - Template:Reflist
+  9.51%  113.599      1 - Template:Start_date_and_age
+  8.36%   99.870     14 - Template:Cite_web
+  6.32%   75.477      1 - Template:Citation_needed
+  6.10%   72.878      2 - Template:Fix
+  5.98%   71.400      1 - Template:Parallel_computing
+  5.58%   66.659      1 - Template:Navbox
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:381842-0!*!0!!en!4!* and timestamp 20141218075609 and revision id 637781387
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=OpenMP&amp;oldid=637781387">http://en.wikipedia.org/w/index.php?title=OpenMP&amp;oldid=637781387</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Fortran" title="Category:Fortran">Fortran</a></li><li><a href="/wiki/Category:C_programming_language_family" title="Category:C programming language family">C programming language family</a></li><li><a href="/wiki/Category:Parallel_computing" title="Category:Parallel computing">Parallel computing</a></li><li><a href="/wiki/Category:Application_programming_interfaces" title="Category:Application programming interfaces">Application programming interfaces</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_December_2014" title="Category:Articles with unsourced statements from December 2014">Articles with unsourced statements from December 2014</a></li><li><a href="/wiki/Category:Articles_needing_more_detailed_references" title="Category:Articles needing more detailed references">Articles needing more detailed references</a></li><li><a href="/wiki/Category:Articles_with_too_many_examples" title="Category:Articles with too many examples">Articles with too many examples</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=OpenMP&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=OpenMP" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/OpenMP"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="/wiki/Talk:OpenMP"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/OpenMP" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/w/index.php?title=OpenMP&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=OpenMP&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/OpenMP" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/OpenMP" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="/w/index.php?title=OpenMP&amp;oldid=637781387" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="/w/index.php?title=OpenMP&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="//www.wikidata.org/wiki/Q496579" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=OpenMP&amp;id=637781387" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=OpenMP">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=OpenMP&amp;oldid=637781387&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="/w/index.php?title=OpenMP&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ar"><a href="//ar.wikipedia.org/wiki/OpenMP" title="OpenMP – Arabic" lang="ar" hreflang="ar">العربية</a></li>
+													<li class="interlanguage-link interwiki-ca"><a href="//ca.wikipedia.org/wiki/OpenMP" title="OpenMP – Catalan" lang="ca" hreflang="ca">Català</a></li>
+													<li class="interlanguage-link interwiki-cs"><a href="//cs.wikipedia.org/wiki/OpenMP" title="OpenMP – Czech" lang="cs" hreflang="cs">Čeština</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="//de.wikipedia.org/wiki/OpenMP" title="OpenMP – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="//es.wikipedia.org/wiki/OpenMP" title="OpenMP – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="//fr.wikipedia.org/wiki/OpenMP" title="OpenMP – French" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-ko"><a href="//ko.wikipedia.org/wiki/OpenMP" title="OpenMP – Korean" lang="ko" hreflang="ko">한국어</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="//it.wikipedia.org/wiki/OpenMP" title="OpenMP – Italian" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-lt"><a href="//lt.wikipedia.org/wiki/OpenMP" title="OpenMP – Lithuanian" lang="lt" hreflang="lt">Lietuvių</a></li>
+													<li class="interlanguage-link interwiki-nl"><a href="//nl.wikipedia.org/wiki/OpenMP" title="OpenMP – Dutch" lang="nl" hreflang="nl">Nederlands</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="//ja.wikipedia.org/wiki/OpenMP" title="OpenMP – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-no"><a href="//no.wikipedia.org/wiki/OpenMP" title="OpenMP – Norwegian (bokmål)" lang="no" hreflang="no">Norsk bokmål</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="//pl.wikipedia.org/wiki/OpenMP" title="OpenMP – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="//pt.wikipedia.org/wiki/OpenMP" title="OpenMP – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="//ru.wikipedia.org/wiki/OpenMP" title="OpenMP – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-sq"><a href="//sq.wikipedia.org/wiki/OpenMP" title="OpenMP – Albanian" lang="sq" hreflang="sq">Shqip</a></li>
+													<li class="interlanguage-link interwiki-tr"><a href="//tr.wikipedia.org/wiki/OpenMP" title="OpenMP – Turkish" lang="tr" hreflang="tr">Türkçe</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="//uk.wikipedia.org/wiki/OpenMP" title="OpenMP – Ukrainian" lang="uk" hreflang="uk">Українська</a></li>
+													<li class="interlanguage-link interwiki-zh"><a href="//zh.wikipedia.org/wiki/OpenMP" title="OpenMP – Chinese" lang="zh" hreflang="zh">中文</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="edit" href="//www.wikidata.org/wiki/Q496579#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 12 December 2014 at 15:39.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=OpenMP&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="//wikimediafoundation.org/"><img src="//bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="//www.mediawiki.org/"><img src="//bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":120,"wgHostname":"mw1051"});
+}</script>
+	</body>
+</html>

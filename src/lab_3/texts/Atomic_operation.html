@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Atomic_operation by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Linearizability - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="http://en.wikipedia.org/wiki/android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Linearizability" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="http://en.wikipedia.org/wiki/Linearizability" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Linearizability" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Linearizability","wgTitle":"Linearizability","wgCurRevisionId":619808979,"wgRevisionId":619808979,"wgArticleId":1204310,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["CS1 errors: dates","CS1 maint: Date and year","Pages using duplicate arguments in template calls","Articles lacking in-text citations from December 2010","All articles lacking in-text citations","CS1 errors: Chapter ignored","Consistency models","Transaction processing","Concurrency control"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Linearizability","wgRelevantArticleId":1204310,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Atomic_operation","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["zh-cn","zh"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgInternalRedirectTargetUrl":"/wiki/Linearizability","wgWikibaseItemId":"Q513932"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Linearizability skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Linearizability</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"><span class="mw-redirectedfrom">  (Redirected from <a href="http://en.wikipedia.org/w/index.php?title=Atomic_operation&amp;redirect=no" title="Atomic operation">Atomic operation</a>)</span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="metadata plainlinks ambox ambox-style ambox-No_footnotes" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Text_document_with_red_question_mark.svg/40px-Text_document_with_red_question_mark.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Text_document_with_red_question_mark.svg/60px-Text_document_with_red_question_mark.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Text_document_with_red_question_mark.svg/80px-Text_document_with_red_question_mark.svg.png 2x" data-file-width="48" data-file-height="48" /></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article includes a <a href="http://en.wikipedia.org/wiki/Wikipedia:Citing_sources" title="Wikipedia:Citing sources">list of references</a>, related reading or <a href="http://en.wikipedia.org/wiki/Wikipedia:External_links" title="Wikipedia:External links">external links</a>, but <b>its sources remain unclear because it lacks <a href="http://en.wikipedia.org/wiki/Wikipedia:Citing_sources#Inline_citations" title="Wikipedia:Citing sources">inline citations</a></b>. <span class="hide-when-compact">Please <a href="http://en.wikipedia.org/wiki/Wikipedia:WikiProject_Fact_and_Reference_Check" title="Wikipedia:WikiProject Fact and Reference Check">improve</a> this article by introducing more precise citations.</span> <small><i>(December 2010)</i></small></span></td>
+</tr>
+</table>
+<p>In <a href="http://en.wikipedia.org/wiki/Concurrent_programming" title="Concurrent programming" class="mw-redirect">concurrent programming</a>, an operation (or set of operations) is <b>atomic</b>, <b>linearizable</b>, <b>indivisible</b> or <b>uninterruptible</b> if it appears to the rest of the system to occur instantaneously. Atomicity is a guarantee of <a href="http://en.wikipedia.org/wiki/Isolation_(computer_science)" title="Isolation (computer science)" class="mw-redirect">isolation</a> from <a href="http://en.wikipedia.org/wiki/Concurrency_(computer_science)" title="Concurrency (computer science)">concurrent processes</a>. Additionally, atomic operations commonly have a <a href="http://en.wikipedia.org/wiki/Atomicity_(database_systems)" title="Atomicity (database systems)">succeed-or-fail</a> definition — they either successfully change the state of the system, or have no apparent effect.</p>
+<p>Atomicity is commonly enforced by <a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">mutual exclusion</a>, whether at the hardware level building on a <a href="http://en.wikipedia.org/wiki/Cache_coherency" title="Cache coherency" class="mw-redirect">cache coherency</a> protocol, or the software level using <a href="http://en.wikipedia.org/wiki/Semaphore_(programming)" title="Semaphore (programming)">semaphores</a> or <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">locks</a>. Thus, an atomic operation does not <i>actually</i> occur instantaneously. The benefit comes from the <i>appearance</i>: the system behaves <i>as if</i> each operation occurred instantly, separated by pauses. Because of this, implementation details may be ignored by the user, except insofar as they affect performance. If an operation is not atomic, the user will also need to understand and cope with sporadic extraneous behaviour caused by interactions between concurrent operations, which by their nature are likely to be hard to reproduce and <a href="http://en.wikipedia.org/wiki/Debugging" title="Debugging">debug</a>.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Primitive_atomic_instructions"><span class="tocnumber">1</span> <span class="toctext">Primitive atomic instructions</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#High-level_atomic_operations"><span class="tocnumber">2</span> <span class="toctext">High-level atomic operations</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Example_atomic_operation"><span class="tocnumber">3</span> <span class="toctext">Example atomic operation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Non-atomic"><span class="tocnumber">3.1</span> <span class="toctext">Non-atomic</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Compare-and-swap"><span class="tocnumber">3.2</span> <span class="toctext">Compare-and-swap</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Fetch-and-increment"><span class="tocnumber">3.3</span> <span class="toctext">Fetch-and-increment</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Locking"><span class="tocnumber">3.4</span> <span class="toctext">Locking</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#History_of_linearizability"><span class="tocnumber">4</span> <span class="toctext">History of linearizability</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Definition_of_linearizability"><span class="tocnumber">5</span> <span class="toctext">Definition of linearizability</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Linearizability_versus_serializability"><span class="tocnumber">5.1</span> <span class="toctext">Linearizability versus serializability</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Linearization_points"><span class="tocnumber">5.2</span> <span class="toctext">Linearization points</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Primitive_atomic_instructions">Primitive atomic instructions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=1" title="Edit section: Primitive atomic instructions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Processors have <a href="http://en.wikipedia.org/wiki/Instruction_(computer_science)" title="Instruction (computer science)" class="mw-redirect">instructions</a> that can be used to implement <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">locking</a> and <a href="http://en.wikipedia.org/wiki/Lock-free_and_wait-free_algorithms" title="Lock-free and wait-free algorithms" class="mw-redirect">lock-free and wait-free algorithms</a>. The ability to temporarily inhibit <a href="http://en.wikipedia.org/wiki/Interrupt" title="Interrupt">interrupts</a>, ensuring that the currently running <a href="http://en.wikipedia.org/wiki/Process_(computing)" title="Process (computing)">process</a> cannot be <a href="http://en.wikipedia.org/wiki/Context_switch" title="Context switch">context switched</a>, also suffices on a <a href="http://en.wikipedia.org/wiki/Uniprocessor" title="Uniprocessor" class="mw-redirect">uniprocessor</a>. These instructions are used directly by compiler and operating system writers but are also abstracted and exposed as bytecodes and library functions in higher-level languages.</p>
+<ul>
+<li>Atomic read-write</li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Atomic_swap&amp;action=edit&amp;redlink=1" class="new" title="Atomic swap (page does not exist)">Atomic swap</a> -- the RDLK instruction in some <a href="http://en.wikipedia.org/wiki/Burroughs_large_systems#Multiple_processors" title="Burroughs large systems">Burroughs mainframes</a>, and the XCHG <a href="http://en.wikipedia.org/wiki/X86_instruction_listings" title="X86 instruction listings">x86 instruction</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/Test-and-set" title="Test-and-set">Test-and-set</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Fetch-and-add" title="Fetch-and-add">Fetch-and-add</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Compare-and-swap" title="Compare-and-swap">Compare-and-swap</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Load-Link/Store-Conditional" title="Load-Link/Store-Conditional" class="mw-redirect">Load-Link/Store-Conditional</a></li>
+</ul>
+<p>Most <a href="http://en.wikipedia.org/wiki/Central_processing_unit" title="Central processing unit">processors</a> include store operations that are not atomic with respect to memory. These include multiple words stores and string operations. Should a high priority interrupt occur when a portion of the store is complete, the operation must be completed when the interrupt level is returned. The routine that processes the interrupt must not access the memory being changed. It is important to take this into account when writing interrupt routines.</p>
+<p>When there are multiple instructions which must be completed without interruption, a CPU instruction which temporarily disables interrupts is used. This must be kept to only a few instructions and the interrupts must be enabled to avoid unacceptable response time to interrupts or even losing interrupts. This mechanism is not sufficient in a multi-processor environment since each CPU can interfere with the process regardless of whether interrupts occur or not.</p>
+<h2><span class="mw-headline" id="High-level_atomic_operations">High-level atomic operations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=2" title="Edit section: High-level atomic operations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The easiest way to achieve linearizability is running groups of primitive operations in a <a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">critical section</a>. Strictly, independent operations can then be carefully permitted to overlap their critical sections, provided this does not violate linearizability. Such an approach must balance the cost of large numbers of <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">locks</a> against the benefits of increased parallelism.</p>
+<p>Another approach, favoured by researchers (but not yet widely used in the software industry), is to design a linearizable object using the native atomic primitives provided by the hardware. This has the potential to maximise available parallelism and minimise synchronisation costs, but requires mathematical proofs which show that the objects behave correctly.</p>
+<p>A promising hybrid of these two is to provide a <a href="http://en.wikipedia.org/wiki/Transactional_memory" title="Transactional memory">transactional memory</a> abstraction. As with critical sections, the user marks sequential code that must be run in isolation from other threads. The implementation then ensures the code executes atomically. This style of abstraction is common when interacting with databases; for instance, when using the <a href="http://en.wikipedia.org/wiki/Spring_Framework" title="Spring Framework">Spring Framework</a>, annotating a method with @Transactional will ensure all enclosed database interactions occur in a single <a href="http://en.wikipedia.org/wiki/Database_transaction" title="Database transaction">database transaction</a>. Transactional memory goes a step further, ensuring that all memory interactions occur atomically. As with database transactions, issues arise regarding composition of transactions, especially database and in-memory transactions.</p>
+<p>A common theme when designing linearizable objects is to provide an all-or-nothing interface: either an operation succeeds completely, or it fails and does nothing. (<a href="http://en.wikipedia.org/wiki/ACID" title="ACID">ACID</a> databases refer to this principle as <a href="http://en.wikipedia.org/wiki/Atomicity_(database_systems)" title="Atomicity (database systems)">atomicity</a>.) If the operation fails (usually due to concurrent operations), the user must retry, usually performing a different operation. For example:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Compare-and-swap" title="Compare-and-swap">Compare-and-swap</a> writes a new value into a location only if the latter's contents matches a supplied old value. This is commonly used in a read-modify-CAS sequence: the user reads the location, computes a new value to write, and writes it with a CAS; if the value changes concurrently, the CAS will fail and the user tries again.</li>
+<li><a href="http://en.wikipedia.org/wiki/Load-Link/Store-Conditional" title="Load-Link/Store-Conditional" class="mw-redirect">Load-Link/Store-Conditional</a> encodes this pattern more directly: the user reads the location with load-link, computes a new value to write, and writes it with store-conditional; if the value has changed concurrently, the SC will fail and the user tries again.</li>
+<li>In a <a href="http://en.wikipedia.org/wiki/Database_transaction" title="Database transaction">database transaction</a>, if the transaction cannot be completed due to a concurrent operation (e.g. in a <a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">deadlock</a>), the transaction will be aborted and the user must try again.</li>
+</ul>
+<h2><span class="mw-headline" id="Example_atomic_operation">Example atomic operation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=3" title="Edit section: Example atomic operation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Consider a simple counter which different processes can increment.</p>
+<h3><span class="mw-headline" id="Non-atomic">Non-atomic</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=4" title="Edit section: Non-atomic">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The naive, non-atomic implementation:</p>
+<ol>
+<li>reads the value in the memory location;</li>
+<li>adds one to the value;</li>
+<li>writes the new value back into the memory location.</li>
+</ol>
+<p>Now, imagine two processes are running incrementing a single, shared memory location:</p>
+<ol>
+<li>the first process reads the value in memory location;</li>
+<li>the first process adds one to the value;</li>
+</ol>
+<p>but before it can write the new value back to the memory location it is suspended, and the second process is allowed to run:</p>
+<ol>
+<li>the second process reads the value in memory location, the <i>same</i> value that the first process read;</li>
+<li>the second process adds one to the value;</li>
+<li>the second process writes the new value into the memory location.</li>
+</ol>
+<p>The second process is suspended and the first process allowed to run again:</p>
+<ol>
+<li>the first process writes a now-wrong value into the memory location, unaware that the other process has already updated the value in the memory location.</li>
+</ol>
+<p>This is a trivial example. In a real system, the operations can be more complex and the errors introduced extremely subtle. For example, reading a <a href="http://en.wikipedia.org/wiki/64-bit" title="64-bit" class="mw-redirect">64-bit</a> value from memory may actually be implemented as two <a href="http://en.wikipedia.org/wiki/Sequence" title="Sequence">sequential</a> reads of two <a href="http://en.wikipedia.org/wiki/32-bit" title="32-bit">32-bit</a> memory locations. If a process has only read the first 32&#160;bits, and before it reads the second 32&#160;bits the value in memory gets changed, it will have neither the original value nor the new value but a mixed-up <a href="http://en.wikipedia.org/wiki/Garbage_(computer_science)" title="Garbage (computer science)">garbage</a> value.</p>
+<p>Furthermore, the specific order in which the processes run can change the results, making such an error difficult to detect, reproduce and <a href="http://en.wikipedia.org/wiki/Debug" title="Debug" class="mw-redirect">debug</a>.</p>
+<h3><span class="mw-headline" id="Compare-and-swap">Compare-and-swap</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=5" title="Edit section: Compare-and-swap">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Most systems provide an atomic <a href="http://en.wikipedia.org/wiki/Compare-and-swap" title="Compare-and-swap">compare-and-swap</a> instruction that reads from a memory location, compares the value with an "expected" one provided by the user, and writes out a "new" value if the two match, returning whether the update succeeded. We can use this to fix the non-atomic counter algorithm as follows:</p>
+<dl>
+<dd>
+<ol>
+<li>read the value in the memory location;</li>
+<li>add one to the value</li>
+<li>use compare-and-swap to write the incremented value back</li>
+<li>retry if the value read in by the compare-and-swap did not match the value we originally read</li>
+</ol>
+</dd>
+</dl>
+<p>Since the compare-and-swap occurs (or appears to occur) instantaneously, if another process updates the location while we are in-progress, the compare-and-swap is guaranteed to fail.</p>
+<h3><span class="mw-headline" id="Fetch-and-increment">Fetch-and-increment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=6" title="Edit section: Fetch-and-increment">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Many systems provide an atomic <a href="http://en.wikipedia.org/wiki/Fetch-and-increment" title="Fetch-and-increment" class="mw-redirect">fetch-and-increment</a> instruction that reads from a memory location, unconditionally writes a new value (the old value plus one), and returns the old value. We can use this to fix the non-atomic counter algorithm as follows:</p>
+<dl>
+<dd>
+<ol>
+<li>Use fetch-and-increment to read the old value and write the incremented value back.</li>
+</ol>
+</dd>
+</dl>
+<p>Using fetch-and increment is always better (requires fewer memory references) for some algorithms -- such as the one shown here -- than compare-and-swap,<sup id="cite_ref-cond-sync_1-0" class="reference"><a href="#cite_note-cond-sync-1"><span>[</span>1<span>]</span></a></sup> even though Herlihy earlier proved that compare-and-swap is better for certain other algorithms that can't be implemented at all using only fetch-and-increment. So <a href="http://en.wikipedia.org/wiki/CPU_design" title="CPU design" class="mw-redirect">CPU designs</a> with both fetch-and-increment and compare-and-swap (or equivalent instructions) may be a better choice than ones with only one or the other.<sup id="cite_ref-cond-sync_1-1" class="reference"><a href="#cite_note-cond-sync-1"><span>[</span>1<span>]</span></a></sup></p>
+<h3><span class="mw-headline" id="Locking">Locking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=7" title="Edit section: Locking">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">Lock (computer science)</a></div>
+<p>Another approach is to turn the naive algorithm into a <a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">critical section</a>, preventing other threads from disrupting it, using a <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">lock</a>. Once again fixing the non-atomic counter algorithm:</p>
+<dl>
+<dd>
+<ol>
+<li>take a lock, excluding other threads from running the critical section (steps 2-4) at the same time</li>
+<li>read the value in the memory location</li>
+<li>add one to the value</li>
+<li>write the incremented value back to the memory location</li>
+<li>release the lock</li>
+</ol>
+</dd>
+</dl>
+<p>This strategy works as expected; the lock prevents other threads from updating the value until it is released. However, when compared with direct use of atomic operations, it can suffer from significant overhead due to lock contention. To improve program performance, it may therefore be a good idea to replace simple critical sections with atomic operations for <a href="http://en.wikipedia.org/wiki/Non-blocking_synchronization" title="Non-blocking synchronization" class="mw-redirect">non-blocking synchronization</a> (as we have just done for the counter with compare-and-swap), instead of the other way around, but unfortunately a significant improvement is not guaranteed and lock-free algorithms can easily become too complicated to be worth the effort.</p>
+<h2><span class="mw-headline" id="History_of_linearizability">History of linearizability</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=8" title="Edit section: History of linearizability">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Linearizability was first introduced as a <a href="http://en.wikipedia.org/wiki/Consistency_model" title="Consistency model">consistency model</a> by <a href="http://en.wikipedia.org/wiki/Maurice_Herlihy" title="Maurice Herlihy">Herlihy</a> and <a href="http://en.wikipedia.org/wiki/Jeannette_Wing" title="Jeannette Wing">Wing</a> in 1987. It encompassed more restrictive definitions of atomic, such as "an atomic operation is one which cannot be (or is not) interrupted by concurrent operations", which are usually vague about when an operation is considered to begin and end.</p>
+<p>An atomic object can be understood immediately and completely from its sequential definition, as a set of operations run in parallel will always appear to occur one after the other; no inconsistencies may emerge. Specifically, linearizability guarantees that the <a href="http://en.wikipedia.org/wiki/Invariant_(computer_science)" title="Invariant (computer science)">invariants</a> of a system are <i>observed</i> and <i>preserved</i> by all operations: if all operations individually preserve an invariant, the system as a whole will.</p>
+<h2><span class="mw-headline" id="Definition_of_linearizability">Definition of linearizability</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=9" title="Edit section: Definition of linearizability">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>A <i>history</i> is a sequence of <i>invocations</i> and <i>responses</i> made of an object by a set of <a href="http://en.wikipedia.org/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">threads</a>. Each invocation of a function will have a subsequent response. This can be used to model any use of an object. Suppose, for example, that two threads, A and B, both attempt to grab a lock, backing off if it's already taken. This would be modeled as both threads invoking the lock operation, then both threads receiving a response, one successful, one not.</p>
+<table border="1" cellspacing="0">
+<tr>
+<td>A invokes <i>lock</i></td>
+<td>B invokes <i>lock</i></td>
+<td>A gets "failed" response</td>
+<td>B gets "successful" response</td>
+</tr>
+</table>
+<p>A <i>sequential</i> history is one in which all invocations have immediate responses. A sequential history should be trivial to reason about, as it has no real concurrency; the previous example was not sequential, and thus is hard to reason about. This is where linearizability comes in.</p>
+<p>A history is <i>linearizable</i> if:</p>
+<ul>
+<li>its invocations and responses can be reordered to yield a sequential history</li>
+<li>that sequential history is correct according to the sequential definition of the object</li>
+<li>if a response preceded an invocation in the original history, it must still precede it in the sequential reordering</li>
+</ul>
+<p>(Note that the first two bullet points here match <a href="http://en.wikipedia.org/wiki/Serializability" title="Serializability">serializability</a>: the operations appear to happen in some order. It is the last point which is unique to linearizability, and is thus the major contribution of Herlihy and Wing.)</p>
+<p>Let us look at two ways of reordering the locking example above.</p>
+<table border="1" cellspacing="0">
+<tr>
+<td>A invokes <i>lock</i></td>
+<td>A gets "failed" response</td>
+<td>B invokes <i>lock</i></td>
+<td>B gets "successful" response</td>
+</tr>
+</table>
+<p>Reordering B's invocation below A's response yields a sequential history. This is easy to reason about, as all operations now happen in an obvious order. Unfortunately, it doesn't match the sequential definition of the object (it doesn't match the semantics of the program): A should have successfully obtained the lock, and B should have subsequently aborted.</p>
+<table border="1" cellspacing="0">
+<tr>
+<td>B invokes <i>lock</i></td>
+<td>B gets "successful" response</td>
+<td>A invokes <i>lock</i></td>
+<td>A gets "failed" response</td>
+</tr>
+</table>
+<p>This is another correct sequential history. It is also a linearization! Note that the definition of linearizability only precludes responses that precede invocations from being reordered; since the original history had no responses before invocations, we can reorder it as we wish. Hence the original history is indeed linearizable.</p>
+<p>An object (as opposed to a history) is linearizable if all valid histories of its use can be linearized. Note that this is a much harder assertion to prove.</p>
+<h3><span class="mw-headline" id="Linearizability_versus_serializability">Linearizability versus serializability</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=10" title="Edit section: Linearizability versus serializability">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Consider the following history, again of two objects interacting with a lock:</p>
+<table border="1" cellspacing="0">
+<tr>
+<td>A invokes lock</td>
+<td>A successfully locks</td>
+<td>B invokes unlock</td>
+<td>B successfully unlocks</td>
+<td>A invokes unlock</td>
+<td>A successfully unlocks</td>
+</tr>
+</table>
+<p>This history is not valid because there is a point at which both A and B hold the lock; moreover, it cannot be reordered to a valid sequential history without violating the ordering rule. Therefore, it is not linearizable. However, under serializability, B's unlock operation may be moved to <i>before</i> A's original lock, which is a valid history (assuming the object begins the history in a locked state):</p>
+<table border="1" cellspacing="0">
+<tr>
+<td>B invokes unlock</td>
+<td>B successfully unlocks</td>
+<td>A invokes lock</td>
+<td>A successfully locks</td>
+<td>A invokes unlock</td>
+<td>A successfully unlocks</td>
+</tr>
+</table>
+<p>While weird, this reordering is sensible provided there is no alternative means of communicating between A and B. Linearizability is better when considering individual objects separately, as the reordering restrictions ensure that multiple linearizable objects are, considered as a whole, still linearizable.</p>
+<h3><span class="mw-headline" id="Linearization_points">Linearization points</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=11" title="Edit section: Linearization points">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This definition of linearizability is equivalent to the following:</p>
+<ul>
+<li>All function calls have a <i>linearization point</i> at some instant between their invocation and their response</li>
+<li>All functions appear to occur instantly at their linearization point, behaving as specified by the sequential definition</li>
+</ul>
+<p>This alternative is usually much easier to prove. It is also much easier to reason about as a user, largely due to its intuitiveness. This property of occurring instantaneously, or indivisibly, leads to the use of the term <i>atomic</i> as an alternative to the longer "linearizable".</p>
+<p>In the examples above, the linearization point of the counter built on CAS is the linearization point of the first (and only) successful CAS update. The counter built using locking can be considered to linearize at any moment while the locks are held, since any potentially conflicting operations are excluded from running during that period.</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=12" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Atomicity_(database_systems)" title="Atomicity (database systems)">Atomic transaction</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Consistency_model" title="Consistency model">Consistency model</a></li>
+<li><a href="http://en.wikipedia.org/wiki/ACID" title="ACID">ACID</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Read-copy-update" title="Read-copy-update">Read-copy-update</a> (RCU)</li>
+<li><a href="http://en.wikipedia.org/wiki/Time_of_check_to_time_of_use" title="Time of check to time of use">Time of check to time of use</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit&amp;section=13" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-cond-sync-1"><span class="mw-cite-backlink">^ <a href="#cite_ref-cond-sync_1-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-cond-sync_1-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation book">Fich, Faith; Hendler, Danny; Shavit, Nir (July 25–28). "On the inherent weakness of conditional synchronization primitives". <a rel="nofollow" class="external text" href="http://doi.acm.org/10.1145/1011767.1011780"><i>Proceedings of the 23rd Annual ACM Symposium on Principles of Distributed Computing, PODC 2004&#160;: St. John's, Newfoundland, Canada</i></a>. New York, NY: ACM Press. pp.&#160;80–87. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/1-58113-802-4" title="Special:BookSources/1-58113-802-4">1-58113-802-4</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALinearizability&amp;rft.atitle=On+the+inherent+weakness+of+conditional+synchronization+primitives&amp;rft.au=Fich%2C+Faith&amp;rft.aufirst=Faith&amp;rft.au=Hendler%2C+Danny&amp;rft.aulast=Fich&amp;rft.au=Shavit%2C+Nir&amp;rft.btitle=Proceedings+of+the+23rd+Annual+ACM+Symposium+on+Principles+of+Distributed+Computing%2C+PODC+2004+%3A+St.+John%27s%2C+Newfoundland%2C+Canada&amp;rft.date=July+25%E2%80%9328&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fdoi.acm.org%2F10.1145%2F1011767.1011780&amp;rft.isbn=1-58113-802-4&amp;rft.pages=80-87&amp;rft.place=New+York%2C+NY&amp;rft.pub=ACM+Press&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="font-size:100%" class="error citation-comment">Check date values in: <code style="color:inherit; border:inherit; padding:inherit;">|date=</code> (<a href="http://en.wikipedia.org/wiki/Help:CS1_errors#bad_date" title="Help:CS1 errors">help</a>)</span></span></li>
+</ol>
+</div>
+<ul>
+<li><span class="citation journal">Herlihy, M. P.; Wing, J. M. (1987). "Proceedings of the 14th ACM SIGACT-SIGPLAN symposium on Principles of programming languages - POPL '87". p.&#160;13. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F41625.41627">10.1145/41625.41627</a>. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-89791-215-2" title="Special:BookSources/0-89791-215-2">0-89791-215-2</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALinearizability&amp;rft.atitle=Axioms+for+concurrent+objects&amp;rft.aufirst=M.+P.&amp;rft.au=Herlihy%2C+M.+P.&amp;rft.aulast=Herlihy&amp;rft.au=Wing%2C+J.+M.&amp;rft.btitle=Proceedings+of+the+14th+ACM+SIGACT-SIGPLAN+symposium+on+Principles+of+programming+languages++-+POPL+%2787&amp;rft.date=1987&amp;rft.genre=bookitem&amp;rft_id=info%3Adoi%2F10.1145%2F41625.41627&amp;rft.isbn=0-89791-215-2&amp;rft.pages=13&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="font-size:100%" class="error citation-comment"><code style="color:inherit; border:inherit; padding:inherit;">|chapter=</code> ignored (<a href="http://en.wikipedia.org/wiki/Help:CS1_errors#chapter_ignored" title="Help:CS1 errors">help</a>)</span></li>
+<li><span class="citation journal">Herlihy, M. (1990). "A methodology for implementing highly concurrent data structures". <i>ACM SIGPLAN Notices</i> <b>25</b> (3): 197. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F99164.99185">10.1145/99164.99185</a>. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-89791-350-7" title="Special:BookSources/0-89791-350-7">0-89791-350-7</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALinearizability&amp;rft.atitle=A+methodology+for+implementing+highly+concurrent+data+structures&amp;rft.aufirst=M.&amp;rft.au=Herlihy%2C+M.&amp;rft.aulast=Herlihy&amp;rft.date=1990&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1145%2F99164.99185&amp;rft.isbn=0-89791-350-7&amp;rft.issue=3&amp;rft.jtitle=ACM+SIGPLAN+Notices&amp;rft.pages=197&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=25" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span class="citation journal">Herlihy, Maurice P.; Wing, Jeannette M. (1990). "Linearizability: A correctness condition for concurrent objects". <i>ACM Transactions on Programming Languages and Systems</i> <b>12</b> (3): 463. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F78969.78972">10.1145/78969.78972</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALinearizability&amp;rft.atitle=Linearizability%3A+A+correctness+condition+for+concurrent+objects&amp;rft.aufirst=Maurice+P.&amp;rft.au=Herlihy%2C+Maurice+P.&amp;rft.aulast=Herlihy&amp;rft.au=Wing%2C+Jeannette+M.&amp;rft.date=1990&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1145%2F78969.78972&amp;rft.issue=3&amp;rft.jtitle=ACM+Transactions+on+Programming+Languages+and+Systems&amp;rft.pages=463&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=12" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1113
+CPU time usage: 0.181 seconds
+Real time usage: 0.225 seconds
+Preprocessor visited node count: 443/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 12793/2097152 bytes
+Template argument size: 13/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 2/500
+Lua time usage: 0.056/10.000 seconds
+Lua memory usage: 1.71 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  194.233      1 - -total
+ 34.30%   66.621      1 - Template:No_footnotes
+ 20.04%   38.923      1 - Template:Ambox
+ 18.67%   36.268      1 - Template:Reflist
+ 13.70%   26.607      1 - Template:Cite_book
+  7.93%   15.395      3 - Template:Cite_journal
+  5.36%   10.419      1 - Template:Main
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1204310-0!*!0!!en!4!* and timestamp 20141211052324 and revision id 619808979
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;oldid=619808979">http://en.wikipedia.org/w/index.php?title=Linearizability&amp;oldid=619808979</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Consistency_models" title="Category:Consistency models">Consistency models</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Transaction_processing" title="Category:Transaction processing">Transaction processing</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Concurrency_control" title="Category:Concurrency control">Concurrency control</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.wikipedia.org/wiki/Category:CS1_errors:_dates" title="Category:CS1 errors: dates">CS1 errors: dates</a></li><li><a href="http://en.wikipedia.org/wiki/Category:CS1_maint:_Date_and_year" title="Category:CS1 maint: Date and year">CS1 maint: Date and year</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Pages_using_duplicate_arguments_in_template_calls" title="Category:Pages using duplicate arguments in template calls">Pages using duplicate arguments in template calls</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_lacking_in-text_citations_from_December_2010" title="Category:Articles lacking in-text citations from December 2010">Articles lacking in-text citations from December 2010</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_lacking_in-text_citations" title="Category:All articles lacking in-text citations">All articles lacking in-text citations</a></li><li><a href="http://en.wikipedia.org/wiki/Category:CS1_errors:_Chapter_ignored" title="Category:CS1 errors: Chapter ignored">CS1 errors: Chapter ignored</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Linearizability&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Linearizability" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Linearizability"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Linearizability"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Linearizability" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://en.wikipedia.org/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://en.wikipedia.org/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Linearizability" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Linearizability" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;oldid=619808979" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q513932" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Linearizability&amp;id=619808979" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Linearizability">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Linearizability&amp;oldid=619808979&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Linearizability&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Atomicita" title="Atomicita – Czech" lang="cs" hreflang="cs">Čeština</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Atomare_Operation" title="Atomare Operation – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="http://es.wikipedia.org/wiki/Instrucción_atómica" title="Instrucción atómica – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Atomicité_(informatique)" title="Atomicité (informatique) – French" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-ko"><a href="http://ko.wikipedia.org/wiki/원자성" title="원자성 – Korean" lang="ko" hreflang="ko">한국어</a></li>
+													<li class="interlanguage-link interwiki-he"><a href="http://he.wikipedia.org/wiki/פעולה_אטומית" title="פעולה אטומית – Hebrew" lang="he" hreflang="he">עברית</a></li>
+													<li class="interlanguage-link interwiki-lt"><a href="http://lt.wikipedia.org/wiki/Nedaloma_operacija" title="Nedaloma operacija – Lithuanian" lang="lt" hreflang="lt">Lietuvių</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/不可分操作" title="不可分操作 – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Operacja_atomowa" title="Operacja atomowa – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Transação_atômica" title="Transação atômica – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Атомарная_операция" title="Атомарная операция – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="http://uk.wikipedia.org/wiki/Атомарна_операція" title="Атомарна операція – Ukrainian" lang="uk" hreflang="uk">Українська</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="http://en.wikipedia.org/wiki/edit" href="http://www.wikidata.org/wiki/Q513932#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 4 August 2014 at 12:45.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Linearizability&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":123,"wgHostname":"mw1084"});
+}</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Atomic_operation by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:50 GMT -->
+</html>

@@ -1,0 +1,975 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Message Passing Interface - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Message_Passing_Interface" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Message_Passing_Interface&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Message_Passing_Interface&amp;action=edit" />
+<link rel="apple-touch-icon" href="//bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="//bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="/wiki/Message_Passing_Interface" />
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Message_Passing_Interface" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.geshi.language.c%7Cext.geshi.local%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Message_Passing_Interface","wgTitle":"Message Passing Interface","wgCurRevisionId":630542180,"wgRevisionId":630542180,"wgArticleId":221466,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles containing predictions or speculation","Articles that may contain original research from May 2008","All articles that may contain original research","Wikipedia articles needing rewrite from August 2011","Articles to be expanded from June 2008","All articles to be expanded","All articles with unsourced statements","Articles with unsourced statements from January 2011","Articles with unsourced statements from May 2010","Articles with DMOZ links","Parallel computing","Application programming interfaces"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Message_Passing_Interface","wgRelevantArticleId":221466,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q127879"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Message_Passing_Interface skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Message Passing Interface</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="metadata plainlinks ambox ambox-content ambox-multiple_issues compact-ambox" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/60px-Ambox_important.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/80px-Ambox_important.svg.png 2x" data-file-width="40" data-file-height="40" /></div>
+</td>
+<td class="mbox-text">
+<table class="collapsible" style="width:95%; background:transparent;">
+<tr>
+<th style="text-align:left; padding:0.2em 2px 0.2em 0;">This article has multiple issues. <span style="font-weight: normal;">Please help <b><a class="external text" href="//en.wikipedia.org/w/index.php?title=Message_Passing_Interface&amp;action=edit">improve it</a></b> or discuss these issues on the <b><a href="/wiki/Talk:Message_Passing_Interface" title="Talk:Message Passing Interface">talk page</a></b>.</span></th>
+</tr>
+<tr>
+<td>
+<table class="metadata plainlinks ambox ambox-content" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/60px-Ambox_important.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/80px-Ambox_important.svg.png 2x" data-file-width="40" data-file-height="40" /></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>possibly contains unsourced <a href="/wiki/Wikipedia:CRYSTAL" title="Wikipedia:CRYSTAL" class="mw-redirect">predictions</a>, speculative material, or accounts of events that might not occur</b>. <span class="hide-when-compact">Please help <a class="external text" href="//en.wikipedia.org/w/index.php?title=Message_Passing_Interface&amp;action=edit">improve it</a> by removing unsourced speculative content.</span> <small><i>(June 2010)</i></small></span></td>
+</tr>
+</table>
+<table class="metadata plainlinks ambox ambox-content ambox-Original_research" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/60px-Ambox_important.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/80px-Ambox_important.svg.png 2x" data-file-width="40" data-file-height="40" /></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>possibly contains <a href="/wiki/Wikipedia:No_original_research" title="Wikipedia:No original research">original research</a></b>. <span class="hide-when-compact">Please <a class="external text" href="//en.wikipedia.org/w/index.php?title=Message_Passing_Interface&amp;action=edit">improve it</a> by <a href="/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">verifying</a> the claims made and adding <a href="/wiki/Wikipedia:Citing_sources#Inline_citations" title="Wikipedia:Citing sources">inline citations</a>. Statements consisting only of original research should be removed.</span> <small><i>(May 2008)</i></small></span></td>
+</tr>
+</table>
+<table class="metadata plainlinks ambox ambox-content" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><a href="/wiki/File:Crystal_Clear_app_kedit.svg" class="image"><img alt="Crystal Clear app kedit.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Crystal_Clear_app_kedit.svg/40px-Crystal_Clear_app_kedit.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Crystal_Clear_app_kedit.svg/60px-Crystal_Clear_app_kedit.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Crystal_Clear_app_kedit.svg/80px-Crystal_Clear_app_kedit.svg.png 2x" data-file-width="128" data-file-height="128" /></a></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>may need to be rewritten entirely to comply with Wikipedia's <a href="/wiki/Wikipedia:Manual_of_Style" title="Wikipedia:Manual of Style">quality standards</a></b>. <span class="hide-when-compact"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Message_Passing_Interface&amp;action=edit">You can help</a>. The <a href="/wiki/Talk:Message_Passing_Interface" title="Talk:Message Passing Interface">discussion page</a> may contain suggestions.</span> <small><i>(August 2011)</i></small></span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><b>Message Passing Interface</b> (<b>MPI</b>) is a standardized and portable <a href="/wiki/Message-passing" title="Message-passing" class="mw-redirect">message-passing</a> system designed by a group of researchers from academia and industry to function on a wide variety of parallel computers. The standard defines the syntax and semantics of a core of library routines useful to a wide range of users writing portable message-passing programs in different computer programming languages such as <a href="/wiki/Fortran" title="Fortran">Fortran</a>, <a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a> and <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>. There are several well-tested and efficient implementations of MPI, including some that are free or in the public domain. These fostered the development of a parallel software industry, and encouraged development of portable and scalable large-scale parallel applications.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#History"><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Overview"><span class="tocnumber">2</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Functionality"><span class="tocnumber">3</span> <span class="toctext">Functionality</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Concepts"><span class="tocnumber">4</span> <span class="toctext">Concepts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Communicator"><span class="tocnumber">4.1</span> <span class="toctext">Communicator</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Point-to-point_basics"><span class="tocnumber">4.2</span> <span class="toctext">Point-to-point basics</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Collective_basics"><span class="tocnumber">4.3</span> <span class="toctext">Collective basics</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Derived_datatypes"><span class="tocnumber">4.4</span> <span class="toctext">Derived datatypes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#MPI-2_concepts"><span class="tocnumber">5</span> <span class="toctext">MPI-2 concepts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#One-sided_communication"><span class="tocnumber">5.1</span> <span class="toctext">One-sided communication</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Collective_extensions"><span class="tocnumber">5.2</span> <span class="toctext">Collective extensions</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Dynamic_process_management"><span class="tocnumber">5.3</span> <span class="toctext">Dynamic process management</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#I.2FO"><span class="tocnumber">5.4</span> <span class="toctext">I/O</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Implementations"><span class="tocnumber">6</span> <span class="toctext">Implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#.27Classical.27_cluster_and_supercomputer_implementations"><span class="tocnumber">6.1</span> <span class="toctext">'Classical' cluster and supercomputer implementations</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Python"><span class="tocnumber">6.2</span> <span class="toctext">Python</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#OCaml"><span class="tocnumber">6.3</span> <span class="toctext">OCaml</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Java"><span class="tocnumber">6.4</span> <span class="toctext">Java</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Matlab"><span class="tocnumber">6.5</span> <span class="toctext">Matlab</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#R"><span class="tocnumber">6.6</span> <span class="toctext">R</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Common_Language_Infrastructure"><span class="tocnumber">6.7</span> <span class="toctext">Common Language Infrastructure</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Hardware_implementations"><span class="tocnumber">6.8</span> <span class="toctext">Hardware implementations</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#mpicc"><span class="tocnumber">6.9</span> <span class="toctext">mpicc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Example_program"><span class="tocnumber">7</span> <span class="toctext">Example program</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#MPI-2_adoption"><span class="tocnumber">8</span> <span class="toctext">MPI-2 adoption</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="#Future"><span class="tocnumber">9</span> <span class="toctext">Future</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#See_also"><span class="tocnumber">10</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="#References"><span class="tocnumber">11</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="#Further_reading"><span class="tocnumber">12</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-30"><a href="#External_links"><span class="tocnumber">13</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=1" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The message passing interface effort began in the summer of 1991 when a small group of researchers started discussions at a mountain retreat in Austria. Out of that discussion came a Workshop on Standards for Message Passing in a Distributed Memory Environment held on April 29–30, 1992 in <a href="/wiki/Williamsburg,_Virginia" title="Williamsburg, Virginia">Williamsburg, Virginia</a>. At this workshop the basic features essential to a standard message-passing interface were discussed, and a working group established to continue the standardization process. <a href="/wiki/Jack_Dongarra" title="Jack Dongarra">Jack Dongarra</a>, Rolf Hempel, <a href="/wiki/Tony_Hey" title="Tony Hey">Tony Hey</a>, and David W. Walker put forward a preliminary draft proposal in November 1992, this was known as MPI1. In November 1992, a meeting of the MPI working group was held in Minneapolis, at which it was decided to place the standardization process on a more formal footing. The MPI working group met every 6 weeks throughout the first 9 months of 1993. The draft MPI standard was presented at the Supercomputing '93 conference in November 1993. After a period of public comments, which resulted in some changes in MPI, version 1.0 of MPI was released in June 1994. These meetings and the email discussion together constituted the MPI Forum, membership of which has been open to all members of the high performance computing community.</p>
+<p>The MPI effort involved about 80 people from 40 organizations, mainly in the United States and Europe. Most of the major vendors of concurrent computers were involved in MPI along with researchers from universities, government laboratories, and industry.</p>
+<p>The MPI standard defines the syntax and semantics of a core of library routines useful to a wide range of users writing portable message passing programs in <a href="/wiki/Fortran" title="Fortran">Fortran</a> and C.</p>
+<p>MPI provides parallel hardware vendors with a clearly defined base set of routines that can be efficiently implemented. As a result, hardware vendors can build upon this collection of standard low-level routines to create higher-level routines for the distributed-memory communication environment supplied with their parallel machines. MPI provides a simple-to-use portable interface for the basic user, yet powerful enough to allow programmers to use the high-performance message passing operations available on advanced machines.</p>
+<p>As an effort to create a “true” standard for message passing, researchers incorporated the most useful features of several systems into MPI, rather than choose one system to adopt as a standard. Features were used from systems by IBM, Intel, nCUBE, PVM, Express, P4 and PARMACS. The message passing paradigm is attractive because of wide portability and can be used in communication for distributed-memory and shared-memory multiprocessors, networks of workstations, and a combination of these elements. The paradigm is applicable in multiple settings, independent of network speed or memory architecture.</p>
+<p>Support for MPI meetings came in part from <a href="/wiki/DARPA" title="DARPA">ARPA</a> and US <a href="/wiki/National_Science_Foundation" title="National Science Foundation">National Science Foundation</a> under grant ASC-9310330, NSF Science and Technology Center Cooperative agreement number CCR-8809615, and the Commission of the European Community through Esprit Project P6643. The <a href="/wiki/University_of_Tennessee" title="University of Tennessee">University of Tennessee</a> also made financial contributions to the MPI Forum.</p>
+<h2><span class="mw-headline" id="Overview">Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=2" title="Edit section: Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>MPI is a language-independent <a href="/wiki/Communications_protocol" title="Communications protocol">communications protocol</a> used to program <a href="/wiki/Parallel_computers" title="Parallel computers" class="mw-redirect">parallel computers</a>. Both point-to-point and collective communication are supported. MPI "is a message-passing application programmer interface, together with protocol and semantic specifications for how its features must behave in any implementation."<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup> MPI's goals are high performance, scalability, and portability. MPI remains the dominant model used in <a href="/wiki/High-performance_computing" title="High-performance computing" class="mw-redirect">high-performance computing</a> today.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>2<span>]</span></a></sup></p>
+<p>MPI is not sanctioned by any major standards body; nevertheless, it has become a <i><a href="/wiki/De_facto" title="De facto">de facto</a></i> <a href="/wiki/Standardization" title="Standardization">standard</a> for <a href="/wiki/Communication" title="Communication">communication</a> among processes that model a <a href="/wiki/Parallel_programming" title="Parallel programming" class="mw-redirect">parallel program</a> running on a <a href="/wiki/Distributed_memory" title="Distributed memory">distributed memory</a> system. Actual distributed memory supercomputers such as computer clusters often run such programs. The principal MPI-1 model has no shared memory concept, and MPI-2 has only a limited <a href="/wiki/Distributed_shared_memory" title="Distributed shared memory">distributed shared memory</a> concept. Nonetheless, MPI programs are regularly run on shared memory computers. Designing programs around the MPI model (contrary to explicit <a href="/wiki/Shared_memory" title="Shared memory">shared memory</a> models) has advantages over <a href="/wiki/Non-Uniform_Memory_Access" title="Non-Uniform Memory Access" class="mw-redirect">NUMA</a> architectures since MPI encourages <a href="/wiki/Locality_of_reference" title="Locality of reference">memory locality</a>.</p>
+<p>Although MPI belongs in layers 5 and higher of the <a href="/wiki/OSI_Reference_Model" title="OSI Reference Model" class="mw-redirect">OSI Reference Model</a>, implementations may cover most layers, with <a href="/wiki/Internet_socket" title="Internet socket" class="mw-redirect">sockets</a> and <a href="/wiki/Transmission_Control_Protocol" title="Transmission Control Protocol">Transmission Control Protocol</a> (TCP) used in the transport layer.</p>
+<p>Most MPI implementations consist of a specific set of routines (i.e., an API) directly callable from <a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/Fortran" title="Fortran">Fortran</a> and any language able to interface with such libraries, including <a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a> or <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a>. The advantages of MPI over older message passing libraries are portability (because MPI has been implemented for almost every distributed memory architecture) and speed (because each <a href="/wiki/Implementation" title="Implementation">implementation</a> is in principle optimized for the hardware on which it runs).</p>
+<p>MPI uses <a href="/wiki/Language_Independent_Specification" title="Language Independent Specification" class="mw-redirect">Language Independent Specifications</a> (LIS) for calls and language bindings. The first MPI standard specified <a href="/wiki/ANSI_C" title="ANSI C">ANSI C</a> and Fortran-77 bindings together with the LIS. The draft was presented at Supercomputing 1994 (November 1994)<sup id="cite_ref-SC94_3-0" class="reference"><a href="#cite_note-SC94-3"><span>[</span>3<span>]</span></a></sup> and finalized soon thereafter. About 128 functions constitute the MPI-1.3 standard which was released as the final end of the MPI-1 series in 2008.<sup id="cite_ref-MPI_Docs_4-0" class="reference"><a href="#cite_note-MPI_Docs-4"><span>[</span>4<span>]</span></a></sup></p>
+<p><span id="VERSIONS"></span> At present, the standard has several versions: version 1.3 (commonly abbreviated <i>MPI-1</i>), which emphasizes message passing and has a static runtime environment, MPI-2.2 (MPI-2), which includes new features such as parallel I/O, dynamic process management and remote memory operations,<sup id="cite_ref-Gropp99adv-pp4-5_5-0" class="reference"><a href="#cite_note-Gropp99adv-pp4-5-5"><span>[</span>5<span>]</span></a></sup> and MPI-3.0 (MPI-3), which includes extensions to the collective operations with nonblocking versions and extensions to the one-sided operations.<sup id="cite_ref-MPI_3.0_6-0" class="reference"><a href="#cite_note-MPI_3.0-6"><span>[</span>6<span>]</span></a></sup> MPI-2's LIS specifies over 500 functions and provides language bindings for <a href="/wiki/ANSI_C" title="ANSI C">ANSI C</a>, <a href="/wiki/ANSI_C%2B%2B" title="ANSI C++" class="mw-redirect">ANSI C++</a>, and ANSI Fortran (Fortran90). Object interoperability was also added to allow easier mixed-language message passing programming. A side-effect of standardizing MPI-2, completed in 1996, was clarifying the MPI-1 standard, creating the MPI-1.2.</p>
+<p><i>MPI-2</i> is mostly a superset of MPI-1, although some functions have been deprecated. MPI-1.3 programs still work under MPI implementations compliant with the MPI-2 standard.</p>
+<p><i>MPI-3</i> includes new Fortran 2008 bindings, while it removes deprecated C++ bindings as well as many deprecated routines and MPI objects.</p>
+<p>MPI is often compared with <a href="/wiki/Parallel_Virtual_Machine" title="Parallel Virtual Machine">Parallel Virtual Machine</a> (PVM), which is a popular distributed environment and message passing system developed in 1989, and which was one of the systems that motivated the need for standard parallel message passing. Threaded shared memory programming models (such as <a href="/wiki/Pthreads" title="Pthreads" class="mw-redirect">Pthreads</a> and <a href="/wiki/OpenMP" title="OpenMP">OpenMP</a>) and message passing programming (MPI/PVM) can be considered as complementary programming approaches, and can occasionally be seen together in applications, e.g. in servers with multiple large shared-memory nodes.</p>
+<h2><span class="mw-headline" id="Functionality">Functionality</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=3" title="Edit section: Functionality">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The MPI interface is meant to provide essential virtual topology, <a href="/wiki/Synchronization" title="Synchronization">synchronization</a>, and communication functionality between a set of processes (that have been mapped to nodes/servers/computer instances) in a language-independent way, with language-specific syntax (bindings), plus a few language-specific features. MPI programs always work with processes, but programmers commonly refer to the processes as processors. Typically, for maximum performance, each <a href="/wiki/CPU" title="CPU" class="mw-redirect">CPU</a> (or <a href="/wiki/Multi-core_(computing)" title="Multi-core (computing)" class="mw-redirect">core</a> in a multi-core machine) will be assigned just a single process. This assignment happens at runtime through the agent that starts the MPI program, normally called mpirun or mpiexec.</p>
+<p>MPI library functions include, but are not limited to, point-to-point rendezvous-type send/receive operations, choosing between a <a href="/wiki/Cartesian_tree" title="Cartesian tree">Cartesian</a> or <a href="/wiki/Graph_(data_structure)" title="Graph (data structure)" class="mw-redirect">graph</a>-like logical process topology, exchanging data between process pairs (send/receive operations), combining partial results of computations (gather and reduce operations), synchronizing nodes (barrier operation) as well as obtaining network-related information such as the number of processes in the computing session, current processor identity that a process is mapped to, neighboring processes accessible in a logical topology, and so on. Point-to-point operations come in <a href="/wiki/Synchronization_(computer_science)" title="Synchronization (computer science)">synchronous</a>, <a href="/wiki/Asynchronous_i/o" title="Asynchronous i/o" class="mw-redirect">asynchronous</a>, buffered, and <i>ready</i> forms, to allow both relatively stronger and weaker <a href="/wiki/Semantics" title="Semantics">semantics</a> for the synchronization aspects of a rendezvous-send. Many outstanding operations are possible in asynchronous mode, in most implementations.</p>
+<p>MPI-1 and MPI-2 both enable implementations that overlap communication and computation, but practice and theory differ. MPI also specifies <i><a href="/wiki/Thread_safe" title="Thread safe" class="mw-redirect">thread safe</a></i> interfaces, which have <a href="/wiki/Cohesion_(computer_science)" title="Cohesion (computer science)">cohesion</a> and <a href="/wiki/Coupling_(computer_science)" title="Coupling (computer science)" class="mw-redirect">coupling</a> strategies that help avoid hidden state within the interface. It is relatively easy to write multithreaded point-to-point MPI code, and some implementations support such code. <a href="/wiki/Multithreaded" title="Multithreaded" class="mw-redirect">Multithreaded</a> collective communication is best accomplished with multiple copies of Communicators, as described below.</p>
+<h2><span class="mw-headline" id="Concepts">Concepts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=4" title="Edit section: Concepts">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>MPI provides a rich range of abilities. The following concepts help in understanding and providing context for all of those abilities and help the programmer to decide what functionality to use in their application programs. Four of MPI's eight basic concepts are unique to MPI-2.</p>
+<h3><span class="mw-headline" id="Communicator">Communicator</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=5" title="Edit section: Communicator">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Communicator objects connect groups of processes in the MPI session. Each communicator gives each contained process an independent identifier and arranges its contained processes in an ordered <a href="/wiki/Topology_(disambiguation)" title="Topology (disambiguation)" class="mw-disambig">topology</a>. MPI also has explicit groups, but these are mainly good for organizing and reorganizing groups of processes before another communicator is made. MPI understands single group intracommunicator operations, and bilateral intercommunicator communication. In MPI-1, single group operations are most prevalent. <a href="/wiki/Bilateral_synchronization" title="Bilateral synchronization">Bilateral</a> operations mostly appear in MPI-2 where they include collective communication and dynamic in-process management.</p>
+<p>Communicators can be partitioned using several MPI commands. These commands include MPI_COMM_SPLIT, where each process joins one of several colored sub-communicators by declaring itself to have that color.</p>
+<h3><span class="mw-headline" id="Point-to-point_basics">Point-to-point basics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=6" title="Edit section: Point-to-point basics">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A number of important MPI functions involve communication between two specific processes. A popular example is MPI_Send, which allows one specified process to send a message to a second specified process. Point-to-point operations, as these are called, are particularly useful in patterned or irregular communication, for example, a <a href="/wiki/Data_parallelism" title="Data parallelism">data-parallel</a> architecture in which each processor routinely swaps regions of data with specific other processors between calculation steps, or a <a href="/wiki/Master-slave_(technology)" title="Master-slave (technology)" class="mw-redirect">master-slave</a> architecture in which the master sends new task data to a slave whenever the prior task is completed.</p>
+<p>MPI-1 specifies mechanisms for both <a href="/wiki/Blocking_(computing)" title="Blocking (computing)">blocking</a> and non-blocking point-to-point communication mechanisms, as well as the so-called 'ready-send' mechanism whereby a send request can be made only when the matching receive request has already been made.</p>
+<h3><span class="mw-headline" id="Collective_basics">Collective basics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=7" title="Edit section: Collective basics">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="/wiki/Collective_operation" title="Collective operation">Collective functions</a> involve communication among all processes in a process group (which can mean the entire process pool or a program-defined subset). A typical function is the MPI_Bcast call (short for "<a href="/wiki/Broadcasting_(computing)" title="Broadcasting (computing)" class="mw-redirect">broadcast</a>"). This function takes data from one node and sends it to all processes in the process group. A reverse operation is the MPI_Reduce call, which takes data from all processes in a group, performs an operation (such as summing), and stores the results on one node. Reduce is often useful at the start or end of a large distributed calculation, where each processor operates on a part of the data and then combines it into a result.</p>
+<p>Other operations perform more sophisticated tasks, such as MPI_Alltoall which rearranges <i>n</i> items of data processor such that the <i>n</i>th node gets the <i>n</i>th item of data from each.</p>
+<h3><span class="mw-headline" id="Derived_datatypes">Derived datatypes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=8" title="Edit section: Derived datatypes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Many MPI functions require that you specify the type of data which is sent between processors. This is because these functions pass variables, not defined types. If the data type is a standard one, such as int, char, double, etc., you can use predefined MPI datatypes such as MPI_INT, MPI_CHAR, MPI_DOUBLE.</p>
+<p>Here is an example in C that passes an array of ints and all the processors want to send their arrays to the root with MPI_Gather:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+<span class="kw4">int</span> array<span class="br0">[</span><span class="nu0">100</span><span class="br0">]</span><span class="sy0">;</span>
+<span class="kw4">int</span> root<span class="sy0">,</span> total_p<span class="sy0">,</span> <span class="sy0">*</span>receive_array<span class="sy0">;</span>
+ 
+MPI_Comm_size<span class="br0">(</span>comm<span class="sy0">,</span> <span class="sy0">&amp;</span>total_p<span class="br0">)</span><span class="sy0">;</span>
+receive_array<span class="sy0">=</span><span class="kw3">malloc</span><span class="br0">(</span>total_p<span class="sy0">*</span><span class="nu0">100</span><span class="sy0">*</span><span class="kw4">sizeof</span><span class="br0">(</span><span class="sy0">*</span>receive_array<span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+MPI_Gather<span class="br0">(</span>array<span class="sy0">,</span> <span class="nu0">100</span><span class="sy0">,</span> MPI_INT<span class="sy0">,</span> receive_array<span class="sy0">,</span> <span class="nu0">100</span><span class="sy0">,</span> MPI_INT<span class="sy0">,</span> root<span class="sy0">,</span> comm<span class="br0">)</span><span class="sy0">;</span>
+</pre></div>
+</div>
+<p>However, you may instead wish to send data as one block as opposed to 100 ints. To do this define a "contiguous block" derived data type.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+MPI_Datatype newtype<span class="sy0">;</span>
+MPI_Type_contiguous<span class="br0">(</span><span class="nu0">100</span><span class="sy0">,</span> MPI_INT<span class="sy0">,</span> <span class="sy0">&amp;</span>newtype<span class="br0">)</span><span class="sy0">;</span>
+MPI_Type_commit<span class="br0">(</span><span class="sy0">&amp;</span>newtype<span class="br0">)</span><span class="sy0">;</span>
+MPI_Gather<span class="br0">(</span>array<span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> newtype<span class="sy0">,</span> receive_array<span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> newtype<span class="sy0">,</span> root<span class="sy0">,</span> comm<span class="br0">)</span><span class="sy0">;</span>
+</pre></div>
+</div>
+<p>Passing a class or a data structure cannot use a predefined data type. MPI_Type_create_struct creates an MPI derived data type from MPI_predefined data types, as follows:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+<span class="kw4">int</span> MPI_Type_create_struct<span class="br0">(</span><span class="kw4">int</span> count<span class="sy0">,</span> <span class="kw4">int</span> blocklen<span class="br0">[</span><span class="br0">]</span><span class="sy0">,</span> MPI_Aint disp<span class="br0">[</span><span class="br0">]</span><span class="sy0">,</span>
+  MPI_Datatype type<span class="br0">[</span><span class="br0">]</span><span class="sy0">,</span> MPI_Datatype <span class="sy0">*</span>newtype<span class="br0">)</span>
+</pre></div>
+</div>
+<p>where count is a number of blocks, also number of entries in blocklen[], disp[], and type[]:</p>
+<ul>
+<li>blocklen[] — number of elements in each block (array of integer)</li>
+<li>disp[] — byte displacement of each block (array of integer)</li>
+<li>type[] — type of elements in each block (array of handles to datatype objects).</li>
+</ul>
+<p>The disp[] array is needed because processors require the variables to be aligned a specific way on the memory. For example, Char is one byte and can go anywhere on the memory. Short is 2 bytes, so it goes to even memory addresses. Long is 4 bytes, it goes on locations divisible by 4 and so on. The compiler tries to accommodate this architecture in a class or data structure by padding the variables. The safest way to find the distance between different variables in a data structure is by obtaining their addresses with MPI_Get_address. This function calculates the displacement of all the structure's elements from the start of the data structure.</p>
+<p>Given the following data structures:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+  <span class="kw4">typedef</span> <span class="kw4">struct</span><span class="br0">{</span>
+     <span class="kw4">int</span> f<span class="sy0">;</span>
+     <span class="kw4">short</span> p<span class="sy0">;</span>
+   <span class="br0">}</span> A<span class="sy0">;</span>
+ 
+  <span class="kw4">typedef</span> <span class="kw4">struct</span><span class="br0">{</span>
+    A a<span class="sy0">;</span>
+    <span class="kw4">int</span> pp<span class="sy0">,</span>vp<span class="sy0">;</span>
+   <span class="br0">}</span> B<span class="sy0">;</span>
+</pre></div>
+</div>
+<p>Here's the C code for building an MPI-derived data type:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+<span class="kw4">void</span> define_MPI_datatype<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+ 
+  <span class="co1">//The first and last elements mark the beg and end of data structure</span>
+  <span class="kw4">int</span> blocklen<span class="br0">[</span><span class="nu0">6</span><span class="br0">]</span><span class="sy0">=</span><span class="br0">{</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">}</span><span class="sy0">;</span>
+  MPI_Aint disp<span class="br0">[</span><span class="nu0">6</span><span class="br0">]</span><span class="sy0">;</span>
+  MPI_Datatype newtype<span class="sy0">;</span>
+  MPI_Datatype type<span class="br0">[</span><span class="nu0">6</span><span class="br0">]</span><span class="sy0">=</span><span class="br0">{</span>MPI_LB<span class="sy0">,</span> MPI_INT<span class="sy0">,</span> MPI_SHORT<span class="sy0">,</span> MPI_INT<span class="sy0">,</span> MPI_INT<span class="sy0">,</span> MPI_UB<span class="br0">}</span><span class="sy0">;</span>
+  <span class="co1">//You need an array to establish the upper bound of the data structure</span>
+  B findsize<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="sy0">;</span>
+  MPI_Aint findsize_addr<span class="sy0">,</span> a_addr<span class="sy0">,</span> f_addr<span class="sy0">,</span> p_addr<span class="sy0">,</span> pp_addr<span class="sy0">,</span> vp_addr<span class="sy0">,</span> UB_addr<span class="sy0">;</span>
+  <span class="kw4">int</span> error<span class="sy0">;</span>
+ 
+  MPI_Get_address<span class="br0">(</span><span class="sy0">&amp;</span>findsize<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="sy0">,</span> <span class="sy0">&amp;</span>findsize_addr<span class="br0">)</span><span class="sy0">;</span>
+  MPI_Get_address<span class="br0">(</span><span class="sy0">&amp;</span><span class="br0">(</span>findsize<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span>.<span class="me1">a</span><span class="sy0">,</span> <span class="sy0">&amp;</span>a_addr<span class="br0">)</span><span class="sy0">;</span>
+  MPI_Get_address<span class="br0">(</span><span class="sy0">&amp;</span><span class="br0">(</span><span class="br0">(</span>findsize<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span>.<span class="me1">a</span><span class="br0">)</span>.<span class="me1">f</span><span class="sy0">,</span> <span class="sy0">&amp;</span>f_addr<span class="br0">)</span><span class="sy0">;</span>
+  MPI_Get_address<span class="br0">(</span><span class="sy0">&amp;</span><span class="br0">(</span><span class="br0">(</span>findsize<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span>.<span class="me1">a</span><span class="br0">)</span>.<span class="me1">p</span><span class="sy0">,</span> <span class="sy0">&amp;</span>p_addr<span class="br0">)</span><span class="sy0">;</span>
+  MPI_Get_address<span class="br0">(</span><span class="sy0">&amp;</span><span class="br0">(</span>findsize<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span>.<span class="me1">pp</span><span class="sy0">,</span> <span class="sy0">&amp;</span>pp_addr<span class="br0">)</span><span class="sy0">;</span>
+  MPI_Get_address<span class="br0">(</span><span class="sy0">&amp;</span><span class="br0">(</span>findsize<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span>.<span class="me1">vp</span><span class="sy0">,</span> <span class="sy0">&amp;</span>vp_addr<span class="br0">)</span><span class="sy0">;</span>
+  MPI_Get_address<span class="br0">(</span><span class="sy0">&amp;</span>findsize<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="sy0">,&amp;</span>UB_addr<span class="br0">)</span><span class="sy0">;</span>
+ 
+  disp<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="sy0">=</span>a_addr<span class="sy0">-</span>findsize_addr<span class="sy0">;</span>
+  disp<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="sy0">=</span>f_addr<span class="sy0">-</span>findsize_addr<span class="sy0">;</span>
+  disp<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="sy0">=</span>p_addr<span class="sy0">-</span>findsize_addr<span class="sy0">;</span>
+  disp<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy0">=</span>pp_addr<span class="sy0">-</span>findsize_addr<span class="sy0">;</span>
+  disp<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span><span class="sy0">=</span>vp_addr<span class="sy0">-</span>findsize_addr<span class="sy0">;</span>
+  disp<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="sy0">=</span>UB_addr<span class="sy0">-</span>findsize_addr<span class="sy0">;</span>
+ 
+  error<span class="sy0">=</span>MPI_Type_create_struct<span class="br0">(</span><span class="nu0">6</span><span class="sy0">,</span> blocklen<span class="sy0">,</span> disp<span class="sy0">,</span> type<span class="sy0">,</span> <span class="sy0">&amp;</span>newtype<span class="br0">)</span><span class="sy0">;</span>
+  MPI_Type_commit<span class="br0">(</span><span class="sy0">&amp;</span>newtype<span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="MPI-2_concepts">MPI-2 concepts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=9" title="Edit section: MPI-2 concepts">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="One-sided_communication">One-sided communication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=10" title="Edit section: One-sided communication">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>MPI-2 defines three one-sided communications operations, Put, Get, and Accumulate, being a write to remote memory, a read from remote memory, and a reduction operation on the same memory across a number of tasks, respectively. Also defined are three different methods to synchronize this communication (global, pairwise, and remote locks) as the specification does not guarantee that these operations have taken place until a synchronization point.</p>
+<p>These types of call can often be useful for algorithms in which synchronization would be inconvenient (e.g. distributed <a href="/wiki/Matrix_multiplication" title="Matrix multiplication">matrix multiplication</a>), or where it is desirable for tasks to be able to balance their load while other processors are operating on data.</p>
+<h3><span class="mw-headline" id="Collective_extensions">Collective extensions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=11" title="Edit section: Collective extensions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This section needs to be developed.</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-content" role="presentation">
+<tr>
+<td class="mbox-image"><a href="/wiki/File:Wiki_letter_w_cropped.svg" class="image"><img alt="[icon]" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/20px-Wiki_letter_w_cropped.svg.png" width="20" height="14" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/30px-Wiki_letter_w_cropped.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/40px-Wiki_letter_w_cropped.svg.png 2x" data-file-width="44" data-file-height="31" /></a></td>
+<td class="mbox-text"><span class="mbox-text-span">This section requires <a class="external text" href="//en.wikipedia.org/w/index.php?title=Message_Passing_Interface&amp;action=edit">expansion</a>. <small><i>(June 2008)</i></small></span></td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Dynamic_process_management">Dynamic process management</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=12" title="Edit section: Dynamic process management">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The key aspect is "the ability of an MPI process to participate in the creation of new MPI processes or to establish communication with MPI processes that have been started separately." The MPI-2 specification describes three main interfaces by which MPI processes can dynamically establish communications, MPI_Comm_spawn, MPI_Comm_accept/MPI_Comm_connect and MPI_Comm_join. The MPI_Comm_spawn interface allows an MPI process to spawn a number of instances of the named MPI process. The newly spawned set of MPI processes form a new MPI_COMM_WORLD intracommunicator but can communicate with the parent and the intercommunicator the function returns. MPI_Comm_spawn_multiple is an alternate interface that allows the different instances spawned to be different binaries with different arguments.<sup id="cite_ref-Gropp99adv-p7_7-0" class="reference"><a href="#cite_note-Gropp99adv-p7-7"><span>[</span>7<span>]</span></a></sup></p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-content" role="presentation">
+<tr>
+<td class="mbox-image"><a href="/wiki/File:Wiki_letter_w_cropped.svg" class="image"><img alt="[icon]" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/20px-Wiki_letter_w_cropped.svg.png" width="20" height="14" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/30px-Wiki_letter_w_cropped.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/40px-Wiki_letter_w_cropped.svg.png 2x" data-file-width="44" data-file-height="31" /></a></td>
+<td class="mbox-text"><span class="mbox-text-span">This section requires <a class="external text" href="//en.wikipedia.org/w/index.php?title=Message_Passing_Interface&amp;action=edit">expansion</a>. <small><i>(June 2008)</i></small></span></td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="I.2FO">I/O</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=13" title="Edit section: I/O">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The parallel I/O feature is sometimes called MPI-IO,<sup id="cite_ref-Gropp99adv-pp5-6_8-0" class="reference"><a href="#cite_note-Gropp99adv-pp5-6-8"><span>[</span>8<span>]</span></a></sup> and refers to a set of functions designed to abstract I/O management on distributed systems to MPI, and allow files to be easily accessed in a patterned way using the existing derived datatype functionality.</p>
+<p>The little research that has been done on this feature indicates the difficulty for good performance. For example, some implementations of sparse matrix-vector multiplications using the MPI I/O library are disastrously inefficient.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>9<span>]</span></a></sup></p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-content" role="presentation">
+<tr>
+<td class="mbox-image"><a href="/wiki/File:Wiki_letter_w_cropped.svg" class="image"><img alt="[icon]" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/20px-Wiki_letter_w_cropped.svg.png" width="20" height="14" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/30px-Wiki_letter_w_cropped.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/40px-Wiki_letter_w_cropped.svg.png 2x" data-file-width="44" data-file-height="31" /></a></td>
+<td class="mbox-text"><span class="mbox-text-span">This section requires <a class="external text" href="//en.wikipedia.org/w/index.php?title=Message_Passing_Interface&amp;action=edit">expansion</a>. <small><i>(June 2008)</i></small></span></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Implementations">Implementations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=14" title="Edit section: Implementations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id=".27Classical.27_cluster_and_supercomputer_implementations">'Classical' cluster and supercomputer implementations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=15" title="Edit section: &#039;Classical&#039; cluster and supercomputer implementations">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The MPI implementation language is not constrained to match the language or languages it seeks to support at runtime. Most implementations combine C, C++ and assembly language, and target C, C++, and Fortran programmers. Bindings are available for many other languages, including Perl, Python, R, Ruby, Java, CL.</p>
+<p>The initial implementation of the MPI 1.x standard was <a href="/wiki/MPICH" title="MPICH">MPICH</a>, from <a href="/wiki/Argonne_National_Laboratory" title="Argonne National Laboratory">Argonne National Laboratory</a> (ANL) and <a href="/wiki/Mississippi_State_University" title="Mississippi State University">Mississippi State University</a>. <a href="/wiki/IBM" title="IBM">IBM</a> also was an early implementor, and most early 90s <a href="/wiki/Supercomputer" title="Supercomputer">supercomputer</a> companies either commercialized MPICH, or built their own implementation. <a href="/wiki/LAM/MPI" title="LAM/MPI">LAM/MPI</a> from <a href="/wiki/Ohio_Supercomputer_Center" title="Ohio Supercomputer Center">Ohio Supercomputer Center</a> was another early open implementation. ANL has continued developing MPICH for over a decade, and now offers MPICH 2, implementing the MPI-2.1 standard. LAM/MPI and a number of other MPI efforts recently merged to form <a href="/wiki/Open_MPI" title="Open MPI">Open MPI</a>. Many other efforts are derivatives of MPICH, LAM, and other works, including, but not limited to, commercial implementations from <a href="/wiki/HP" title="HP" class="mw-redirect">HP</a>, <a href="/wiki/Intel" title="Intel">Intel</a>, and <a href="/wiki/Microsoft" title="Microsoft">Microsoft</a>.</p>
+<h3><span class="mw-headline" id="Python">Python</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=16" title="Edit section: Python">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>MPI Python implementations include: <a href="/wiki/PyMPI" title="PyMPI">pyMPI</a>, mpi4py,<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>10<span>]</span></a></sup> pypar,<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span>[</span>11<span>]</span></a></sup> MYMPI,<sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span>[</span>12<span>]</span></a></sup> and the MPI submodule in <a href="/wiki/ScientificPython" title="ScientificPython">ScientificPython</a>. pyMPI is notable because it is a variant python interpreter, while pypar, MYMPI, and ScientificPython's module are import modules. They make it the coder's job to decide where the call to MPI_Init belongs. Recently the well known <a href="/wiki/Boost_C%2B%2B_Libraries" title="Boost C++ Libraries" class="mw-redirect">Boost C++ Libraries</a> acquired Boost:MPI which included the MPI Python Bindings.<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span>[</span>13<span>]</span></a></sup> This is of particular help for mixing C++ and Python.</p>
+<h3><span class="mw-headline" id="OCaml">OCaml</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=17" title="Edit section: OCaml">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The OCamlMPI Module<sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span>[</span>14<span>]</span></a></sup> implements a large subset of MPI functions and is in active use in scientific computing. An eleven thousand line OCaml program was "MPI-ified" using the module, with an additional 500 lines of code and slight restructuring and ran with excellent results on up to 170 nodes in a supercomputer.<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span>[</span>15<span>]</span></a></sup></p>
+<h3><span class="mw-headline" id="Java">Java</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=18" title="Edit section: Java">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Although Java does not have an official MPI binding, several groups attempt to bridge the two, with different degrees of success and compatibility. One of the first attempts was Bryan Carpenter's mpiJava,<sup id="cite_ref-16" class="reference"><a href="#cite_note-16"><span>[</span>16<span>]</span></a></sup> essentially a set of <a href="/wiki/Java_Native_Interface" title="Java Native Interface">Java Native Interface</a> (JNI) wrappers to a local C MPI library, resulting in a hybrid implementation with limited portability, which also has to be compiled against the specific MPI library being used.</p>
+<p>However, this original project also defined the mpiJava API<sup id="cite_ref-17" class="reference"><a href="#cite_note-17"><span>[</span>17<span>]</span></a></sup> (a <a href="/wiki/De_facto" title="De facto">de facto</a> MPI <a href="/wiki/API" title="API" class="mw-redirect">API</a> for Java that closely followed the equivalent C++ bindings) which other subsequent Java MPI projects adopted. An alternative, less-used API is MPJ API,<sup id="cite_ref-18" class="reference"><a href="#cite_note-18"><span>[</span>18<span>]</span></a></sup> designed to be more object-oriented and closer to <a href="/wiki/Sun_Microsystems" title="Sun Microsystems">Sun Microsystems</a>' coding conventions. Beyond the API, Java MPI libraries can be either dependent on a local MPI library, or implement the message passing functions in Java, while some like <a href="/w/index.php?title=P2P-MPI&amp;action=edit&amp;redlink=1" class="new" title="P2P-MPI (page does not exist)">P2P-MPI</a> also provide <a href="/wiki/Peer-to-peer" title="Peer-to-peer">peer-to-peer</a> functionality and allow mixed platform operation.</p>
+<p>Some of the most challenging parts of Java/MPI arise from Java characteristics such as the lack of explicit <a href="/wiki/Data_pointer" title="Data pointer" class="mw-redirect">pointers</a> and the linear memory address space for its objects, which make transferring multidimensional arrays and complex objects inefficient. Workarounds usually involve transferring one line at a time and/or performing explicit de-<a href="/wiki/Serialization" title="Serialization">serialization</a> and <a href="/wiki/Cast_(computer_science)" title="Cast (computer science)" class="mw-redirect">casting</a> at both sending and receiving ends, simulating C or Fortran-like arrays by the use of a one-dimensional array, and pointers to primitive types by the use of single-element arrays, thus resulting in programming styles quite far from Java conventions.</p>
+<p>Another Java message passing system is MPJ Express.<sup id="cite_ref-19" class="reference"><a href="#cite_note-19"><span>[</span>19<span>]</span></a></sup> Recent versions can be executed in cluster and multicore configurations. In the cluster configuration, it can execute parallel Java applications on clusters and clouds. Here Java sockets or specialized I/O interconnects like <a href="/wiki/Myrinet" title="Myrinet">Myrinet</a> can support messaging between MPJ Express processes. It can also utilize native C implementation of MPI using its native device. In the multicore configuration, a parallel Java application is executed on multicore processors. In this mode, MPJ Express processes are represented by Java threads.</p>
+<h3><span class="mw-headline" id="Matlab">Matlab</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=19" title="Edit section: Matlab">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>There are a few academic implementations of MPI using Matlab. Matlab has their own parallel extension library implemented using MPI and PVM.</p>
+<h3><span class="mw-headline" id="R">R</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=20" title="Edit section: R">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="/wiki/R_(programming_language)" title="R (programming language)">R</a> implementations of MPI include <a href="/w/index.php?title=Rmpi&amp;action=edit&amp;redlink=1" class="new" title="Rmpi (page does not exist)">Rmpi</a><sup id="cite_ref-20" class="reference"><a href="#cite_note-20"><span>[</span>20<span>]</span></a></sup> and <a href="/wiki/Programming_with_Big_Data_in_R" title="Programming with Big Data in R">pbdMPI</a>,<sup id="cite_ref-21" class="reference"><a href="#cite_note-21"><span>[</span>21<span>]</span></a></sup> where Rmpi focuses on <a href="/wiki/Master/slave_(technology)" title="Master/slave (technology)">manager-workers</a> parallelism while pbdMPI focuses on <a href="/wiki/SPMD" title="SPMD">SPMD</a> parallelism. Both implementations fully support <a href="/wiki/Open_MPI" title="Open MPI">Open MPI</a> or <a href="/wiki/MPICH2" title="MPICH2">MPICH2</a>.</p>
+<h3><span class="mw-headline" id="Common_Language_Infrastructure">Common Language Infrastructure</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=21" title="Edit section: Common Language Infrastructure">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The two managed <a href="/wiki/Common_Language_Infrastructure" title="Common Language Infrastructure">Common Language Infrastructure</a> (CLI) <a href="/wiki/.NET_Framework" title=".NET Framework">.NET</a> implementations are Pure Mpi.NET<sup id="cite_ref-22" class="reference"><a href="#cite_note-22"><span>[</span>22<span>]</span></a></sup> and MPI.NET,<sup id="cite_ref-23" class="reference"><a href="#cite_note-23"><span>[</span>23<span>]</span></a></sup> a research effort at <a href="/wiki/Indiana_University" title="Indiana University">Indiana University</a> licensed under a <a href="/wiki/BSD" title="BSD" class="mw-redirect">BSD</a>-style license. It is compatible with <a href="/wiki/Mono_(software)" title="Mono (software)">Mono</a>, and can make full use of underlying low-latency MPI network fabrics.</p>
+<h3><span class="mw-headline" id="Hardware_implementations">Hardware implementations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=22" title="Edit section: Hardware implementations">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>MPI hardware research focuses on implementing MPI directly in hardware, for example via <a href="/wiki/Processor-in-memory" title="Processor-in-memory" class="mw-redirect">processor-in-memory</a>, building MPI operations into the microcircuitry of the <a href="/wiki/RAM" title="RAM" class="mw-redirect">RAM</a> chips in each node. By implication, this approach is independent of the language, OS or CPU, but cannot be readily updated or removed.</p>
+<p>Another approach has been to add hardware acceleration to one or more parts of the operation, including hardware processing of MPI queues and using <a href="/wiki/Remote_direct_memory_access" title="Remote direct memory access">RDMA</a> to directly transfer data between memory and the network interface without CPU or OS kernel intervention.</p>
+<h3><span class="mw-headline" id="mpicc">mpicc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=23" title="Edit section: mpicc">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b>mpicc</b> is a program which helps the programmer to use a standard <a href="/wiki/C_programming_language" title="C programming language" class="mw-redirect">C programming language</a> <a href="/wiki/Compiler" title="Compiler">compiler</a> together with the Message Passing Interface (MPI) libraries, most commonly the <a href="/wiki/OpenMPI" title="OpenMPI" class="mw-redirect">OpenMPI</a> implementation which is found in many <a href="/wiki/TOP-500" title="TOP-500" class="mw-redirect">TOP-500</a> <a href="/wiki/Supercomputer" title="Supercomputer">supercomputers</a>, for the purpose of producing <a href="/wiki/Parallel_processing" title="Parallel processing">parallel processing</a> programs to run over <a href="/wiki/Computer_cluster" title="Computer cluster">computer clusters</a> (often <a href="/wiki/Beowulf_cluster" title="Beowulf cluster">Beowulf clusters</a>). The mpicc program uses a programmer's preferred C compiler and takes care of linking it with the MPI libraries.<sup id="cite_ref-24" class="reference"><a href="#cite_note-24"><span>[</span>24<span>]</span></a></sup><sup id="cite_ref-25" class="reference"><a href="#cite_note-25"><span>[</span>25<span>]</span></a></sup></p>
+<h2><span class="mw-headline" id="Example_program">Example program</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=24" title="Edit section: Example program">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Here is a "Hello World" program in MPI written in C. In this example, we send a "hello" message to each processor, manipulate it trivially, return the results to the main process, and print the messages.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+ <span class="coMULTI">/*
+  "Hello World" MPI Test Program
+ */</span>
+ <span class="co2">#include &lt;mpi.h&gt;</span>
+ <span class="co2">#include &lt;stdio.h&gt;</span>
+ <span class="co2">#include &lt;string.h&gt;</span>
+ 
+ <span class="co2">#define BUFSIZE 128</span>
+ <span class="co2">#define TAG 0</span>
+ 
+ <span class="kw4">int</span> main<span class="br0">(</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">[</span><span class="br0">]</span><span class="br0">)</span>
+ <span class="br0">{</span>
+   <span class="kw4">char</span> idstr<span class="br0">[</span><span class="nu0">32</span><span class="br0">]</span><span class="sy0">;</span>
+   <span class="kw4">char</span> buff<span class="br0">[</span>BUFSIZE<span class="br0">]</span><span class="sy0">;</span>
+   <span class="kw4">int</span> numprocs<span class="sy0">;</span>
+   <span class="kw4">int</span> myid<span class="sy0">;</span>
+   <span class="kw4">int</span> i<span class="sy0">;</span>
+   MPI_Status stat<span class="sy0">;</span>
+   <span class="coMULTI">/* MPI programs start with MPI_Init; all 'N' processes exist thereafter */</span>
+   MPI_Init<span class="br0">(</span><span class="sy0">&amp;</span>argc<span class="sy0">,&amp;</span>argv<span class="br0">)</span><span class="sy0">;</span>
+   <span class="coMULTI">/* find out how big the SPMD world is */</span>
+   MPI_Comm_size<span class="br0">(</span>MPI_COMM_WORLD<span class="sy0">,&amp;</span>numprocs<span class="br0">)</span><span class="sy0">;</span>
+   <span class="coMULTI">/* and this processes' rank is */</span>
+   MPI_Comm_rank<span class="br0">(</span>MPI_COMM_WORLD<span class="sy0">,&amp;</span>myid<span class="br0">)</span><span class="sy0">;</span>
+ 
+   <span class="coMULTI">/* At this point, all programs are running equivalently, the rank
+      distinguishes the roles of the programs in the SPMD model, with
+      rank 0 often used specially... */</span>
+   <span class="kw1">if</span><span class="br0">(</span>myid <span class="sy0">==</span> <span class="nu0">0</span><span class="br0">)</span>
+   <span class="br0">{</span>
+     <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"%d: We have %d processors<span class="es1">\n</span>"</span><span class="sy0">,</span> myid<span class="sy0">,</span> numprocs<span class="br0">)</span><span class="sy0">;</span>
+     <span class="kw1">for</span><span class="br0">(</span>i<span class="sy0">=</span><span class="nu0">1</span><span class="sy0">;</span>i<span class="sy0">&lt;</span>numprocs<span class="sy0">;</span>i<span class="sy0">++</span><span class="br0">)</span>
+     <span class="br0">{</span>
+       <span class="kw3">sprintf</span><span class="br0">(</span>buff<span class="sy0">,</span> <span class="st0">"Hello %d! "</span><span class="sy0">,</span> i<span class="br0">)</span><span class="sy0">;</span>
+       MPI_Send<span class="br0">(</span>buff<span class="sy0">,</span> BUFSIZE<span class="sy0">,</span> MPI_CHAR<span class="sy0">,</span> i<span class="sy0">,</span> TAG<span class="sy0">,</span> MPI_COMM_WORLD<span class="br0">)</span><span class="sy0">;</span>
+     <span class="br0">}</span>
+     <span class="kw1">for</span><span class="br0">(</span>i<span class="sy0">=</span><span class="nu0">1</span><span class="sy0">;</span>i<span class="sy0">&lt;</span>numprocs<span class="sy0">;</span>i<span class="sy0">++</span><span class="br0">)</span>
+     <span class="br0">{</span>
+       MPI_Recv<span class="br0">(</span>buff<span class="sy0">,</span> BUFSIZE<span class="sy0">,</span> MPI_CHAR<span class="sy0">,</span> i<span class="sy0">,</span> TAG<span class="sy0">,</span> MPI_COMM_WORLD<span class="sy0">,</span> <span class="sy0">&amp;</span>stat<span class="br0">)</span><span class="sy0">;</span>
+       <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"%d: %s<span class="es1">\n</span>"</span><span class="sy0">,</span> myid<span class="sy0">,</span> buff<span class="br0">)</span><span class="sy0">;</span>
+     <span class="br0">}</span>
+   <span class="br0">}</span>
+   <span class="kw1">else</span>
+   <span class="br0">{</span>
+     <span class="coMULTI">/* receive from rank 0: */</span>
+     MPI_Recv<span class="br0">(</span>buff<span class="sy0">,</span> BUFSIZE<span class="sy0">,</span> MPI_CHAR<span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> TAG<span class="sy0">,</span> MPI_COMM_WORLD<span class="sy0">,</span> <span class="sy0">&amp;</span>stat<span class="br0">)</span><span class="sy0">;</span>
+     <span class="kw3">sprintf</span><span class="br0">(</span>idstr<span class="sy0">,</span> <span class="st0">"Processor %d "</span><span class="sy0">,</span> myid<span class="br0">)</span><span class="sy0">;</span>
+     <span class="kw3">strncat</span><span class="br0">(</span>buff<span class="sy0">,</span> idstr<span class="sy0">,</span> BUFSIZE<span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+     <span class="kw3">strncat</span><span class="br0">(</span>buff<span class="sy0">,</span> <span class="st0">"reporting for duty"</span><span class="sy0">,</span> BUFSIZE<span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+     <span class="coMULTI">/* send to rank 0: */</span>
+     MPI_Send<span class="br0">(</span>buff<span class="sy0">,</span> BUFSIZE<span class="sy0">,</span> MPI_CHAR<span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> TAG<span class="sy0">,</span> MPI_COMM_WORLD<span class="br0">)</span><span class="sy0">;</span>
+   <span class="br0">}</span>
+ 
+   <span class="coMULTI">/* MPI programs end with MPI Finalize; this is a weak synchronization point */</span>
+   MPI_Finalize<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+   <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+ <span class="br0">}</span>
+</pre></div>
+</div>
+<p>When run with two processors this gives the following output.<sup id="cite_ref-26" class="reference"><a href="#cite_note-26"><span>[</span>26<span>]</span></a></sup></p>
+<pre>
+0: We have 2 processors
+0: Hello 1! Processor 1 reporting for duty
+
+</pre>
+<p>The runtime environment for the MPI implementation used (often called mpirun or mpiexec) spawns multiple copies of the program, with the total number of copies determining the number of process <i>ranks</i> in MPI_COMM_WORLD, which is an opaque descriptor for communication between the set of processes. A single process, multiple data (<a href="/wiki/SPMD" title="SPMD">SPMD</a>) programming model is thereby facilitated, but not required; many MPI implementations allow multiple, different, executables to be started in the same MPI job. Each process has its own rank, the total number of processes in the world, and the ability to communicate between them either with point-to-point (send/receive) communication, or by collective communication among the group. It is enough for MPI to provide an SPMD-style program with MPI_COMM_WORLD, its own rank, and the size of the world to allow algorithms to decide what to do. In more realistic situations, I/O is more carefully managed than in this example. MPI does not guarantee how <a href="/wiki/POSIX" title="POSIX">POSIX</a> I/O would actually work on a given system, but it commonly does work, at least from rank 0.</p>
+<p>MPI uses the notion of process rather than processor. Program copies are <i>mapped</i> to processors by the MPI runtime. In that sense, the parallel machine can map to 1 physical processor, or N where N is the total number of processors available, or something in between. For maximum parallel speedup, more physical processors are used. This example adjusts its behavior to the size of the world N, so it also seeks to scale to the runtime configuration without compilation for each size variation, although runtime decisions might vary depending on that absolute amount of concurrency available.</p>
+<h2><span class="mw-headline" id="MPI-2_adoption">MPI-2 adoption</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=25" title="Edit section: MPI-2 adoption">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Adoption of MPI-1.2 has been universal, particularly in cluster computing, but acceptance of MPI-2.1 has been more limited. Issues include:</p>
+<ol>
+<li>MPI-2 implementations include I/O and dynamic process management, and the size of the middleware is substantially larger. Most sites that use batch scheduling systems cannot support dynamic process management. MPI-2's parallel I/O is well accepted.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (January 2011)">citation needed</span></a></i>]</sup></li>
+<li>Many MPI-1.2 programs were developed before MPI-2. Portability concerns initially slowed, although wider support has lessened this.</li>
+<li>Many MPI-1.2 applications use only a subset of that standard (16-25 functions) with no real need for MPI-2 functionality.</li>
+</ol>
+<h2><span class="mw-headline" id="Future">Future</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=26" title="Edit section: Future">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Some aspects of MPI's future appear solid; others less so. The <a href="/w/index.php?title=MPI_Forum&amp;action=edit&amp;redlink=1" class="new" title="MPI Forum (page does not exist)">MPI Forum</a> reconvened in 2007, to clarify some MPI-2 issues and explore developments for a possible MPI-3.</p>
+<p>Like Fortran, MPI is ubiquitous in technical computing, and it is taught and used widely.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (May 2010)">citation needed</span></a></i>]</sup></p>
+<p>Architectures are changing, with greater internal concurrency (multi-core), better fine-grain concurrency control (threading, affinity), and more levels of memory hierarchy. <a href="/wiki/Multithreaded" title="Multithreaded" class="mw-redirect">Multithreaded</a> programs can take advantage of these developments more easily than single threaded applications. This has already yielded separate, complementary standards for <a href="/wiki/Symmetric_multiprocessing" title="Symmetric multiprocessing">symmetric multiprocessing</a>, namely <a href="/wiki/OpenMP" title="OpenMP">OpenMP</a>. MPI-2 defines how standard-conforming implementations should deal with multithreaded issues, but does not require that implementations be multithreaded, or even thread safe. Few multithreaded-capable MPI implementations exist. Multi-level concurrency completely within MPI is an opportunity for the standard.</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=27" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="div-col columns column-width" style="-moz-column-width: 25em; -webkit-column-width: 25em; column-width: 25em;">
+<ul>
+<li><a href="/wiki/MPICH" title="MPICH">MPICH</a></li>
+<li><a href="/wiki/Open_MPI" title="Open MPI">Open MPI</a></li>
+<li><a href="/wiki/OpenMP" title="OpenMP">OpenMP</a></li>
+<li><a href="/wiki/OpenHMPP" title="OpenHMPP">OpenHMPP</a> <a rel="nofollow" class="external text" href="http://www.openhmpp.org">HPC Open Standard for Manycore Programming</a></li>
+<li><a href="/wiki/Microsoft_Messaging_Passing_Interface" title="Microsoft Messaging Passing Interface">Microsoft Messaging Passing Interface</a></li>
+<li><a href="/wiki/Global_Arrays" title="Global Arrays">Global Arrays</a></li>
+<li><a href="/wiki/Unified_Parallel_C" title="Unified Parallel C">Unified Parallel C</a></li>
+<li><a href="/wiki/Co-array_Fortran" title="Co-array Fortran" class="mw-redirect">Co-array Fortran</a></li>
+<li><a href="/wiki/Occam_(programming_language)" title="Occam (programming language)">occam (programming language)</a></li>
+<li><a href="/wiki/Linda_(coordination_language)" title="Linda (coordination language)">Linda (coordination language)</a></li>
+<li><a href="/wiki/X10_(programming_language)" title="X10 (programming language)">X10 (programming language)</a></li>
+<li><a href="/wiki/Parallel_Virtual_Machine" title="Parallel Virtual Machine">Parallel Virtual Machine</a></li>
+<li><a href="/wiki/Calculus_of_communicating_systems" title="Calculus of communicating systems">Calculus of communicating systems</a></li>
+<li><a href="/wiki/Calculus_of_Broadcasting_Systems" title="Calculus of Broadcasting Systems">Calculus of Broadcasting Systems</a></li>
+<li><a href="/wiki/Actor_model" title="Actor model">Actor model</a></li>
+<li><a href="/wiki/Allinea_Distributed_Debugging_Tool" title="Allinea Distributed Debugging Tool">DDT</a> Debugging tool for MPI programs</li>
+<li><a href="/wiki/Bulk_Synchronous_Parallel" title="Bulk Synchronous Parallel" class="mw-redirect">Bulk Synchronous Parallel</a> BSP Programming</li>
+<li><a href="/wiki/Partitioned_global_address_space" title="Partitioned global address space">Partitioned global address space</a></li>
+<li><a href="/wiki/Caltech_Cosmic_Cube" title="Caltech Cosmic Cube">Caltech Cosmic Cube</a></li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=28" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist columns references-column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><a href="#CITEREFGroppLuskSkjellum1996">Gropp, Lusk &amp; Skjellum 1996</a>, p.&#160;3</span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://portal.acm.org/citation.cfm?id=1188565">High-performance and scalable MPI over InfiniBand with reduced memory usage</a></span></li>
+<li id="cite_note-SC94-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-SC94_3-0">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://hpc.sagepub.com/content/8/3-4.toc">Table of Contents — September 1994, 8 (3-4)</a>. Hpc.sagepub.com. Retrieved on 2014-03-24.</span></li>
+<li id="cite_note-MPI_Docs-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-MPI_Docs_4-0">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.mpi-forum.org/docs/">MPI Documents</a>. Mpi-forum.org. Retrieved on 2014-03-24.</span></li>
+<li id="cite_note-Gropp99adv-pp4-5-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-Gropp99adv-pp4-5_5-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFGroppLuskSkjellum1999b">Gropp, Lusk &amp; Skjellum 1999b</a>, pp.&#160;4–5</span></li>
+<li id="cite_note-MPI_3.0-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-MPI_3.0_6-0">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.mpi-forum.org/docs/mpi-3.0/mpi30-report.pdf">MPI: A Message-Passing Interface Standard<br />
+Version 3.0, Message Passing Interface Forum, September 21, 2012</a>. <a rel="nofollow" class="external free" href="http://www.mpi-forum.org">http://www.mpi-forum.org</a>. Retrieved on 2014-06-28.</span></li>
+<li id="cite_note-Gropp99adv-p7-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-Gropp99adv-p7_7-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFGroppLuskSkjelling1999b">Gropp, Lusk &amp; Skjelling 1999b</a>, p.&#160;7</span></li>
+<li id="cite_note-Gropp99adv-pp5-6-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-Gropp99adv-pp5-6_8-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFGroppLuskSkjelling1999b">Gropp, Lusk &amp; Skjelling 1999b</a>, pp.&#160;5–6</span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.phys.uu.nl/~hulten/mod3a/report.ps">Sparse matrix-vector multiplications using the MPI I/O library</a></span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://code.google.com/p/mpi4py/">mpi4py</a></span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://code.google.com/p/pypar/">pypar</a></span></li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-12">^</a></b></span> <span class="reference-text">Now part of <a rel="nofollow" class="external text" href="http://sourceforge.net/projects/pydusa/">Pydusa</a></span></li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.boost.org/doc/libs/1_35_0/doc/html/mpi/python.html">Boost:MPI Python Bindings</a></span></li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://cristal.inria.fr/~xleroy/software.html#ocamlmpi">OCamlMPI Module</a></span></li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://caml.inria.fr/pub/ml-archives/caml-list/2003/07/155910c4eeb09e684f02ea4ae342873b.en.html">Archives of the Caml mailing list &gt; Message from Yaron M. Minsky</a>. Caml.inria.fr (2003-07-15). Retrieved on 2014-03-24.</span></li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-16">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.hpjava.org/mpiJava.html">mpiJava</a></span></li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-17">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.hpjava.org/theses/shko/thesis_paper/node33.html">mpiJava API</a></span></li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><b><a href="#cite_ref-18">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.hpjava.org/papers/MPJ-CPE/cpempi/node6.html">MPJ API</a></span></li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><b><a href="#cite_ref-19">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://mpj-express.org/">MPJ Express</a></span></li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><b><a href="#cite_ref-20">^</a></b></span> <span class="reference-text"><span class="citation journal">Yu, H. (2002). <a rel="nofollow" class="external text" href="http://cran.r-project.org/package=Rmpi">"Rmpi: Parallel Statistical Computing in R"</a>. <i>R News</i>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMessage+Passing+Interface&amp;rft.atitle=Rmpi%3A+Parallel+Statistical+Computing+in+R&amp;rft.aulast=Yu%2C+H.&amp;rft.au=Yu%2C+H.&amp;rft.date=2002&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fcran.r-project.org%2Fpackage%3DRmpi&amp;rft.jtitle=R+News&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><b><a href="#cite_ref-21">^</a></b></span> <span class="reference-text"><span class="citation web">Chen, W.-C., Ostrouchov, G., Schmidt, D., Patel, P., and Yu, H. (2012). <a rel="nofollow" class="external text" href="http://cran.r-project.org/package=pbdMPI">"pbdMPI: Programming with Big Data -- Interface to MPI"</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMessage+Passing+Interface&amp;rft.au=Chen%2C+W.-C.%2C+Ostrouchov%2C+G.%2C+Schmidt%2C+D.%2C+Patel%2C+P.%2C+and+Yu%2C+H.&amp;rft.aulast=Chen%2C+W.-C.%2C+Ostrouchov%2C+G.%2C+Schmidt%2C+D.%2C+Patel%2C+P.%2C+and+Yu%2C+H.&amp;rft.btitle=pbdMPI%3A+Programming+with+Big+Data+--+Interface+to+MPI&amp;rft.date=2012&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fcran.r-project.org%2Fpackage%3DpbdMPI&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><b><a href="#cite_ref-22">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.purempi.net">Pure Mpi.NET</a></span></li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><b><a href="#cite_ref-23">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.osl.iu.edu/research/mpi.net/">MPI.NET</a></span></li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><b><a href="#cite_ref-24">^</a></b></span> <span class="reference-text">Woodman, Lawrence. (2009-12-02) <a rel="nofollow" class="external text" href="http://techtinkering.com/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/">Setting up a Beowulf Cluster Using Open MPI on Linux</a>. Techtinkering.com. Retrieved on 2014-03-24.</span></li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><b><a href="#cite_ref-25">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.mpich.org/static/docs/latest/www1/mpicc.html">mpicc</a>. Mpich.org. Retrieved on 2014-03-24.</span></li>
+<li id="cite_note-26"><span class="mw-cite-backlink"><b><a href="#cite_ref-26">^</a></b></span> <span class="reference-text">Using OpenMPI, compiled with <code>gcc -g -v -I/usr/lib/openmpi/include/ -L/usr/lib/openmpi/include/ wiki_mpi_example.c -lmpi</code> and run with <code>mpirun -np 2 ./a.out</code>.</span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="Further_reading">Further reading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=29" title="Edit section: Further reading">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="div-col columns column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em;">
+<ul>
+<li><span class="citation foldoc">This article is based on material taken from the <a href="/wiki/Free_On-line_Dictionary_of_Computing" title="Free On-line Dictionary of Computing">Free On-line Dictionary of Computing</a> prior to 1 November 2008 and incorporated under the "relicensing" terms of the <a href="/wiki/GNU_Free_Documentation_License" title="GNU Free Documentation License">GFDL</a>, version 1.3 or later.</span></li>
+<li>Aoyama, Yukiya; Nakano, Jun (1999) <i><a rel="nofollow" class="external text" href="http://www.redbooks.ibm.com/abstracts/sg245380.html">RS/6000 SP: Practical MPI Programming</a></i>, ITSO</li>
+<li>Foster, Ian (1995) <i>Designing and Building Parallel Programs (Online)</i> Addison-Wesley <a href="/wiki/Special:BookSources/0201575949" class="internal mw-magiclink-isbn">ISBN 0-201-57594-9</a>, chapter 8 <i><a rel="nofollow" class="external text" href="http://www-unix.mcs.anl.gov/dbpp/text/node94.html#SECTION03500000000000000000">Message Passing Interface</a></i></li>
+</ul>
+<ul>
+<li>Viraj B., Wijesuriya 2010-12-29 <i><a rel="nofollow" class="external text" href="http://www.daniweb.com/forums/post1428830.html#post1428830">Daniweb: Sample Code for Matrix Multiplication using MPI Parallel Programming Approach</a></i></li>
+<li><i>Using MPI</i> series:
+<ul>
+<li><span id="CITEREFGroppLuskSkjellum1994" class="citation book">Gropp, William; Lusk, Ewing; Skjellum, Anthony (1994). <a rel="nofollow" class="external text" href="http://www-unix.mcs.anl.gov/mpi/usingmpi/usingmpi-1st/index.html"><i>Using MPI: portable parallel programming with the message-passing interface</i></a>. Cambridge, MA, USA: <a href="/wiki/MIT_Press" title="MIT Press">MIT Press</a> Scientific And Engineering Computation Series. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-262-57104-8" title="Special:BookSources/0-262-57104-8">0-262-57104-8</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMessage+Passing+Interface&amp;rft.aufirst=William&amp;rft.au=Gropp%2C+William&amp;rft.aulast=Gropp&amp;rft.au=Lusk%2C+Ewing&amp;rft.au=Skjellum%2C+Anthony&amp;rft.btitle=Using+MPI%3A+portable+parallel+programming+with+the+message-passing+interface&amp;rft.date=1994&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww-unix.mcs.anl.gov%2Fmpi%2Fusingmpi%2Fusingmpi-1st%2Findex.html&amp;rft.isbn=0-262-57104-8&amp;rft.place=Cambridge%2C+MA%2C+USA&amp;rft.pub=MIT+Press+Scientific+And+Engineering+Computation+Series&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="CITEREFGroppLuskSkjellum1999a" class="citation book">Gropp, William; Lusk, Ewing; Skjellum, Anthony (1999a). <a rel="nofollow" class="external text" href="http://mitpress.mit.edu/book-home.tcl?isbn=0262571323"><i>Using MPI, 2nd Edition: Portable Parallel Programming with the Message Passing Interface</i></a>. Cambridge, MA, USA: <a href="/wiki/MIT_Press" title="MIT Press">MIT Press</a> Scientific And Engineering Computation Series. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/978-0-262-57132-6" title="Special:BookSources/978-0-262-57132-6">978-0-262-57132-6</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMessage+Passing+Interface&amp;rft.aufirst=William&amp;rft.au=Gropp%2C+William&amp;rft.aulast=Gropp&amp;rft.au=Lusk%2C+Ewing&amp;rft.au=Skjellum%2C+Anthony&amp;rft.btitle=Using+MPI%2C+2nd+Edition%3A+Portable+Parallel+Programming+with+the+Message+Passing+Interface&amp;rft.date=1999&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fmitpress.mit.edu%2Fbook-home.tcl%3Fisbn%3D0262571323&amp;rft.isbn=978-0-262-57132-6&amp;rft.place=Cambridge%2C+MA%2C+USA&amp;rft.pub=MIT+Press+Scientific+And+Engineering+Computation+Series&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="CITEREFGroppLuskSkjellum1999b" class="citation book">Gropp, William; Lusk, Ewing; Skjellum, Anthony (1999b). <i>Using MPI-2: Advanced Features of the Message Passing Interface</i>. <a href="/wiki/MIT_Press" title="MIT Press">MIT Press</a>. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-262-57133-1" title="Special:BookSources/0-262-57133-1">0-262-57133-1</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMessage+Passing+Interface&amp;rft.aufirst=William&amp;rft.au=Gropp%2C+William&amp;rft.aulast=Gropp&amp;rft.au=Lusk%2C+Ewing&amp;rft.au=Skjellum%2C+Anthony&amp;rft.btitle=Using+MPI-2%3A+Advanced+Features+of+the+Message+Passing+Interface&amp;rft.date=1999&amp;rft.genre=book&amp;rft.isbn=0-262-57133-1&amp;rft.pub=MIT+Press&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+</li>
+<li><span id="CITEREFGroppLuskSkjellum1996" class="citation journal">Gropp, William; Lusk, Ewing; Skjellum, Anthony (1996). "A High-Performance, Portable Implementation of the MPI Message Passing Interface". <i>Parallel Computing</i>. <a href="/wiki/CiteSeer#CiteSeerX" title="CiteSeer">CiteSeerX</a>: <span class="url"><a rel="nofollow" class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.102.9485">10<wbr />.1<wbr />.1<wbr />.102<wbr />.9485</a></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMessage+Passing+Interface&amp;rft.atitle=A+High-Performance%2C+Portable+Implementation+of+the+MPI+Message+Passing+Interface&amp;rft.aufirst=William&amp;rft.au=Gropp%2C+William&amp;rft.aulast=Gropp&amp;rft.au=Lusk%2C+Ewing&amp;rft.au=Skjellum%2C+Anthony&amp;rft.date=1996&amp;rft.genre=article&amp;rft.jtitle=Parallel+Computing&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li>Pacheco, Peter S. (1997) <i><a rel="nofollow" class="external text" href="http://books.google.it/books?&amp;id=tCVkM1z2aOoC">Parallel Programming with MPI</a></i>.<a rel="nofollow" class="external autonumber" href="http://www.cs.usfca.edu/mpi/">[1]</a> 500 pp. Morgan Kaufmann <a href="/wiki/Special:BookSources/1558603395" class="internal mw-magiclink-isbn">ISBN 1-55860-339-5</a>.</li>
+</ul>
+<ul>
+<li><i>MPI—The Complete Reference</i> series:
+<ul>
+<li>Snir, Marc; Otto, Steve; Huss-Lederman, Steven; Walker, David; Dongarra, Jack (1995) <i><a rel="nofollow" class="external text" href="http://www.netlib.org/utk/papers/mpi-book/mpi-book.html">MPI: The Complete Reference</a></i>. MIT Press Cambridge, MA, USA. <a href="/wiki/Special:BookSources/0262692155" class="internal mw-magiclink-isbn">ISBN 0-262-69215-5</a></li>
+<li>M Snir, SW Otto, S Huss-Lederman, DW Walker, J (1998) <i>MPI—The Complete Reference: Volume 1, The MPI Core</i>. MIT Press, Cambridge, MA. <a href="/wiki/Special:BookSources/0262692155" class="internal mw-magiclink-isbn">ISBN 0-262-69215-5</a></li>
+<li>Gropp, William; Steven Huss-Lederman, Andrew Lumsdaine, Ewing Lusk, Bill Nitzberg, William Saphir, and Marc Snir (1998) <i><a rel="nofollow" class="external text" href="http://mitpress.mit.edu/book-home.tcl?isbn=0262571234">MPI—The Complete Reference: Volume 2, The MPI-2 Extensions</a></i>. MIT Press, Cambridge, MA <a href="/wiki/Special:BookSources/9780262571234" class="internal mw-magiclink-isbn">ISBN 978-0-262-57123-4</a></li>
+</ul>
+</li>
+<li>Parallel Processing via MPI &amp; OpenMP, M. Firuziaan, O. Nommensen. Linux Enterprise, 10/2002</li>
+<li>Vanneschi, Marco (1999) <i>Parallel paradigms for scientific computing</i> In Proc. of the European School on Computational Chemistry (1999, Perugia, Italy), number 75 in <i><a rel="nofollow" class="external text" href="http://books.google.com/books?&amp;id=zMqVdFgVnrgC">Lecture Notes in Chemistry</a></i>, pages 170–183. Springer, 2000.</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit&amp;section=30" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="mbox-small plainlinks" style="border:1px solid #aaa;background-color:#f9f9f9">
+<tr>
+<td class="mbox-image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikibooks-logo-en-noslogan.svg/40px-Wikibooks-logo-en-noslogan.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikibooks-logo-en-noslogan.svg/60px-Wikibooks-logo-en-noslogan.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikibooks-logo-en-noslogan.svg/80px-Wikibooks-logo-en-noslogan.svg.png 2x" data-file-width="400" data-file-height="400" /></td>
+<td class="mbox-text plainlist">Wikibooks has a book on the topic of: <i><b><a href="//en.wikibooks.org/wiki/Message-Passing_Interface" class="extiw" title="wikibooks:Message-Passing Interface">Message-Passing Interface</a></b></i></td>
+</tr>
+</table>
+<ul>
+<li><span class="citation web"><a rel="nofollow" class="external text" href="http://www.haberdar.org/#tutorials">"MPI Examples - Message Passing Interface"</a>. Hakan Haberdar, University of Houston<span class="reference-accessdate">. Retrieved October 2012</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMessage+Passing+Interface&amp;rft.btitle=MPI+Examples+-+Message+Passing+Interface&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.haberdar.org%2F%23tutorials&amp;rft.pub=Hakan+Haberdar%2C+University+of+Houston&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><a rel="nofollow" class="external text" href="https://www.dmoz.org/Computers/Parallel_Computing/Programming/Libraries/MPI">Message Passing Interface</a> at <a href="/wiki/DMOZ" title="DMOZ">DMOZ</a></li>
+<li><a rel="nofollow" class="external text" href="http://polaris.cs.uiuc.edu/~padua/cs320/mpi/tutorial.pdf">Tutorial on MPI: The Message-Passing Interface</a> (PDF)</li>
+<li><a rel="nofollow" class="external text" href="http://moss.csc.ncsu.edu/~mueller/cluster/mpi.guide.pdf">A User's Guide to MPI</a> (PDF)</li>
+</ul>
+<table class="navbox" style="border-spacing:0">
+<tr>
+<td style="padding:2px">
+<table class="nowraplinks hlist collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="/wiki/Template:Parallel_computing" title="Template:Parallel computing"><span title="View this template" style=";;background:none transparent;border:none;">v</span></a></li>
+<li class="nv-talk"><a href="/wiki/Template_talk:Parallel_computing" title="Template talk:Parallel computing"><span title="Discuss this template" style=";;background:none transparent;border:none;">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Parallel_computing&amp;action=edit"><span title="Edit this template" style=";;background:none transparent;border:none;">e</span></a></li>
+</ul>
+</div>
+<div style="font-size:110%"><a href="/wiki/Parallel_computing" title="Parallel computing">Parallel computing</a></div>
+</th>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">General</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Cloud_computing" title="Cloud computing">Cloud computing</a></li>
+<li><a href="/wiki/High-performance_computing" title="High-performance computing" class="mw-redirect">High-performance computing</a></li>
+<li><a href="/wiki/Computer_cluster" title="Computer cluster">Cluster computing</a></li>
+<li><a href="/wiki/Distributed_computing" title="Distributed computing">Distributed computing</a></li>
+<li><a href="/wiki/Grid_computing" title="Grid computing">Grid computing</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Levels</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Bit-level_parallelism" title="Bit-level parallelism">Bit</a></li>
+<li><a href="/wiki/Instruction-level_parallelism" title="Instruction-level parallelism">Instruction</a></li>
+<li><a href="/wiki/Data_parallelism" title="Data parallelism">Data</a></li>
+<li><a href="/wiki/Memory-level_parallelism" title="Memory-level parallelism">Memory</a></li>
+<li><a href="/wiki/Task_parallelism" title="Task parallelism">Task</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Multithreading_(computer_architecture)" title="Multithreading (computer architecture)">Multithreading</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Temporal_multithreading" title="Temporal multithreading">Temporal multithreading</a></li>
+<li><a href="/wiki/Simultaneous_multithreading" title="Simultaneous multithreading">Simultaneous multithreading</a>
+<ul>
+<li><a href="/wiki/Hyper-threading" title="Hyper-threading">Hyper-threading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Theory</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Amdahl%27s_law" title="Amdahl's law">Amdahl's law</a></li>
+<li><a href="/wiki/Gustafson%27s_law" title="Gustafson's law">Gustafson's law</a></li>
+<li><a href="/wiki/Cost_efficiency" title="Cost efficiency">Cost efficiency</a></li>
+<li><a href="/wiki/Karp%E2%80%93Flatt_metric" title="Karp–Flatt metric">Karp–Flatt metric</a></li>
+<li><a href="/wiki/Parallel_slowdown" title="Parallel slowdown">slowdown</a></li>
+<li><a href="/wiki/Speedup" title="Speedup">speedup</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Elements</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Process_(computing)" title="Process (computing)">Process</a></li>
+<li><a href="/wiki/Thread_(computing)" title="Thread (computing)">Thread</a></li>
+<li><a href="/wiki/Fiber_(computer_science)" title="Fiber (computer science)">Fiber</a></li>
+<li><a href="/wiki/Parallel_random-access_machine" title="Parallel random-access machine">PRAM</a></li>
+<li><a href="/wiki/Instruction_window" title="Instruction window">Instruction window</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Coordination</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Multiprocessing" title="Multiprocessing">Multiprocessing</a></li>
+<li><a href="/wiki/Memory_coherence" title="Memory coherence">Memory coherency</a></li>
+<li><a href="/wiki/Cache_coherence" title="Cache coherence">Cache coherency</a></li>
+<li><a href="/wiki/Cache_invalidation" title="Cache invalidation">Cache invalidation</a></li>
+<li><a href="/wiki/Barrier_(computer_science)" title="Barrier (computer science)">Barrier</a></li>
+<li><a href="/wiki/Synchronization_(computer_science)" title="Synchronization (computer science)">Synchronization</a></li>
+<li><a href="/wiki/Application_checkpointing" title="Application checkpointing">Application checkpointing</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Computer_programming" title="Computer programming">Programming</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Parallel_programming_model" title="Parallel programming model">Models</a>
+<ul>
+<li><a href="/wiki/Implicit_parallelism" title="Implicit parallelism">Implicit parallelism</a></li>
+<li><a href="/wiki/Explicit_parallelism" title="Explicit parallelism">Explicit parallelism</a></li>
+<li><a href="/wiki/Concurrency_(computer_science)" title="Concurrency (computer science)">Concurrency</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Flynn%27s_taxonomy" title="Flynn's taxonomy">Flynn's taxonomy</a>
+<ul>
+<li><a href="/wiki/SISD" title="SISD">SISD</a></li>
+<li><a href="/wiki/SIMD" title="SIMD">SIMD</a></li>
+<li><a href="/wiki/MISD" title="MISD">MISD</a></li>
+<li><a href="/wiki/MIMD" title="MIMD">MIMD</a>
+<ul>
+<li><a href="/wiki/SPMD" title="SPMD">SPMD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/wiki/Thread_(computing)" title="Thread (computing)">Thread</a></li>
+<li><a href="/wiki/Non-blocking_algorithm" title="Non-blocking algorithm">Non-blocking algorithm</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Computer_hardware" title="Computer hardware">Hardware</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Multiprocessor" title="Multiprocessor" class="mw-redirect">Multiprocessor</a>
+<ul>
+<li><a href="/wiki/Symmetric_multiprocessing" title="Symmetric multiprocessing">Symmetric</a></li>
+<li><a href="/wiki/Asymmetric_multiprocessing" title="Asymmetric multiprocessing">Asymmetric</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Semiconductor_memory" title="Semiconductor memory">Memory</a>
+<ul>
+<li><a href="/wiki/Non-uniform_memory_access" title="Non-uniform memory access">NUMA</a></li>
+<li><a href="/wiki/Cache-only_memory_architecture" title="Cache-only memory architecture">COMA</a></li>
+<li><a href="/wiki/Distributed_memory" title="Distributed memory">distributed</a></li>
+<li><a href="/wiki/Shared_memory" title="Shared memory">shared</a></li>
+<li><a href="/wiki/Distributed_shared_memory" title="Distributed shared memory">distributed shared</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Massively_parallel_(computing)" title="Massively parallel (computing)">MPP</a></li>
+<li><a href="/wiki/Superscalar" title="Superscalar">Superscalar</a></li>
+<li><a href="/wiki/Vector_processor" title="Vector processor">Vector processor</a></li>
+<li><a href="/wiki/Supercomputer" title="Supercomputer">Supercomputer</a></li>
+<li><a href="/wiki/Beowulf_cluster" title="Beowulf cluster">Beowulf cluster</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Application_programming_interface" title="Application programming interface">APIs</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Ateji_PX" title="Ateji PX">Ateji PX</a></li>
+<li><a href="/wiki/POSIX_Threads" title="POSIX Threads">POSIX Threads</a></li>
+<li><a href="/wiki/OpenMP" title="OpenMP">OpenMP</a></li>
+<li><a href="/wiki/OpenHMPP" title="OpenHMPP">OpenHMPP</a></li>
+<li><a href="/wiki/OpenACC" title="OpenACC">OpenACC</a></li>
+<li><a href="/wiki/Parallel_Virtual_Machine" title="Parallel Virtual Machine">PVM</a></li>
+<li><strong class="selflink">MPI</strong></li>
+<li><a href="/wiki/Unified_Parallel_C" title="Unified Parallel C">UPC</a></li>
+<li><a href="/wiki/Threading_Building_Blocks" title="Threading Building Blocks">TBB</a></li>
+<li><a href="/wiki/Boost_(C%2B%2B_libraries)#Multithreading_.E2.80.93_Boost.Thread" title="Boost (C++ libraries)">Boost.Thread</a></li>
+<li><a href="/wiki/Global_Arrays" title="Global Arrays">Global Arrays</a></li>
+<li><a href="/wiki/Charm%2B%2B" title="Charm++">Charm++</a></li>
+<li><a href="/wiki/Cilk" title="Cilk">Cilk</a>/<a href="/wiki/Cilk_Plus" title="Cilk Plus">Cilk Plus</a></li>
+<li><a href="/wiki/Coarray_Fortran" title="Coarray Fortran">Coarray Fortran</a></li>
+<li><a href="/wiki/OpenCL" title="OpenCL">OpenCL</a></li>
+<li><a href="/wiki/CUDA" title="CUDA">CUDA</a></li>
+<li><a href="/wiki/Dryad_(programming)" title="Dryad (programming)">Dryad</a></li>
+<li><a href="/wiki/C%2B%2B_AMP" title="C++ AMP">C++ AMP</a></li>
+<li><a href="/wiki/Parallel_LINQ" title="Parallel LINQ" class="mw-redirect">PLINQ</a></li>
+<li><a href="/wiki/Parallel_Extensions#Task_Parallel_Library" title="Parallel Extensions">TPL</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Problems</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Embarrassingly_parallel" title="Embarrassingly parallel">Embarrassingly parallel</a></li>
+<li><a href="/wiki/Software_lockout" title="Software lockout">Software lockout</a></li>
+<li><a href="/wiki/Scalability" title="Scalability">Scalability</a></li>
+<li><a href="/wiki/Race_condition#Computing" title="Race condition">Race condition</a></li>
+<li><a href="/wiki/Deadlock" title="Deadlock">Deadlock</a></li>
+<li><a href="/wiki/Deadlock#Livelock" title="Deadlock">Livelock</a></li>
+<li><a href="/wiki/Resource_starvation" title="Resource starvation">Starvation</a></li>
+<li><a href="/wiki/Deterministic_algorithm" title="Deterministic algorithm">Deterministic algorithm</a></li>
+<li><a href="/wiki/Parallel_slowdown" title="Parallel slowdown">Parallel slowdown</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<td class="navbox-abovebelow" colspan="2">
+<div>
+<ul>
+<li><img alt="Category" src="//upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/16px-Folder_Hexagonal_Icon.svg.png" width="16" height="14" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/24px-Folder_Hexagonal_Icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/32px-Folder_Hexagonal_Icon.svg.png 2x" data-file-width="36" data-file-height="31" />&#160;<a href="/wiki/Category:Parallel_computing" title="Category:Parallel computing">Category: parallel computing</a></li>
+<li><img alt="" src="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/12px-Commons-logo.svg.png" width="12" height="16" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/18px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/24px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376" /> Media related to <a href="//commons.wikimedia.org/wiki/Category:parallel_computing" class="extiw" title="commons:Category:parallel computing">parallel computing</a> at Wikimedia Commons</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1004
+CPU time usage: 1.728 seconds
+Real time usage: 1.876 seconds
+Preprocessor visited node count: 2731/1000000
+Preprocessor generated node count: 13498/1500000
+Post‐expand include size: 69057/2097152 bytes
+Template argument size: 3960/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 12/500
+Lua time usage: 0.213/10.000 seconds
+Lua memory usage: 2.92 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1343.986      1 - -total
+ 42.22%  567.380      7 - Template:Ambox
+ 33.16%  445.693      1 - Template:Multiple_issues
+ 19.81%  266.288      1 - Template:Reflist
+ 12.69%  170.619     74 - Template:Multiple_issues/message
+  6.25%   83.968      2 - Template:Cite_journal
+  5.72%   76.876      1 - Template:Parallel_Computing
+  5.57%   74.819      2 - Template:Citation_needed
+  5.24%   70.363      1 - Template:Navbox
+  4.89%   65.756      3 - Template:Expand_section
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:221466-0!*!0!!en!4!* and timestamp 20141218060359 and revision id 630542180
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Message_Passing_Interface&amp;oldid=630542180">http://en.wikipedia.org/w/index.php?title=Message_Passing_Interface&amp;oldid=630542180</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Parallel_computing" title="Category:Parallel computing">Parallel computing</a></li><li><a href="/wiki/Category:Application_programming_interfaces" title="Category:Application programming interfaces">Application programming interfaces</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Articles_containing_predictions_or_speculation" title="Category:Articles containing predictions or speculation">Articles containing predictions or speculation</a></li><li><a href="/wiki/Category:Articles_that_may_contain_original_research_from_May_2008" title="Category:Articles that may contain original research from May 2008">Articles that may contain original research from May 2008</a></li><li><a href="/wiki/Category:All_articles_that_may_contain_original_research" title="Category:All articles that may contain original research">All articles that may contain original research</a></li><li><a href="/wiki/Category:Wikipedia_articles_needing_rewrite_from_August_2011" title="Category:Wikipedia articles needing rewrite from August 2011">Wikipedia articles needing rewrite from August 2011</a></li><li><a href="/wiki/Category:Articles_to_be_expanded_from_June_2008" title="Category:Articles to be expanded from June 2008">Articles to be expanded from June 2008</a></li><li><a href="/wiki/Category:All_articles_to_be_expanded" title="Category:All articles to be expanded">All articles to be expanded</a></li><li><a href="/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_January_2011" title="Category:Articles with unsourced statements from January 2011">Articles with unsourced statements from January 2011</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_May_2010" title="Category:Articles with unsourced statements from May 2010">Articles with unsourced statements from May 2010</a></li><li><a href="/wiki/Category:Articles_with_DMOZ_links" title="Category:Articles with DMOZ links">Articles with DMOZ links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Message+Passing+Interface&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Message+Passing+Interface" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Message_Passing_Interface"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="/wiki/Talk:Message_Passing_Interface"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/Message_Passing_Interface" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Message_Passing_Interface&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Message_Passing_Interface" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Message_Passing_Interface" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="/w/index.php?title=Message_Passing_Interface&amp;oldid=630542180" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="/w/index.php?title=Message_Passing_Interface&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="//www.wikidata.org/wiki/Q127879" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Message_Passing_Interface&amp;id=630542180" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Message+Passing+Interface">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Message+Passing+Interface&amp;oldid=630542180&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="/w/index.php?title=Message_Passing_Interface&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ar"><a href="//ar.wikipedia.org/wiki/%D9%88%D8%A7%D8%AC%D9%87%D8%A9_%D8%AA%D9%85%D8%B1%D9%8A%D8%B1_%D8%A7%D9%84%D8%B1%D8%B3%D8%A7%D8%A6%D9%84" title="واجهة تمرير الرسائل – Arabic" lang="ar" hreflang="ar">العربية</a></li>
+													<li class="interlanguage-link interwiki-cs"><a href="//cs.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – Czech" lang="cs" hreflang="cs">Čeština</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="//de.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="//es.wikipedia.org/wiki/Interfaz_de_Paso_de_Mensajes" title="Interfaz de Paso de Mensajes – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fa"><a href="//fa.wikipedia.org/wiki/%D8%B1%D8%A7%D8%A8%D8%B7_%D9%81%D8%B1%D8%B3%D8%AA%D8%A7%D8%AF%D9%86_%D9%BE%DB%8C%D8%A7%D9%85" title="رابط فرستادن پیام – Persian" lang="fa" hreflang="fa">فارسی</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="//fr.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – French" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-ko"><a href="//ko.wikipedia.org/wiki/%EB%A9%94%EC%8B%9C%EC%A7%80_%EC%A0%84%EB%8B%AC_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4" title="메시지 전달 인터페이스 – Korean" lang="ko" hreflang="ko">한국어</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="//it.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – Italian" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-lt"><a href="//lt.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – Lithuanian" lang="lt" hreflang="lt">Lietuvių</a></li>
+													<li class="interlanguage-link interwiki-nl"><a href="//nl.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – Dutch" lang="nl" hreflang="nl">Nederlands</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="//ja.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="//pl.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="//pt.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="//ru.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-sk"><a href="//sk.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – Slovak" lang="sk" hreflang="sk">Slovenčina</a></li>
+													<li class="interlanguage-link interwiki-tr"><a href="//tr.wikipedia.org/wiki/MPI" title="MPI – Turkish" lang="tr" hreflang="tr">Türkçe</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="//uk.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface – Ukrainian" lang="uk" hreflang="uk">Українська</a></li>
+													<li class="interlanguage-link interwiki-vi"><a href="//vi.wikipedia.org/wiki/MPI" title="MPI – Vietnamese" lang="vi" hreflang="vi">Tiếng Việt</a></li>
+													<li class="interlanguage-link interwiki-zh"><a href="//zh.wikipedia.org/wiki/%E8%A8%8A%E6%81%AF%E5%82%B3%E9%81%9E%E4%BB%8B%E9%9D%A2" title="訊息傳遞介面 – Chinese" lang="zh" hreflang="zh">中文</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="edit" href="//www.wikidata.org/wiki/Q127879#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 21 October 2014 at 17:49.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Message_Passing_Interface&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="//wikimediafoundation.org/"><img src="//bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="//www.mediawiki.org/"><img src="//bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":99,"wgHostname":"mw1246"});
+}</script>
+	</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Parallel_algorithm by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Parallel algorithm - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="http://en.wikipedia.org/wiki/android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Parallel_algorithm" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="http://en.wikipedia.org/wiki/Parallel_algorithm" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Parallel_algorithm" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Parallel_algorithm","wgTitle":"Parallel algorithm","wgCurRevisionId":625081313,"wgRevisionId":625081313,"wgArticleId":148840,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages using citations with accessdate and no URL","Articles needing additional references from November 2012","All articles needing additional references","Articles to be expanded from February 2014","All articles to be expanded","Parallel computing","Concurrent algorithms","Distributed algorithms"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Parallel_algorithm","wgRelevantArticleId":148840,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q1087987"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Parallel_algorithm skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Parallel algorithm</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="metadata plainlinks ambox ambox-content ambox-Refimprove" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><a href="http://en.wikipedia.org/wiki/File:Question_book-new.svg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" width="50" height="39" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/75px-Question_book-new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/100px-Question_book-new.svg.png 2x" data-file-width="262" data-file-height="204" /></a></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>needs additional citations for <a href="http://en.wikipedia.org/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">verification</a></b>. <span class="hide-when-compact">Please help <a class="external text" href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit">improve this article</a> by <a href="http://en.wikipedia.org/wiki/Help:Introduction_to_referencing/1" title="Help:Introduction to referencing/1">adding citations to reliable sources</a>. Unsourced material may be challenged and removed.</span> <small><i>(November 2012)</i></small></span></td>
+</tr>
+</table>
+<p>In <a href="http://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a>, a <b>parallel algorithm</b>, as opposed to a traditional <a href="http://en.wikipedia.org/wiki/Serial_algorithm" title="Serial algorithm" class="mw-redirect">serial algorithm</a>, is an <a href="http://en.wikipedia.org/wiki/Algorithm" title="Algorithm">algorithm</a> which can be executed a piece at a time on many different processing devices, and then combined together again at the end to get the correct result.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup></p>
+<p>Many parallel algorithms are executed <a href="http://en.wikipedia.org/wiki/Concurrent_computing" title="Concurrent computing">concurrently</a> – though in general <a href="http://en.wikipedia.org/wiki/Concurrent_algorithm" title="Concurrent algorithm">concurrent algorithms</a> are a distinct concept – and thus these concepts are often conflated, with which aspect of an algorithm is parallel and which is concurrent not being clearly distinguished. Further, non-parallel, non-concurrent algorithms are often referred to as "sequential algorithms", by contrast with concurrent algorithms.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Parallelizability"><span class="tocnumber">1</span> <span class="toctext">Parallelizability</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Motivation"><span class="tocnumber">2</span> <span class="toctext">Motivation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Issues"><span class="tocnumber">3</span> <span class="toctext">Issues</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Communication"><span class="tocnumber">3.1</span> <span class="toctext">Communication</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Load_balancing"><span class="tocnumber">3.2</span> <span class="toctext">Load balancing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Distributed_algorithms"><span class="tocnumber">4</span> <span class="toctext">Distributed algorithms</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Parallelizability">Parallelizability</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit&amp;section=1" title="Edit section: Parallelizability">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Algorithms vary significantly in how parallelizable they are, ranging from easily parallelizable to completely unparallelizable. Further, a given problem may accommodate different algorithms, which may be more or less parallelizable.</p>
+<p>Some problems are easy to divide up into pieces in this way – these are called <i><a href="http://en.wikipedia.org/wiki/Embarrassingly_parallel_problem" title="Embarrassingly parallel problem" class="mw-redirect">embarrassingly parallel problems</a>.</i> For example, splitting up the job of checking all of the numbers from one to a hundred thousand to see which are <a href="http://en.wikipedia.org/wiki/Prime_number" title="Prime number">primes</a> could be done by assigning a subset of the numbers to each available processor, and then putting the list of positive results back together. Algorithms are also used for things such as rubik's cubing and for hash decryption.</p>
+<p>Some problems cannot be split up into parallel portions, as they require the results from a preceding step to effectively carry on with the next step – these are called <b><span id="inherently_serial_problem">inherently serial problem</span>s</b>. Examples include iterative <a href="http://en.wikipedia.org/wiki/Numerical_analysis" title="Numerical analysis">numerical methods</a>, such as <a href="http://en.wikipedia.org/wiki/Newton%27s_method" title="Newton's method">Newton's method</a>, iterative solutions to the <a href="http://en.wikipedia.org/wiki/Three-body_problem" title="Three-body problem">three-body problem</a>, and most of the available algorithms to compute <a href="http://en.wikipedia.org/wiki/Pi" title="Pi">pi</a> (π).</p>
+<p>Computing prime numbers is an interesting example of a problem where different algorithms vary significantly in parallelizability. The <a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" title="Sieve of Eratosthenes">sieve of Eratosthenes</a> is inherently serial – though highly efficient for small numbers – as it uses the <i>k</i>th prime number as input to its <i>k</i> step, which produces the <i>k</i>+1st prime; while other algorithms are embarrassingly parallel, as they operate on a single number without needing to know all primes up to that point.</p>
+<h2><span class="mw-headline" id="Motivation">Motivation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit&amp;section=2" title="Edit section: Motivation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Parallel algorithms on individual devices have become more common since the early 2000s because of substantial improvements in <a href="http://en.wikipedia.org/wiki/Multiprocessing" title="Multiprocessing">multiprocessing</a> systems and the rise of <a href="http://en.wikipedia.org/wiki/Multi-core" title="Multi-core" class="mw-redirect">multi-core</a> processors. Up until the end of 2004, single-core processor performance rapidly increased via <a href="http://en.wikipedia.org/wiki/Frequency_scaling" title="Frequency scaling">frequency scaling</a>, and thus it was easier to construct a computer with a single fast core than one with many slower cores with the same <a href="http://en.wikipedia.org/wiki/Throughput" title="Throughput">throughput</a>, so multicore systems were of more limited use. Since 2004 however, frequency scaling hit a wall, and thus multicore systems have become more widespread, making parallel algorithms of more general use.</p>
+<h2><span class="mw-headline" id="Issues">Issues</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit&amp;section=3" title="Edit section: Issues">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Communication">Communication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit&amp;section=4" title="Edit section: Communication">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The cost or complexity of serial algorithms is estimated in terms of the space (memory) and time (processor cycles) that they take. Parallel algorithms need to optimize one more resource, the communication between different processors. There are two ways parallel processors communicate, shared memory or message passing.</p>
+<p><a href="http://en.wikipedia.org/wiki/Shared_memory" title="Shared memory">Shared memory</a> processing needs additional <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">locking</a> for the data, imposes the overhead of additional processor and bus cycles, and also serializes some portion of the algorithm.</p>
+<p><a href="http://en.wikipedia.org/wiki/Message_passing" title="Message passing">Message passing</a> processing uses channels and message boxes but this communication adds transfer overhead on the bus, additional memory need for queues and message boxes and latency in the messages. Designs of parallel processors use special buses like crossbar so that the communication overhead will be small but it is the parallel algorithm that decides the volume of the traffic.</p>
+<p>If the communication overhead of additional processors outweighs the benefit of adding another processor, one encounters <a href="http://en.wikipedia.org/wiki/Parallel_slowdown" title="Parallel slowdown">parallel slowdown</a>.</p>
+<h3><span class="mw-headline" id="Load_balancing">Load balancing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit&amp;section=5" title="Edit section: Load balancing">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Load_balancing_(computing)" title="Load balancing (computing)">Load balancing (computing)</a></div>
+<p>Another problem with parallel algorithms is ensuring that they are suitably <a href="http://en.wikipedia.org/wiki/Load_balancing_(computing)" title="Load balancing (computing)">load balanced</a>, by ensuring that <i>load</i> (overall work) is balanced, rather than input size being balanced. For example, checking all numbers from one to a hundred thousand for primality is easy to split amongst processors; however, if the numbers are simply divided out evenly (1–1,000, 1,001–2,000, etc.), the amount of work will be unbalanced, as smaller numbers are easier to process by this algorithm (easier to test for primality), and thus some processors will get more work to do than the others, which will sit idle until the loaded processors complete.</p>
+<h2><span class="mw-headline" id="Distributed_algorithms">Distributed algorithms</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit&amp;section=6" title="Edit section: Distributed algorithms">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Distributed_algorithm" title="Distributed algorithm">Distributed algorithm</a></div>
+<table class="metadata plainlinks ambox mbox-small-left ambox-content" role="presentation">
+<tr>
+<td class="mbox-image"><a href="http://en.wikipedia.org/wiki/File:Wiki_letter_w_cropped.svg" class="image"><img alt="[icon]" src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/20px-Wiki_letter_w_cropped.svg.png" width="20" height="14" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/30px-Wiki_letter_w_cropped.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wiki_letter_w_cropped.svg/40px-Wiki_letter_w_cropped.svg.png 2x" data-file-width="44" data-file-height="31" /></a></td>
+<td class="mbox-text"><span class="mbox-text-span">This section requires <a class="external text" href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit">expansion</a>. <small><i>(February 2014)</i></small></span></td>
+</tr>
+</table>
+<p>A subtype of parallel algorithms, <i><a href="http://en.wikipedia.org/wiki/Distributed_algorithm" title="Distributed algorithm">distributed algorithms</a></i> are algorithms designed to work in <a href="http://en.wikipedia.org/wiki/Cluster_computing" title="Cluster computing" class="mw-redirect">cluster computing</a> and <a href="http://en.wikipedia.org/wiki/Distributed_computing" title="Distributed computing">distributed computing</a> environments, where additional concerns beyond the scope of "classical" parallel algorithms need to be addressed.</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit&amp;section=7" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Multiple-agent_system" title="Multiple-agent system" class="mw-redirect">Multiple-agent system</a> (MAS)</li>
+<li><a href="http://en.wikipedia.org/wiki/Neural_network" title="Neural network" class="mw-redirect">Neural network</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_computing" title="Parallel computing">Parallel computing</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit&amp;section=8" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><span class="citation journal">Blelloch, Guy E.; Maggs, Bruce M. "Parallel Algorithms". USA: School of Computer Science, <a href="http://en.wikipedia.org/wiki/Carnegie_Mellon_University" title="Carnegie Mellon University">Carnegie Mellon University</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AParallel+algorithm&amp;rft.au=Blelloch%2C+Guy+E.&amp;rft.aufirst=Guy+E.&amp;rft.aulast=Blelloch&amp;rft.au=Maggs%2C+Bruce+M.&amp;rft.btitle=Parallel+Algorithms&amp;rft.genre=book&amp;rft.place=USA&amp;rft.pub=School+of+Computer+Science%2C+Carnegie+Mellon+University&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="display:none;font-size:100%" class="error citation-comment"><code style="color:inherit; border:inherit; padding:inherit;">|accessdate=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">|url=</code> (<a href="http://en.wikipedia.org/wiki/Help:CS1_errors#accessdate_missing_url" title="Help:CS1 errors">help</a>)</span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit&amp;section=9" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www-unix.mcs.anl.gov/dbpp/">Designing and Building Parallel Programs page at the US Argonne National Laboratories</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1021
+CPU time usage: 0.164 seconds
+Real time usage: 0.209 seconds
+Preprocessor visited node count: 341/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 8036/2097152 bytes
+Template argument size: 101/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 4/500
+Lua time usage: 0.050/10.000 seconds
+Lua memory usage: 1.64 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  195.683      1 - -total
+ 31.91%   62.452      1 - Template:Refimprove
+ 21.85%   42.754      2 - Template:Ambox
+ 18.50%   36.201      1 - Template:Reflist
+ 15.20%   29.749      1 - Template:Cite_paper
+  6.23%   12.194      2 - Template:Main
+  4.55%    8.909      1 - Template:Expand_section
+  1.75%    3.424      1 - Template:Visible_anchor
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:148840-0!*!0!!en!4!* and timestamp 20141211045711 and revision id 625081313
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;oldid=625081313">http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;oldid=625081313</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Parallel_computing" title="Category:Parallel computing">Parallel computing</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Concurrent_algorithms" title="Category:Concurrent algorithms">Concurrent algorithms</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Distributed_algorithms" title="Category:Distributed algorithms">Distributed algorithms</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Pages_using_citations_with_accessdate_and_no_URL" title="Category:Pages using citations with accessdate and no URL">Pages using citations with accessdate and no URL</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_needing_additional_references_from_November_2012" title="Category:Articles needing additional references from November 2012">Articles needing additional references from November 2012</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_needing_additional_references" title="Category:All articles needing additional references">All articles needing additional references</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_to_be_expanded_from_February_2014" title="Category:Articles to be expanded from February 2014">Articles to be expanded from February 2014</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_to_be_expanded" title="Category:All articles to be expanded">All articles to be expanded</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Parallel+algorithm&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Parallel+algorithm" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Parallel_algorithm"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Parallel_algorithm"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Parallel_algorithm" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://en.wikipedia.org/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://en.wikipedia.org/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Parallel_algorithm" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Parallel_algorithm" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;oldid=625081313" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q1087987" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Parallel_algorithm&amp;id=625081313" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Parallel+algorithm">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Parallel+algorithm&amp;oldid=625081313&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ar"><a href="http://ar.wikipedia.org/wiki/خوارزمية_متوازية" title="خوارزمية متوازية – Arabic" lang="ar" hreflang="ar">العربية</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Paralleler_Algorithmus" title="Paralleler Algorithmus – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="http://es.wikipedia.org/wiki/Algoritmo_paralelo" title="Algoritmo paralelo – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fa"><a href="http://fa.wikipedia.org/wiki/الگوریتم_موازی" title="الگوریتم موازی – Persian" lang="fa" hreflang="fa">فارسی</a></li>
+													<li class="interlanguage-link interwiki-hu"><a href="http://hu.wikipedia.org/wiki/Párhuzamos_algoritmus" title="Párhuzamos algoritmus – Hungarian" lang="hu" hreflang="hu">Magyar</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/並列アルゴリズム" title="並列アルゴリズム – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Algorytm_równoległy" title="Algorytm równoległy – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-ro"><a href="http://ro.wikipedia.org/wiki/Algoritmi_de_calcul_paralel" title="Algoritmi de calcul paralel – Romanian" lang="ro" hreflang="ro">Română</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Параллельный_алгоритм" title="Параллельный алгоритм – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="http://uk.wikipedia.org/wiki/Паралельний_алгоритм" title="Паралельний алгоритм – Ukrainian" lang="uk" hreflang="uk">Українська</a></li>
+													<li class="interlanguage-link interwiki-vi"><a href="http://vi.wikipedia.org/wiki/Thuật_toán_song_song" title="Thuật toán song song – Vietnamese" lang="vi" hreflang="vi">Tiếng Việt</a></li>
+													<li class="interlanguage-link interwiki-zh"><a href="http://zh.wikipedia.org/wiki/平行演算法" title="平行演算法 – Chinese" lang="zh" hreflang="zh">中文</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="http://en.wikipedia.org/wiki/edit" href="http://www.wikidata.org/wiki/Q1087987#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 11 September 2014 at 12:15.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Parallel_algorithm&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":125,"wgHostname":"mw1081"});
+}</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Parallel_algorithm by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+</html>

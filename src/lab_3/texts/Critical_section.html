@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Critical_section by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Critical section - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="http://en.wikipedia.org/wiki/android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Critical_section" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="http://en.wikipedia.org/wiki/Critical_section" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Critical_section" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.geshi.language.c%7Cext.geshi.local%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Critical_section","wgTitle":"Critical section","wgCurRevisionId":637168319,"wgRevisionId":637168319,"wgArticleId":638312,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing additional references from June 2010","All articles needing additional references","All articles with unsourced statements","Articles with unsourced statements from November 2008","Articles with unsourced statements from October 2012","Articles needing additional references from July 2007","Concurrency control","Programming constructs"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Critical_section","wgRelevantArticleId":638312,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["en-gb","en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q1046373"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Critical_section skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Critical section</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="metadata plainlinks ambox ambox-content ambox-Refimprove" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><a href="http://en.wikipedia.org/wiki/File:Question_book-new.svg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" width="50" height="39" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/75px-Question_book-new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/100px-Question_book-new.svg.png 2x" data-file-width="262" data-file-height="204" /></a></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>needs additional citations for <a href="http://en.wikipedia.org/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">verification</a></b>. <span class="hide-when-compact">Please help <a class="external text" href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;action=edit">improve this article</a> by <a href="http://en.wikipedia.org/wiki/Help:Introduction_to_referencing/1" title="Help:Introduction to referencing/1">adding citations to reliable sources</a>. Unsourced material may be challenged and removed.</span> <small><i>(June 2010)</i></small></span></td>
+</tr>
+</table>
+<p>In <a href="http://en.wikipedia.org/wiki/Concurrent_programming" title="Concurrent programming" class="mw-redirect">concurrent programming</a>, a <b>critical section</b> is a piece of <a href="http://en.wikipedia.org/wiki/Code" title="Code">code</a> that accesses a shared resource (data structure or device) that must not be concurrently accessed by more than one <a href="http://en.wikipedia.org/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">thread of execution</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup> A critical section will usually terminate in fixed time, and a thread, task, or process will have to wait for a fixed time to enter it (aka bounded waiting). Some <a href="http://en.wikipedia.org/wiki/Synchronization_(computer_science)" title="Synchronization (computer science)">synchronization</a> mechanism is required at the entry and exit of the critical section to ensure exclusive use, for example a <a href="http://en.wikipedia.org/wiki/Semaphore_(programming)" title="Semaphore (programming)">semaphore</a>.</p>
+<p>By carefully controlling which variables are modified inside and outside the critical section, concurrent access to that state is prevented. A critical section is typically used when a <a href="http://en.wikipedia.org/wiki/Multithreaded" title="Multithreaded" class="mw-redirect">multithreaded</a> program must update multiple related variables without a separate thread making conflicting changes to that data. In a related situation, a critical section may be used to ensure a shared resource, for example a printer, can only be accessed by one process at a time.</p>
+<p>How critical sections are implemented varies among operating systems.</p>
+<p>The simplest method is to prevent any change of processor control inside the critical section. On uni-processor systems, this can be done by disabling interrupts on entry into the critical section, avoiding system calls that can cause a <a href="http://en.wikipedia.org/wiki/Context_switch" title="Context switch">context switch</a> while inside the section, and restoring interrupts to their previous state on exit. Any thread of execution entering any critical section anywhere in the system will, with this implementation, prevent any other thread, including an interrupt, from being granted processing time on the CPU - and therefore from entering any other critical section or, indeed, any code whatsoever - until the original thread leaves its critical section.</p>
+<p>This brute-force approach can be improved upon by using semaphores. To enter a critical section, a thread must obtain a semaphore, which it releases on leaving the section. Other threads are prevented from entering the critical section at the same time as the original thread, but are free to gain control of the CPU and execute other code, including other critical sections that are protected by different semaphores.</p>
+<p>Some confusion exists in literature about the relationship between different critical sections in the same program.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (November 2008)">citation needed</span></a></i>]</sup> Clearly, a resource that must be protected from concurrent access must be accessible by several entry points in the code. If the resource were only accessible through a single entry point, then multithreaded processing would not be a necessary consideration. Each resource must be guarded by a common, "global" semaphore. Is each piece now a critical section, or are all the pieces guarded by the same semaphore in aggregate a single critical section? This confusion is evident in definitions of a critical section such as "... a piece of <a href="http://en.wikipedia.org/wiki/Code" title="Code">code</a> that can only be <a href="http://en.wikipedia.org/wiki/Execution_(computers)" title="Execution (computers)" class="mw-redirect">executed</a> by one <a href="http://en.wikipedia.org/wiki/Computer_process" title="Computer process" class="mw-redirect">process</a> or <a href="http://en.wikipedia.org/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">thread</a> at a time".<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (October 2012)">citation needed</span></a></i>]</sup></p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Application_level_critical_sections"><span class="tocnumber">1</span> <span class="toctext">Application level critical sections</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Kernel_level_critical_sections"><span class="tocnumber">2</span> <span class="toctext">Kernel level critical sections</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External_links"><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Application_level_critical_sections">Application level critical sections</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;action=edit&amp;section=1" title="Edit section: Application level critical sections">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><a href="http://en.wikipedia.org/wiki/Application_software" title="Application software">Application</a>-level critical sections reside in the <a href="http://en.wikipedia.org/wiki/Random_access_memory" title="Random access memory" class="mw-redirect">memory</a> range of the process and are usually modifiable by the process itself. This is called a <a href="http://en.wikipedia.org/wiki/User_space" title="User space">user-space</a> object because the program run by the user (as opposed to the <a href="http://en.wikipedia.org/wiki/Kernel_(computer_science)" title="Kernel (computer science)" class="mw-redirect">kernel</a>) can modify and interact with the object. However, the functions called may jump to <a href="http://en.wikipedia.org/wiki/Kernel_space" title="Kernel space" class="mw-redirect">kernel-space</a> code to register the user-space object with the kernel.</p>
+<p><b>Example Code For Critical Sections with C Standard Library Threads</b></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+<span class="coMULTI">/* Sample C, C Standard Library */</span>
+<span class="co2">#include &lt;threads.h&gt;</span>
+ 
+<span class="coMULTI">/* This is the critical section object -- once initialized, it cannot be moved in memory. */</span>
+<span class="kw4">static</span> mtx_t cs_mutex<span class="sy0">;</span>
+ 
+<span class="kw4">void</span> f<span class="br0">(</span> <span class="kw4">void</span> <span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="coMULTI">/* Enter the critical section -- other threads are locked out */</span>
+    mtx_lock<span class="br0">(</span> <span class="sy0">&amp;</span>cs_mutex <span class="br0">)</span><span class="sy0">;</span>
+ 
+    <span class="coMULTI">/* Do some thread-safe processing! */</span>
+ 
+    <span class="coMULTI">/* Leave the critical section -- other threads can now pthread_mutex_lock() */</span>
+    mtx_unlock<span class="br0">(</span> <span class="sy0">&amp;</span>cs_mutex <span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span> <span class="kw4">void</span> <span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="coMULTI">/* Initialize the critical section before entering multi-threaded context. */</span>
+    mtx_init<span class="br0">(</span> <span class="sy0">&amp;</span>cs_mutex<span class="sy0">,</span> mtx_plain <span class="br0">)</span><span class="sy0">;</span>
+ 
+    f<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+ 
+    <span class="coMULTI">/* Release system object when all is finished -- usually at the end of the cleanup code. */</span>
+    mtx_destroy<span class="br0">(</span> <span class="sy0">&amp;</span>cs_mutex <span class="br0">)</span><span class="sy0">;</span>
+ 
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p><b>Example Code For Critical Sections with POSIX pthread library</b></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+<span class="coMULTI">/* Sample C/C++, Unix/Linux */</span>
+<span class="co2">#include &lt;pthread.h&gt;</span>
+ 
+<span class="coMULTI">/* This is the critical section object (statically allocated). */</span>
+<span class="kw4">static</span> pthread_mutex_t cs_mutex <span class="sy0">=</span>  PTHREAD_RECURSIVE_MUTEX_INITIALIZER<span class="sy0">;</span>
+ 
+<span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="coMULTI">/* Enter the critical section -- other threads are locked out */</span>
+    pthread_mutex_lock<span class="br0">(</span> <span class="sy0">&amp;</span>cs_mutex <span class="br0">)</span><span class="sy0">;</span>
+ 
+    <span class="coMULTI">/* Do some thread-safe processing! */</span>
+ 
+    <span class="coMULTI">/*Leave the critical section -- other threads can now pthread_mutex_lock()  */</span>
+    pthread_mutex_unlock<span class="br0">(</span> <span class="sy0">&amp;</span>cs_mutex <span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    f<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+ 
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p><b>Example Code For Critical Sections with Win32 API</b></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+<span class="coMULTI">/* Sample C/C++, Windows, link to kernel32.dll */</span>
+<span class="co2">#include &lt;windows.h&gt;</span>
+ 
+<span class="kw4">static</span> CRITICAL_SECTION cs<span class="sy0">;</span> <span class="coMULTI">/* This is the critical section object -- once initialized,
+                               it cannot be moved in memory */</span>
+                            <span class="coMULTI">/* If you program in OOP, declare this as a non-static member in your class */</span> 
+<span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="coMULTI">/* Enter the critical section -- other threads are locked out */</span>
+    EnterCriticalSection<span class="br0">(</span><span class="sy0">&amp;</span>cs<span class="br0">)</span><span class="sy0">;</span>
+ 
+    <span class="coMULTI">/* Do some thread-safe processing! */</span>
+ 
+    <span class="coMULTI">/* Leave the critical section -- other threads can now EnterCriticalSection() */</span>
+    LeaveCriticalSection<span class="br0">(</span><span class="sy0">&amp;</span>cs<span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="coMULTI">/* Initialize the critical section before entering multi-threaded context. */</span>
+    InitializeCriticalSection<span class="br0">(</span><span class="sy0">&amp;</span>cs<span class="br0">)</span><span class="sy0">;</span>
+ 
+    f<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> 
+ 
+    <span class="coMULTI">/* Release system object when all finished -- usually at the end of the cleanup code */</span>
+    DeleteCriticalSection<span class="br0">(</span><span class="sy0">&amp;</span>cs<span class="br0">)</span><span class="sy0">;</span>
+ 
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Note that on <a href="http://en.wikipedia.org/wiki/Windows_NT" title="Windows NT">Windows NT</a> (not 9x/ME), the function <b>TryEnterCriticalSection()</b> can be used to attempt to enter the critical section. This function returns immediately so that the thread can do other things if it fails to enter the critical section (usually due to another thread having locked it). With C Standard Library threads, the equivalent function is <b>mtx_trylock()</b>. With the pthreads library, the equivalent function is <b>pthread_mutex_trylock()</b>. Note that the use of a CriticalSection is not the same as a Win32 <a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">Mutex</a>, which is an <a href="http://en.wikipedia.org/wiki/Object_(computer_science)" title="Object (computer science)">object</a> used for <i>inter-process</i> synchronization. A Win32 CriticalSection is for <i>intra-process</i> synchronization (and is much faster regarding lock times), however it cannot be shared across processes.</p>
+<h2><span class="mw-headline" id="Kernel_level_critical_sections">Kernel level critical sections</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;action=edit&amp;section=2" title="Edit section: Kernel level critical sections">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="metadata plainlinks ambox ambox-content ambox-Unreferenced" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><a href="http://en.wikipedia.org/wiki/File:Question_book-new.svg" class="image"><img alt="Question book-new.svg" src="http://upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" width="50" height="39" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/75px-Question_book-new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/100px-Question_book-new.svg.png 2x" data-file-width="262" data-file-height="204" /></a></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This section <b>does not <a href="http://en.wikipedia.org/wiki/Wikipedia:Citing_sources" title="Wikipedia:Citing sources">cite</a> any <a href="http://en.wikipedia.org/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">references or sources</a></b>. <span class="hide-when-compact">Please help improve this section by <a href="http://en.wikipedia.org/wiki/Help:Introduction_to_referencing/1" title="Help:Introduction to referencing/1">adding citations to reliable sources</a>. Unsourced material may be challenged and <a href="http://en.wikipedia.org/wiki/Wikipedia:Verifiability#Burden_of_evidence" title="Wikipedia:Verifiability">removed</a>.</span> <small><i>(July 2007)</i></small></span></td>
+</tr>
+</table>
+<p>Typically, critical sections prevent process and thread migration between processors and the <a href="http://en.wikipedia.org/wiki/Preemption_(computing)" title="Preemption (computing)">preemption</a> of processes and threads by interrupts and other processes and threads.</p>
+<p>Critical sections often allow nesting. Nesting allows multiple critical sections to be entered and exited at little cost.</p>
+<p>If the <a href="http://en.wikipedia.org/wiki/Scheduling_(computing)" title="Scheduling (computing)">scheduler</a> interrupts the current process or thread in a critical section, the scheduler will either allow the currently executing process or thread to run to completion of the critical section, or it will schedule the process or thread for another complete quantum. The scheduler will not migrate the process or thread to another processor, and it will not schedule another process or thread to run while the current process or thread is in a critical section.</p>
+<p>Similarly, if an <a href="http://en.wikipedia.org/wiki/Interrupt" title="Interrupt">interrupt</a> occurs in a critical section, the interrupt's information is recorded for future processing, and execution is returned to the process or thread in the critical section. Once the critical section is exited, and in some cases the scheduled quantum completes, the pending interrupt will be executed. The concept of scheduling quantum applies to "Round Robin" and similar scheduling policies.</p>
+<p>Since critical sections may <a href="http://en.wikipedia.org/wiki/Execution_(computers)" title="Execution (computers)" class="mw-redirect">execute</a> only on the processor on which they are entered, synchronization is only required within the executing processor. This allows critical sections to be entered and exited at almost zero cost. No interprocessor synchronization is required, only instruction stream synchronization. Most processors provide the required amount of synchronization by the simple act of interrupting the current execution state. This allows critical sections in most cases to be nothing more than a per processor count of critical sections entered.</p>
+<p>Performance enhancements include executing pending interrupts at the exit of all critical sections and allowing the scheduler to run at the exit of all critical sections. Furthermore, pending interrupts may be transferred to other processors for execution.</p>
+<p>Critical sections should not be used as a long-lived locking primitive. They should be short enough that the critical section will be entered, executed, and exited without any interrupts occurring, neither from <a href="http://en.wikipedia.org/wiki/Personal_computer_hardware" title="Personal computer hardware" class="mw-redirect">hardware</a> much less the scheduler.</p>
+<p>Kernel Level Critical Sections are the base of the <a href="http://en.wikipedia.org/wiki/Software_lockout" title="Software lockout">software lockout</a> issue.</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;action=edit&amp;section=3" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">Lock (computer science)</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;action=edit&amp;section=4" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><span class="citation book">Jones, M. Tim (2008). <a rel="nofollow" class="external text" href="http://www.courseptr.com/Courses.aspx?q=GNU%2FLinux+Application+Programming&amp;x=12&amp;y=8"><i>GNU/Linux Application Programming</i></a> (2nd ed.). [Hingham, Mass.]: Charles River Media. p.&#160;264. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/978-1-58450-568-6" title="Special:BookSources/978-1-58450-568-6">978-1-58450-568-6</a>. <q><i>A critical section is a section of code that can be executed by at most one process at a time. The critical section exists to protect shard resources from multiple access.</i></q></span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACritical+section&amp;rft.aufirst=M.+Tim&amp;rft.au=Jones%2C+M.+Tim&amp;rft.aulast=Jones&amp;rft.btitle=GNU%2FLinux+Application+Programming&amp;rft.date=2008&amp;rft.edition=2nd&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.courseptr.com%2FCourses.aspx%3Fq%3DGNU%252FLinux%2BApplication%2BProgramming%26x%3D12%26y%3D8&amp;rft.isbn=978-1-58450-568-6&amp;rft.pages=264&amp;rft.place=%5BHingham%2C+Mass.%5D&amp;rft.pub=Charles+River+Media&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;action=edit&amp;section=5" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://msdn2.microsoft.com/en-us/library/ms682530.aspx">Critical Section documentation</a> on the <a href="http://en.wikipedia.org/wiki/MSDN_Library" title="MSDN Library" class="mw-redirect">MSDN Library</a> web page</li>
+<li><a rel="nofollow" class="external text" href="http://www.futurechips.org/tips-for-power-coders/parallel-programming-understanding-impact-critical-sections.html">Tutorial on Critical Sections</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1183
+CPU time usage: 0.164 seconds
+Real time usage: 0.210 seconds
+Preprocessor visited node count: 560/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 14698/2097152 bytes
+Template argument size: 1055/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 6/500
+Lua time usage: 0.046/10.000 seconds
+Lua memory usage: 1.71 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  235.427      1 - -total
+ 26.80%   63.098      1 - Template:Morerefs
+ 17.40%   40.958      2 - Template:Ambox
+ 12.60%   29.662      1 - Template:Reflist
+  9.99%   23.529      2 - Template:Citation_needed
+  9.88%   23.258      1 - Template:Cite_book
+  8.00%   18.829      2 - Template:Fix
+  5.97%   14.064      4 - Template:Category_handler
+  4.38%   10.319      1 - Template:Unreferenced_section
+  3.02%    7.117      1 - Template:Unreferenced
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:638312-0!*!0!!en!4!* and timestamp 20141211050216 and revision id 637168319
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;oldid=637168319">http://en.wikipedia.org/w/index.php?title=Critical_section&amp;oldid=637168319</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Concurrency_control" title="Category:Concurrency control">Concurrency control</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Programming_constructs" title="Category:Programming constructs">Programming constructs</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Articles_needing_additional_references_from_June_2010" title="Category:Articles needing additional references from June 2010">Articles needing additional references from June 2010</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_needing_additional_references" title="Category:All articles needing additional references">All articles needing additional references</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_November_2008" title="Category:Articles with unsourced statements from November 2008">Articles with unsourced statements from November 2008</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_October_2012" title="Category:Articles with unsourced statements from October 2012">Articles with unsourced statements from October 2012</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_needing_additional_references_from_July_2007" title="Category:Articles needing additional references from July 2007">Articles needing additional references from July 2007</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Critical+section&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Critical+section" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Critical_section"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Critical_section"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Critical_section" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://en.wikipedia.org/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://en.wikipedia.org/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Critical_section" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Critical_section" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;oldid=637168319" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q1046373" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Critical_section&amp;id=637168319" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Critical+section">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Critical+section&amp;oldid=637168319&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Critical_section&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Secció_crítica" title="Secció crítica – Catalan" lang="ca" hreflang="ca">Català</a></li>
+													<li class="interlanguage-link interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Kritická_sekce" title="Kritická sekce – Czech" lang="cs" hreflang="cs">Čeština</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Kritischer_Abschnitt" title="Kritischer Abschnitt – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="http://es.wikipedia.org/wiki/Sección_crítica" title="Sección crítica – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fa"><a href="http://fa.wikipedia.org/wiki/بخش_بحرانی" title="بخش بحرانی – Persian" lang="fa" hreflang="fa">فارسی</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Section_critique" title="Section critique – French" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-ko"><a href="http://ko.wikipedia.org/wiki/임계_구역" title="임계 구역 – Korean" lang="ko" hreflang="ko">한국어</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="http://it.wikipedia.org/wiki/Sezione_critica" title="Sezione critica – Italian" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-he"><a href="http://he.wikipedia.org/wiki/קטע_קריטי" title="קטע קריטי – Hebrew" lang="he" hreflang="he">עברית</a></li>
+													<li class="interlanguage-link interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Kritieke_sectie" title="Kritieke sectie – Dutch" lang="nl" hreflang="nl">Nederlands</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/クリティカルセクション" title="クリティカルセクション – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Sekcja_krytyczna" title="Sekcja krytyczna – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Região_crítica" title="Região crítica – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Критическая_секция" title="Критическая секция – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-fi"><a href="http://fi.wikipedia.org/wiki/Kriittinen_alue" title="Kriittinen alue – Finnish" lang="fi" hreflang="fi">Suomi</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="http://uk.wikipedia.org/wiki/Критична_секція" title="Критична секція – Ukrainian" lang="uk" hreflang="uk">Українська</a></li>
+													<li class="interlanguage-link interwiki-zh"><a href="http://zh.wikipedia.org/wiki/臨界區段" title="臨界區段 – Chinese" lang="zh" hreflang="zh">中文</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="http://en.wikipedia.org/wiki/edit" href="http://www.wikidata.org/wiki/Q1046373#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 8 December 2014 at 14:13.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Critical_section&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":116,"wgHostname":"mw1104"});
+}</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Critical_section by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+</html>

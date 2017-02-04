@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Lock-free_and_wait-free_algorithms by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Non-blocking algorithm - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="http://en.wikipedia.org/wiki/android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Non-blocking_algorithm" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="http://en.wikipedia.org/wiki/Non-blocking_algorithm" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Non-blocking_algorithm" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Non-blocking_algorithm","wgTitle":"Non-blocking algorithm","wgCurRevisionId":635688489,"wgRevisionId":635688489,"wgArticleId":554867,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["CS1 errors: dates","CS1 maint: Date and year","Articles needing additional references from August 2010","All articles needing additional references","Wikipedia articles needing style editing from October 2012","All articles needing style editing","All articles with unsourced statements","Articles with unsourced statements from June 2014","Synchronization","Concurrency control","Concurrency control algorithms","Operating system technology"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Non-blocking_algorithm","wgRelevantArticleId":554867,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Lock-free_and_wait-free_algorithms","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":[],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgInternalRedirectTargetUrl":"/wiki/Non-blocking_algorithm","wgWikibaseItemId":"Q1985141"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Non-blocking_algorithm skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Non-blocking algorithm</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"><span class="mw-redirectedfrom">  (Redirected from <a href="http://en.wikipedia.org/w/index.php?title=Lock-free_and_wait-free_algorithms&amp;redirect=no" title="Lock-free and wait-free algorithms">Lock-free and wait-free algorithms</a>)</span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="hatnote">Not to be confused with <a href="http://en.wikipedia.org/wiki/Non-blocking_I/O" title="Non-blocking I/O" class="mw-redirect">Non-blocking I/O</a>.</div>
+<table class="metadata plainlinks ambox ambox-content ambox-multiple_issues compact-ambox" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/60px-Ambox_important.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/80px-Ambox_important.svg.png 2x" data-file-width="40" data-file-height="40" /></div>
+</td>
+<td class="mbox-text">
+<table class="collapsible" style="width:95%; background:transparent;">
+<tr>
+<th style="text-align:left; padding:0.2em 2px 0.2em 0;">This article has multiple issues. <span style="font-weight: normal;">Please help <b><a class="external text" href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit">improve it</a></b> or discuss these issues on the <b><a href="http://en.wikipedia.org/wiki/Talk:Non-blocking_algorithm" title="Talk:Non-blocking algorithm">talk page</a></b>.</span></th>
+</tr>
+<tr>
+<td>
+<table class="metadata plainlinks ambox ambox-content ambox-Refimprove" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><a href="http://en.wikipedia.org/wiki/File:Question_book-new.svg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" width="50" height="39" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/75px-Question_book-new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/100px-Question_book-new.svg.png 2x" data-file-width="262" data-file-height="204" /></a></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>needs additional citations for <a href="http://en.wikipedia.org/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">verification</a></b>. <span class="hide-when-compact">Please help <a class="external text" href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit">improve this article</a> by <a href="http://en.wikipedia.org/wiki/Help:Introduction_to_referencing/1" title="Help:Introduction to referencing/1">adding citations to reliable sources</a>. Unsourced material may be challenged and removed.</span> <small><i>(August 2010)</i></small></span></td>
+</tr>
+</table>
+<table class="metadata plainlinks ambox ambox-style ambox-Tone" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/40px-Edit-clear.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/60px-Edit-clear.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/80px-Edit-clear.svg.png 2x" data-file-width="48" data-file-height="48" /></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article's <b>tone or style may not reflect the encyclopedic tone used on Wikipedia</b>. <span class="hide-when-compact">See Wikipedia's <a href="http://en.wikipedia.org/wiki/Wikipedia:Writing_better_articles#Tone" title="Wikipedia:Writing better articles">guide to writing better articles</a> for suggestions.</span> <small><i>(October 2012)</i></small></span></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p>In <a href="http://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a>, a <b>non-blocking algorithm</b> ensures that <a href="http://en.wikipedia.org/wiki/Thread_(software_engineering)" title="Thread (software engineering)" class="mw-redirect">threads</a> competing for a shared <a href="http://en.wikipedia.org/wiki/Resource_(computer_science)" title="Resource (computer science)" class="mw-redirect">resource</a> do not have their <a href="http://en.wikipedia.org/wiki/Execution_(computers)" title="Execution (computers)" class="mw-redirect">execution</a> indefinitely postponed by <a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">mutual exclusion</a>. That is, the suspension of one or more threads will not stop the potential progress of the remaining threads. Such algorithms are designed to avoid requiring a <a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">critical section</a>. Often, they allow multiple processes to make progress on a problem without ever blocking each other. For some operations, these algorithms provide an alternative to <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">locking mechanisms</a>.</p>
+<p>A non-blocking <a href="http://en.wikipedia.org/wiki/Algorithm" title="Algorithm">algorithm</a> is <b>lock-free</b> if there is guaranteed system-wide <a href="http://en.wikipedia.org/wiki/Resource_starvation" title="Resource starvation">progress</a> regardless of <a href="http://en.wikipedia.org/wiki/Scheduling_(computing)" title="Scheduling (computing)">scheduling</a>; it is <b>wait-free</b> if there is also guaranteed per-thread progress. "Non-blocking" was used as a synonym for "lock-free" until around 2003.<sup id="cite_ref-obs-free_1-0" class="reference"><a href="#cite_note-obs-free-1"><span>[</span>1<span>]</span></a></sup> Since 2003, the term only excludes progress-blocking interactions with a <a href="http://en.wikipedia.org/wiki/Computer_multitasking" title="Computer multitasking">preemptive scheduler</a>.</p>
+<p>The word "non-blocking" was traditionally used to describe <a href="http://en.wikipedia.org/wiki/Telecommunications_network" title="Telecommunications network">telecommunications networks</a> that could route a connection through a set of relays "without having to re-arrange existing calls", see <a href="http://en.wikipedia.org/wiki/Clos_network" title="Clos network">Clos network</a>. Also, if the telephone exchange "is not defective, it can always make the connection", see <a href="http://en.wikipedia.org/wiki/Nonblocking_minimal_spanning_switch" title="Nonblocking minimal spanning switch">Nonblocking minimal spanning switch</a>.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Motivation"><span class="tocnumber">1</span> <span class="toctext">Motivation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Implementation"><span class="tocnumber">2</span> <span class="toctext">Implementation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Wait-freedom"><span class="tocnumber">3</span> <span class="toctext">Wait-freedom</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Lock-freedom"><span class="tocnumber">4</span> <span class="toctext">Lock-freedom</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Obstruction-freedom"><span class="tocnumber">5</span> <span class="toctext">Obstruction-freedom</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Motivation">Motivation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit&amp;section=1" title="Edit section: Motivation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)#Disadvantages" title="Lock (computer science)">Disadvantages of locks</a></div>
+<p>The traditional approach to multi-threaded programming is to use <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">locks</a> to synchronize access to shared resources. Synchronization primitives such as <a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">mutexes</a>, <a href="http://en.wikipedia.org/wiki/Semaphore_(programming)" title="Semaphore (programming)">semaphores</a>, and <a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">critical sections</a> are all mechanisms by which a programmer can ensure that certain sections of code do not execute concurrently, if doing so would corrupt shared memory structures. If one thread attempts to acquire a lock that is already held by another thread, the thread will block until the lock is free.</p>
+<p>Blocking a thread is undesirable for many reasons. An obvious reason is that while the thread is blocked, it cannot accomplish anything. If the blocked thread was performing a high-priority or <a href="http://en.wikipedia.org/wiki/Real-time_computing" title="Real-time computing">real-time</a> task, it would be highly undesirable to halt its progress. Other problems are less obvious. Certain interactions between locks can lead to error conditions such as <a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">deadlock</a>, <a href="http://en.wikipedia.org/wiki/Livelock" title="Livelock" class="mw-redirect">livelock</a>, and <a href="http://en.wikipedia.org/wiki/Priority_inversion" title="Priority inversion">priority inversion</a>. Using locks also involves a trade-off between coarse-grained locking, which can significantly reduce opportunities for <a href="http://en.wikipedia.org/wiki/Parallel_computing" title="Parallel computing">parallelism</a>, and fine-grained locking, which requires more careful design, increases locking overhead and is more prone to bugs.</p>
+<p>Non-blocking algorithms are also safe for use in <a href="http://en.wikipedia.org/wiki/Interrupt_handler" title="Interrupt handler">interrupt handlers</a>: even though the <a href="http://en.wikipedia.org/wiki/Pre-emptive_multitasking" title="Pre-emptive multitasking" class="mw-redirect">preempted</a> thread cannot be resumed, progress is still possible without it. In contrast, global data structures protected by mutual exclusion cannot safely be accessed in a handler, as the preempted thread may be the one holding the lock.</p>
+<h2><span class="mw-headline" id="Implementation">Implementation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit&amp;section=2" title="Edit section: Implementation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>With few exceptions, non-blocking algorithms use <a href="http://en.wikipedia.org/wiki/Linearizability" title="Linearizability">atomic</a> <a href="http://en.wikipedia.org/wiki/Read-modify-write" title="Read-modify-write">read-modify-write</a> primitives that the hardware must provide, the most notable of which is <a href="http://en.wikipedia.org/wiki/Compare-and-swap" title="Compare-and-swap">compare and swap (CAS)</a>. <a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">Critical sections</a> are almost always implemented using standard interfaces over these primitives. Until recently, all non-blocking algorithms had to be written "natively" with the underlying primitives to achieve acceptable performance. However, the emerging field of <a href="http://en.wikipedia.org/wiki/Software_transactional_memory" title="Software transactional memory">software transactional memory</a> promises standard abstractions for writing efficient non-blocking code. <sup id="cite_ref-lightweight-transactions_2-0" class="reference"><a href="#cite_note-lightweight-transactions-2"><span>[</span>2<span>]</span></a></sup><sup id="cite_ref-composable-memory-transactions_3-0" class="reference"><a href="#cite_note-composable-memory-transactions-3"><span>[</span>3<span>]</span></a></sup></p>
+<p>Much research has also been done in providing basic <a href="http://en.wikipedia.org/wiki/Data_structure" title="Data structure">data structures</a> such as <a href="http://en.wikipedia.org/wiki/Stack_(data_structure)" title="Stack (data structure)" class="mw-redirect">stacks</a>, <a href="http://en.wikipedia.org/wiki/Queue_(data_structure)" title="Queue (data structure)" class="mw-redirect">queues</a>, <a href="http://en.wikipedia.org/wiki/Set_(computer_science)" title="Set (computer science)" class="mw-redirect">sets</a>, and <a href="http://en.wikipedia.org/wiki/Hash_table" title="Hash table">hash tables</a>. These allow programs to easily exchange data between threads asynchronously.</p>
+<p>Additionally, some non-blocking data structures are weak enough to be implemented without special atomic primitives. These exceptions include:</p>
+<ul>
+<li>single-reader single-writer <a href="http://en.wikipedia.org/wiki/Circular_buffer" title="Circular buffer">ring buffer</a> <a href="http://en.wikipedia.org/wiki/FIFO" title="FIFO">FIFO</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Read-copy-update" title="Read-copy-update">Read-copy-update</a> with a single writer and any number of readers. (The readers are wait-free; the writer is usually lock-free, until it needs to reclaim memory).</li>
+<li><a href="http://en.wikipedia.org/wiki/Read-copy-update" title="Read-copy-update">Read-copy-update</a> with multiple writers and any number of readers. (The readers are wait-free; multiple writers generally serialize with a lock and are not obstruction-free).</li>
+</ul>
+<p>Several libraries internally use lock-free techniques,<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>4<span>]</span></a></sup><sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>5<span>]</span></a></sup> <sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>6<span>]</span></a></sup> but it is difficult to write lock-free code that is correct.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>7<span>]</span></a></sup><sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>8<span>]</span></a></sup><sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>9<span>]</span></a></sup><sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>10<span>]</span></a></sup></p>
+<h2><span class="mw-headline" id="Wait-freedom">Wait-freedom</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit&amp;section=3" title="Edit section: Wait-freedom">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Wait-freedom is the strongest non-blocking guarantee of progress, combining guaranteed system-wide throughput with <a href="http://en.wikipedia.org/wiki/Resource_starvation" title="Resource starvation">starvation</a>-freedom. An algorithm is wait-free if every operation has a bound on the number of steps the algorithm will take before the operation completes. This property is critical for real-time systems and is always nice to have as long as the performance cost is not too high.</p>
+<p>It was shown in the 1980s<sup id="cite_ref-imp_11-0" class="reference"><a href="#cite_note-imp-11"><span>[</span>11<span>]</span></a></sup> that all algorithms can be implemented wait-free, and many transformations from serial code, called <i>universal constructions</i>, have been demonstrated. However, the resulting performance does not in general match even naïve blocking designs. Several papers have since improved the performance of universal constructions, but still, their performance is far below blocking designs.</p>
+<p>Several papers have investigated the difficulty of creating wait-free algorithms. For example, it has been shown<sup id="cite_ref-cond-sync_12-0" class="reference"><a href="#cite_note-cond-sync-12"><span>[</span>12<span>]</span></a></sup> that the widely available atomic <i>conditional</i> primitives, <a href="http://en.wikipedia.org/wiki/Compare-and-swap" title="Compare-and-swap">CAS</a> and <a href="http://en.wikipedia.org/wiki/Load-link/store-conditional" title="Load-link/store-conditional">LL/SC</a>, cannot provide starvation-free implementations of many common data structures without memory costs growing linearly in the number of threads.</p>
+<p>But in practice these lower bounds do not present a real barrier as spending a cache line or exclusive reservation granule (up to 2kb on ARM) of store per thread in the shared memory is not considered too costly for practical systems (typically the amount of store logically required is a word, but physically CAS operations on the same cache line will collide, and LL/SC operations in the same exclusive reservation granule will collide, so the amount of store physically required<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (June 2014)">citation needed</span></a></i>]</sup> is greater).</p>
+<p>Wait-free algorithms were rare until 2011, both in research and in practice. However, in 2011 Kogan and Petrank<sup id="cite_ref-wf-queue_13-0" class="reference"><a href="#cite_note-wf-queue-13"><span>[</span>13<span>]</span></a></sup> presented a wait-free queue building on the <a href="http://en.wikipedia.org/wiki/Compare-and-swap" title="Compare-and-swap">CAS</a> primitive, generally available on common hardware. Their construction expands the lock-free queue of Michael and Scott,<sup id="cite_ref-lf-queue_14-0" class="reference"><a href="#cite_note-lf-queue-14"><span>[</span>14<span>]</span></a></sup> which is an efficient queue often used in practice. A follow-up paper by Kogan and Petrank<sup id="cite_ref-wf-fpsp_15-0" class="reference"><a href="#cite_note-wf-fpsp-15"><span>[</span>15<span>]</span></a></sup> provided a methodology for making wait-free algorithms fast and used this methodology to make the wait-free queue practically as fast as its lock-free counterpart.</p>
+<h2><span class="mw-headline" id="Lock-freedom">Lock-freedom</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit&amp;section=4" title="Edit section: Lock-freedom">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Lock-freedom allows individual threads to starve but guarantees system-wide throughput. An algorithm is lock-free if it satisfies that when the program threads are run sufficiently long at least one of the threads makes progress (for some sensible definition of progress). All wait-free algorithms are lock-free.</p>
+<p>In general, a lock-free algorithm can run in four phases: completing one's own operation, assisting an obstructing operation, aborting an obstructing operation, and waiting. Completing one's own operation is complicated by the possibility of concurrent assistance and abortion, but is invariably the fastest path to completion.</p>
+<p>The decision about when to assist, abort or wait when an obstruction is met is the responsibility of a <i>contention manager</i>. This may be very simple (assist higher priority operations, abort lower priority ones), or may be more optimized to achieve better throughput, or lower the latency of prioritized operations.</p>
+<p>Correct concurrent assistance is typically the most complex part of a lock-free algorithm, and often very costly to execute: not only does the assisting thread slow down, but thanks to the mechanics of shared memory, the thread being assisted will be slowed, too, if it is still running.</p>
+<h2><span class="mw-headline" id="Obstruction-freedom">Obstruction-freedom</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit&amp;section=5" title="Edit section: Obstruction-freedom">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Obstruction-freedom is possibly the weakest natural non-blocking progress guarantee. An algorithm is obstruction-free if at any point, a single thread executed in isolation (i.e., with all obstructing threads suspended) for a bounded number of steps will complete its operation. All lock-free algorithms are obstruction-free.</p>
+<p>Obstruction-freedom demands only that any partially completed operation can be aborted and the changes made rolled back. Dropping concurrent assistance can often result in much simpler algorithms that are easier to validate. Preventing the system from continually <a href="http://en.wikipedia.org/wiki/Livelock" title="Livelock" class="mw-redirect">live-locking</a> is the task of a contention manager.</p>
+<p>Obstruction-freedom is also called <a href="http://en.wikipedia.org/wiki/Optimistic_concurrency_control" title="Optimistic concurrency control">optimistic concurrency control</a>.</p>
+<p>Some obstruction-free algorithms use a pair of "consistency markers" in the data structure. Processes reading the data structure first read one consistency marker, then read the relevant data into an internal buffer, then read the other marker, and then compare the markers. The data is consistent if the two markers are identical. Markers may be non-identical when the read is interrupted by another process updating the data structure. In such a case, the process discards the data in the internal buffer and tries again.</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Concurrent_data_structure" title="Concurrent data structure">Concurrent data structure</a></li>
+<li><a href="http://en.wikipedia.org/wiki/ABA_problem" title="ABA problem">ABA problem</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Compare-and-swap" title="Compare-and-swap">Compare-and-swap</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Concurrency_control" title="Concurrency control">Concurrency control</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Communicating_sequential_processes" title="Communicating sequential processes">Communicating sequential processes</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">Deadlock</a></li>
+<li><a href="http://en.wikipedia.org/wiki/JCSP" title="JCSP">JCSP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Linearizability" title="Linearizability">Linearizability</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Load-Link/Store-Conditional" title="Load-Link/Store-Conditional" class="mw-redirect">Load-Link/Store-Conditional</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Lock_(software_engineering)" title="Lock (software engineering)" class="mw-redirect">Lock (software engineering)</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Memory_barrier" title="Memory barrier">Memory barrier</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">Mutual exclusion</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Pre-emptive_multitasking" title="Pre-emptive multitasking" class="mw-redirect">Pre-emptive multitasking</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Priority_inversion" title="Priority inversion">Priority inversion</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Read-copy-update" title="Read-copy-update">Read-copy-update</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Resource_starvation" title="Resource starvation">Resource starvation</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Room_synchronization" title="Room synchronization">Room synchronization</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Software_transactional_memory" title="Software transactional memory">Software transactional memory</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Partitioned_global_address_space" title="Partitioned global address space">Partitioned global address space</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit&amp;section=7" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ol class="references">
+<li id="cite_note-obs-free-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-obs-free_1-0">^</a></b></span> <span class="reference-text"><span class="citation conference">Herlihy, M.; Luchangco, V.; Moir, M. (2003). <a rel="nofollow" class="external text" href="http://www.cs.brown.edu/people/mph/HerlihyLM03/main.pdf">"Obstruction-Free Synchronization: Double-Ended Queues as an Example"</a>. 23rd <a href="http://en.wikipedia.org/wiki/International_Conference_on_Distributed_Computing_Systems" title="International Conference on Distributed Computing Systems">International Conference on Distributed Computing Systems</a>. p.&#160;522.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANon-blocking+algorithm&amp;rft.aufirst=M.&amp;rft.au=Herlihy%2C+M.&amp;rft.aulast=Herlihy&amp;rft.au=Luchangco%2C+V.&amp;rft.au=Moir%2C+M.&amp;rft.btitle=Obstruction-Free+Synchronization%3A+Double-Ended+Queues+as+an+Example&amp;rft.date=2003&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.cs.brown.edu%2Fpeople%2Fmph%2FHerlihyLM03%2Fmain.pdf&amp;rft.pages=522&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-lightweight-transactions-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-lightweight-transactions_2-0">^</a></b></span> <span class="reference-text"><span class="citation journal">Harris, Tim; Fraser, Keir (26 November 2003). <a rel="nofollow" class="external text" href="http://research.microsoft.com/en-us/um/people/tharris/papers/2003-oopsla.pdf">"Language support for lightweight transactions"</a>. <i>ACM SIGPLAN Notices</i> <b>38</b> (11): 388. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F949343.949340">10.1145/949343.949340</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANon-blocking+algorithm&amp;rft.atitle=Language+support+for+lightweight+transactions&amp;rft.aufirst=Tim&amp;rft.au=Fraser%2C+Keir&amp;rft.au=Harris%2C+Tim&amp;rft.aulast=Harris&amp;rft.date=26+November+2003&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fum%2Fpeople%2Ftharris%2Fpapers%2F2003-oopsla.pdf&amp;rft_id=info%3Adoi%2F10.1145%2F949343.949340&amp;rft.issue=11&amp;rft.jtitle=ACM+SIGPLAN+Notices&amp;rft.pages=388&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=38" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-composable-memory-transactions-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-composable-memory-transactions_3-0">^</a></b></span> <span class="reference-text"><span class="citation book">Harris, Tim; Marlow, S.; Peyton-Jones, S.; Herlihy, M. (June 15–17). "Composable memory transactions". <a rel="nofollow" class="external text" href="http://doi.acm.org/10.1145/1065944.1065952"><i>Proceedings of the 2005 ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, PPoPP '05&#160;: Chicago, Illinois</i></a>. New York, NY: ACM Press. pp.&#160;48–60. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/1-59593-080-9" title="Special:BookSources/1-59593-080-9">1-59593-080-9</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANon-blocking+algorithm&amp;rft.atitle=Composable+memory+transactions&amp;rft.aufirst=Tim&amp;rft.au=Harris%2C+Tim&amp;rft.au=Herlihy%2C+M.&amp;rft.aulast=Harris&amp;rft.au=Marlow%2C+S.&amp;rft.au=Peyton-Jones%2C+S.&amp;rft.btitle=Proceedings+of+the+2005+ACM+SIGPLAN+Symposium+on+Principles+and+Practice+of+Parallel+Programming%2C+PPoPP+%2705+%3A+Chicago%2C+Illinois&amp;rft.date=June+15%E2%80%9317&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fdoi.acm.org%2F10.1145%2F1065944.1065952&amp;rft.isbn=1-59593-080-9&amp;rft.pages=48-60&amp;rft.place=New+York%2C+NY&amp;rft.pub=ACM+Press&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="font-size:100%" class="error citation-comment">Check date values in: <code style="color:inherit; border:inherit; padding:inherit;">|date=</code> (<a href="http://en.wikipedia.org/wiki/Help:CS1_errors#bad_date" title="Help:CS1 errors">help</a>)</span></span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://libcds.sourceforge.net/">libcds</a> - C++ library of lock-free containers and safe memory reclamation schema</span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.liblfds.org/">liblfds</a> - A library of lock-free data structures, written in C</span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://concurrencykit.org/">Concurrency Kit</a> - A C library for non-blocking system design and implementation</span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text">Herb Sutter. <a rel="nofollow" class="external text" href="http://www.drdobbs.com/article/print?articleId=210600279&amp;siteSectionName=cpp">"Lock-Free Code: A False Sense of Security"</a>.</span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text">Herb Sutter. <a rel="nofollow" class="external text" href="http://www.ddj.com/cpp/184401930">"Writing Lock-Free Code: A Corrected Queue"</a>.</span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text">Herb Sutter. <a rel="nofollow" class="external text" href="http://www.ddj.com/cpp/211601363">"Writing a Generalized Concurrent Queue"</a>.</span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text">Herb Sutter. <a rel="nofollow" class="external text" href="http://www.ddj.com/cpp/184401930">"The Trouble With Locks"</a>.</span></li>
+<li id="cite_note-imp-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-imp_11-0">^</a></b></span> <span class="reference-text"><span class="citation book">Herlihy, Maurice P. (August 15–17). "Impossibility and universality results for wait-free synchronization". <a rel="nofollow" class="external text" href="http://doi.acm.org/10.1145/62546.62593"><i>Proceedings of the Seventh Annual ACM Symposium on Principles of Distributed Computing&#160;: Toronto, Ontario, Canada</i></a>. New York, N.Y.: Association for Computing Machinery. pp.&#160;276–290. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-89791-277-2" title="Special:BookSources/0-89791-277-2">0-89791-277-2</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANon-blocking+algorithm&amp;rft.atitle=Impossibility+and+universality+results+for+wait-free+synchronization&amp;rft.aufirst=Maurice+P.&amp;rft.au=Herlihy%2C+Maurice+P.&amp;rft.aulast=Herlihy&amp;rft.btitle=Proceedings+of+the+Seventh+Annual+ACM+Symposium+on+Principles+of+Distributed+Computing+%3A+Toronto%2C+Ontario%2C+Canada&amp;rft.date=August+15%E2%80%9317&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fdoi.acm.org%2F10.1145%2F62546.62593&amp;rft.isbn=0-89791-277-2&amp;rft.pages=276-290&amp;rft.place=New+York%2C+N.Y.&amp;rft.pub=Association+for+Computing+Machinery&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="font-size:100%" class="error citation-comment">Check date values in: <code style="color:inherit; border:inherit; padding:inherit;">|date=</code> (<a href="http://en.wikipedia.org/wiki/Help:CS1_errors#bad_date" title="Help:CS1 errors">help</a>)</span></span></li>
+<li id="cite_note-cond-sync-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-cond-sync_12-0">^</a></b></span> <span class="reference-text"><span class="citation book">Fich, Faith; Hendler, Danny; Shavit, Nir (July 25–28). "On the inherent weakness of conditional synchronization primitives". <a rel="nofollow" class="external text" href="http://doi.acm.org/10.1145/1011767.1011780"><i>Proceedings of the 23rd Annual ACM Symposium on Principles of Distributed Computing, PODC 2004&#160;: St. John's, Newfoundland, Canada</i></a>. New York, NY: ACM Press. pp.&#160;80–87. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/1-58113-802-4" title="Special:BookSources/1-58113-802-4">1-58113-802-4</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANon-blocking+algorithm&amp;rft.atitle=On+the+inherent+weakness+of+conditional+synchronization+primitives&amp;rft.au=Fich%2C+Faith&amp;rft.aufirst=Faith&amp;rft.au=Hendler%2C+Danny&amp;rft.aulast=Fich&amp;rft.au=Shavit%2C+Nir&amp;rft.btitle=Proceedings+of+the+23rd+Annual+ACM+Symposium+on+Principles+of+Distributed+Computing%2C+PODC+2004+%3A+St.+John%27s%2C+Newfoundland%2C+Canada&amp;rft.date=July+25%E2%80%9328&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fdoi.acm.org%2F10.1145%2F1011767.1011780&amp;rft.isbn=1-58113-802-4&amp;rft.pages=80-87&amp;rft.place=New+York%2C+NY&amp;rft.pub=ACM+Press&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="font-size:100%" class="error citation-comment">Check date values in: <code style="color:inherit; border:inherit; padding:inherit;">|date=</code> (<a href="http://en.wikipedia.org/wiki/Help:CS1_errors#bad_date" title="Help:CS1 errors">help</a>)</span></span></li>
+<li id="cite_note-wf-queue-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-wf-queue_13-0">^</a></b></span> <span class="reference-text"><span class="citation book">Kogan, Alex; Petrank, Erez (February 12–16). "Wait-free queues with multiple enqueuers and dequeuers". <a rel="nofollow" class="external text" href="http://doi.acm.org/10.1145/1941553.1941585"><i>Proceedings of the 16th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming (PPOPP 2011)</i></a>. San Antonio, TX: ACM Press. pp.&#160;223–234. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/978-1-4503-0119-0" title="Special:BookSources/978-1-4503-0119-0">978-1-4503-0119-0</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANon-blocking+algorithm&amp;rft.atitle=Wait-free+queues+with+multiple+enqueuers+and+dequeuers&amp;rft.aufirst=Alex&amp;rft.au=Kogan%2C+Alex&amp;rft.aulast=Kogan&amp;rft.au=Petrank%2C+Erez&amp;rft.btitle=Proceedings+of+the+16th+ACM+SIGPLAN+Symposium+on+Principles+and+Practice+of+Parallel+Programming+%28PPOPP+2011%29&amp;rft.date=February+12%E2%80%9316&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fdoi.acm.org%2F10.1145%2F1941553.1941585&amp;rft.isbn=978-1-4503-0119-0&amp;rft.pages=223-234&amp;rft.place=San+Antonio%2C+TX&amp;rft.pub=ACM+Press&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="font-size:100%" class="error citation-comment">Check date values in: <code style="color:inherit; border:inherit; padding:inherit;">|date=</code> (<a href="http://en.wikipedia.org/wiki/Help:CS1_errors#bad_date" title="Help:CS1 errors">help</a>)</span></span></li>
+<li id="cite_note-lf-queue-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-lf-queue_14-0">^</a></b></span> <span class="reference-text"><span class="citation book">Michael, Maged; Scott, Michael (May 23–26). "Simple, Fast, and Practical Non-Blocking and Blocking Concurrent Queue Algorithms". <a rel="nofollow" class="external text" href="http://doi.acm.org/10.1145/248052.248106"><i>Proceedings of the Fifteenth Annual ACM Symposium on Principles of Distributed Computing(PODC 1996)</i></a>. Philadelphia, Pennsylvania, USA: ACM Press. pp.&#160;267–275. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-89791-800-2" title="Special:BookSources/0-89791-800-2">0-89791-800-2</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANon-blocking+algorithm&amp;rft.atitle=Simple%2C+Fast%2C+and+Practical+Non-Blocking+and+Blocking+Concurrent+Queue+Algorithms&amp;rft.aufirst=Maged&amp;rft.aulast=Michael&amp;rft.au=Michael%2C+Maged&amp;rft.au=Scott%2C+Michael&amp;rft.btitle=Proceedings+of+the+Fifteenth+Annual+ACM+Symposium+on+Principles+of+Distributed+Computing%28PODC+1996%29&amp;rft.date=May+23%E2%80%9326&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fdoi.acm.org%2F10.1145%2F248052.248106&amp;rft.isbn=0-89791-800-2&amp;rft.pages=267-275&amp;rft.place=Philadelphia%2C+Pennsylvania%2C+USA&amp;rft.pub=ACM+Press&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="font-size:100%" class="error citation-comment">Check date values in: <code style="color:inherit; border:inherit; padding:inherit;">|date=</code> (<a href="http://en.wikipedia.org/wiki/Help:CS1_errors#bad_date" title="Help:CS1 errors">help</a>)</span></span></li>
+<li id="cite_note-wf-fpsp-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-wf-fpsp_15-0">^</a></b></span> <span class="reference-text"><span class="citation book">Kogan, Alex; Petrank, Erez (February 25–29). "A methodology for creating fast wait-free data structures". <a rel="nofollow" class="external text" href="http://doi.acm.org/10.1145/2145816.2145835"><i>Proceedings of the 17ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming (PPOPP 2012)</i></a>. New Orleans, LA: ACM Press. pp.&#160;141–150. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/978-1-4503-1160-1" title="Special:BookSources/978-1-4503-1160-1">978-1-4503-1160-1</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ANon-blocking+algorithm&amp;rft.atitle=A+methodology+for+creating+fast+wait-free+data+structures&amp;rft.aufirst=Alex&amp;rft.au=Kogan%2C+Alex&amp;rft.aulast=Kogan&amp;rft.au=Petrank%2C+Erez&amp;rft.btitle=Proceedings+of+the+17ACM+SIGPLAN+Symposium+on+Principles+and+Practice+of+Parallel+Programming+%28PPOPP+2012%29&amp;rft.date=February+25%E2%80%9329&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fdoi.acm.org%2F10.1145%2F2145816.2145835&amp;rft.isbn=978-1-4503-1160-1&amp;rft.pages=141-150&amp;rft.place=New+Orleans%2C+LA&amp;rft.pub=ACM+Press&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="font-size:100%" class="error citation-comment">Check date values in: <code style="color:inherit; border:inherit; padding:inherit;">|date=</code> (<a href="http://en.wikipedia.org/wiki/Help:CS1_errors#bad_date" title="Help:CS1 errors">help</a>)</span></span></li>
+</ol>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1004
+CPU time usage: 0.900 seconds
+Real time usage: 0.971 seconds
+Preprocessor visited node count: 1585/1000000
+Preprocessor generated node count: 7963/1500000
+Post‐expand include size: 38101/2097152 bytes
+Template argument size: 2035/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 6/500
+Lua time usage: 0.152/10.000 seconds
+Lua memory usage: 2.66 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1187.089      1 - -total
+ 26.33%  312.506      3 - Template:Ambox
+ 21.78%  258.491      1 - Template:Multiple_issues
+  7.45%   88.413     74 - Template:Multiple_issues/message
+  7.24%   85.906      1 - Template:Citation_needed
+  5.87%   69.740      1 - Template:Fix
+  5.04%   59.783      6 - Template:Cite_book
+  4.83%   57.293      1 - Template:Refimprove
+  4.45%   52.794      2 - Template:Category_handler
+  3.91%   46.407      1 - Template:Cite_conference
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:554867-0!*!0!!en!4!* and timestamp 20141213100309 and revision id 635688489
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;oldid=635688489">http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;oldid=635688489</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Synchronization" title="Category:Synchronization">Synchronization</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Concurrency_control" title="Category:Concurrency control">Concurrency control</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Concurrency_control_algorithms" title="Category:Concurrency control algorithms">Concurrency control algorithms</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Operating_system_technology" title="Category:Operating system technology">Operating system technology</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.wikipedia.org/wiki/Category:CS1_errors:_dates" title="Category:CS1 errors: dates">CS1 errors: dates</a></li><li><a href="http://en.wikipedia.org/wiki/Category:CS1_maint:_Date_and_year" title="Category:CS1 maint: Date and year">CS1 maint: Date and year</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_needing_additional_references_from_August_2010" title="Category:Articles needing additional references from August 2010">Articles needing additional references from August 2010</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_needing_additional_references" title="Category:All articles needing additional references">All articles needing additional references</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Wikipedia_articles_needing_style_editing_from_October_2012" title="Category:Wikipedia articles needing style editing from October 2012">Wikipedia articles needing style editing from October 2012</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_needing_style_editing" title="Category:All articles needing style editing">All articles needing style editing</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_June_2014" title="Category:Articles with unsourced statements from June 2014">Articles with unsourced statements from June 2014</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Non-blocking+algorithm&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Non-blocking+algorithm" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Non-blocking_algorithm"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Non-blocking_algorithm"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Non-blocking_algorithm" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://en.wikipedia.org/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://en.wikipedia.org/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Non-blocking_algorithm" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Non-blocking_algorithm" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;oldid=635688489" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q1985141" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Non-blocking_algorithm&amp;id=635688489" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Non-blocking+algorithm">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Non-blocking+algorithm&amp;oldid=635688489&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ar"><a href="http://ar.wikipedia.org/wiki/خوارزمية_غير_مسدودة" title="خوارزمية غير مسدودة – Arabic" lang="ar" hreflang="ar">العربية</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Nicht-blockierende_Synchronisation" title="Nicht-blockierende Synchronisation – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-he"><a href="http://he.wikipedia.org/wiki/אלגוריתם_חסר_נעילות" title="אלגוריתם חסר נעילות – Hebrew" lang="he" hreflang="he">עברית</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/Lock-freeとWait-freeアルゴリズム" title="Lock-freeとWait-freeアルゴリズム – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Synchronizacja_nieblokująca" title="Synchronizacja nieblokująca – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Неблокирующая_синхронизация" title="Неблокирующая синхронизация – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="http://en.wikipedia.org/wiki/edit" href="http://www.wikidata.org/wiki/Q1985141#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 November 2014 at 20:55.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Non-blocking_algorithm&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":162,"wgHostname":"mw1018"});
+}</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Lock-free_and_wait-free_algorithms by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:50 GMT -->
+</html>

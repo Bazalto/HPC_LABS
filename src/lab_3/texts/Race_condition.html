@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Race_condition by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Race condition - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="http://en.wikipedia.org/wiki/android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Race_condition" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="http://en.wikipedia.org/wiki/Race_condition" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Race_condition" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Race_condition","wgTitle":"Race condition","wgCurRevisionId":635136490,"wgRevisionId":635136490,"wgArticleId":475952,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing additional references from July 2010","All articles needing additional references","Computer security exploits","Anti-patterns","Concurrency (computer science)","Software bugs","Logic gates","Logic in computer science","Distributed computing problems","Timing in electronic circuits"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Race_condition","wgRelevantArticleId":475952,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["en-us","en","de-ch"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q616554"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Race_condition skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Race condition</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="metadata plainlinks ambox ambox-content ambox-Refimprove" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><a href="http://en.wikipedia.org/wiki/File:Question_book-new.svg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" width="50" height="39" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/75px-Question_book-new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/100px-Question_book-new.svg.png 2x" data-file-width="262" data-file-height="204" /></a></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>needs additional citations for <a href="http://en.wikipedia.org/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">verification</a></b>. <span class="hide-when-compact">Please help <a class="external text" href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit">improve this article</a> by <a href="http://en.wikipedia.org/wiki/Help:Introduction_to_referencing/1" title="Help:Introduction to referencing/1">adding citations to reliable sources</a>. Unsourced material may be challenged and removed.</span> <small><i>(July 2010)</i></small></span></td>
+</tr>
+</table>
+<div class="thumb tright">
+<div class="thumbinner" style="width:264px;"><a href="http://en.wikipedia.org/wiki/File:Race_condition.svg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Race_condition.svg/262px-Race_condition.svg.png" width="262" height="349" class="thumbimage" data-file-width="262" data-file-height="349" /></a>
+<div class="thumbcaption">Race condition in a logic circuit. Here, ∆<i>t</i><sub>1</sub> and ∆<i>t</i><sub>2</sub> represent the <a href="http://en.wikipedia.org/wiki/Propagation_delay" title="Propagation delay">propagation delays</a> of the logic elements. When the input value (<i>A</i>) changes from low to high, the circuit outputs a short spike of duration (∆<i>t</i><sub>1</sub>+∆<i>t</i><sub>2</sub>) - ∆<i>t</i><sub>2</sub> = ∆<i>t</i><sub>1</sub>.</div>
+</div>
+</div>
+<p>A <b>race condition</b> or <b>race <a href="http://en.wikipedia.org/wiki/Hazard_(logic)" title="Hazard (logic)">hazard</a></b> is the behavior of an electronic or software <a href="http://en.wikipedia.org/wiki/System" title="System">system</a> where the output is dependent on the sequence or timing of other uncontrollable events. It becomes a <a href="http://en.wikipedia.org/wiki/Software_bug" title="Software bug">bug</a> when events do not happen in the order the programmer intended. The term originates with the idea of two <a href="http://en.wikipedia.org/wiki/Signal_(information_theory)" title="Signal (information theory)" class="mw-redirect">signals</a> racing each other to influence the output first.</p>
+<p>Race conditions can occur in <a href="http://en.wikipedia.org/wiki/Electronics" title="Electronics">electronics</a> systems, especially <a href="http://en.wikipedia.org/wiki/Logic_gate" title="Logic gate">logic circuits</a>, and in computer software, especially <a href="http://en.wikipedia.org/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">multithreaded</a> or <a href="http://en.wikipedia.org/wiki/Distributed_systems" title="Distributed systems" class="mw-redirect">distributed</a> programs.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Electronics"><span class="tocnumber">1</span> <span class="toctext">Electronics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Critical_and_non-critical_race_conditions"><span class="tocnumber">1.1</span> <span class="toctext">Critical and non-critical race conditions</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Static.2C_dynamic.2C_and_essential_race_conditions"><span class="tocnumber">1.2</span> <span class="toctext">Static, dynamic, and essential race conditions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Software"><span class="tocnumber">2</span> <span class="toctext">Software</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Example"><span class="tocnumber">2.1</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#C.2B.2B"><span class="tocnumber">2.2</span> <span class="toctext">C++</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#File_systems"><span class="tocnumber">2.3</span> <span class="toctext">File systems</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Networking"><span class="tocnumber">2.4</span> <span class="toctext">Networking</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Life-critical_systems"><span class="tocnumber">2.5</span> <span class="toctext">Life-critical systems</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Computer_security"><span class="tocnumber">2.6</span> <span class="toctext">Computer security</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Biology"><span class="tocnumber">3</span> <span class="toctext">Biology</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#External_links"><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Electronics">Electronics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=1" title="Edit section: Electronics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>A typical example of a race condition may occur in a system of <a href="http://en.wikipedia.org/wiki/Logic_gate" title="Logic gate">logic gates</a>, where inputs vary. If a particular output depends on the state of the inputs, it may only be defined for steady-state signals. As the inputs change state, a small delay will occur before the output changes, due to the physical nature of the electronic system. For a brief period, the output may change to an unwanted state before settling back to the designed state. Certain systems can tolerate such <a href="http://en.wikipedia.org/wiki/Glitch" title="Glitch">glitches</a>, but if, for example, this output functions as a <a href="http://en.wikipedia.org/wiki/Clock_signal" title="Clock signal">clock signal</a> for further systems that contain memory, the system can rapidly depart from its designed behaviour (in effect, the temporary glitch becomes a permanent glitch).</p>
+<p>For example, consider a two input <a href="http://en.wikipedia.org/wiki/AND_gate" title="AND gate">AND gate</a> fed with a logic signal A on one input and its negation, NOT A, on another input. In theory, the output (A AND NOT A) should never be true. However, if changes in the value of A take longer to propagate to the second input than the first when A changes from false to true, a brief period will ensue during which both inputs are true, and so the gate's output will also be true.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup></p>
+<p>Design techniques such as <a href="http://en.wikipedia.org/wiki/Karnaugh_map" title="Karnaugh map">Karnaugh maps</a> encourage designers to recognize and eliminate race conditions before they cause problems. Often <a href="http://en.wikipedia.org/wiki/Logic_redundancy" title="Logic redundancy">logic redundancy</a> can be added to eliminate some kinds of races.</p>
+<p>As well as these problems, some logic elements can enter <a href="http://en.wikipedia.org/wiki/Metastability_in_electronics" title="Metastability in electronics">metastable states</a>, which create further problems for circuit designers.</p>
+<h3><span class="mw-headline" id="Critical_and_non-critical_race_conditions">Critical and non-critical race conditions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=2" title="Edit section: Critical and non-critical race conditions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A <b>critical race</b> occurs when the order in which internal variables are changed determines the eventual state that the <a href="http://en.wikipedia.org/wiki/Finite_state_machine" title="Finite state machine" class="mw-redirect">state machine</a> will end up in.</p>
+<p>A <b>non-critical race</b> occurs when the order in which internal variables are changed does not alter the eventual state. In other words, a non-critical race occurs when moving to a desired state means that more than one internal state variable must be changed at once, but no matter in what order these internal state variables change, the resultant state will be the same.</p>
+<h3><span class="mw-headline" id="Static.2C_dynamic.2C_and_essential_race_conditions">Static, dynamic, and essential race conditions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=3" title="Edit section: Static, dynamic, and essential race conditions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>Static race conditions&#160;</dt>
+<dd>These are caused when a signal and its complement are combined together.</dd>
+<dt>Dynamic race conditions&#160;</dt>
+<dd>These result in multiple transitions when only one is intended. They are due to interaction between gates (Dynamic race conditions can be eliminated by using no more than two levels of gating).</dd>
+<dt>Essential race conditions&#160;</dt>
+<dd>These are caused when an input has two transitions in less than the total feedback propagation time. Sometimes they are cured using inductive <a href="http://en.wikipedia.org/wiki/Digital_delay_line" title="Digital delay line">delay-line</a> elements to effectively increase the time duration of an input signal.</dd>
+</dl>
+<h2><span class="mw-headline" id="Software">Software</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=4" title="Edit section: Software">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Race conditions arise in software when an application depends on the sequence or timing of <a href="http://en.wikipedia.org/wiki/Process_(computer_science)" title="Process (computer science)" class="mw-redirect">processes</a> or <a href="http://en.wikipedia.org/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">threads</a> for it to operate properly. As with electronics, there are critical race conditions that result in invalid execution and <a href="http://en.wikipedia.org/wiki/Software_bug" title="Software bug">bugs</a> as well as non-critical race-conditions that result in unanticipated behavior. Critical race conditions often happen when the processes or threads depend on some shared state. Operations upon shared states are <a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">critical sections</a> that must be <a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">mutually exclusive</a>. Failure to obey this rule opens up the possibility of corrupting the shared state.</p>
+<p>Race conditions have a reputation of being difficult to reproduce and debug, since the end result is <a href="http://en.wikipedia.org/wiki/Nondeterministic_algorithm" title="Nondeterministic algorithm">nondeterministic</a> and depends on the relative timing between interfering threads. Problems occurring in production systems can therefore disappear when running in debug mode, when additional logging is added, or when attaching a debugger, often referred to as a "<a href="http://en.wikipedia.org/wiki/Heisenbug" title="Heisenbug">Heisenbug</a>". It is therefore better to avoid race conditions by careful software design rather than attempting to fix them afterwards.</p>
+<h3><span class="mw-headline" id="Example">Example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>As a simple example let us assume that two threads each want to increment the value of a global integer variable by one. Ideally, the following sequence of operations would take place:</p>
+<table class="wikitable" style="text-align: center;">
+<tr>
+<th>Thread 1</th>
+<th>Thread 2</th>
+<th></th>
+<th>Integer value</th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>read value</td>
+<td></td>
+<td>←</td>
+<td>0</td>
+</tr>
+<tr>
+<td style="background: wheat;">increase value</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>write back</td>
+<td></td>
+<td>→</td>
+<td>1</td>
+</tr>
+<tr>
+<td></td>
+<td>read value</td>
+<td>←</td>
+<td>1</td>
+</tr>
+<tr>
+<td></td>
+<td style="background: wheat;">increase value</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td></td>
+<td>write back</td>
+<td>→</td>
+<td>2</td>
+</tr>
+</table>
+<p>In the case shown above, the final value is 2, as expected. However, if the two threads run simultaneously without locking or synchronization, the outcome of the operation could be wrong. The alternative sequence of operations below demonstrates this scenario:</p>
+<table class="wikitable" style="text-align: center;">
+<tr>
+<th>Thread 1</th>
+<th>Thread 2</th>
+<th></th>
+<th>Integer value</th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>read value</td>
+<td></td>
+<td>←</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td>read value</td>
+<td>←</td>
+<td>0</td>
+</tr>
+<tr>
+<td style="background: wheat;">increase value</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td style="background: wheat;">increase value</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>write back</td>
+<td></td>
+<td>→</td>
+<td>1</td>
+</tr>
+<tr>
+<td></td>
+<td>write back</td>
+<td>→</td>
+<td>1</td>
+</tr>
+</table>
+<p>The final value is 1 instead of the expected result of 2. This occurs because the increment operations of the second case are not mutually exclusive. <a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">Mutually exclusive</a> operations are those that cannot be interrupted while accessing some resource such as a memory location.</p>
+<h3><span class="mw-headline" id="C.2B.2B">C++</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=6" title="Edit section: C++">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="http://en.wikipedia.org/wiki/C++11" title="C++11">C++11</a> introduced formal support for multithreading, and defined a data race strictly as a race condition between non-atomic variables. While race conditions in general will continue to exist, a "data race" must be avoided by the programmer, who must assure that only one thread at a time may access any variable if the access is for writing.</p>
+<h3><span class="mw-headline" id="File_systems">File systems</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=7" title="Edit section: File systems">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In <a href="http://en.wikipedia.org/wiki/File_system" title="File system">file systems</a>, two or more programs may "collide" in their attempts to modify or access a file, which could result in data corruption. <a href="http://en.wikipedia.org/wiki/File_locking" title="File locking">File locking</a> provides a commonly used solution. A more cumbersome remedy involves organizing the system in such a way that one unique process (running a <a href="http://en.wikipedia.org/wiki/Daemon_(computer_software)" title="Daemon (computer software)" class="mw-redirect">daemon</a> or the like) has exclusive access to the file, and all other processes that need to access the data in that file do so only via interprocess communication with that one process (which of course requires synchronization at the process level).</p>
+<p>A different form of race condition exists in file systems where unrelated programs may affect each other by suddenly using up available resources such as disk space (or memory, or processor cycles). Software not carefully designed to anticipate and handle this race situation may then become quite fragile and unpredictable. Such a risk may be overlooked for a long time in a system that seems very reliable. But eventually enough data may accumulate or enough other software may be added to critically destabilize many parts of a system. Probably the best known example of this occurred with the near loss of the <a href="http://en.wikipedia.org/wiki/Spirit_rover" title="Spirit rover" class="mw-redirect">Mars Rover "Spirit"</a> not long after landing, but this is a commonly overlooked hazard in many computer systems. A solution is for software to request <i>and reserve</i> all the resources it will need before beginning a task; if this request fails then the task is postponed, avoiding the many points where failure could have occurred. (Alternatively, each of those points can be equipped with error handling, or the success of the entire task can be verified afterwards, before continuing.) A more common but incorrect approach is to simply verify that enough disk space (for example) is available before starting a task; this is not adequate because in complex systems the actions of other running programs can be unpredictable.</p>
+<h3><span class="mw-headline" id="Networking">Networking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=8" title="Edit section: Networking">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In networking, consider a distributed chat network like <a href="http://en.wikipedia.org/wiki/IRC" title="IRC" class="mw-redirect">IRC</a>, where a user who starts a channel automatically acquires channel-operator privileges. If two users on different servers, on different ends of the same network, try to start the same-named channel at the same time, each user's respective server will grant channel-operator privileges to each user, since neither server will yet have received the other server's signal that it has allocated that channel. (Note that this problem has been largely <a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat#Abuse_prevention" title="Internet Relay Chat">solved</a> by various IRC server implementations.)</p>
+<p>In this case of a race condition, the concept of the "shared <a href="http://en.wikipedia.org/wiki/Resource_(computer_science)" title="Resource (computer science)" class="mw-redirect">resource</a>" covers the state of the network (what channels exist, as well as what users started them and therefore have what privileges), which each server can freely change as long as it signals the other servers on the network about the changes so that they can update their conception of the state of the network. However, the <a href="http://en.wikipedia.org/wiki/Latency_(engineering)" title="Latency (engineering)">latency</a> across the network makes possible the kind of race condition described. In this case, heading off race conditions by imposing a form of control over access to the shared resource—say, appointing one server to control who holds what privileges—would mean turning the distributed network into a centralized one (at least for that one part of the network operation).</p>
+<p>Race conditions can also exist when a computer program is written with <a href="http://en.wikipedia.org/wiki/Berkeley_sockets#Blocking_vs._non-blocking_mode" title="Berkeley sockets">non-blocking sockets</a>, in which case the performance of the program can be dependent on the speed of the network link.</p>
+<h3><span class="mw-headline" id="Life-critical_systems">Life-critical systems</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=9" title="Edit section: Life-critical systems">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Software flaws in <a href="http://en.wikipedia.org/wiki/Life-critical_system" title="Life-critical system">life-critical systems</a> can be disastrous. Race conditions were among the flaws in the <a href="http://en.wikipedia.org/wiki/Therac-25" title="Therac-25">Therac-25</a> <a href="http://en.wikipedia.org/wiki/Radiation_therapy" title="Radiation therapy">radiation therapy</a> machine, which led to the death of at least three patients and injuries to several more.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>2<span>]</span></a></sup> Another example is the Energy Management System provided by <a href="http://en.wikipedia.org/wiki/GE_Energy" title="GE Energy">GE Energy</a> and used by <a href="http://en.wikipedia.org/wiki/Ohio" title="Ohio">Ohio</a>-based <a href="http://en.wikipedia.org/wiki/FirstEnergy_Corp" title="FirstEnergy Corp" class="mw-redirect">FirstEnergy Corp</a> (among other power facilities). A race condition existed in the alarm subsystem; when three sagging power lines were tripped simultaneously, the condition prevented alerts from being raised to the monitoring technicians, delaying their awareness of the problem. This software flaw eventually led to the <a href="http://en.wikipedia.org/wiki/2003_North_America_blackout" title="2003 North America blackout" class="mw-redirect">North American Blackout of 2003</a>.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>3<span>]</span></a></sup> GE Energy later developed a software patch to correct the previously undiscovered error.</p>
+<h3><span class="mw-headline" id="Computer_security">Computer security</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=10" title="Edit section: Computer security">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A specific kind of race condition involves checking for a predicate (e.g. for <a href="http://en.wikipedia.org/wiki/Authentication" title="Authentication">authentication</a>), then acting on the predicate, while the state can change between the <i>time of check</i> and the <i>time of use</i>. When this kind of <a href="http://en.wikipedia.org/wiki/Computer_bug" title="Computer bug" class="mw-redirect">bug</a> exists in <a href="http://en.wikipedia.org/wiki/Computer_security" title="Computer security">security</a>-conscious code, a <a href="http://en.wikipedia.org/wiki/Security_vulnerability" title="Security vulnerability" class="mw-redirect">security vulnerability</a> called a <a href="http://en.wikipedia.org/wiki/Time-of-check-to-time-of-use" title="Time-of-check-to-time-of-use" class="mw-redirect">time-of-check-to-time-of-use</a> (<i>TOCTTOU</i>) bug is created.</p>
+<h2><span class="mw-headline" id="Biology">Biology</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=11" title="Edit section: Biology">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Neuroscience is demonstrating that race conditions can occur in mammal (rat) brains as well.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>4<span>]</span></a></sup><sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>5<span>]</span></a></sup></p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=12" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="noprint portal tright" style="border:solid #aaa 1px;margin:0.5em 0 0.5em 1em">
+<table style="background:#f9f9f9;font-size:85%;line-height:110%;max-width:175px">
+<tr style="vertical-align:middle">
+<td style="text-align:center"><a href="http://en.wikipedia.org/wiki/File:Green_bug_and_broom.svg" class="image"><img alt="Portal icon" src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Green_bug_and_broom.svg/32px-Green_bug_and_broom.svg.png" width="32" height="28" class="noviewer" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/83/Green_bug_and_broom.svg/48px-Green_bug_and_broom.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/83/Green_bug_and_broom.svg/64px-Green_bug_and_broom.svg.png 2x" data-file-width="447" data-file-height="385" /></a></td>
+<td style="padding:0 0.2em;vertical-align:middle;font-style:italic;font-weight:bold"><a href="http://en.wikipedia.org/wiki/Portal:Software_Testing" title="Portal:Software Testing" class="mw-redirect">Software Testing portal</a></td>
+</tr>
+</table>
+</div>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Concurrency_control" title="Concurrency control">Concurrency control</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">Deadlock</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Synchronization_(computer_science)" title="Synchronization (computer science)">Synchronization (computer science)</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Linearizability" title="Linearizability">Linearizability</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Racetrack_problem" title="Racetrack problem">Racetrack problem</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Call_collision" title="Call collision">Call collision</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=13" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><span class="citation journal">Unger, S.H. (June 1995). <a rel="nofollow" class="external text" href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&amp;arnumber=391185">"Hazards, Critical Races, and Metastability"</a>. <i>IEEE Transactions on Computers</i> <b>44</b> (6): 754–768. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1109%2F12.391185">10.1109/12.391185</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARace+condition&amp;rft.atitle=Hazards%2C+Critical+Races%2C+and+Metastability&amp;rft.aufirst=S.H.&amp;rft.aulast=Unger&amp;rft.au=Unger%2C+S.H.&amp;rft.date=June+1995&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fieeexplore.ieee.org%2Fxpl%2FarticleDetails.jsp%3Ftp%3D%26arnumber%3D391185&amp;rft_id=info%3Adoi%2F10.1109%2F12.391185&amp;rft.issue=6&amp;rft.jtitle=IEEE+Transactions+on+Computers&amp;rft.pages=754-768&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=44" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://courses.cs.vt.edu/~cs3604/lib/Therac_25/Therac_1.html">"An Investigation of Therac-25 Accidents — I"</a>. Courses.cs.vt.edu<span class="reference-accessdate">. Retrieved <span class="nowrap">2011-09-19</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARace+condition&amp;rft.btitle=An+Investigation+of+Therac-25+Accidents+%E2%80%94+I&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fcourses.cs.vt.edu%2F~cs3604%2Flib%2FTherac_25%2FTherac_1.html&amp;rft.pub=Courses.cs.vt.edu&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><span class="citation web">Kevin Poulsen (2004-04-07). <a rel="nofollow" class="external text" href="http://www.securityfocus.com/news/8412">"Tracking the blackout bug"</a>. Securityfocus.com<span class="reference-accessdate">. Retrieved <span class="nowrap">2011-09-19</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARace+condition&amp;rft.au=Kevin+Poulsen&amp;rft.aulast=Kevin+Poulsen&amp;rft.btitle=Tracking+the+blackout+bug&amp;rft.date=2004-04-07&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.securityfocus.com%2Fnews%2F8412&amp;rft.pub=Securityfocus.com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://blogs.discovermagazine.com/neuroskeptic/2013/08/03/the-race-to-stop-an-errant-movement/">"How Brains Race to Cancel Errant Movements"</a>. Discover Magazine blogs. 2013-08-03.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARace+condition&amp;rft.btitle=How+Brains+Race+to+Cancel+Errant+Movements&amp;rft.date=2013-08-03&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fblogs.discovermagazine.com%2Fneuroskeptic%2F2013%2F08%2F03%2Fthe-race-to-stop-an-errant-movement%2F&amp;rft.pub=Discover+Magazine+blogs&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><span class="citation journal">Schmidt, Robert; Leventhal, Daniel K; Mallet, Nicolas; Chen, Fujun; Berke, Joshua D (2013). <a rel="nofollow" class="external text" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3733500">"Canceling actions involves a race between basal ganglia pathways"</a>. <i>Nature Neuroscience</i> <b>16</b> (8): 1118–24. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1038%2Fnn.3456">10.1038/nn.3456</a>. <a href="http://en.wikipedia.org/wiki/PubMed_Central" title="PubMed Central">PMC</a>&#160;<a rel="nofollow" class="external text" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3733500">3733500</a>. <a href="http://en.wikipedia.org/wiki/PubMed_Identifier" title="PubMed Identifier" class="mw-redirect">PMID</a>&#160;<a rel="nofollow" class="external text" href="http://www.ncbi.nlm.nih.gov/pubmed/23852117">23852117</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARace+condition&amp;rft.atitle=Canceling+actions+involves+a+race+between+basal+ganglia+pathways&amp;rft.au=Berke%2C+Joshua+D&amp;rft.au=Chen%2C+Fujun&amp;rft.aufirst=Robert&amp;rft.aulast=Schmidt&amp;rft.au=Leventhal%2C+Daniel+K&amp;rft.au=Mallet%2C+Nicolas&amp;rft.au=Schmidt%2C+Robert&amp;rft.date=2013&amp;rft.genre=article&amp;rft_id=%2F%2Fwww.ncbi.nlm.nih.gov%2Fpmc%2Farticles%2FPMC3733500&amp;rft_id=info%3Adoi%2F10.1038%2Fnn.3456&amp;rft_id=info%3Apmc%2F3733500&amp;rft_id=info%3Apmid%2F23852117&amp;rft.issue=8&amp;rft.jtitle=Nature+Neuroscience&amp;rft.pages=1118-24&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=16" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit&amp;section=14" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><span class="citation journal">Karam, G.M.; Buhr, R.J.A. (August 1990). <a rel="nofollow" class="external text" href="http://doi.ieeecomputersociety.org/10.1109/32.57622">"Starvation and Critical Race Analyzers for Ada"</a>. <i><a href="http://en.wikipedia.org/wiki/IEEE_Transactions_on_Software_Engineering" title="IEEE Transactions on Software Engineering">IEEE Transactions on Software Engineering</a></i> <b>16</b> (8): 829–843. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1109%2F32.57622">10.1109/32.57622</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARace+condition&amp;rft.atitle=Starvation+and+Critical+Race+Analyzers+for+Ada&amp;rft.au=Buhr%2C+R.J.A.&amp;rft.aufirst=G.M.&amp;rft.au=Karam%2C+G.M.&amp;rft.aulast=Karam&amp;rft.date=August+1990&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fdoi.ieeecomputersociety.org%2F10.1109%2F32.57622&amp;rft_id=info%3Adoi%2F10.1109%2F32.57622&amp;rft.issue=8&amp;rft.jtitle=IEEE+Transactions+on+Software+Engineering&amp;rft.pages=829-843&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=16" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span class="citation book">Fuhrer, R.M.; Lin, B.; <a href="http://en.wikipedia.org/w/index.php?title=Steven_M._Nowick&amp;action=edit&amp;redlink=1" class="new" title="Steven M. Nowick (page does not exist)">Nowick, S.M.</a> (27–29 Mar 1995). <a rel="nofollow" class="external text" href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=515611">"Algorithms for the optimal state assignment of asynchronous state machines"</a>. <i>Advanced Research in VLSI, 1995. Proceedings., 16th Conference on</i>. pp.&#160;59–75. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1109%2FARVLSI.1995.515611">10.1109/ARVLSI.1995.515611</a>. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-8186-7047-9" title="Special:BookSources/0-8186-7047-9">0-8186-7047-9</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARace+condition&amp;rft.atitle=Algorithms+for+the+optimal+state+assignment+of+asynchronous+state+machines&amp;rft.aufirst=R.M.&amp;rft.au=Fuhrer%2C+R.M.&amp;rft.aulast=Fuhrer&amp;rft.au=Lin%2C+B.&amp;rft.au=Nowick%2C+S.M.&amp;rft.btitle=Advanced+Research+in+VLSI%2C+1995.+Proceedings.%2C+16th+Conference+on&amp;rft.date=27-29+Mar+1995&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fieeexplore.ieee.org%2Fxpl%2Flogin.jsp%3Ftp%3D%26arnumber%3D515611&amp;rft_id=info%3Adoi%2F10.1109%2FARVLSI.1995.515611&amp;rft.isbn=0-8186-7047-9&amp;rft.pages=59-75&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <a rel="nofollow" class="external text" href="http://www.cs.columbia.edu/~rmf/arvlsi-95.pdf">as PDF</a></li>
+<li>Paper "<a rel="nofollow" class="external text" href="http://citeseer.ist.psu.edu/11804.html">A Novel Framework for Solving the State Assignment Problem for Event-Based Specifications</a>" by <a href="http://en.wikipedia.org/w/index.php?title=Luciano_Lavagno&amp;action=edit&amp;redlink=1" class="new" title="Luciano Lavagno (page does not exist)">Luciano Lavagno</a>, <a href="http://en.wikipedia.org/w/index.php?title=Cho_W._Moon&amp;action=edit&amp;redlink=1" class="new" title="Cho W. Moon (page does not exist)">Cho W. Moon</a>, <a href="http://en.wikipedia.org/w/index.php?title=Robert_K._Brayton&amp;action=edit&amp;redlink=1" class="new" title="Robert K. Brayton (page does not exist)">Robert K. Brayton</a> and <a href="http://en.wikipedia.org/wiki/Alberto_Sangiovanni-Vincentelli" title="Alberto Sangiovanni-Vincentelli">Alberto Sangiovanni-Vincentelli</a></li>
+<li><span class="citation web">Wheeler, David A. (7 October 2004). <a rel="nofollow" class="external text" href="http://www-128.ibm.com/developerworks/linux/library/l-sprace.html">"Secure programmer: Prevent race conditions—Resource contention can be used against you"</a>. <i>IBM developerWorks</i>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARace+condition&amp;rft.atitle=Secure+programmer%3A+Prevent+race+conditions%E2%80%94Resource+contention+can+be+used+against+you&amp;rft.aufirst=David+A.&amp;rft.aulast=Wheeler&amp;rft.au=Wheeler%2C+David+A.&amp;rft.date=7+October+2004&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww-128.ibm.com%2Fdeveloperworks%2Flinux%2Flibrary%2Fl-sprace.html&amp;rft.jtitle=IBM+developerWorks&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li>Chapter "<a rel="nofollow" class="external text" href="http://www.dwheeler.com/secure-programs/Secure-Programs-HOWTO/avoid-race.html">Avoid Race Conditions</a>" (Secure Programming for Linux and Unix HOWTO)</li>
+<li><a rel="nofollow" class="external text" href="http://chiralsoftware.com/blog/Race-condition-vulnerability-in-syscall-wrappers-fa3e57c594119803.html">Race conditions, security, and immutability in Java</a>, with sample source code and comparison to C code, by Chiral Software</li>
+<li><span class="citation web">Karpov, Andrey (11 April 2009). <a rel="nofollow" class="external text" href="http://software.intel.com/en-us/articles/interview-with-dmitriy-vyukov-the-author-of-relacy-race-detector-rrd/">"Interview with Dmitriy Vyukov — the author of Relacy Race Detector (RRD)"</a>. <i>Intel Software Library Articles</i>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARace+condition&amp;rft.atitle=Interview+with+Dmitriy+Vyukov+%E2%80%94+the+author+of+Relacy+Race+Detector+%28RRD%29&amp;rft.aufirst=Andrey&amp;rft.au=Karpov%2C+Andrey&amp;rft.aulast=Karpov&amp;rft.date=11+April+2009&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fsoftware.intel.com%2Fen-us%2Farticles%2Finterview-with-dmitriy-vyukov-the-author-of-relacy-race-detector-rrd%2F&amp;rft.jtitle=Intel+Software+Library+Articles&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><a rel="nofollow" class="external text" href="http://support.microsoft.com/kb/317723">Microsoft Support description</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1073
+CPU time usage: 0.236 seconds
+Real time usage: 0.288 seconds
+Preprocessor visited node count: 614/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 20325/2097152 bytes
+Template argument size: 9/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 2/500
+Lua time usage: 0.072/10.000 seconds
+Lua memory usage: 2.8 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  244.226      1 - -total
+ 27.75%   67.774      1 - Template:Refimprove
+ 24.82%   60.629      1 - Template:Reflist
+ 17.25%   42.123      1 - Template:Ambox
+ 14.44%   35.256      3 - Template:Cite_journal
+  8.70%   21.238      5 - Template:Cite_web
+  4.40%   10.743      1 - Template:Portal
+  2.65%    6.463      1 - Template:Cite_book
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:475952-0!*!0!!en!4!* and timestamp 20141211045545 and revision id 635136490
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;oldid=635136490">http://en.wikipedia.org/w/index.php?title=Race_condition&amp;oldid=635136490</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Computer_security_exploits" title="Category:Computer security exploits">Computer security exploits</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Anti-patterns" title="Category:Anti-patterns">Anti-patterns</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Concurrency_(computer_science)" title="Category:Concurrency (computer science)">Concurrency (computer science)</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Software_bugs" title="Category:Software bugs">Software bugs</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Logic_gates" title="Category:Logic gates">Logic gates</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Logic_in_computer_science" title="Category:Logic in computer science">Logic in computer science</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Distributed_computing_problems" title="Category:Distributed computing problems">Distributed computing problems</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Timing_in_electronic_circuits" title="Category:Timing in electronic circuits">Timing in electronic circuits</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Articles_needing_additional_references_from_July_2010" title="Category:Articles needing additional references from July 2010">Articles needing additional references from July 2010</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_needing_additional_references" title="Category:All articles needing additional references">All articles needing additional references</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Race+condition&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Race+condition" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Race_condition"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Race_condition"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Race_condition" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://en.wikipedia.org/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://en.wikipedia.org/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Race_condition" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Race_condition" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;oldid=635136490" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q616554" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Race_condition&amp;id=635136490" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Race+condition">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Race+condition&amp;oldid=635136490&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Race_condition&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ar"><a href="http://ar.wikipedia.org/wiki/حالة_تسابق" title="حالة تسابق – Arabic" lang="ar" hreflang="ar">العربية</a></li>
+													<li class="interlanguage-link interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Situació_de_competició" title="Situació de competició – Catalan" lang="ca" hreflang="ca">Català</a></li>
+													<li class="interlanguage-link interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Souběh" title="Souběh – Czech" lang="cs" hreflang="cs">Čeština</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Race_Condition" title="Race Condition – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="http://es.wikipedia.org/wiki/Condición_de_carrera" title="Condición de carrera – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fa"><a href="http://fa.wikipedia.org/wiki/وضعیت_رقابتی" title="وضعیت رقابتی – Persian" lang="fa" hreflang="fa">فارسی</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Situation_de_compétition" title="Situation de compétition – French" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-ko"><a href="http://ko.wikipedia.org/wiki/경쟁_상태" title="경쟁 상태 – Korean" lang="ko" hreflang="ko">한국어</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="http://it.wikipedia.org/wiki/Race_condition" title="Race condition – Italian" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-he"><a href="http://he.wikipedia.org/wiki/מרוץ_תהליכים" title="מרוץ תהליכים – Hebrew" lang="he" hreflang="he">עברית</a></li>
+													<li class="interlanguage-link interwiki-lt"><a href="http://lt.wikipedia.org/wiki/Lenktynių_aplinka" title="Lenktynių aplinka – Lithuanian" lang="lt" hreflang="lt">Lietuvių</a></li>
+													<li class="interlanguage-link interwiki-hu"><a href="http://hu.wikipedia.org/wiki/Versenyhelyzet" title="Versenyhelyzet – Hungarian" lang="hu" hreflang="hu">Magyar</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/競合状態" title="競合状態 – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Hazard_(elektronika)" title="Hazard (elektronika) – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Condição_de_corrida" title="Condição de corrida – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Состояние_гонки" title="Состояние гонки – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-simple"><a href="http://simple.wikipedia.org/wiki/Race_condition" title="Race condition – Simple English" lang="simple" hreflang="simple">Simple English</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="http://uk.wikipedia.org/wiki/Стан_гонитви" title="Стан гонитви – Ukrainian" lang="uk" hreflang="uk">Українська</a></li>
+													<li class="interlanguage-link interwiki-zh"><a href="http://zh.wikipedia.org/wiki/競爭危害" title="競爭危害 – Chinese" lang="zh" hreflang="zh">中文</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="http://en.wikipedia.org/wiki/edit" href="http://www.wikidata.org/wiki/Q616554#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 November 2014 at 19:27.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Race_condition&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":109,"wgHostname":"mw1168"});
+}</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Race_condition by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+</html>

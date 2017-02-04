@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Amdahl%27s_law by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Amdahl's law - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="http://en.wikipedia.org/wiki/android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Amdahl%27s_law" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="http://en.wikipedia.org/wiki/Amdahl%27s_law" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Amdahl%27s_law" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.math.styles%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Amdahl's_law","wgTitle":"Amdahl's law","wgCurRevisionId":634175153,"wgRevisionId":634175153,"wgArticleId":2323,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Commons category with local link same as on Wikidata","Parallel computing","Programming rules of thumb"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Amdahl's_law","wgRelevantArticleId":2323,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["en-us","en","zh-cn","zh"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q460419"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Amdahl_s_law skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Amdahl's law</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="thumb tright">
+<div class="thumbinner" style="width:302px;"><a href="http://en.wikipedia.org/wiki/File:AmdahlsLaw.svg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/AmdahlsLaw.svg/300px-AmdahlsLaw.svg.png" width="300" height="225" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/ea/AmdahlsLaw.svg/450px-AmdahlsLaw.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/ea/AmdahlsLaw.svg/600px-AmdahlsLaw.svg.png 2x" data-file-width="648" data-file-height="486" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:AmdahlsLaw.svg" class="internal" title="Enlarge"></a></div>
+The speedup of a program using multiple processors in parallel computing is limited by the sequential fraction of the program. For example, if 95% of the program can be parallelized, the theoretical maximum speedup using parallel computing would be 20× as shown in the diagram, no matter how many processors are used.</div>
+</div>
+</div>
+<p><b>Amdahl's law</b>, also known as <b>Amdahl's argument</b>,<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup> is used to find the maximum expected improvement to an overall system when only part of the system is improved. It is often used in <a href="http://en.wikipedia.org/wiki/Parallel_computing" title="Parallel computing">parallel computing</a> to predict the theoretical maximum <a href="http://en.wikipedia.org/wiki/Speedup" title="Speedup">speedup</a> using multiple processors. The law is named after <a href="http://en.wikipedia.org/wiki/Computer_architecture" title="Computer architecture">computer architect</a> <a href="http://en.wikipedia.org/wiki/Gene_Amdahl" title="Gene Amdahl">Gene Amdahl</a>, and was presented at the <a href="http://en.wikipedia.org/wiki/American_Federation_of_Information_Processing_Societies" title="American Federation of Information Processing Societies">AFIPS</a> Spring Joint Computer Conference in 1967.</p>
+<p>The speedup of a program using multiple processors in parallel computing is limited by the time needed for the sequential fraction of the program. For example, if a program needs 20 hours using a single processor core, and a particular portion of the program which takes one hour to execute cannot be parallelized, while the remaining 19 hours (95%) of execution time can be parallelized, then regardless of how many processors are devoted to a parallelized execution of this program, the minimum execution time cannot be less than that critical one hour. Hence the speedup is limited to at most 20×.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Definition"><span class="tocnumber">1</span> <span class="toctext">Definition</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Description"><span class="tocnumber">2</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Parallelization"><span class="tocnumber">3</span> <span class="toctext">Parallelization</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Relation_to_law_of_diminishing_returns"><span class="tocnumber">4</span> <span class="toctext">Relation to law of diminishing returns</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Speedup_in_a_sequential_program"><span class="tocnumber">5</span> <span class="toctext">Speedup in a sequential program</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Notes"><span class="tocnumber">7</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Further_reading"><span class="tocnumber">9</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#External_links"><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Definition">Definition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit&amp;section=1" title="Edit section: Definition">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Given:</p>
+<ul>
+<li><img class="mwe-math-fallback-image-inline tex" alt="n \in \mathbb{N}" src="http://upload.wikimedia.org/math/2/e/2/2e259ed38824a8713d454b6f5bad6bde.png" />, the number of <a href="http://en.wikipedia.org/wiki/Thread_of_execution" title="Thread of execution" class="mw-redirect">threads of execution</a>,</li>
+<li><img class="mwe-math-fallback-image-inline tex" alt="B\in [0, 1]" src="http://upload.wikimedia.org/math/1/d/9/1d97374d911839dafda25cf8dc98e075.png" />, the fraction of the algorithm that is strictly serial,</li>
+</ul>
+<p>The time <img class="mwe-math-fallback-image-inline tex" alt="T \left(n \right)" src="http://upload.wikimedia.org/math/e/1/0/e10b3ad73d7870b400b1edb1f107f657.png" /> an algorithm takes to finish when being executed on <img class="mwe-math-fallback-image-inline tex" alt="n" src="http://upload.wikimedia.org/math/7/b/8/7b8b965ad4bca0e41ab51de7b31363a1.png" /> thread(s) of execution corresponds to:</p>
+<p><img class="mwe-math-fallback-image-inline tex" alt="T(n) = T(1) \left(B + \frac{1}{n}\left(1 - B\right)\right)" src="http://upload.wikimedia.org/math/2/9/a/29ab5bd626576c3a3de3a07805fe023c.png" /></p>
+<p><br />
+Therefore, the theoretical speedup <img class="mwe-math-fallback-image-inline tex" alt="S(n)" src="http://upload.wikimedia.org/math/b/4/3/b43f9f9ebfb541f8ed7146fcaac57508.png" /> that can be had by executing a given algorithm on a system capable of executing <img class="mwe-math-fallback-image-inline tex" alt="n" src="http://upload.wikimedia.org/math/7/b/8/7b8b965ad4bca0e41ab51de7b31363a1.png" /> threads of execution is:</p>
+<p><img class="mwe-math-fallback-image-inline tex" alt="S(n) = \frac{ T\left(1\right)}{T\left(n\right)} = \frac{T\left(1\right)}{T\left(1\right)\left(B + \frac{1}{n}\left(1 - B\right)\right) } =  \frac{1}{B + \frac{1}{n}\left(1-B\right)}" src="http://upload.wikimedia.org/math/5/4/c/54cf863eb92680c123ad6f1aa6223990.png" /></p>
+<h2><span class="mw-headline" id="Description">Description</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit&amp;section=2" title="Edit section: Description">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Amdahl's law is a model for the relationship between the expected speedup of parallelized implementations of an algorithm relative to the serial algorithm, under the assumption that the problem size remains the same when parallelized. For example, if for a given problem size a parallelized implementation of an algorithm can run 12% of the algorithm's operations arbitrarily quickly (while the remaining 88% of the operations are not parallelizable), Amdahl's law states that the maximum speedup of the parallelized version is <span class="nowrap">1/(1 – 0.12) = 1.136</span> times as fast as the non-parallelized implementation.</p>
+<p>More technically, the law is concerned with the speedup achievable from an improvement to a computation that affects a proportion <i>P</i> of that computation where the improvement has a speedup of <i>S</i>. (For example, if 30% of the computation may be the subject of a speed up, <i>P</i> will be 0.3; if the improvement makes the portion affected twice as fast, <i>S</i> will be 2.) Amdahl's law states that the overall speedup of applying the improvement will be:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\frac{1}{(1 - P) + \frac{P}{S}} = \frac{1}{(1 - 0.3) + \frac{0.3}{2}} = 1.1765" src="http://upload.wikimedia.org/math/6/1/1/611fb80e44fd7fbbdc68350f05b779aa.png" /></dd>
+</dl>
+<p>To see how this formula was derived, assume that the running time of the old computation was 1, for some unit of time. The running time of the new computation will be the length of time the unimproved fraction takes (which is 1 − <i>P</i>), plus the length of time the improved fraction takes. The length of time for the improved part of the computation is the length of the improved part's former running time divided by the speedup, making the length of time of the improved part <i>P</i>/<i>S</i>. The final speedup is computed by dividing the old running time by the new running time, which is what the above formula does.</p>
+<p>Here's another example. We are given a sequential task which is split into four consecutive parts: P1, P2, P3 and P4 with the percentages of runtime being 11%, 18%, 23% and 48% respectively. Then we are told that P1 is not sped up, so S1 = 1, while P2 is sped up 5×, P3 is sped up 20×, and P4 is sped up 1.6×. By using the formula P1/S1 + P2/S2 + P3/S3 + P4/S4, we find the new sequential running time is:</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\frac{0.11}{1} + \frac{0.18}{5} + \frac{0.23}{20} + \frac{0.48}{1.6} = 0.4575." src="http://upload.wikimedia.org/math/2/8/a/28a4046a7db0c5a4c1905b20178b4a51.png" /></dd>
+</dl>
+<p>or a little less than <span class="frac nowrap"><sup>1</sup>⁄<sub>2</sub></span> the original running time. Using the formula <span class="nowrap">(P1/S1 + P2/S2 + P3/S3 + P4/S4)<sup>−1</sup></span>, the overall speed boost is 1 / 0.4575 = 2.186, or a little more than double the original speed. Notice how the 20× and 5× speedup don't have much effect on the overall speed when P1 (11%) is not sped up, and P4 (48%) is sped up only 1.6 times.</p>
+<h2><span class="mw-headline" id="Parallelization">Parallelization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit&amp;section=3" title="Edit section: Parallelization">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>In the case of parallelization, Amdahl's law states that if <i>P</i> is the proportion of a program that can be made parallel (i.e., benefit from parallelization), and (1 − <i>P</i>) is the proportion that cannot be parallelized (remains serial), then the maximum speedup that can be achieved by using <i>N</i> processors is</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="S(N) = \frac{1}{(1-P) + \frac{P}{N}}" src="http://upload.wikimedia.org/math/1/4/6/146ba61af938bd39cb1c93469a4c862e.png" />.</dd>
+</dl>
+<p>In the limit, as <i>N</i> tends to <a href="http://en.wikipedia.org/wiki/Extended_real_number_line" title="Extended real number line">infinity</a>, the maximum speedup tends to 1 / (1 − <i>P</i>). In practice, performance to price ratio falls rapidly as <i>N</i> is increased once there is even a small component of (1 − <i>P</i>).</p>
+<p>As an example, if <i>P</i> is 90%, then (1 − <i>P</i>) is 10%, and the problem can be sped up by a maximum of a factor of 10, no matter how large the value of <i>N</i> used. For this reason, parallel computing is only useful for either small numbers of <a href="http://en.wikipedia.org/wiki/Central_processing_unit" title="Central processing unit">processors</a>, or problems with very high values of <i>P</i>: so-called <a href="http://en.wikipedia.org/wiki/Embarrassingly_parallel" title="Embarrassingly parallel">embarrassingly parallel</a> problems. A great part of the craft of <a href="http://en.wikipedia.org/wiki/Parallel_programming" title="Parallel programming" class="mw-redirect">parallel programming</a> consists of attempting to reduce the component (1 – <i>P</i>) to the smallest possible value.</p>
+<p><i>P</i> can be estimated by using the measured speedup (<i>SU</i>) on a specific number of processors (<i>NP</i>) using</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="P_\text{estimated} = \frac{\frac{1}{SU} - 1}{\frac{1}{NP} - 1}" src="http://upload.wikimedia.org/math/4/5/9/459938a12c19d7a1bb98b5ce15c77425.png" />.</dd>
+</dl>
+<p><i>P</i> estimated in this way can then be used in Amdahl's law to predict speedup for a different number of processors.</p>
+<h2><span class="mw-headline" id="Relation_to_law_of_diminishing_returns">Relation to law of diminishing returns</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit&amp;section=4" title="Edit section: Relation to law of diminishing returns">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Amdahl's law is often conflated with the <a href="http://en.wikipedia.org/wiki/Diminishing_returns" title="Diminishing returns">law of diminishing returns</a>, whereas only a special case of applying Amdahl's law demonstrates 'law of diminishing returns'. If one picks optimally (in terms of the achieved speed-up) what to improve, then one will see monotonically decreasing improvements as one improves. If, however, one picks non-optimally, after improving a sub-optimal component and moving on to improve a more optimal component, one can see an increase in return. Note that it is often rational to improve a system in an order that is "non-optimal" in this sense, given that some improvements are more difficult or consuming of development time than others.</p>
+<p>Amdahl's law does represent the law of diminishing returns if you are considering what sort of return you get by adding more processors to a machine, if you are running a fixed-size computation that will use all available processors to their capacity. Each new processor you add to the system will add less usable power than the previous one. Each time you double the number of processors the speedup ratio will diminish, as the total throughput heads toward the limit of <img class="mwe-math-fallback-image-inline tex" alt="\scriptstyle 1 / (1 \,-\, P)" src="http://upload.wikimedia.org/math/6/5/f/65f0bf1231735c10285df3f540a2118c.png" />.</p>
+<p>This analysis neglects other potential bottlenecks such as <a href="http://en.wikipedia.org/wiki/Memory_bandwidth" title="Memory bandwidth">memory bandwidth</a> and I/O bandwidth, if they do not scale with the number of processors; however, taking into account such bottlenecks would tend to further demonstrate the diminishing returns of only adding processors.</p>
+<h2><span class="mw-headline" id="Speedup_in_a_sequential_program">Speedup in a sequential program</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit&amp;section=5" title="Edit section: Speedup in a sequential program">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:402px;"><a href="http://en.wikipedia.org/wiki/File:Optimizing-different-parts.svg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Optimizing-different-parts.svg/400px-Optimizing-different-parts.svg.png" width="400" height="139" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/40/Optimizing-different-parts.svg/600px-Optimizing-different-parts.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/40/Optimizing-different-parts.svg/800px-Optimizing-different-parts.svg.png 2x" data-file-width="525" data-file-height="182" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Optimizing-different-parts.svg" class="internal" title="Enlarge"></a></div>
+Assume that a task has two independent parts, A and B. B takes roughly 25% of the time of the whole computation. By working very hard, one may be able to make this part 5 times faster, but this only reduces the time for the whole computation by a little. In contrast, one may need to perform less work to make part A be twice as fast. This will make the computation much faster than by optimizing part B, even though B's speed-up is greater by ratio, (5× versus 2×).</div>
+</div>
+</div>
+<p>The maximum speedup in an improved sequential program, where some part was sped up <img class="mwe-math-fallback-image-inline tex" alt="p" src="http://upload.wikimedia.org/math/8/3/8/83878c91171338902e0fe0fb97a8c47a.png" /> times is limited by inequality</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\text{maximum speedup } \le \frac{p}{1 + f \cdot (p - 1)}" src="http://upload.wikimedia.org/math/3/c/f/3cf8e6b407c7e2e9b43ab773fa1b8a59.png" /></dd>
+</dl>
+<p>where <img class="mwe-math-fallback-image-inline tex" alt="\scriptstyle f" src="http://upload.wikimedia.org/math/d/5/2/d52558b155faf73f2ed588accb0539bd.png" /> (<img class="mwe-math-fallback-image-inline tex" alt="\scriptstyle 0 \;&lt;\; f \;&lt;\; 1" src="http://upload.wikimedia.org/math/1/e/2/1e233327c3728e57c7024d2525b92d73.png" />) is the fraction of time (before the improvement) spent in the part that was not improved. For example (see picture on right):</p>
+<ul>
+<li>If part B is made five times faster (<img class="mwe-math-fallback-image-inline tex" alt="\scriptstyle p \;=\; 5" src="http://upload.wikimedia.org/math/6/a/2/6a22ac9f55bf7c7eda3040b702aead0a.png" />), <img class="mwe-math-fallback-image-inline tex" alt="\scriptstyle t_A \;=\; 3" src="http://upload.wikimedia.org/math/7/3/9/73907034fa24d51807520ae36b40d767.png" />, <img class="mwe-math-fallback-image-inline tex" alt="\scriptstyle t_B \;=\; 1" src="http://upload.wikimedia.org/math/4/e/b/4eb6ffe1d0ae439064bb6fa1e438fce9.png" />, and <img class="mwe-math-fallback-image-inline tex" alt="\scriptstyle f \;=\; t_A / (t_A \,+\, t_B) \;=\; 0.75" src="http://upload.wikimedia.org/math/c/b/d/cbd909ae5792b30fdb2914022de5b89a.png" />, then
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\text{maximum speedup } \le \frac{5}{1 + 0.75 \cdot (5 - 1)} = 1.25" src="http://upload.wikimedia.org/math/0/1/8/018357af5589a57e555031e92243990c.png" /></dd>
+</dl>
+</li>
+<li>If part A is made to run twice as fast (<img class="mwe-math-fallback-image-inline tex" alt="\scriptstyle p \;=\; 2" src="http://upload.wikimedia.org/math/d/c/6/dc6ccf9160421be68225346885435e70.png" />), <img class="mwe-math-fallback-image-inline tex" alt="\scriptstyle t_B \;=\; 1" src="http://upload.wikimedia.org/math/4/e/b/4eb6ffe1d0ae439064bb6fa1e438fce9.png" />, <img class="mwe-math-fallback-image-inline tex" alt="\scriptstyle t_A \;=\; 3" src="http://upload.wikimedia.org/math/7/3/9/73907034fa24d51807520ae36b40d767.png" />, and <img class="mwe-math-fallback-image-inline tex" alt="\scriptstyle f \;=\; t_B / (t_A \,+\, t_B) \;=\; 0.25" src="http://upload.wikimedia.org/math/d/c/3/dc3530e6f61579f0f2d3b6ce9dc630ae.png" />, then
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\text{maximum speedup } \le \frac{2}{1 + 0.25 \cdot (2 - 1)} = 1.60" src="http://upload.wikimedia.org/math/a/6/3/a63c9f8a9ef88cdb106739cf38ecea02.png" /></dd>
+</dl>
+</li>
+</ul>
+<p>Therefore, making A twice as fast is better than making B five times faster. The percentage improvement in speed can be calculated as</p>
+<dl>
+<dd><img class="mwe-math-fallback-image-inline tex" alt="\text{percentage improvement} = \left(1 - \frac{1}{\text{speedup factor}}\right) \cdot 100" src="http://upload.wikimedia.org/math/4/5/5/4553def08f9293459b50ff882702cecf.png" /></dd>
+</dl>
+<ul>
+<li>Improving part A by a factor of two will increase overall program speed by a factor of 1.6, which makes it 37.5% faster than the original computation.</li>
+<li>However, improving part B by a factor of five, which presumably requires more effort, will only achieve an overall speedup factor of 1.25, which makes it 20% faster.</li>
+</ul>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Gustafson%27s_law" title="Gustafson's law">Gustafson's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Karp–Flatt_metric" title="Karp–Flatt metric">Karp–Flatt metric</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Moore%27s_law" title="Moore's law">Moore's law</a></li>
+</ul>
+<h2><span class="mw-headline" id="Notes">Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit&amp;section=7" title="Edit section: Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text">(<a href="#CITEREFRodgers1985">Rodgers 1985</a>, p.&#160;226)</span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit&amp;section=8" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><span id="CITEREFRodgers1985" class="citation journal">Rodgers, David P. (June 1985). <a rel="nofollow" class="external text" href="http://portal.acm.org/citation.cfm?id=327215">"Improvements in multiprocessor system design"</a>. <i>ACM SIGARCH Computer Architecture News archive</i> (New York, NY, USA: <a href="http://en.wikipedia.org/wiki/Association_for_Computing_Machinery" title="Association for Computing Machinery">ACM</a>) <b>13</b> (3): 225–231. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F327070.327215">10.1145/327070.327215</a>. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-8186-0634-7" title="Special:BookSources/0-8186-0634-7">0-8186-0634-7</a>. <a href="http://en.wikipedia.org/wiki/International_Standard_Serial_Number" title="International Standard Serial Number">ISSN</a>&#160;<a rel="nofollow" class="external text" href="http://www.worldcat.org/issn/0163-5964">0163-5964</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmdahl%27s+law&amp;rft.atitle=Improvements+in+multiprocessor+system+design&amp;rft.aufirst=David+P.&amp;rft.aulast=Rodgers&amp;rft.au=Rodgers%2C+David+P.&amp;rft.date=June+1985&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fportal.acm.org%2Fcitation.cfm%3Fid%3D327215&amp;rft_id=info%3Adoi%2F10.1145%2F327070.327215&amp;rft.isbn=0-8186-0634-7&amp;rft.issn=0163-5964&amp;rft.issue=3&amp;rft.jtitle=ACM+SIGARCH+Computer+Architecture+News+archive&amp;rft.pages=225-231&amp;rft.place=New+York%2C+NY%2C+USA&amp;rft.pub=ACM&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=13" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+<h2><span class="mw-headline" id="Further_reading">Further reading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit&amp;section=9" title="Edit section: Further reading">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><span id="CITEREFAmdahl1967" class="citation journal">Amdahl, Gene M. (1967). <a rel="nofollow" class="external text" href="http://www-inst.eecs.berkeley.edu/~n252/paper/Amdahl.pdf">"Validity of the Single Processor Approach to Achieving Large-Scale Computing Capabilities"</a>. <i>AFIPS Conference Proceedings</i> (30): 483–485. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F1465482.1465560">10.1145/1465482.1465560</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmdahl%27s+law&amp;rft.atitle=Validity+of+the+Single+Processor+Approach+to+Achieving+Large-Scale+Computing+Capabilities&amp;rft.au=Amdahl%2C+Gene+M.&amp;rft.aufirst=Gene+M.&amp;rft.aulast=Amdahl&amp;rft.date=1967&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww-inst.eecs.berkeley.edu%2F~n252%2Fpaper%2FAmdahl.pdf&amp;rft_id=info%3Adoi%2F10.1145%2F1465482.1465560&amp;rft.issue=30&amp;rft.jtitle=AFIPS+Conference+Proceedings&amp;rft.pages=483-485&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit&amp;section=10" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="mbox-small plainlinks" style="border:1px solid #aaa;background-color:#f9f9f9">
+<tr>
+<td class="mbox-image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png" width="30" height="40" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/45px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/59px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376" /></td>
+<td class="mbox-text plainlist">Wikimedia Commons has media related to <i><b><a href="http://commons.wikimedia.org/wiki/Category:Amdahl%27s_law" class="extiw" title="commons:Category:Amdahl's law">Amdahl's law</a></b></i>.</td>
+</tr>
+</table>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.futurechips.org/thoughts-for-researchers/parallel-programming-gene-amdahl-said.html">Cases where Amdahl's law is inapplicable</a></li>
+<li><a rel="nofollow" class="external text" href="http://purl.umn.edu/104341">Oral history interview with Gene M. Amdahl</a> <a href="http://en.wikipedia.org/wiki/Charles_Babbage_Institute" title="Charles Babbage Institute">Charles Babbage Institute</a>, University of Minnesota. Amdahl discusses his graduate work at the University of Wisconsin and his design of <a href="http://en.wikipedia.org/wiki/Wisconsin_Integrally_Synchronized_Computer" title="Wisconsin Integrally Synchronized Computer">WISC</a>. Discusses his role in the design of several computers for IBM including the <a href="http://en.wikipedia.org/wiki/IBM_Stretch" title="IBM Stretch" class="mw-redirect">STRETCH</a>, <a href="http://en.wikipedia.org/wiki/IBM_701" title="IBM 701">IBM 701</a>, and <a href="http://en.wikipedia.org/wiki/IBM_704" title="IBM 704">IBM 704</a>. He discusses his work with <a href="http://en.wikipedia.org/wiki/Nathaniel_Rochester_(computer_scientist)" title="Nathaniel Rochester (computer scientist)">Nathaniel Rochester</a> and IBM's management of the design process. Mentions work with <a href="http://en.wikipedia.org/wiki/TRW_Inc." title="TRW Inc.">Ramo-Wooldridge</a>, <a href="http://en.wikipedia.org/wiki/Aeronutronic" title="Aeronutronic">Aeronutronic</a>, and <a href="http://en.wikipedia.org/wiki/Computer_Sciences_Corporation" title="Computer Sciences Corporation">Computer Sciences Corporation</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.scl.ameslab.gov/Publications/Gus/AmdahlsLaw/Amdahls.html">Reevaluating Amdahl's Law</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.julianbrowne.com/article/viewer/amdahls-law">A simple interactive Amdahl's Law calculator</a></li>
+<li><a rel="nofollow" class="external text" href="http://demonstrations.wolfram.com/AmdahlsLaw/">"Amdahl's Law"</a> by Joel F. Klein, <a href="http://en.wikipedia.org/wiki/Wolfram_Demonstrations_Project" title="Wolfram Demonstrations Project">Wolfram Demonstrations Project</a>, 2007.</li>
+<li><a rel="nofollow" class="external text" href="http://www.cs.wisc.edu/multifacet/amdahl/">Amdahl's Law in the Multicore Era</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.cilk.com/multicore-blog/bid/5365/What-the-is-Parallelism-Anyhow">Blog Post: "What the $#@! is Parallelism, Anyhow?"</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.multicorepacketprocessing.com/how-should-amdahl-law-drive-the-redesigns-of-socket-system-calls-for-an-os-on-a-multicore-cpu">Amdahl's Law applied to OS system calls on multicore CPU</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.cs.sfu.ca/~fedorova/papers/TurboBoostEvaluation.pdf">Evaluation of the Intel Core i7 Turbo Boost feature</a>, by James Charles, Preet Jassi, Ananth Narayan S, Abbas Sadat and Alexandra Fedorova</li>
+</ul>
+<p><br /></p>
+<table class="navbox" style="border-spacing:0">
+<tr>
+<td style="padding:2px">
+<table class="nowraplinks collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="http://en.wikipedia.org/wiki/Template:Computer_laws" title="Template:Computer laws"><span title="View this template" style=";;background:none transparent;border:none;">v</span></a></li>
+<li class="nv-talk"><a href="http://en.wikipedia.org/w/index.php?title=Template_talk:Computer_laws&amp;action=edit&amp;redlink=1" class="new" title="Template talk:Computer laws (page does not exist)"><span title="Discuss this template" style=";;background:none transparent;border:none;">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="http://en.wikipedia.org/w/index.php?title=Template:Computer_laws&amp;action=edit"><span title="Edit this template" style=";;background:none transparent;border:none;">e</span></a></li>
+</ul>
+</div>
+<div style="font-size:110%">Computer laws</div>
+</th>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<td colspan="2" class="navbox-list navbox-odd hlist" style="width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><strong class="selflink">Amdahl's law</strong></li>
+<li><a href="http://en.wikipedia.org/wiki/Bell%27s_law_of_computer_classes" title="Bell's law of computer classes">Bell's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Grosch%27s_law" title="Grosch's law">Grosch's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Gustafson%27s_law" title="Gustafson's law">Gustafson's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Haitz%27s_law" title="Haitz's law">Haitz's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Koomey%27s_law" title="Koomey's law">Koomey's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Metcalfe%27s_law" title="Metcalfe's law">Metcalfe's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Moore%27s_law" title="Moore's law">Moore's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Pollack%27s_Rule" title="Pollack's Rule">Pollack's Rule</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Rock%27s_law" title="Rock's law">Rock's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Wirth%27s_law" title="Wirth's law">Wirth's law</a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="navbox" style="border-spacing:0">
+<tr>
+<td style="padding:2px">
+<table class="nowraplinks hlist collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="http://en.wikipedia.org/wiki/Template:Parallel_computing" title="Template:Parallel computing"><span title="View this template" style=";;background:none transparent;border:none;">v</span></a></li>
+<li class="nv-talk"><a href="http://en.wikipedia.org/wiki/Template_talk:Parallel_computing" title="Template talk:Parallel computing"><span title="Discuss this template" style=";;background:none transparent;border:none;">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="http://en.wikipedia.org/w/index.php?title=Template:Parallel_computing&amp;action=edit"><span title="Edit this template" style=";;background:none transparent;border:none;">e</span></a></li>
+</ul>
+</div>
+<div style="font-size:110%"><a href="http://en.wikipedia.org/wiki/Parallel_computing" title="Parallel computing">Parallel computing</a></div>
+</th>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">General</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Cloud_computing" title="Cloud computing">Cloud computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/High-performance_computing" title="High-performance computing" class="mw-redirect">High-performance computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Computer_cluster" title="Computer cluster">Cluster computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Distributed_computing" title="Distributed computing">Distributed computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Grid_computing" title="Grid computing">Grid computing</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Levels</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Bit-level_parallelism" title="Bit-level parallelism">Bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Instruction-level_parallelism" title="Instruction-level parallelism">Instruction</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Data_parallelism" title="Data parallelism">Data</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Memory-level_parallelism" title="Memory-level parallelism">Memory</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Task_parallelism" title="Task parallelism">Task</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Multithreading_(computer_architecture)" title="Multithreading (computer architecture)">Multithreading</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Temporal_multithreading" title="Temporal multithreading">Temporal multithreading</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Simultaneous_multithreading" title="Simultaneous multithreading">Simultaneous multithreading</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Hyper-threading" title="Hyper-threading">Hyper-threading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Theory</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><strong class="selflink">Amdahl's law</strong></li>
+<li><a href="http://en.wikipedia.org/wiki/Gustafson%27s_law" title="Gustafson's law">Gustafson's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cost_efficiency" title="Cost efficiency">Cost efficiency</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Karp–Flatt_metric" title="Karp–Flatt metric">Karp–Flatt metric</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_slowdown" title="Parallel slowdown">slowdown</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Speedup" title="Speedup">speedup</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Elements</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Process_(computing)" title="Process (computing)">Process</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Thread_(computing)" title="Thread (computing)">Thread</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Fiber_(computer_science)" title="Fiber (computer science)">Fiber</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_random-access_machine" title="Parallel random-access machine">PRAM</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Instruction_window" title="Instruction window">Instruction window</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Coordination</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Multiprocessing" title="Multiprocessing">Multiprocessing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Memory_coherence" title="Memory coherence">Memory coherency</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cache_coherence" title="Cache coherence">Cache coherency</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cache_invalidation" title="Cache invalidation">Cache invalidation</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Barrier_(computer_science)" title="Barrier (computer science)">Barrier</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Synchronization_(computer_science)" title="Synchronization (computer science)">Synchronization</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Application_checkpointing" title="Application checkpointing">Application checkpointing</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Computer_programming" title="Computer programming">Programming</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_programming_model" title="Parallel programming model">Models</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Implicit_parallelism" title="Implicit parallelism">Implicit parallelism</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Explicit_parallelism" title="Explicit parallelism">Explicit parallelism</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Concurrency_(computer_science)" title="Concurrency (computer science)">Concurrency</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Flynn%27s_taxonomy" title="Flynn's taxonomy">Flynn's taxonomy</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/SISD" title="SISD">SISD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/SIMD" title="SIMD">SIMD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/MISD" title="MISD">MISD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/MIMD" title="MIMD">MIMD</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/SPMD" title="SPMD">SPMD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Thread_(computing)" title="Thread (computing)">Thread</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Non-blocking_algorithm" title="Non-blocking algorithm">Non-blocking algorithm</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Computer_hardware" title="Computer hardware">Hardware</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Multiprocessor" title="Multiprocessor" class="mw-redirect">Multiprocessor</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Symmetric_multiprocessing" title="Symmetric multiprocessing">Symmetric</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Asymmetric_multiprocessing" title="Asymmetric multiprocessing">Asymmetric</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Semiconductor_memory" title="Semiconductor memory">Memory</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Non-uniform_memory_access" title="Non-uniform memory access">NUMA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cache-only_memory_architecture" title="Cache-only memory architecture">COMA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Distributed_memory" title="Distributed memory">distributed</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Shared_memory" title="Shared memory">shared</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Distributed_shared_memory" title="Distributed shared memory">distributed shared</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Massively_parallel_(computing)" title="Massively parallel (computing)">MPP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Superscalar" title="Superscalar">Superscalar</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Vector_processor" title="Vector processor">Vector processor</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Supercomputer" title="Supercomputer">Supercomputer</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Beowulf_cluster" title="Beowulf cluster">Beowulf cluster</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Application_programming_interface" title="Application programming interface">APIs</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Ateji_PX" title="Ateji PX">Ateji PX</a></li>
+<li><a href="http://en.wikipedia.org/wiki/POSIX_Threads" title="POSIX Threads">POSIX Threads</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenMP" title="OpenMP">OpenMP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenHMPP" title="OpenHMPP">OpenHMPP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenACC" title="OpenACC">OpenACC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_Virtual_Machine" title="Parallel Virtual Machine">PVM</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface">MPI</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Unified_Parallel_C" title="Unified Parallel C">UPC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Threading_Building_Blocks" title="Threading Building Blocks">TBB</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Boost_(C++_libraries)#Multithreading_.E2.80.93_Boost.Thread" title="Boost (C++ libraries)">Boost.Thread</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Global_Arrays" title="Global Arrays">Global Arrays</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Charm++" title="Charm++">Charm++</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cilk" title="Cilk">Cilk</a>/<a href="http://en.wikipedia.org/wiki/Cilk_Plus" title="Cilk Plus">Cilk Plus</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Coarray_Fortran" title="Coarray Fortran">Coarray Fortran</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenCL" title="OpenCL">OpenCL</a></li>
+<li><a href="http://en.wikipedia.org/wiki/CUDA" title="CUDA">CUDA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Dryad_(programming)" title="Dryad (programming)">Dryad</a></li>
+<li><a href="http://en.wikipedia.org/wiki/C++_AMP" title="C++ AMP">C++ AMP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_LINQ" title="Parallel LINQ" class="mw-redirect">PLINQ</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_Extensions#Task_Parallel_Library" title="Parallel Extensions">TPL</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Problems</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Embarrassingly_parallel" title="Embarrassingly parallel">Embarrassingly parallel</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Software_lockout" title="Software lockout">Software lockout</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Scalability" title="Scalability">Scalability</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Race_condition#Computing" title="Race condition">Race condition</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">Deadlock</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deadlock#Livelock" title="Deadlock">Livelock</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Resource_starvation" title="Resource starvation">Starvation</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deterministic_algorithm" title="Deterministic algorithm">Deterministic algorithm</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_slowdown" title="Parallel slowdown">Parallel slowdown</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<td class="navbox-abovebelow" colspan="2">
+<div>
+<ul>
+<li><img alt="Category" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/16px-Folder_Hexagonal_Icon.svg.png" width="16" height="14" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/24px-Folder_Hexagonal_Icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/32px-Folder_Hexagonal_Icon.svg.png 2x" data-file-width="36" data-file-height="31" />&#160;<a href="http://en.wikipedia.org/wiki/Category:Parallel_computing" title="Category:Parallel computing">Category: parallel computing</a></li>
+<li><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/12px-Commons-logo.svg.png" width="12" height="16" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/18px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/24px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376" /> Media related to <a href="http://commons.wikimedia.org/wiki/Category:parallel_computing" class="extiw" title="commons:Category:parallel computing">parallel computing</a> at Wikimedia Commons</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1047
+CPU time usage: 0.272 seconds
+Real time usage: 0.483 seconds
+Preprocessor visited node count: 755/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 31955/2097152 bytes
+Template argument size: 425/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 4/500
+Lua time usage: 0.049/10.000 seconds
+Lua memory usage: 1.62 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  314.545      1 - -total
+ 14.70%   46.241      2 - Template:Navbox
+ 12.14%   38.194      1 - Template:Commons_category
+ 11.68%   36.754      1 - Template:Parallel_Computing
+ 11.34%   35.685      1 - Template:Reflist
+ 10.87%   34.204      2 - Template:Cite_journal
+  9.44%   29.678      1 - Template:Harv
+  6.93%   21.790      1 - Template:Computer_laws
+  4.86%   15.276      1 - Template:Commons
+  4.19%   13.173      1 - Template:Sister
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:2323-0!*!0!!en!4!*!math=0 and timestamp 20141217043649 and revision id 634175153
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;oldid=634175153">http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;oldid=634175153</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Parallel_computing" title="Category:Parallel computing">Parallel computing</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Programming_rules_of_thumb" title="Category:Programming rules of thumb">Programming rules of thumb</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Commons_category_with_local_link_same_as_on_Wikidata" title="Category:Commons category with local link same as on Wikidata">Commons category with local link same as on Wikidata</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Amdahl%27s+law&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Amdahl%27s+law" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Amdahl%27s_law"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Amdahl%27s_law"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Amdahl%27s_law" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://en.wikipedia.org/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://en.wikipedia.org/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Amdahl%27s_law" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Amdahl%27s_law" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;oldid=634175153" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q460419" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Amdahl%27s_law&amp;id=634175153" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Amdahl%27s+law">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Amdahl%27s+law&amp;oldid=634175153&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ar"><a href="http://ar.wikipedia.org/wiki/قانون_أمدال" title="قانون أمدال – Arabic" lang="ar" hreflang="ar">العربية</a></li>
+													<li class="interlanguage-link interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Llei_d%27Amdahl" title="Llei d&#039;Amdahl – Catalan" lang="ca" hreflang="ca">Català</a></li>
+													<li class="interlanguage-link interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Amdahlův_zákon" title="Amdahlův zákon – Czech" lang="cs" hreflang="cs">Čeština</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Amdahlsches_Gesetz" title="Amdahlsches Gesetz – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-et"><a href="http://et.wikipedia.org/wiki/Amdahli_seadus" title="Amdahli seadus – Estonian" lang="et" hreflang="et">Eesti</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="http://es.wikipedia.org/wiki/Ley_de_Amdahl" title="Ley de Amdahl – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fa"><a href="http://fa.wikipedia.org/wiki/قانون_امدال" title="قانون امدال – Persian" lang="fa" hreflang="fa">فارسی</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Loi_d%27Amdahl" title="Loi d&#039;Amdahl – French" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-ko"><a href="http://ko.wikipedia.org/wiki/암달의_법칙" title="암달의 법칙 – Korean" lang="ko" hreflang="ko">한국어</a></li>
+													<li class="interlanguage-link interwiki-hr"><a href="http://hr.wikipedia.org/wiki/Amdahlov_zakon" title="Amdahlov zakon – Croatian" lang="hr" hreflang="hr">Hrvatski</a></li>
+													<li class="interlanguage-link interwiki-id"><a href="http://id.wikipedia.org/wiki/Hukum_Amdahl" title="Hukum Amdahl – Indonesian" lang="id" hreflang="id">Bahasa Indonesia</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="http://it.wikipedia.org/wiki/Legge_di_Amdahl" title="Legge di Amdahl – Italian" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-he"><a href="http://he.wikipedia.org/wiki/חוק_אמדל" title="חוק אמדל – Hebrew" lang="he" hreflang="he">עברית</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/アムダールの法則" title="アムダールの法則 – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Prawo_Amdahla" title="Prawo Amdahla – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Lei_de_Amdahl" title="Lei de Amdahl – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-ro"><a href="http://ro.wikipedia.org/wiki/Legea_lui_Amdahl" title="Legea lui Amdahl – Romanian" lang="ro" hreflang="ro">Română</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Закон_Амдала" title="Закон Амдала – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-sr"><a href="http://sr.wikipedia.org/wiki/Амдалов_закон" title="Амдалов закон – Serbian" lang="sr" hreflang="sr">Српски / srpski</a></li>
+													<li class="interlanguage-link interwiki-tr"><a href="http://tr.wikipedia.org/wiki/Amdahl_yasası" title="Amdahl yasası – Turkish" lang="tr" hreflang="tr">Türkçe</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="http://uk.wikipedia.org/wiki/Закон_Амдала" title="Закон Амдала – Ukrainian" lang="uk" hreflang="uk">Українська</a></li>
+													<li class="interlanguage-link interwiki-vi"><a href="http://vi.wikipedia.org/wiki/Luật_Amdahl" title="Luật Amdahl – Vietnamese" lang="vi" hreflang="vi">Tiếng Việt</a></li>
+													<li class="interlanguage-link interwiki-zh"><a href="http://zh.wikipedia.org/wiki/阿姆达尔定律" title="阿姆达尔定律 – Chinese" lang="zh" hreflang="zh">中文</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="http://en.wikipedia.org/wiki/edit" href="http://www.wikidata.org/wiki/Q460419#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 November 2014 at 03:37.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Amdahl%27s_law&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":113,"wgHostname":"mw1069"});
+}</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Amdahl%27s_law by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+</html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Synchronization_(computer_science) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Synchronization (computer science) - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="http://en.wikipedia.org/wiki/android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Synchronization_(computer_science)" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="http://en.wikipedia.org/wiki/Synchronization_(computer_science)" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Synchronization_(computer_science)" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Synchronization_(computer_science)","wgTitle":"Synchronization (computer science)","wgCurRevisionId":638716050,"wgRevisionId":638716050,"wgArticleId":4726017,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages using citations with accessdate and no URL","Articles needing additional references from November 2014","All articles needing additional references","Concurrency (computer science)","Communication","Synchronization"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Synchronization_(computer_science)","wgRelevantArticleId":4726017,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q650462"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Synchronization_computer_science skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Synchronization (computer science)</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="metadata plainlinks ambox ambox-content ambox-Refimprove" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><a href="http://en.wikipedia.org/wiki/File:Question_book-new.svg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" width="50" height="39" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/75px-Question_book-new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/100px-Question_book-new.svg.png 2x" data-file-width="262" data-file-height="204" /></a></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>needs additional citations for <a href="http://en.wikipedia.org/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">verification</a></b>. <span class="hide-when-compact">Please help <a class="external text" href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit">improve this article</a> by <a href="http://en.wikipedia.org/wiki/Help:Introduction_to_referencing/1" title="Help:Introduction to referencing/1">adding citations to reliable sources</a>. Unsourced material may be challenged and removed.</span> <small><i>(November 2014)</i></small></span></td>
+</tr>
+</table>
+<p>In <a href="http://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a>, <b>synchronization</b> refers to one of two distinct but related concepts: synchronization of <a href="http://en.wikipedia.org/wiki/Process_(computer_science)" title="Process (computer science)" class="mw-redirect">processes</a>, and synchronization of data. <b>Process synchronization</b> refers to the idea that multiple processes are to join up or <a href="http://en.wikipedia.org/wiki/Handshaking" title="Handshaking">handshake</a> at a certain point, in order to reach an agreement or commit to a certain sequence of action. <a href="http://en.wikipedia.org/wiki/Data_synchronization" title="Data synchronization">Data Synchronization</a> refers to the idea of keeping multiple copies of a <a href="http://en.wikipedia.org/wiki/Dataset" title="Dataset" class="mw-redirect">dataset</a> in coherence with one another, or to maintain <a href="http://en.wikipedia.org/wiki/Data_integrity" title="Data integrity">data integrity</a>. Process synchronization primitives are commonly used to implement data synchronization.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Thread_or_process_synchronization"><span class="tocnumber">1</span> <span class="toctext">Thread or process synchronization</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Classic_Problems_of_Synchronization"><span class="tocnumber">1.1</span> <span class="toctext">Classic Problems of Synchronization</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Hardware_Synchronization"><span class="tocnumber">1.2</span> <span class="toctext">Hardware Synchronization</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Synchronization_strategies_in_programming_languages"><span class="tocnumber">1.3</span> <span class="toctext">Synchronization strategies in programming languages</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Synchronization_examples"><span class="tocnumber">1.4</span> <span class="toctext">Synchronization examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Synchronization_in_Windows"><span class="tocnumber">1.4.1</span> <span class="toctext">Synchronization in Windows</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Synchronization_in_Linux"><span class="tocnumber">1.4.2</span> <span class="toctext">Synchronization in Linux</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Synchronization_in_Solaris"><span class="tocnumber">1.4.3</span> <span class="toctext">Synchronization in Solaris</span></a>
+<ul>
+<li class="toclevel-4 tocsection-9"><a href="#Adaptive_Mutexes"><span class="tocnumber">1.4.3.1</span> <span class="toctext">Adaptive Mutexes</span></a></li>
+<li class="toclevel-4 tocsection-10"><a href="#Reader-Writer_Locks"><span class="tocnumber">1.4.3.2</span> <span class="toctext">Reader-Writer Locks</span></a></li>
+<li class="toclevel-4 tocsection-11"><a href="#Turnstiles"><span class="tocnumber">1.4.3.3</span> <span class="toctext">Turnstiles</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-12"><a href="#Pthreads_Synchronization"><span class="tocnumber">1.4.4</span> <span class="toctext">Pthreads Synchronization</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#See"><span class="tocnumber">1.5</span> <span class="toctext">See</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Data_synchronization"><span class="tocnumber">2</span> <span class="toctext">Data synchronization</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Challenges_in_data_synchronization"><span class="tocnumber">2.1</span> <span class="toctext">Challenges in data synchronization</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#Data_Formats_Complexity"><span class="tocnumber">2.1.1</span> <span class="toctext">Data Formats Complexity</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Real-timeliness"><span class="tocnumber">2.1.2</span> <span class="toctext">Real-timeliness</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Security"><span class="tocnumber">2.1.3</span> <span class="toctext">Security</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Data_Quality"><span class="tocnumber">2.1.4</span> <span class="toctext">Data Quality</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#Performance"><span class="tocnumber">2.1.5</span> <span class="toctext">Performance</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#Mathematical_foundations"><span class="tocnumber">3</span> <span class="toctext">Mathematical foundations</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#External_links"><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Thread_or_process_synchronization">Thread or process synchronization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=1" title="Edit section: Thread or process synchronization">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="http://en.wikipedia.org/wiki/File:Multiple_Processes_Accessing_the_shared_resource.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Multiple_Processes_Accessing_the_shared_resource.png/220px-Multiple_Processes_Accessing_the_shared_resource.png" width="220" height="128" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Multiple_Processes_Accessing_the_shared_resource.png/330px-Multiple_Processes_Accessing_the_shared_resource.png 1.5x, //upload.wikimedia.org/wikipedia/commons/a/a3/Multiple_Processes_Accessing_the_shared_resource.png 2x" data-file-width="360" data-file-height="210" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Multiple_Processes_Accessing_the_shared_resource.png" class="internal" title="Enlarge"></a></div>
+<b>Figure 1</b>: Three processes, <i>Process 1</i>, <i>Process 2</i> and <i>Process 3</i>, accessing the shared resource (<a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">critical section</a>) simultaneously.</div>
+</div>
+</div>
+<p>Thread synchronization or serialization, strictly defined, is the application of particular mechanisms to ensure that two concurrently-executing <a href="http://en.wikipedia.org/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">threads</a> or <a href="http://en.wikipedia.org/wiki/Process_(computer_science)" title="Process (computer science)" class="mw-redirect">processes</a> do not execute specific portions of a program at the same time, referred to as <a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">mutual exclusion</a>. If one thread has begun to execute a serialized portion of the program called a <a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">critical section</a>, any other thread trying to execute this portion must wait until the first thread finishes. If such synchronization measures are not taken, it can result in a <a href="http://en.wikipedia.org/wiki/Race_condition#Software" title="Race condition">race condition</a> where variable values are unpredictable and depend on the timings of the thread or process <a href="http://en.wikipedia.org/wiki/Context_switch" title="Context switch">context switch</a>.</p>
+<p>To further clarify thread or process synchronization, consider the following example: Three processes - Process 1, Process 2, and Process 3 - are executed concurrently and need to access a shared resource (critical section), Figure 1. To avoid conflicts when accessing shared resource (critical section), processes Process 1, Process 2, and Process 3 must be synchronized. Thus, when Process 1 accesses shared resource (critical section), and Process 2 also tries to access shared resource (critical section), Process 2’s access of shared resource (critical section) must be avoided with security measures or using some synchronization techniques until Process 1 finishes its operation and comes out of shared resource (critical section), Figure 2.<sup id="cite_ref-CoryJanssen_1-0" class="reference"><a href="#cite_note-CoryJanssen-1"><span>[</span>1<span>]</span></a></sup></p>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="http://en.wikipedia.org/wiki/File:Shared_Resource_access_in_synchronization_environment.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Shared_Resource_access_in_synchronization_environment.png/220px-Shared_Resource_access_in_synchronization_environment.png" width="220" height="253" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/50/Shared_Resource_access_in_synchronization_environment.png/330px-Shared_Resource_access_in_synchronization_environment.png 1.5x, //upload.wikimedia.org/wikipedia/commons/5/50/Shared_Resource_access_in_synchronization_environment.png 2x" data-file-width="350" data-file-height="402" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Shared_Resource_access_in_synchronization_environment.png" class="internal" title="Enlarge"></a></div>
+<b>Figure 2</b>: Process P accessing Shared Resource (<a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">critical section</a>) if available, based on some synchronization technique.</div>
+</div>
+</div>
+<p>One very common synchronization requirement encountered by computer programmers is the strict order of two tasks. Task A must be completed before Task B can start. In simple words for example, we cannot board the train until we have bought a ticket. Similarly, we cannot enter the intersection until the traffic light is green and we cannot get money from an ATM until after we have entered our PIN.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>2<span>]</span></a></sup></p>
+<p>In addition to providing mutual exclusion, synchronization must also guard against the following:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">Deadlock</a>: This happens when two or more processes or threads are waiting for a lock to enter a critical section, which the other process is holding. This results in them indefinitely stalling and them making no further progress.</li>
+<li><a href="http://en.wikipedia.org/wiki/Resource_starvation" title="Resource starvation">Starvation</a>: In some instances, a process or thread could have unbounded waiting time to acquire a lock and never make any progress.</li>
+<li><a href="http://en.wikipedia.org/wiki/Priority_inversion" title="Priority inversion">Priority inversion</a>: In systems that have priorities for processes and threads, a medium priority task can pre-empt a higher priority task when using synchronization thereby violating the system rules. This is especially severe in real time systems which can cause missed deadlines.</li>
+<li><a href="http://en.wikipedia.org/wiki/Busy_waiting" title="Busy waiting">Busy waiting</a> occurs when one thread continuously checks if it may proceed, robbing other threads of processing time.</li>
+</ul>
+<p>Synchronization is used to control access to state both in small-scale multiprocessing systems—in multithreaded environments and multiprocessor computers—and in distributed computers consisting of thousands of units—in banking and database systems, in web servers, and so on.</p>
+<h3><span class="mw-headline" id="Classic_Problems_of_Synchronization">Classic Problems of Synchronization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=2" title="Edit section: Classic Problems of Synchronization">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Following are the classic problems of synchronization:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Producer–consumer_problem" title="Producer–consumer problem">The Producer-Consumer Problem</a> (also called the The Bounded Buffer Problem)</li>
+<li><a href="http://en.wikipedia.org/wiki/Readers–writers_problem" title="Readers–writers problem">The Readers-Writers Problem</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Dining_philosophers_problem" title="Dining philosophers problem">The Dining Philosophers Problem</a></li>
+</ul>
+<p>These problems are used to test nearly every newly proposed synchronization scheme or primitive.</p>
+<h3><span class="mw-headline" id="Hardware_Synchronization">Hardware Synchronization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=3" title="Edit section: Hardware Synchronization">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Many systems provide hardware support for <a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">critical section</a> code.</p>
+<p>Single processor or <a href="http://en.wikipedia.org/wiki/Uniprocessor_system" title="Uniprocessor system">Uniprocessor</a> system could disable <a href="http://en.wikipedia.org/wiki/Interrupt" title="Interrupt">interrupts</a> by executing currently running code without <a href="http://en.wikipedia.org/wiki/Preemption_(computing)" title="Preemption (computing)">preemption</a>, which is very inefficient on <a href="http://en.wikipedia.org/wiki/Multiprocessing" title="Multiprocessing">multiprocessor</a> systems.<sup id="cite_ref-Wiley2014_3-0" class="reference"><a href="#cite_note-Wiley2014-3"><span>[</span>3<span>]</span></a></sup> The key ability we require to implement synchronization in a multiprocessor is a set of hardware primitives with the ability to atomically read and modify a memory location. Without such a capability, the cost of building basic synchronization primitives will be too high and will increase as the processor count increases. There are a number of alternative formulations of the basic hardware primitives, all of which provide the ability to atomically read and modify a location, together with some way to tell if the read and write were performed atomically. These hardware primitives are the basic building blocks that are used to build a wide variety of user-level synchronization operations, including things such as <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">locks</a> and <a href="http://en.wikipedia.org/wiki/Barrier_(computer_science)" title="Barrier (computer science)">barriers</a>. In general, architects do not expect users to employ the basic hardware primitives, but instead expect that the primitives will be used by system programmers to build a synchronization library, a process that is often complex and tricky.<sup id="cite_ref-Morgan2011_4-0" class="reference"><a href="#cite_note-Morgan2011-4"><span>[</span>4<span>]</span></a></sup> Many modern hardware provides special atomic hardware instructions by either <a href="http://en.wikipedia.org/wiki/Test-and-set" title="Test-and-set">test-and-set</a> the memory word or <a href="http://en.wikipedia.org/wiki/Compare-and-swap" title="Compare-and-swap">compare-and-swap</a> contents of two memory words.</p>
+<h3><span class="mw-headline" id="Synchronization_strategies_in_programming_languages">Synchronization strategies in programming languages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=4" title="Edit section: Synchronization strategies in programming languages">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In Java, two synchronization strategies are used to prevent <a rel="nofollow" class="external text" href="https://docs.oracle.com/javase/tutorial/essential/concurrency/interfere.html">thread interference</a> and <a rel="nofollow" class="external text" href="https://docs.oracle.com/javase/tutorial/essential/concurrency/memconsist.html">memory consistency</a> errors:<sup id="cite_ref-CoryJanssen_1-1" class="reference"><a href="#cite_note-CoryJanssen-1"><span>[</span>1<span>]</span></a></sup></p>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://docs.oracle.com/javase/tutorial/essential/concurrency/syncmeth.html">Synchronized Method</a>: Includes the synchronized keyword in its declaration. When a thread invokes a synchronized method, synchronized method automatically acquires the intrinsic lock for that method's object and releases it when the method returns, even if that return was caused by an uncaught exception.</li>
+<li><a rel="nofollow" class="external text" href="https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html">Synchronized Statement</a>: Declares a block of code to be synchronized. Unlike synchronized methods, synchronized statements should specify the objects that provide the intrinsic lock. These statements are useful for improving concurrency with fine-grained synchronization, as they enable the avoidance of unnecessary blocking.</li>
+</ul>
+<p>The .NET framework provides synchronization primitives using the multi-threaded applications controlled without any race conditions. Synchronization is designed to be cooperative, demanding that every thread or process follow the synchronization mechanism before accessing protected resources (critical section) for consistent results. <a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/library/ms228964(v=vs.110).aspx#locking">Locking</a>, <a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/library/ms228964(v=vs.110).aspx#signaling">signaling</a>, <a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/library/ms228964(v=vs.110).aspx#lightweight_synchronization_types">lightweight synchronization types</a>, <a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/library/system.threading.thread.spinwait(v=vs.110).aspx">spinwait</a> and <a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/library/ms228964(v=vs.110).aspx#interlocked_operations">interlocked operations</a> are mechanisms related to synchronization in .NET.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>5<span>]</span></a></sup></p>
+<h3><span class="mw-headline" id="Synchronization_examples">Synchronization examples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=5" title="Edit section: Synchronization examples">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Following are some synchronization examples with respect to different platforms:<sup id="cite_ref-Wiley2012_6-0" class="reference"><a href="#cite_note-Wiley2012-6"><span>[</span>6<span>]</span></a></sup></p>
+<ul>
+<li>Windows</li>
+<li>Linux</li>
+<li>Solaris</li>
+<li>Pthreads(OS-Independent)</li>
+</ul>
+<h4><span class="mw-headline" id="Synchronization_in_Windows">Synchronization in Windows</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=6" title="Edit section: Synchronization in Windows">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li>Uses <a href="http://en.wikipedia.org/wiki/Interrupt" title="Interrupt">interrupt masks</a> to protect access to global resources (critical section) on uniprocessor systems.</li>
+<li>Uses spinlocks on multiprocessor systems: Spinlocking-thread will never be preempted.</li>
+<li>Also provides dispatcher objects user-land which may act mutexes, semaphores, events, and timers:
+<ul>
+<li>Events: An event acts much like a condition variable.</li>
+<li>Timers: Timers notify one or more thread when time expired.</li>
+<li>Dispatcher: Dispatcher objects either signaled-state (object available) or non-signaled state (thread will block).</li>
+</ul>
+</li>
+</ul>
+<h4><span class="mw-headline" id="Synchronization_in_Linux">Synchronization in Linux</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=7" title="Edit section: Synchronization in Linux">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li>Linux:
+<ul>
+<li>Prior to kernel Version 2.6, disables interrupts to implement short critical sections.</li>
+<li>Version 2.6 and later, fully preemptive.</li>
+</ul>
+</li>
+<li>Linux provides:
+<ul>
+<li>semaphores</li>
+<li>spinlocks</li>
+<li>reader-writer versions of both</li>
+</ul>
+</li>
+<li>On single-CPU system, spinlocks replaced by enabling and disabling kernel preemption.</li>
+</ul>
+<h4><span class="mw-headline" id="Synchronization_in_Solaris">Synchronization in Solaris</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=8" title="Edit section: Synchronization in Solaris">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li>Solaris controls access to critical sections using five tools:
+<ul>
+<li>semaphores</li>
+<li>condition variables</li>
+<li>adaptive mutexes</li>
+<li>reader-writer locks</li>
+<li>turnstiles</li>
+</ul>
+</li>
+</ul>
+<h5><span class="mw-headline" id="Adaptive_Mutexes">Adaptive Mutexes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=9" title="Edit section: Adaptive Mutexes">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
+<p>Adaptive mutexes are basically binary semaphores that are implemented differently depending upon the conditions:</p>
+<ul>
+<li>On a single processor system, the semaphore sleeps when it is blocked, until the block is released.</li>
+<li>On a multi-processor system, if the thread that is blocking the semaphore is running on the same processor as the thread that is blocked, or if the blocking thread is not running at all, then the blocked thread sleeps just like a single processor system.</li>
+<li>However if the blocking thread is currently running on a different processor than the blocked thread, then the blocked thread does a spinlock, under the assumption that the block will soon be released.</li>
+<li>Adaptive mutexes are only used for protecting short critical sections, where the benefit of not doing context switching is worth a short bit of spinlocking. Otherwise traditional semaphores and condition variables are used.</li>
+</ul>
+<h5><span class="mw-headline" id="Reader-Writer_Locks">Reader-Writer Locks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=10" title="Edit section: Reader-Writer Locks">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
+<p>Reader-writer locks are used only for protecting longer sections of code which are accessed frequently but which are changed infrequently.</p>
+<h5><span class="mw-headline" id="Turnstiles">Turnstiles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=11" title="Edit section: Turnstiles">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
+<p>A turnstile is a queue of threads waiting on a lock.</p>
+<ul>
+<li>Each synchronized object which has threads blocked waiting for access to it needs a separate turnstile. For efficiency, however, the turnstile is associated with the thread currently holding the object, rather than the object itself.</li>
+<li>In order to prevent priority inversion, the thread holding a lock for an object will temporarily acquire the highest priority of any process in the turnstile waiting for the blocked object. This is called a priority-inheritance protocol.</li>
+<li>User threads are controlled the same as for kernel threads, except that the priority-inheritance protocol does not apply.</li>
+</ul>
+<h4><span class="mw-headline" id="Pthreads_Synchronization">Pthreads Synchronization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=12" title="Edit section: Pthreads Synchronization">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Pthreads API is OS-Independent. It provides:</p>
+<ul>
+<li>mutex locks</li>
+<li>condition variables</li>
+<li>read-write locks</li>
+<li>spinlocks</li>
+</ul>
+<h3><span class="mw-headline" id="See">See</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=13" title="Edit section: See">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">Lock (computer science)</a> and <a href="http://en.wikipedia.org/wiki/Mutex" title="Mutex" class="mw-redirect">mutex</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Monitor_(synchronization)" title="Monitor (synchronization)">Monitor (synchronization)</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Monitor_(synchronization)#Synchronization_primitives" title="Monitor (synchronization)">Synchronization primitives</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Semaphore_(programming)" title="Semaphore (programming)">Semaphore (programming)</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Test-and-set" title="Test-and-set">Test-and-set</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Compare-and-swap" title="Compare-and-swap">Compare-and-swap</a></li>
+<li><a href="http://en.wikipedia.org/wiki/SCOOP_(software)" title="SCOOP (software)">Simple Concurrent Object-Oriented Programming (SCOOP)</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Java_concurrency" title="Java concurrency">JAVA concurrency</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Thread_(computing)" title="Thread (computing)">Threads</a></li>
+</ul>
+<h2><span class="mw-headline" id="Data_synchronization">Data synchronization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=14" title="Edit section: Data synchronization">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Data_synchronization" title="Data synchronization">Data synchronization</a></div>
+<div class="thumb tright">
+<div class="thumbinner" style="width:192px;"><a href="http://en.wikipedia.org/wiki/File:Data_Synchronization.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/d/dc/Data_Synchronization.png" width="190" height="255" class="thumbimage" data-file-width="190" data-file-height="255" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Data_Synchronization.png" class="internal" title="Enlarge"></a></div>
+<b>Figure 3:</b> Changes from both SERVER and CLIENT(s) are Synchronized.</div>
+</div>
+</div>
+<p>A distinctly different (but related) concept is that of <a href="http://en.wikipedia.org/wiki/Data_synchronization" title="Data synchronization">data synchronization</a>. This refers to the need to keep multiple copies of a set of data coherent with one another or to maintain <a href="http://en.wikipedia.org/wiki/Data_integrity" title="Data integrity">data integrity</a>, Figure 3. For example, database replication is used to keep multiple copies of data synchronized with database servers that store data in different locations.</p>
+<h3><span class="mw-headline" id="Challenges_in_data_synchronization">Challenges in data synchronization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=15" title="Edit section: Challenges in data synchronization">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Following are some challenges which you may face in data synchronization:<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>7<span>]</span></a></sup></p>
+<ul>
+<li>Data Formats Complexity</li>
+<li>Real-timeliness</li>
+<li>Security</li>
+<li>Data Quality</li>
+<li>Performance</li>
+</ul>
+<h4><span class="mw-headline" id="Data_Formats_Complexity">Data Formats Complexity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=16" title="Edit section: Data Formats Complexity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>As the organization grows and evolves, the data formats vary which results not only in building a simple interface between the two applications (source and target), but also in a need to transform the data while passing them to the target application(s). <a href="http://en.wikipedia.org/wiki/Extract,_transform,_load" title="Extract, transform, load">ETL</a> tools can be helpful at this stage.</p>
+<h4><span class="mw-headline" id="Real-timeliness">Real-timeliness</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=17" title="Edit section: Real-timeliness">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Today the systems are all real time. Customers want to see what the status of their order in e-shop is; the status of a parcel delivery - a real time parcel tracking; what the current balance on their account is; etc. So here is the need to have the system real-time updated as well to enable smooth manufacturing process, e.g. ordering material when enterprise is running out stock; synchronizing customer orders with manufacturing process, etc. There are thousands of examples from real life when the real time is becoming either advantage or a must to be successful and competitive.</p>
+<h4><span class="mw-headline" id="Security">Security</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=18" title="Edit section: Security">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Different systems may have different policies to enforce data security and access levels. Even though the security is maintained correctly in the source system which captures the data, the security and information access privileges must be enforced on the target systems as well to prevent any potential misuse of the information. This is particularly an issue when handling personal information or any piece of confidential information under <a href="http://en.wikipedia.org/wiki/Non-disclosure_agreement" title="Non-disclosure agreement">Non Disclosure Agreement (NDA)</a>. Any intermediate results of the data transfer as well as the data transfer itself must be encrypted.</p>
+<h4><span class="mw-headline" id="Data_Quality">Data Quality</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=19" title="Edit section: Data Quality">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Maintaining data in one place and sharing with other applications is best practice in managing and improving data quality. This prevents inconsistencies in the data caused by updating the same data in one system.</p>
+<h4><span class="mw-headline" id="Performance">Performance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=20" title="Edit section: Performance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>The data synchronization process consists of five basic phases:</p>
+<ul>
+<li>Data extraction from the source (master/main) system</li>
+<li>Data transfer</li>
+<li>Data transformation</li>
+<li>Data transfer</li>
+<li>Data load to the target system</li>
+</ul>
+<p>In case of large data, each of these steps may impact performance. Therefore, the synchronization needs to be carefully planned to avoid any negative impact.</p>
+<p>Examples include:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/File_synchronization" title="File synchronization">File synchronization</a>, such as syncing a hand-held MP3 player to a desktop computer.</li>
+<li><a href="http://en.wikipedia.org/wiki/Cluster_file_system" title="Cluster file system" class="mw-redirect">Cluster file systems</a>, which are <a href="http://en.wikipedia.org/wiki/File_system" title="File system">file systems</a> that maintain data or indexes in a coherent fashion across a whole <a href="http://en.wikipedia.org/wiki/Computing_cluster" title="Computing cluster" class="mw-redirect">computing cluster</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/Cache_coherency" title="Cache coherency" class="mw-redirect">Cache coherency</a>, maintaining multiple copies of data in sync across multiple <a href="http://en.wikipedia.org/wiki/Cache_(computing)" title="Cache (computing)">caches</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/RAID" title="RAID">RAID</a>, where data is written in a redundant fashion across multiple disks, so that the loss of any one disk does not lead to a loss of data.</li>
+<li><a href="http://en.wikipedia.org/wiki/Database_replication" title="Database replication" class="mw-redirect">Database replication</a>, where copies of data on a <a href="http://en.wikipedia.org/wiki/Database" title="Database">database</a> are kept in sync, despite possible large geographical separation.</li>
+<li><a href="http://en.wikipedia.org/wiki/Journaling_file_system" title="Journaling file system">Journaling</a>, a technique used by many modern file systems to make sure that file metadata are updated on a disk in a coherent, consistent manner.</li>
+</ul>
+<h2><span class="mw-headline" id="Mathematical_foundations">Mathematical foundations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=21" title="Edit section: Mathematical foundations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Synchronization was originally a process based concept whereby a lock could be obtained on an object. Its primary usage was in databases. There are two types of (file) <a href="http://en.wikipedia.org/wiki/File_locking" title="File locking">lock</a>; read-only and read-write. Read-only locks may be obtained by many processes or threads. Read-write locks are exclusive, as they may only be used by a single process/thread at a time.</p>
+<p>Although locks were derived for file databases, data is also shared in memory between processes and threads. Sometimes more than one object (or file) is locked at a time. If they are not locked simultaneously they can overlap, causing a deadlock exception.</p>
+<p><a href="http://en.wikipedia.org/wiki/Java_(programming_language)" title="Java (programming language)">Java</a> and <a href="http://en.wikipedia.org/wiki/Ada_(programming_language)" title="Ada (programming language)">Ada</a> only have exclusive locks because they are thread based and rely on the compare-and-swap processor instruction (see <a href="http://en.wikipedia.org/wiki/Mutex" title="Mutex" class="mw-redirect">mutex</a>).</p>
+<p>An abstract mathematical foundation for synchronization primitives is given by the <a href="http://en.wikipedia.org/wiki/History_monoid" title="History monoid">history monoid</a>. There are also many higher-level theoretical devices, such as <a href="http://en.wikipedia.org/wiki/Process_calculi" title="Process calculi" class="mw-redirect">process calculi</a> and <a href="http://en.wikipedia.org/wiki/Petri_net" title="Petri net">Petri nets</a>, which can be built on top of the history monoid.</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=22" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Futures_and_promises" title="Futures and promises">Futures and promises</a>, synchronization mechanisms in pure functional paradigms.</li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=23" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-CoryJanssen-1"><span class="mw-cite-backlink">^ <a href="#cite_ref-CoryJanssen_1-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-CoryJanssen_1-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation web">Janssen, Cory. <a rel="nofollow" class="external text" href="http://www.techopedia.com/definition/24349/thread-synchronization">"Thread Synchronization"</a>. <i>Techopedia</i><span class="reference-accessdate">. Retrieved <span class="nowrap">23 November</span> 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASynchronization+%28computer+science%29&amp;rft.atitle=Thread+Synchronization&amp;rft.aufirst=Cory&amp;rft.au=Janssen%2C+Cory&amp;rft.aulast=Janssen&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.techopedia.com%2Fdefinition%2F24349%2Fthread-synchronization&amp;rft.jtitle=Techopedia&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><span class="citation web">Fatheisian, Halleh; Rosenberger, Eric. <a rel="nofollow" class="external text" href="http://www.cs.gmu.edu/cne/itcore/processes/Sync.html">"Synchronization"</a>. <i>Department of Computer Science, George Mason University</i><span class="reference-accessdate">. Retrieved <span class="nowrap">23 November</span> 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASynchronization+%28computer+science%29&amp;rft.atitle=Synchronization&amp;rft.au=Fatheisian%2C+Halleh&amp;rft.aufirst=Halleh&amp;rft.aulast=Fatheisian&amp;rft.au=Rosenberger%2C+Eric&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.cs.gmu.edu%2Fcne%2Fitcore%2Fprocesses%2FSync.html&amp;rft.jtitle=Department+of+Computer+Science%2C+George+Mason+University&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-Wiley2014-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-Wiley2014_3-0">^</a></b></span> <span class="reference-text"><span class="citation book">Silberschatz, Abraham; Gagne, Greg; Galvin, Peter Baer (July 11, 2008). "Chapter 6: Process Synchronization". <i>Operating System Concepts</i> (Eighth ed.). John Wiley &amp; Sons. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/978-0-470-12872-5" title="Special:BookSources/978-0-470-12872-5">978-0-470-12872-5</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASynchronization+%28computer+science%29&amp;rft.atitle=Chapter+6%3A+Process+Synchronization&amp;rft.aufirst=Abraham&amp;rft.au=Gagne%2C+Greg&amp;rft.au=Galvin%2C+Peter+Baer&amp;rft.aulast=Silberschatz&amp;rft.au=Silberschatz%2C+Abraham&amp;rft.btitle=Operating+System+Concepts&amp;rft.date=July+11%2C+2008&amp;rft.edition=Eighth&amp;rft.genre=bookitem&amp;rft.isbn=978-0-470-12872-5&amp;rft.pub=John+Wiley+%26+Sons.&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="display:none;font-size:100%" class="error citation-comment"><code style="color:inherit; border:inherit; padding:inherit;">|accessdate=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">|url=</code> (<a href="http://en.wikipedia.org/wiki/Help:CS1_errors#accessdate_missing_url" title="Help:CS1 errors">help</a>)</span></span></li>
+<li id="cite_note-Morgan2011-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-Morgan2011_4-0">^</a></b></span> <span class="reference-text"><span class="citation book">Hennessy, John L.; Patterson, David A. (September 30, 2011). "Chapter 5: Thread-Level Parallelism". <i>Computer Architecture: A Quantitative Approach</i> (Fifth ed.). Morgan Kaufmann. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/978-0-123-83872-8" title="Special:BookSources/978-0-123-83872-8">978-0-123-83872-8</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASynchronization+%28computer+science%29&amp;rft.atitle=Chapter+5%3A+Thread-Level+Parallelism&amp;rft.aufirst=John+L.&amp;rft.au=Hennessy%2C+John+L.&amp;rft.aulast=Hennessy&amp;rft.au=Patterson%2C+David+A.&amp;rft.btitle=Computer+Architecture%3A+A+Quantitative+Approach&amp;rft.date=September+30%2C+2011&amp;rft.edition=Fifth&amp;rft.genre=bookitem&amp;rft.isbn=978-0-123-83872-8&amp;rft.pub=Morgan+Kaufmann&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/library/ms228964(v=vs.110).aspx">"Synchronization Primitives in .Net framework"</a>. <i>MSDN - The Microsoft Developer Network</i>. Microsoft<span class="reference-accessdate">. Retrieved <span class="nowrap">23 November</span> 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASynchronization+%28computer+science%29&amp;rft.atitle=Synchronization+Primitives+in+.Net+framework&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Flibrary%2Fms228964%2528v%3Dvs.110%2529.aspx&amp;rft.jtitle=MSDN+-+The+Microsoft+Developer+Network&amp;rft.pub=Microsoft&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-Wiley2012-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-Wiley2012_6-0">^</a></b></span> <span class="reference-text"><span class="citation book">Silberschatz, Abraham; Gagne, Greg; Galvin, Peter Baer (December 7, 2012). "Chapter 5: Process Synchronization". <i>Operating System Concepts</i> (Ninth ed.). John Wiley &amp; Sons. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/978-1-118-06333-0" title="Special:BookSources/978-1-118-06333-0">978-1-118-06333-0</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASynchronization+%28computer+science%29&amp;rft.atitle=Chapter+5%3A+Process+Synchronization&amp;rft.aufirst=Abraham&amp;rft.au=Gagne%2C+Greg&amp;rft.au=Galvin%2C+Peter+Baer&amp;rft.aulast=Silberschatz&amp;rft.au=Silberschatz%2C+Abraham&amp;rft.btitle=Operating+System+Concepts&amp;rft.date=December+7%2C+2012&amp;rft.edition=Ninth&amp;rft.genre=bookitem&amp;rft.isbn=978-1-118-06333-0&amp;rft.pub=John+Wiley+%26+Sons.&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.dataintegration.info/data-synchronization/">"Data Synchronization"</a>. <i>Javlin Inc</i><span class="reference-accessdate">. Retrieved <span class="nowrap">23 November</span> 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASynchronization+%28computer+science%29&amp;rft.atitle=Data+Synchronization&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.dataintegration.info%2Fdata-synchronization%2F&amp;rft.jtitle=Javlin+Inc.&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<ul>
+<li><span class="citation book">Schneider, Fred B. (1997). <i>On concurrent programming</i>. Springer-Verlag New York, Inc. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-387-94942-9" title="Special:BookSources/0-387-94942-9">0-387-94942-9</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASynchronization+%28computer+science%29&amp;rft.aufirst=Fred+B.&amp;rft.aulast=Schneider&amp;rft.au=Schneider%2C+Fred+B.&amp;rft.btitle=On+concurrent+programming&amp;rft.date=1997&amp;rft.genre=book&amp;rft.isbn=0-387-94942-9&amp;rft.pub=Springer-Verlag+New+York%2C+Inc.&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit&amp;section=24" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://web.archive.org/web/20090209170415/http://ibm.com/developerworks/linux/library/l-linux-synchronization.html">Anatomy of Linux synchronization methods</a> at IBM developerWorks</li>
+<li><a rel="nofollow" class="external text" href="http://greenteapress.com/semaphores/"><i>The Little Book of Semaphores</i></a>, by Allen B. Downey</li>
+</ul>
+<table class="navbox" style="border-spacing:0">
+<tr>
+<td style="padding:2px">
+<table class="nowraplinks hlist collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="http://en.wikipedia.org/wiki/Template:Parallel_computing" title="Template:Parallel computing"><span title="View this template" style=";;background:none transparent;border:none;">v</span></a></li>
+<li class="nv-talk"><a href="http://en.wikipedia.org/wiki/Template_talk:Parallel_computing" title="Template talk:Parallel computing"><span title="Discuss this template" style=";;background:none transparent;border:none;">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="http://en.wikipedia.org/w/index.php?title=Template:Parallel_computing&amp;action=edit"><span title="Edit this template" style=";;background:none transparent;border:none;">e</span></a></li>
+</ul>
+</div>
+<div style="font-size:110%"><a href="http://en.wikipedia.org/wiki/Parallel_computing" title="Parallel computing">Parallel computing</a></div>
+</th>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">General</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Cloud_computing" title="Cloud computing">Cloud computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/High-performance_computing" title="High-performance computing" class="mw-redirect">High-performance computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Computer_cluster" title="Computer cluster">Cluster computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Distributed_computing" title="Distributed computing">Distributed computing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Grid_computing" title="Grid computing">Grid computing</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Levels</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Bit-level_parallelism" title="Bit-level parallelism">Bit</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Instruction-level_parallelism" title="Instruction-level parallelism">Instruction</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Data_parallelism" title="Data parallelism">Data</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Memory-level_parallelism" title="Memory-level parallelism">Memory</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Task_parallelism" title="Task parallelism">Task</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Multithreading_(computer_architecture)" title="Multithreading (computer architecture)">Multithreading</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Temporal_multithreading" title="Temporal multithreading">Temporal multithreading</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Simultaneous_multithreading" title="Simultaneous multithreading">Simultaneous multithreading</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Hyper-threading" title="Hyper-threading">Hyper-threading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Theory</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Amdahl%27s_law" title="Amdahl's law">Amdahl's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Gustafson%27s_law" title="Gustafson's law">Gustafson's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cost_efficiency" title="Cost efficiency">Cost efficiency</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Karp–Flatt_metric" title="Karp–Flatt metric">Karp–Flatt metric</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_slowdown" title="Parallel slowdown">slowdown</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Speedup" title="Speedup">speedup</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Elements</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Process_(computing)" title="Process (computing)">Process</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Thread_(computing)" title="Thread (computing)">Thread</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Fiber_(computer_science)" title="Fiber (computer science)">Fiber</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_random-access_machine" title="Parallel random-access machine">PRAM</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Instruction_window" title="Instruction window">Instruction window</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Coordination</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Multiprocessing" title="Multiprocessing">Multiprocessing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Memory_coherence" title="Memory coherence">Memory coherency</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cache_coherence" title="Cache coherence">Cache coherency</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cache_invalidation" title="Cache invalidation">Cache invalidation</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Barrier_(computer_science)" title="Barrier (computer science)">Barrier</a></li>
+<li><strong class="selflink">Synchronization</strong></li>
+<li><a href="http://en.wikipedia.org/wiki/Application_checkpointing" title="Application checkpointing">Application checkpointing</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Computer_programming" title="Computer programming">Programming</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_programming_model" title="Parallel programming model">Models</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Implicit_parallelism" title="Implicit parallelism">Implicit parallelism</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Explicit_parallelism" title="Explicit parallelism">Explicit parallelism</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Concurrency_(computer_science)" title="Concurrency (computer science)">Concurrency</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Flynn%27s_taxonomy" title="Flynn's taxonomy">Flynn's taxonomy</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/SISD" title="SISD">SISD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/SIMD" title="SIMD">SIMD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/MISD" title="MISD">MISD</a></li>
+<li><a href="http://en.wikipedia.org/wiki/MIMD" title="MIMD">MIMD</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/SPMD" title="SPMD">SPMD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Thread_(computing)" title="Thread (computing)">Thread</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Non-blocking_algorithm" title="Non-blocking algorithm">Non-blocking algorithm</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Computer_hardware" title="Computer hardware">Hardware</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Multiprocessor" title="Multiprocessor" class="mw-redirect">Multiprocessor</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Symmetric_multiprocessing" title="Symmetric multiprocessing">Symmetric</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Asymmetric_multiprocessing" title="Asymmetric multiprocessing">Asymmetric</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Semiconductor_memory" title="Semiconductor memory">Memory</a>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Non-uniform_memory_access" title="Non-uniform memory access">NUMA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cache-only_memory_architecture" title="Cache-only memory architecture">COMA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Distributed_memory" title="Distributed memory">distributed</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Shared_memory" title="Shared memory">shared</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Distributed_shared_memory" title="Distributed shared memory">distributed shared</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Massively_parallel_(computing)" title="Massively parallel (computing)">MPP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Superscalar" title="Superscalar">Superscalar</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Vector_processor" title="Vector processor">Vector processor</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Supercomputer" title="Supercomputer">Supercomputer</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Beowulf_cluster" title="Beowulf cluster">Beowulf cluster</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="http://en.wikipedia.org/wiki/Application_programming_interface" title="Application programming interface">APIs</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Ateji_PX" title="Ateji PX">Ateji PX</a></li>
+<li><a href="http://en.wikipedia.org/wiki/POSIX_Threads" title="POSIX Threads">POSIX Threads</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenMP" title="OpenMP">OpenMP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenHMPP" title="OpenHMPP">OpenHMPP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenACC" title="OpenACC">OpenACC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_Virtual_Machine" title="Parallel Virtual Machine">PVM</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Message_Passing_Interface" title="Message Passing Interface">MPI</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Unified_Parallel_C" title="Unified Parallel C">UPC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Threading_Building_Blocks" title="Threading Building Blocks">TBB</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Boost_(C++_libraries)#Multithreading_.E2.80.93_Boost.Thread" title="Boost (C++ libraries)">Boost.Thread</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Global_Arrays" title="Global Arrays">Global Arrays</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Charm++" title="Charm++">Charm++</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cilk" title="Cilk">Cilk</a>/<a href="http://en.wikipedia.org/wiki/Cilk_Plus" title="Cilk Plus">Cilk Plus</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Coarray_Fortran" title="Coarray Fortran">Coarray Fortran</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OpenCL" title="OpenCL">OpenCL</a></li>
+<li><a href="http://en.wikipedia.org/wiki/CUDA" title="CUDA">CUDA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Dryad_(programming)" title="Dryad (programming)">Dryad</a></li>
+<li><a href="http://en.wikipedia.org/wiki/C++_AMP" title="C++ AMP">C++ AMP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_LINQ" title="Parallel LINQ" class="mw-redirect">PLINQ</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_Extensions#Task_Parallel_Library" title="Parallel Extensions">TPL</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Problems</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Embarrassingly_parallel" title="Embarrassingly parallel">Embarrassingly parallel</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Software_lockout" title="Software lockout">Software lockout</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Scalability" title="Scalability">Scalability</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Race_condition#Computing" title="Race condition">Race condition</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">Deadlock</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deadlock#Livelock" title="Deadlock">Livelock</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Resource_starvation" title="Resource starvation">Starvation</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deterministic_algorithm" title="Deterministic algorithm">Deterministic algorithm</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Parallel_slowdown" title="Parallel slowdown">Parallel slowdown</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<td class="navbox-abovebelow" colspan="2">
+<div>
+<ul>
+<li><img alt="Category" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/16px-Folder_Hexagonal_Icon.svg.png" width="16" height="14" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/24px-Folder_Hexagonal_Icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/32px-Folder_Hexagonal_Icon.svg.png 2x" data-file-width="36" data-file-height="31" />&#160;<a href="http://en.wikipedia.org/wiki/Category:Parallel_computing" title="Category:Parallel computing">Category: parallel computing</a></li>
+<li><img alt="" src="http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/12px-Commons-logo.svg.png" width="12" height="16" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/18px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/24px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376" /> Media related to <a href="http://commons.wikimedia.org/wiki/Category:parallel_computing" class="extiw" title="commons:Category:parallel computing">parallel computing</a> at Wikimedia Commons</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1021
+CPU time usage: 0.289 seconds
+Real time usage: 0.348 seconds
+Preprocessor visited node count: 947/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 37798/2097152 bytes
+Template argument size: 171/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 4/500
+Lua time usage: 0.082/10.000 seconds
+Lua memory usage: 2.9 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  205.219      1 - -total
+ 36.85%   75.617      1 - Template:Reflist
+ 29.65%   60.856      1 - Template:Refimprove
+ 20.56%   42.190      1 - Template:Parallel_computing
+ 18.95%   38.886      4 - Template:Cite_web
+ 18.91%   38.813      1 - Template:Ambox
+ 18.85%   38.679      1 - Template:Navbox
+  8.96%   18.397      4 - Template:Cite_book
+  5.33%   10.946      1 - Template:Main
+  4.78%    9.812      1 - Template:Commonscat-inline
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:4726017-0!*!0!!en!4!* and timestamp 20141219005333 and revision id 638716050
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;oldid=638716050">http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;oldid=638716050</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Concurrency_(computer_science)" title="Category:Concurrency (computer science)">Concurrency (computer science)</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Communication" title="Category:Communication">Communication</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Synchronization" title="Category:Synchronization">Synchronization</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Pages_using_citations_with_accessdate_and_no_URL" title="Category:Pages using citations with accessdate and no URL">Pages using citations with accessdate and no URL</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_needing_additional_references_from_November_2014" title="Category:Articles needing additional references from November 2014">Articles needing additional references from November 2014</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_needing_additional_references" title="Category:All articles needing additional references">All articles needing additional references</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Synchronization+%28computer+science%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Synchronization+%28computer+science%29" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Synchronization_(computer_science)"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Synchronization_(computer_science)"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Synchronization_(computer_science)" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://en.wikipedia.org/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://en.wikipedia.org/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Synchronization_(computer_science)" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Synchronization_(computer_science)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;oldid=638716050" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q650462" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Synchronization_%28computer_science%29&amp;id=638716050" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Synchronization+%28computer+science%29">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Synchronization+%28computer+science%29&amp;oldid=638716050&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Prozesssynchronisation" title="Prozesssynchronisation – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-fa"><a href="http://fa.wikipedia.org/wiki/همگام‌سازی_(علوم_رایانه)" title="همگام‌سازی (علوم رایانه) – Persian" lang="fa" hreflang="fa">فارسی</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Synchronisation_(multitâches)" title="Synchronisation (multitâches) – French" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-hr"><a href="http://hr.wikipedia.org/wiki/Sinkronizacija_(računalstvo)" title="Sinkronizacija (računalstvo) – Croatian" lang="hr" hreflang="hr">Hrvatski</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="http://it.wikipedia.org/wiki/Sincronizzazione" title="Sincronizzazione – Italian" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-he"><a href="http://he.wikipedia.org/wiki/סנכרון_(מדעי_המחשב)" title="סנכרון (מדעי המחשב) – Hebrew" lang="he" hreflang="he">עברית</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/同期_(計算機科学)" title="同期 (計算機科学) – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Sincronização_(ciência_da_computação)" title="Sincronização (ciência da computação) – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Синхронизация_(информатика)" title="Синхронизация (информатика) – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-simple"><a href="http://simple.wikipedia.org/wiki/Synchronization_(computer_science)" title="Synchronization (computer science) – Simple English" lang="simple" hreflang="simple">Simple English</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="http://uk.wikipedia.org/wiki/Синхронізація_процесів" title="Синхронізація процесів – Ukrainian" lang="uk" hreflang="uk">Українська</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="http://en.wikipedia.org/wiki/edit" href="http://www.wikidata.org/wiki/Q650462#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 19 December 2014 at 00:53.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Synchronization_(computer_science)&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":77,"wgHostname":"mw1238"});
+}</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Synchronization_(computer_science) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+</html>

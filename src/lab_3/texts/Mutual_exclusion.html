@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Mutual_exclusion by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Mutual exclusion - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="http://en.wikipedia.org/wiki/android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Mutual_exclusion" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="http://en.wikipedia.org/wiki/Mutual_exclusion" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Mutual_exclusion" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Mutual_exclusion","wgTitle":"Mutual exclusion","wgCurRevisionId":637884788,"wgRevisionId":637884788,"wgArticleId":36827,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Use dmy dates from December 2010","Concurrency control"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Mutual_exclusion","wgRelevantArticleId":36827,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q1047554"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Mutual_exclusion skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Mutual exclusion</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="hatnote">For the concept, see <a href="http://en.wikipedia.org/wiki/Mutually_exclusive_events" title="Mutually exclusive events">Mutually exclusive events</a>.</div>
+<div class="hatnote">"mutex" redirects here. For the computer program object that negotiates mutual exclusion among threads, see <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">lock (computer science)</a>.</div>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="http://en.wikipedia.org/wiki/File:Mutual_exclusion_example_with_linked_list.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Mutual_exclusion_example_with_linked_list.png/220px-Mutual_exclusion_example_with_linked_list.png" width="220" height="156" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Mutual_exclusion_example_with_linked_list.png/330px-Mutual_exclusion_example_with_linked_list.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Mutual_exclusion_example_with_linked_list.png/440px-Mutual_exclusion_example_with_linked_list.png 2x" data-file-width="2550" data-file-height="1808" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Mutual_exclusion_example_with_linked_list.png" class="internal" title="Enlarge"></a></div>
+<b>Figure 1</b>: Two nodes, <i>i</i> and <i>i+1</i>, being removed simultaneously result in node <i>i+1</i> not being removed.</div>
+</div>
+</div>
+<p>In <a href="http://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a>, <b>mutual exclusion</b> refers to the requirement of ensuring that no two <a href="http://en.wikipedia.org/wiki/Concurrent_computing" title="Concurrent computing">concurrent</a> <a href="http://en.wikipedia.org/wiki/Process_(computing)" title="Process (computing)">processes</a><sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>a<span>]</span></a></sup> are in their <a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">critical section</a> at the same time; it is a basic requirement in <a href="http://en.wikipedia.org/wiki/Concurrency_control" title="Concurrency control">concurrency control</a>, to prevent <a href="http://en.wikipedia.org/wiki/Race_condition" title="Race condition">race conditions</a>. Here, a critical section refers to a period when the process accesses a shared resource, such as <a href="http://en.wikipedia.org/wiki/Shared_memory" title="Shared memory">shared memory</a>. The requirement of mutual exclusion was first identified and solved by <a href="http://en.wikipedia.org/wiki/Edsger_W._Dijkstra" title="Edsger W. Dijkstra">Edsger W. Dijkstra</a> in his seminal 1965 paper titled <i>Solution of a problem in concurrent programming control</i>,<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>1<span>]</span></a></sup><sup id="cite_ref-Taubenfeld:2004_3-0" class="reference"><a href="#cite_note-Taubenfeld:2004-3"><span>[</span>2<span>]</span></a></sup> and is credited as the first topic in the study of <a href="http://en.wikipedia.org/wiki/Concurrent_algorithm" title="Concurrent algorithm">concurrent algorithms</a>.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>3<span>]</span></a></sup></p>
+<p>A simple example of why mutual exclusion is important in practice can be visualized using a <a href="http://en.wikipedia.org/wiki/Singly_linked_list" title="Singly linked list" class="mw-redirect">singly linked list</a> (See Figure 1). In such a linked list, the removal of a node is done by changing the “next” pointer of the preceding node to point to the subsequent node (e.g., if node <i>i</i> is being removed then the “next” pointer of node <i>i−1</i> will be changed to point to node <i>i+1</i>). In an execution where such a linked list is being shared between multiple processes, two processes may attempt to remove two different nodes simultaneously, resulting in the following problem: let nodes <i>i</i> and <i>i+1</i> be the nodes to be removed; furthermore, let neither of them be the head nor the tail; the next pointer of node <i>i−1</i> will be changed to point to node <i>i+1</i> and the next pointer of node <i>i</i> will be changed to point to node <i>i+2</i>. Although both removal operations complete successfully, node <i>i+1</i> remains in the list since <i>i−1</i> was made to point to <i>i+1</i>, skipping node <i>i</i> (which was the node that reflected the removal of <i>i+1</i> by having its next pointer set to <i>i+2</i>). This can be seen in Figure 1. This problem (normally called a race condition) can be avoided by using the requirement of mutual exclusion to ensure that simultaneous updates to the same part of the list cannot occur.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Enforcing_mutual_exclusion"><span class="tocnumber">1</span> <span class="toctext">Enforcing mutual exclusion</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Hardware_solutions"><span class="tocnumber">1.1</span> <span class="toctext">Hardware solutions</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Software_solutions"><span class="tocnumber">1.2</span> <span class="toctext">Software solutions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Advanced_mutual_exclusion"><span class="tocnumber">2</span> <span class="toctext">Advanced mutual exclusion</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Notes"><span class="tocnumber">4</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Further_reading"><span class="tocnumber">6</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Enforcing_mutual_exclusion">Enforcing mutual exclusion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit&amp;section=1" title="Edit section: Enforcing mutual exclusion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>There are both software and hardware solutions for enforcing mutual exclusion. Some different solutions are discussed below.</p>
+<h3><span class="mw-headline" id="Hardware_solutions">Hardware solutions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit&amp;section=2" title="Edit section: Hardware solutions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>On <a href="http://en.wikipedia.org/wiki/Uniprocessor" title="Uniprocessor" class="mw-redirect">uniprocessor</a> systems, the simplest solution to achieve mutual exclusion is to disable <a href="http://en.wikipedia.org/wiki/Interrupt" title="Interrupt">interrupts</a> during a process's critical section. This will prevent any <a href="http://en.wikipedia.org/wiki/Interrupt_service_routine" title="Interrupt service routine" class="mw-redirect">interrupt service routines</a> from running (effectively preventing a process from being <a href="http://en.wikipedia.org/wiki/Preemption_(computing)" title="Preemption (computing)">preempted</a>). Although this solution is effective, it leads to many problems. If a critical section is long, then the <a href="http://en.wikipedia.org/wiki/System_clock" title="System clock" class="mw-redirect">system clock</a> will drift every time a critical section is executed because the timer interrupt is no longer serviced, so tracking time is impossible during the critical section. Also, if a process halts during its critical section, control will never be returned to another process, effectively halting the entire system. A more elegant method for achieving mutual exclusion is the <a href="http://en.wikipedia.org/wiki/Busy-wait" title="Busy-wait" class="mw-redirect">busy-wait</a>.</p>
+<p>Busy-waiting is effective for both uniprocessor and <a href="http://en.wikipedia.org/wiki/Multiprocessor" title="Multiprocessor" class="mw-redirect">multiprocessor</a> systems. The use of shared memory and an <a href="http://en.wikipedia.org/wiki/Linearizability" title="Linearizability">atomic</a> <a href="http://en.wikipedia.org/wiki/Test-and-set" title="Test-and-set">test-and-set</a> instruction provides the mutual exclusion. A process can test-and-set on a location in shared memory, and since the operation is atomic, only one process can set the flag at a time. Any process that is unsuccessful in setting the flag can either go on to do other tasks and try again later, release the processor to another process and try again later, or continue to loop while checking the flag until it is successful in acquiring it. <a href="http://en.wikipedia.org/wiki/Preemption_(computing)" title="Preemption (computing)">Preemption</a> is still possible, so this method allows the system to continue to function - even if a process halts while holding the lock.</p>
+<p>Several other atomic operations can be used to provide mutual exclusion of data structures; most notable of these is <a href="http://en.wikipedia.org/wiki/Compare-and-swap" title="Compare-and-swap">compare-and-swap</a> (CAS). CAS can be used to achieve <a href="http://en.wikipedia.org/wiki/Wait-free" title="Wait-free" class="mw-redirect">wait-free</a> mutual exclusion for any shared data structure by creating a linked list where each node represents the desired operation to be performed. CAS is then used to change the pointers in the linked list during the insertion of a new node. Only one process can be successful in its CAS; all other processes attempting to add a node at the same time will have to try again. Each process can then keep a local copy of the data structure, and upon traversing the linked list, can perform each operation from the list on its local copy.</p>
+<h3><span class="mw-headline" id="Software_solutions">Software solutions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit&amp;section=3" title="Edit section: Software solutions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Beside hardware-supported solutions, some software solutions exist that use <a href="http://en.wikipedia.org/wiki/Busy_waiting" title="Busy waiting">busy waiting</a> to achieve mutual exclusion. Examples of these include the following:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Dekker%27s_algorithm" title="Dekker's algorithm">Dekker's algorithm</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Peterson%27s_algorithm" title="Peterson's algorithm">Peterson's algorithm</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Lamport%27s_bakery_algorithm" title="Lamport's bakery algorithm">Lamport's bakery algorithm</a><sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>4<span>]</span></a></sup></li>
+<li><a href="http://en.wikipedia.org/wiki/Szymanski%27s_Algorithm" title="Szymanski's Algorithm">Szymanski's Algorithm</a></li>
+<li>Taubenfeld's black-white bakery algorithm.<sup id="cite_ref-Taubenfeld:2004_3-1" class="reference"><a href="#cite_note-Taubenfeld:2004-3"><span>[</span>2<span>]</span></a></sup></li>
+</ul>
+<p>These algorithms do not work if <a href="http://en.wikipedia.org/wiki/Out-of-order_execution" title="Out-of-order execution">out-of-order execution</a> is used on the platform that executes them. Programmers have to specify strict ordering on the memory operations within a thread.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>5<span>]</span></a></sup></p>
+<p>It is often preferable to use synchronization facilities provided by an operating system's multithreading library, which will take advantage of hardware solutions if possible but will use software solutions if no hardware solutions exist. For example, when the operating system's <a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">lock</a> library is used and a thread tries to acquire an already acquired lock, the operating system could suspend the thread using a <a href="http://en.wikipedia.org/wiki/Context_switch" title="Context switch">context switch</a> and swap it out with another thread that is ready to be run, or could put that processor into a low power state if there is no other thread that can be run. Therefore, most modern mutual exclusion methods attempt to reduce <a href="http://en.wikipedia.org/wiki/Latency_(engineering)" title="Latency (engineering)">latency</a> and busy-waits by using queuing and context switches. However, if the time that is spent suspending a thread and then restoring it can be proven to be always more than the time that must be waited for a thread to become ready to run after being blocked in a particular situation, then <a href="http://en.wikipedia.org/wiki/Spinlock" title="Spinlock">spinlocks</a> are an acceptable solution (for that situation only).</p>
+<h2><span class="mw-headline" id="Advanced_mutual_exclusion">Advanced mutual exclusion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit&amp;section=4" title="Edit section: Advanced mutual exclusion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The solutions explained above can be used to build the synchronization primitives below:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" title="Lock (computer science)">Locks</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Reentrant_mutex" title="Reentrant mutex">Reentrant mutexes</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Semaphore_(programming)" title="Semaphore (programming)">Semaphores</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Monitor_(synchronization)" title="Monitor (synchronization)">Monitors</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Message_passing" title="Message passing">Message passing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Tuple_space" title="Tuple space">Tuple space</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Readers-writer_lock" title="Readers-writer lock" class="mw-redirect">Readers-writer lock</a></li>
+</ul>
+<p>Many forms of mutual exclusion have side-effects. For example, classic <a href="http://en.wikipedia.org/wiki/Semaphore_(programming)" title="Semaphore (programming)">semaphores</a> permit <a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">deadlocks</a>, in which one process gets a semaphore, another process gets a second semaphore, and then both wait forever for the other semaphore to be released. Other common side-effects include <a href="http://en.wikipedia.org/wiki/Resource_starvation" title="Resource starvation">starvation</a>, in which a process never gets sufficient resources to run to completion; <a href="http://en.wikipedia.org/wiki/Priority_inversion" title="Priority inversion">priority inversion</a>, in which a higher priority thread waits for a lower-priority thread; and "high latency", in which response to interrupts is not prompt.</p>
+<p>Much research is aimed at eliminating the above effects, often with the goal of guaranteeing <a href="http://en.wikipedia.org/wiki/Non-blocking_synchronization" title="Non-blocking synchronization" class="mw-redirect">non-blocking progress</a>. No perfect scheme is known. Blocking system calls used to sleep an entire process. Until such calls became <a href="http://en.wikipedia.org/wiki/Thread_safe" title="Thread safe" class="mw-redirect">thread safe</a>, there was no proper mechanism for sleeping a single thread within a process (see <a href="http://en.wikipedia.org/wiki/Polling_(computer_science)" title="Polling (computer science)">polling</a>).</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit&amp;section=5" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Atomicity_(programming)" title="Atomicity (programming)" class="mw-redirect">Atomicity (programming)</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Concurrency_control" title="Concurrency control">Concurrency control</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Exclusive_or" title="Exclusive or">Exclusive or</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Mutually_exclusive_events" title="Mutually exclusive events">Mutually exclusive events</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Semaphore_(programming)" title="Semaphore (programming)">Semaphore</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Dining_philosophers_problem" title="Dining philosophers problem">Dining philosophers problem</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Reentrant_mutex" title="Reentrant mutex">Reentrant mutex</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Spinlock" title="Spinlock">Spinlock</a></li>
+</ul>
+<h2><span class="mw-headline" id="Notes">Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit&amp;section=6" title="Edit section: Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: lower-alpha;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text">These processes may be implemented as <a href="http://en.wikipedia.org/wiki/Thread_(computing)" title="Thread (computing)">threads</a>.</span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit&amp;section=7" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><span class="citation journal">Dijkstra, E. W. (1965). "Solution of a problem in concurrent programming control". <i>Communications of the ACM</i> <b>8</b> (9): 569. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F365559.365617">10.1145/365559.365617</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMutual+exclusion&amp;rft.atitle=Solution+of+a+problem+in+concurrent+programming+control&amp;rft.au=Dijkstra%2C+E.+W.&amp;rft.aufirst=E.+W.&amp;rft.aulast=Dijkstra&amp;rft.date=1965&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1145%2F365559.365617&amp;rft.issue=9&amp;rft.jtitle=Communications+of+the+ACM&amp;rft.pages=569&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=8" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-Taubenfeld:2004-3"><span class="mw-cite-backlink">^ <a href="#cite_ref-Taubenfeld:2004_3-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Taubenfeld:2004_3-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text">Taubenfeld, <a rel="nofollow" class="external text" href="http://www.cs.tau.ac.il/~afek/gadi.pdf">The Black-White Bakery Algorithm</a>. In Proc. Distributed Computing, 18th international conference, DISC 2004. Vol 18, 56-70, 2004</span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><span id="CITEREF" class="citation"><a rel="nofollow" class="external text" href="http://www.podc.org/influential/2002.html">"PODC Influential Paper Award: 2002"</a>, <i>ACM Symposium on Principles of Distributed Computing</i><span class="reference-accessdate">, retrieved <span class="nowrap">2009-08-24</span></span></span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMutual+exclusion&amp;rft.atitle=PODC+Influential+Paper+Award%3A+2002&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.podc.org%2Finfluential%2F2002.html&amp;rft.jtitle=ACM+Symposium+on+Principles+of+Distributed+Computing&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><span class="citation journal">Lamport, Leslie (August 1974). "A new solution of Dijkstra's concurrent programming problem". <i>Communications of the ACM</i> <b>17</b> (8): 453–455. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F361082.361093">10.1145/361082.361093</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMutual+exclusion&amp;rft.atitle=A+new+solution+of+Dijkstra%27s+concurrent+programming+problem&amp;rft.aufirst=Leslie&amp;rft.au=Lamport%2C+Leslie&amp;rft.aulast=Lamport&amp;rft.date=August+1974&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1145%2F361082.361093&amp;rft.issue=8&amp;rft.jtitle=Communications+of+the+ACM&amp;rft.pages=453-455&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=17" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><span class="citation journal">Holzmann, Gerard J.; Bosnacki, Dragan (1 October 2007). "The Design of a Multicore Extension of the SPIN Model Checker". <i>IEEE Transactions on Software Engineering</i> <b>33</b> (10): 659–674. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1109%2FTSE.2007.70724">10.1109/TSE.2007.70724</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMutual+exclusion&amp;rft.atitle=The+Design+of+a+Multicore+Extension+of+the+SPIN+Model+Checker&amp;rft.au=Bosnacki%2C+Dragan&amp;rft.aufirst=Gerard+J.&amp;rft.au=Holzmann%2C+Gerard+J.&amp;rft.aulast=Holzmann&amp;rft.date=1+October+2007&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1109%2FTSE.2007.70724&amp;rft.issue=10&amp;rft.jtitle=IEEE+Transactions+on+Software+Engineering&amp;rft.pages=659-674&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=33" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="Further_reading">Further reading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit&amp;section=8" title="Edit section: Further reading">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li>Michel Raynal: <i>Algorithms for Mutual Exclusion</i>, MIT Press, <a href="http://en.wikipedia.org/wiki/Special:BookSources/0262181193" class="internal mw-magiclink-isbn">ISBN 0-262-18119-3</a></li>
+<li>Sunil R. Das, Pradip K. Srimani: <i>Distributed Mutual Exclusion Algorithms</i>, IEEE Computer Society, <a href="http://en.wikipedia.org/wiki/Special:BookSources/0818633808" class="internal mw-magiclink-isbn">ISBN 0-8186-3380-8</a></li>
+<li>Thomas W. Christopher, George K. Thiruvathukal: <i>High-Performance Java Platform Computing</i>, Prentice Hall, <a href="http://en.wikipedia.org/wiki/Special:BookSources/0130161640" class="internal mw-magiclink-isbn">ISBN 0-13-016164-0</a></li>
+<li>Gadi Taubenfeld, <i>Synchronization Algorithms and Concurrent Programming</i>, Pearson/Prentice Hall, <a href="http://en.wikipedia.org/wiki/Special:BookSources/0131972596" class="internal mw-magiclink-isbn">ISBN 0-13-197259-6</a></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit&amp;section=9" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li>Article <a rel="nofollow" class="external text" href="http://cprogramscollege.blogspot.in/2013/03/mutex-simple-c-code.html">A Simple Mutex Program</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.ibm.com/developerworks/library/l-posix2/">Common threads: POSIX threads explained - The little things called mutexes</a>" by <a href="http://en.wikipedia.org/wiki/Daniel_Robbins_(computer_programmer)" title="Daniel Robbins (computer programmer)">Daniel Robbins</a></li>
+<li><a rel="nofollow" class="external text" href="http://bardavid.com/mead/">Mutual exclusion algorithm discovery</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.cs.adelaide.edu.au/users/esser/mutual.html">Mutual Exclusion Petri Net</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.thinkingparallel.com/2006/09/09/mutual-exclusion-with-locks-an-introduction/">Mutual Exclusion with Locks - an Introduction</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.thinkingparallel.com/2006/08/21/scoped-locking-vs-critical-in-openmp-a-personal-shootout/">Mutual exclusion variants in OpenMP</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.faculty.idc.ac.il/gadi/Publications.htm">The Black-White Bakery Algorithm</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1231
+CPU time usage: 0.130 seconds
+Real time usage: 0.171 seconds
+Preprocessor visited node count: 598/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 8593/2097152 bytes
+Template argument size: 268/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 2/500
+Lua time usage: 0.024/10.000 seconds
+Lua memory usage: 1.54 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  200.778      1 - -total
+ 21.30%   42.763      2 - Template:Reflist
+ 12.95%   26.004      1 - Template:For
+ 12.78%   25.662      3 - Template:Cite_journal
+ 11.97%   24.027      1 - Template:Hatnote
+  9.00%   18.070      1 - Template:Use_dmy_dates
+  6.53%   13.120      1 - Template:DMCA
+  5.72%   11.478      1 - Template:Dated_maintenance_category
+  4.87%    9.771      1 - Template:Redir
+  3.92%    7.870      1 - Template:FULLROOTPAGENAME
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:36827-0!*!0!!en!4!* and timestamp 20141213082904 and revision id 637884788
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;oldid=637884788">http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;oldid=637884788</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Concurrency_control" title="Category:Concurrency control">Concurrency control</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Use_dmy_dates_from_December_2010" title="Category:Use dmy dates from December 2010">Use dmy dates from December 2010</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Mutual+exclusion&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Mutual+exclusion" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Mutual_exclusion"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Mutual_exclusion"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Mutual_exclusion" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://en.wikipedia.org/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://en.wikipedia.org/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Mutual_exclusion" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Mutual_exclusion" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;oldid=637884788" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q1047554" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Mutual_exclusion&amp;id=637884788" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Mutual+exclusion">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Mutual+exclusion&amp;oldid=637884788&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ar"><a href="http://ar.wikipedia.org/wiki/استبعاد_التشارك" title="استبعاد التشارك – Arabic" lang="ar" hreflang="ar">العربية</a></li>
+													<li class="interlanguage-link interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Exclusió_mútua" title="Exclusió mútua – Catalan" lang="ca" hreflang="ca">Català</a></li>
+													<li class="interlanguage-link interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Vzájemné_vyloučení" title="Vzájemné vyloučení – Czech" lang="cs" hreflang="cs">Čeština</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Mutex" title="Mutex – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-el"><a href="http://el.wikipedia.org/wiki/Αμοιβαίος_αποκλεισμός_(υπολογιστές)" title="Αμοιβαίος αποκλεισμός (υπολογιστές) – Greek" lang="el" hreflang="el">Ελληνικά</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="http://es.wikipedia.org/wiki/Exclusión_mutua_(informática)" title="Exclusión mutua (informática) – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-eu"><a href="http://eu.wikipedia.org/wiki/Elkar-bazterketa" title="Elkar-bazterketa – Basque" lang="eu" hreflang="eu">Euskara</a></li>
+													<li class="interlanguage-link interwiki-fa"><a href="http://fa.wikipedia.org/wiki/انحصار_متقابل" title="انحصار متقابل – Persian" lang="fa" hreflang="fa">فارسی</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Exclusion_mutuelle" title="Exclusion mutuelle – French" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-ko"><a href="http://ko.wikipedia.org/wiki/상호_배제" title="상호 배제 – Korean" lang="ko" hreflang="ko">한국어</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="http://it.wikipedia.org/wiki/Mutex" title="Mutex – Italian" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-he"><a href="http://he.wikipedia.org/wiki/מניעה_הדדית" title="מניעה הדדית – Hebrew" lang="he" hreflang="he">עברית</a></li>
+													<li class="interlanguage-link interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Wederzijdse_uitsluiting" title="Wederzijdse uitsluiting – Dutch" lang="nl" hreflang="nl">Nederlands</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/排他制御" title="排他制御 – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Problem_wzajemnego_wykluczania" title="Problem wzajemnego wykluczania – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Exclusão_mútua" title="Exclusão mútua – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Мьютекс" title="Мьютекс – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-sr"><a href="http://sr.wikipedia.org/wiki/Мутекс" title="Мутекс – Serbian" lang="sr" hreflang="sr">Српски / srpski</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="http://uk.wikipedia.org/wiki/М%27ютекс" title="М&#039;ютекс – Ukrainian" lang="uk" hreflang="uk">Українська</a></li>
+													<li class="interlanguage-link interwiki-zh"><a href="http://zh.wikipedia.org/wiki/互斥锁" title="互斥锁 – Chinese" lang="zh" hreflang="zh">中文</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="http://en.wikipedia.org/wiki/edit" href="http://www.wikidata.org/wiki/Q1047554#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 13 December 2014 at 08:29.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Mutual_exclusion&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":115,"wgHostname":"mw1034"});
+}</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Mutual_exclusion by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+</html>

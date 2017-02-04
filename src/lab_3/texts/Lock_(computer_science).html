@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Lock_(computer_science) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Lock (computer science) - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf12" />
+<link rel="alternate" href="http://en.wikipedia.org/wiki/android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Lock_(computer_science)" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="http://en.wikipedia.org/wiki/Lock_(computer_science)" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Lock_(computer_science)" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.geshi.language.c%2Ccsharp%7Cext.geshi.local%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Lock_(computer_science)","wgTitle":"Lock (computer science)","wgCurRevisionId":638227398,"wgRevisionId":638227398,"wgArticleId":244593,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["All articles with unsourced statements","Articles with unsourced statements from July 2011","Articles with unsourced statements from November 2013","Concurrency control","Software design patterns"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Lock_(computer_science)","wgRelevantArticleId":244593,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q1427251"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf12/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Lock_computer_science skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Lock (computer science)</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>In <a href="http://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a>, a <b>lock</b> is a <a href="http://en.wikipedia.org/wiki/Synchronization_(computer_science)" title="Synchronization (computer science)">synchronization</a> mechanism for enforcing limits on access to a resource in an environment where there are many <a href="http://en.wikipedia.org/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">threads of execution</a>. A lock is designed to enforce a <a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">mutual exclusion</a> <a href="http://en.wikipedia.org/wiki/Concurrency_control" title="Concurrency control">concurrency control</a> policy.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Types"><span class="tocnumber">1</span> <span class="toctext">Types</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Granularity"><span class="tocnumber">2</span> <span class="toctext">Granularity</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Database_locks"><span class="tocnumber">3</span> <span class="toctext">Database locks</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Disadvantages"><span class="tocnumber">4</span> <span class="toctext">Disadvantages</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Language_support"><span class="tocnumber">5</span> <span class="toctext">Language support</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#External_links"><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Types">Types</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=edit&amp;section=1" title="Edit section: Types">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Generally, locks are <b>advisory locks</b>, where each thread cooperates by acquiring the lock before accessing the corresponding data. Some systems also implement <b>mandatory locks</b>, where attempting unauthorized access to a locked resource will force an <a href="http://en.wikipedia.org/wiki/Exception_handling" title="Exception handling">exception</a> in the entity attempting to make the access.</p>
+<p>The simplest type of lock is a binary <a href="http://en.wikipedia.org/wiki/Semaphore_(programming)" title="Semaphore (programming)">semaphore</a>. It provides exclusive access to the locked data. Other schemes also provide shared access for reading data. Other widely implemented access modes are exclusive, intend-to-exclude and intend-to-upgrade.</p>
+<p>Another way to classify locks is by what happens when the <a href="http://en.wikipedia.org/w/index.php?title=Lock_strategy&amp;action=edit&amp;redlink=1" class="new" title="Lock strategy (page does not exist)">lock strategy</a> prevents progress of a thread. Most locking designs <a href="http://en.wikipedia.org/wiki/Blocking_(computing)" title="Blocking (computing)">block</a> the <a href="http://en.wikipedia.org/wiki/Execution_(computers)" title="Execution (computers)" class="mw-redirect">execution</a> of the <a href="http://en.wikipedia.org/wiki/Thread_(computer_science)" title="Thread (computer science)" class="mw-redirect">thread</a> requesting the lock until it is allowed to access the locked resource. With a <a href="http://en.wikipedia.org/wiki/Spinlock" title="Spinlock">spinlock</a>, the thread simply waits ("spins") until the lock becomes available. This is efficient if threads are blocked for a short time, because it avoids the overhead of operating system process re-scheduling. It is inefficient if the lock is held for a long time, or if the progress of the thread that is holding the lock depends on preemption of the locked thread.</p>
+<p>Locks typically require hardware support for efficient implementation. This support usually takes the form of one or more <a href="http://en.wikipedia.org/wiki/Atomic_(computer_science)" title="Atomic (computer science)" class="mw-redirect">atomic</a> instructions such as "<a href="http://en.wikipedia.org/wiki/Test-and-set" title="Test-and-set">test-and-set</a>", "<a href="http://en.wikipedia.org/wiki/Fetch-and-add" title="Fetch-and-add">fetch-and-add</a>" or "<a href="http://en.wikipedia.org/wiki/Compare-and-swap" title="Compare-and-swap">compare-and-swap</a>". These instructions allow a single process to test if the lock is free, and if free, acquire the lock in a single atomic operation.</p>
+<p><a href="http://en.wikipedia.org/wiki/Uniprocessor" title="Uniprocessor" class="mw-redirect">Uniprocessor</a> architectures have the option of using <a href="http://en.wikipedia.org/w/index.php?title=Uninterruptable_sequence&amp;action=edit&amp;redlink=1" class="new" title="Uninterruptable sequence (page does not exist)">uninterruptable sequences</a> of instructions ‒ using special instructions or instruction prefixes to disable interrupts temporarily ‒ but this technique does not work for <a href="http://en.wikipedia.org/wiki/Multiprocessor" title="Multiprocessor" class="mw-redirect">multiprocessor</a> shared-memory machines. Proper support for locks in a multiprocessor environment can require quite complex hardware or software support, with substantial <a href="http://en.wikipedia.org/wiki/Synchronization" title="Synchronization">synchronization</a> issues.</p>
+<p>The reason an atomic operation is required is because of concurrency, where more than one task executes the same logic. For example, consider the following <a href="http://en.wikipedia.org/wiki/C_(programming_language)" title="C (programming language)">C</a> code:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="c source-c">
+<pre class="de1">
+<span class="kw1">if</span> <span class="br0">(</span>lock <span class="sy0">==</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="coMULTI">/* lock free - set it */</span>
+    lock <span class="sy0">=</span> myPID<span class="sy0">;</span> 
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>The above example does not guarantee that the task has the lock, since more than one task can be testing the lock at the same time. Since both tasks will detect that the lock is free, both tasks will attempt to set the lock, not knowing that the other task is also setting the lock. <a href="http://en.wikipedia.org/wiki/Dekker%27s_algorithm" title="Dekker's algorithm">Dekker's</a> or <a href="http://en.wikipedia.org/wiki/Peterson%27s_algorithm" title="Peterson's algorithm">Peterson's algorithm</a> are possible substitutes if atomic locking operations are not available.</p>
+<p>Careless use of locks can result in <a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">deadlock</a> or <a href="http://en.wikipedia.org/wiki/Livelock" title="Livelock" class="mw-redirect">livelock</a>. A number of strategies can be used to avoid or recover from deadlocks or livelocks, both at design-time and at <a href="http://en.wikipedia.org/wiki/Run_time_(program_lifecycle_phase)" title="Run time (program lifecycle phase)">run-time</a>. (The most common strategy is to standardize the lock acquisition sequences so that combinations of inter-dependent locks are always acquired and released in a specifically defined "cascade" order.)</p>
+<p>Some languages do support locks syntactically. An example in <a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a> follows:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="csharp source-csharp">
+<pre class="de1">
+<span class="kw4">class</span> Account <span class="br0">{</span>     <span class="co1">// this is a monitor of an account</span>
+  <span class="kw4">long</span> val <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+  <span class="kw4">object</span> thisLock <span class="sy0">=</span> <span class="kw3">new</span> <span class="kw4">object</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+  <span class="kw1">public</span> <span class="kw4">void</span> Deposit<span class="br0">(</span><span class="kw1">const</span> <span class="kw4">long</span> x<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">lock</span> <span class="br0">(</span>thisLock<span class="br0">)</span> <span class="br0">{</span>   <span class="co1">// only 1 thread at a time may execute this statement</span>
+      val <span class="sy0">+=</span> x<span class="sy0">;</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw1">public</span> <span class="kw4">void</span> Withdraw<span class="br0">(</span><span class="kw1">const</span> <span class="kw4">long</span> x<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">lock</span> <span class="br0">(</span>thisLock<span class="br0">)</span> <span class="br0">{</span>
+      val <span class="sy0">-=</span> x<span class="sy0">;</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>The code <code>lock (this)</code> is a problem if the instance can be accessed publicly.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup></p>
+<p>Similar to <a href="http://en.wikipedia.org/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, C# can also synchronize entire methods, by using the MethodImplOptions.Synchronized attribute.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>2<span>]</span></a></sup><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>3<span>]</span></a></sup></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="csharp source-csharp">
+<pre class="de1">
+ <span class="br0">[</span>MethodImpl<span class="br0">(</span>MethodImplOptions<span class="sy0">.</span><span class="me1">Synchronized</span><span class="br0">)</span><span class="br0">]</span>
+  <span class="kw1">public</span> <span class="kw4">void</span> SomeMethod <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+	<span class="co1">// do stuff</span>
+  <span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Granularity">Granularity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=edit&amp;section=2" title="Edit section: Granularity">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Before being introduced to lock granularity, one needs to understand three concepts about locks.</p>
+<ul>
+<li><b>lock overhead</b>: The extra resources for using locks, like the memory space allocated for locks, the CPU time to initialize and destroy locks, and the time for acquiring or releasing locks. The more locks a program uses, the more overhead associated with the usage.</li>
+<li><b>lock contention</b>: This occurs whenever one process or thread attempts to acquire a lock held by another process or thread. The more fine-grained the available locks, the less likely one process/thread will request a lock held by the other. (For example, locking a row rather than the entire table, or locking a cell rather than the entire row.)</li>
+<li><b>deadlock</b>: The situation when each of two tasks is waiting for a lock that the other task holds. Unless something is done, the two tasks will wait forever.</li>
+</ul>
+<p>There is a tradeoff between decreasing lock overhead and decreasing lock contention when choosing the number of locks in synchronization.</p>
+<p>An important property of a lock is its <b>granularity</b>. The granularity is a measure of the amount of data the lock is protecting. In general, choosing a coarse granularity (a small number of locks, each protecting a large segment of data) results in less <b>lock overhead</b> when a single process is accessing the protected data, but worse performance when multiple processes are running concurrently. This is because of increased <b>lock contention</b>. The more coarse the lock, the higher the likelihood that the lock will stop an unrelated process from proceeding. Conversely, using a fine granularity (a larger number of locks, each protecting a fairly small amount of data) increases the overhead of the locks themselves but reduces lock contention. Granular locking where each process must hold multiple locks from a common set of locks can create subtle lock dependencies. This subtlety can increase the chance that a programmer will unknowingly introduce a <b>deadlock</b>.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (July 2011)">citation needed</span></a></i>]</sup></p>
+<p>In a <a href="http://en.wikipedia.org/wiki/Database_management_system" title="Database management system" class="mw-redirect">database management system</a>, for example, a lock could protect, in order of decreasing granularity, part of a field, a field, a record, a data page, or an entire table. Coarse granularity, such as using table locks, tends to give the best performance for a single user, whereas fine granularity, such as record locks, tends to give the best performance for multiple users.</p>
+<h2><span class="mw-headline" id="Database_locks">Database locks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=edit&amp;section=3" title="Edit section: Database locks">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Lock_(database)" title="Lock (database)">Lock (database)</a></div>
+<p><a href="http://en.wikipedia.org/wiki/Lock_(database)" title="Lock (database)">Database locks</a> can be used as a means of ensuring transaction synchronicity. i.e. when making transaction processing concurrent (interleaving transactions), using <a href="http://en.wikipedia.org/wiki/Two-phase_locking" title="Two-phase locking">2-phased locks</a> ensures that the concurrent execution of the transaction turns out equivalent to some serial ordering of the transaction. However, deadlocks become an unfortunate side-effect of locking in databases. Deadlocks are either prevented by pre-determining the locking order between transactions or are detected using <a href="http://en.wikipedia.org/wiki/Wait-for_graph" title="Wait-for graph">waits-for graphs</a>. An alternate to locking for database synchronicity while avoiding deadlocks involves the use of totally ordered global timestamps.</p>
+<p>There are mechanisms employed to manage the actions of multiple <a href="http://en.wikipedia.org/wiki/Concurrent_user" title="Concurrent user">concurrent users</a> on a database - the purpose is to prevent lost updates and dirty reads. The two types of locking are Pessimistic and Optimistic Locking.</p>
+<ul>
+<li><b>Pessimistic locking</b>: A user who reads a record, with the intention of updating it, places an exclusive lock on the record to prevent other users from manipulating it. This means no one else can manipulate that record until the user releases the lock. The downside is that users can be locked out for a very long time, thereby slowing the overall system response and causing frustration.
+<ul>
+<li><b>Where to use pessimistic locking</b>: This is mainly used in environments where data-contention (the degree of users request to the database system at any one time) is heavy; where the cost of protecting data through locks is less than the cost of rolling back transactions, if concurrency conflicts occur. Pessimistic concurrency is best implemented when lock times will be short, as in programmatic processing of records. Pessimistic concurrency requires a persistent connection to the database and is not a scalable option when users are interacting with data, because records might be locked for relatively large periods of time. It is not appropriate for use in Web application development.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><b><a href="http://en.wikipedia.org/wiki/Optimistic_locking" title="Optimistic locking" class="mw-redirect">Optimistic locking</a></b>: this allows multiple concurrent users access to the database whilst the system keeps a copy of the initial-read made by each user. When a user wants to update a record, the application determines whether another user has changed the record since it was last read. The application does this by comparing the initial-read held in memory to the database record to verify any changes made to the record. Any discrepancies between the initial-read and the database record violates concurrency rules and hence causes the system to disregard any update request. An error message is generated and the user is asked to start the update process again. It improves database performance by reducing the amount of locking required, thereby reducing the load on the database server. It works efficiently with tables that require limited updates since no users are locked out. However, some updates may fail. The downside is constant update failures due to high volumes of update requests from multiple concurrent users - it can be frustrating for users.
+<ul>
+<li><b>Where to use optimistic locking</b>: This is appropriate in environments where there is low contention for data, or where read-only access to data is required. Optimistic concurrency is used extensively in .NET to address the needs of mobile and disconnected applications,<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>4<span>]</span></a></sup> where locking data rows for prolonged periods of time would be infeasible. Also, maintaining record locks requires a persistent connection to the database server, which is not possible in disconnected applications.</li>
+</ul>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Disadvantages">Disadvantages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=edit&amp;section=4" title="Edit section: Disadvantages">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Lock-based resource protection and thread/process synchronization have many disadvantages:</p>
+<ul>
+<li>They cause blocking, which means some threads/processes have to wait until a lock (or a whole set of locks) is released. If one of the threads holding a lock dies, stalls/blocks or goes into any sort of infinite loop, other threads waiting for the lock may wait forever.</li>
+<li>Lock handling adds overhead for each access to a resource, even when the chances for collision are very rare. (However, any chance for such collisions is a <a href="http://en.wikipedia.org/wiki/Race_condition" title="Race condition">race condition</a>.)</li>
+<li>Locks can be vulnerable to failures and faults that are often very subtle and may be difficult to reproduce reliably. One example is the <a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">deadlock</a>, where (at least) two threads each hold a lock that the other thread holds and will not give up until it has acquired the other lock.</li>
+<li>Lock contention limits scalability and adds complexity.</li>
+<li>The optimal balance between lock overhead and contention can be unique to the problem domain (application) and sensitive to design, implementation, and even low-level system architectural changes. These balances may change over the life cycle of an application and may entail tremendous changes to update (re-balance).</li>
+<li>Locks are only composable (e.g., managing multiple concurrent locks in order to atomically delete Item X from Table A and insert X into Table B) with relatively elaborate (overhead) software support and perfect adherence by applications programming to rigorous conventions.</li>
+<li><a href="http://en.wikipedia.org/wiki/Priority_inversion" title="Priority inversion">Priority inversion</a>. A low-priority thread/process holding a common lock can prevent high-priority threads/processes from proceeding. <a href="http://en.wikipedia.org/wiki/Priority_inheritance" title="Priority inheritance">Priority inheritance</a> can be used to reduce priority-inversion duration. The <a href="http://en.wikipedia.org/wiki/Priority_ceiling_protocol" title="Priority ceiling protocol">Priority ceiling protocol</a> can be used on uniprocessor systems to minimize the worst-case priority-inversion duration, as well as prevent <a href="http://en.wikipedia.org/wiki/Deadlock" title="Deadlock">deadlock</a>.</li>
+<li>Convoying. All other threads have to wait, if a thread holding a lock is descheduled due to a time-slice interrupt or page fault (<i>See <a href="http://en.wikipedia.org/wiki/Lock_convoy" title="Lock convoy">lock convoy</a></i>)</li>
+<li>Hard to debug: Bugs associated with locks are time dependent. They are extremely hard to replicate.</li>
+</ul>
+<p>Some <a href="http://en.wikipedia.org/wiki/Concurrency_control" title="Concurrency control">concurrency control</a> strategies avoid some or all of these problems. For example, a <a href="http://en.wikipedia.org/wiki/Funnel_(Concurrent_computing)" title="Funnel (Concurrent computing)" class="mw-redirect">funnel</a> or <a href="http://en.wikipedia.org/wiki/Serializing_tokens" title="Serializing tokens">serializing tokens</a> can avoid the biggest problem: deadlocks. Alternatives to locking include <a href="http://en.wikipedia.org/wiki/Non-blocking_synchronization" title="Non-blocking synchronization" class="mw-redirect">non-blocking synchronization</a> methods, like <a href="http://en.wikipedia.org/wiki/Lock-free_and_wait-free_algorithms" title="Lock-free and wait-free algorithms" class="mw-redirect">lock-free</a> programming techniques and <a href="http://en.wikipedia.org/wiki/Transactional_memory" title="Transactional memory">transactional memory</a>. However, such alternative methods often require that the actual lock mechanisms be implemented at a more fundamental level of the operating software. Therefore, they may only relieve the <i>application</i> level from the details of implementing locks, with the problems listed above still needing to be dealt with beneath the application.</p>
+<p>In most cases, proper locking depends on the CPU providing a method of atomic instruction stream synchronization (for example, the addition or deletion of an item into a pipeline requires that all contemporaneous operations needing to add or delete other items in the pipe be suspended during the manipulation of the memory content required to add or delete the specific item). Therefore, an application can often be more robust when it recognizes the burdens it places upon an operating system and is capable of graciously recognizing the reporting of impossible demands.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (November 2013)">citation needed</span></a></i>]</sup></p>
+<h2><span class="mw-headline" id="Language_support">Language support</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=edit&amp;section=5" title="Edit section: Language support">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="hatnote boilerplate seealso">See also: <a href="http://en.wikipedia.org/wiki/Barrier_(computer_science)" title="Barrier (computer science)">Barrier (computer science)</a></div>
+<p>Programming languages vary in their support for synchronization:</p>
+<ul>
+<li>ISO/IEC standard C provides no <a href="http://en.wikipedia.org/wiki/Application_programming_interface" title="Application programming interface">API</a> for <a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">mutual exclusion</a> (mutex). The current ISO C++ standard, <a href="http://en.wikipedia.org/wiki/C++11" title="C++11">C++11</a>, supports <a href="http://en.wikipedia.org/wiki/C++0x#Threading_facilities" title="C++0x" class="mw-redirect">threading facilities</a>. The <a href="http://en.wikipedia.org/wiki/OpenMP" title="OpenMP">OpenMP</a> standard is supported by some compilers, and allows critical sections to be specified using pragmas. The <a href="http://en.wikipedia.org/wiki/POSIX_Threads" title="POSIX Threads">POSIX pthread</a> API provides lock support.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>5<span>]</span></a></sup> <a href="http://en.wikipedia.org/wiki/Visual_C++" title="Visual C++">Visual C++</a> provides the <i>synchronize</i> attribute of methods to be synchronized, but this is specific to "COM objects" in the <a href="http://en.wikipedia.org/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a> architecture and <a href="http://en.wikipedia.org/wiki/Visual_C++" title="Visual C++">Visual C++</a> compiler.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>6<span>]</span></a></sup> C and C++ can easily access any native operating system locking features.</li>
+<li><a href="http://en.wikipedia.org/wiki/Objective-C" title="Objective-C">Objective-C</a> provides the keyword "@synchronized"<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>7<span>]</span></a></sup> to put locks on blocks of code and also provides the classes NSLock,<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>8<span>]</span></a></sup> NSRecursiveLock,<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>9<span>]</span></a></sup> and NSConditionLock<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>10<span>]</span></a></sup> along with the NSLocking protocol<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span>[</span>11<span>]</span></a></sup> for locking as well.</li>
+<li><a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a> provides the <i>lock</i> keyword on a thread to ensure its exclusive access to a resource.</li>
+<li><a href="http://en.wikipedia.org/wiki/VB.NET" title="VB.NET" class="mw-redirect">VB.NET</a> provides a <i>SyncLock</i> keyword like C#'s <i>lock</i> keyword.</li>
+<li><a href="http://en.wikipedia.org/wiki/Java_(programming_language)" title="Java (programming language)">Java</a> provides the keyword <i>synchronized</i> to lock code blocks, <a href="http://en.wikipedia.org/wiki/Method_(computer_science)" title="Method (computer science)" class="mw-redirect">methods</a> or <a href="http://en.wikipedia.org/wiki/Object_(computer_science)" title="Object (computer science)">objects</a><sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span>[</span>12<span>]</span></a></sup> and libraries featuring concurrency-safe data structures.</li>
+<li><a href="http://en.wikipedia.org/wiki/Python_(programming_language)" title="Python (programming language)">Python</a> provides a low-level <a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">mutex</a> mechanism without a keyword.<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span>[</span>13<span>]</span></a></sup></li>
+<li><a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)" title="Ruby (programming language)">Ruby</a> provides a low-level <a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">mutex</a> object and no keyword.<sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span>[</span>14<span>]</span></a></sup></li>
+<li><a href="http://en.wikipedia.org/wiki/Ada_(programming_language)" title="Ada (programming language)">Ada</a> provides protected objects that have visible protected subprograms or entries<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span>[</span>15<span>]</span></a></sup> as well as rendezvous.<sup id="cite_ref-16" class="reference"><a href="#cite_note-16"><span>[</span>16<span>]</span></a></sup></li>
+<li>x86 Assembly provides the LOCK prefix on certain operations to guarantee their atomicity.</li>
+</ul>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Critical_section" title="Critical section">Critical section</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Double-checked_locking" title="Double-checked locking">Double-checked locking</a></li>
+<li><a href="http://en.wikipedia.org/wiki/File_locking" title="File locking">File locking</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Lock-free_and_wait-free_algorithms" title="Lock-free and wait-free algorithms" class="mw-redirect">Lock-free and wait-free algorithms</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Monitor_(synchronization)" title="Monitor (synchronization)">Monitor (synchronization)</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Mutual_exclusion" title="Mutual exclusion">Mutual exclusion</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Read/write_lock_pattern" title="Read/write lock pattern" class="mw-redirect">Read/write lock pattern</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Semaphore_(programming)" title="Semaphore (programming)">Semaphore (programming)</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=edit&amp;section=7" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist columns references-column-count references-column-count-2" style="-moz-column-count: 2; -webkit-column-count: 2; column-count: 2; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/library/c5kehkcz(v=vs.100).aspx">"lock Statement (C# Reference)"</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=lock+Statement+%28C%23+Reference%29&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Flibrary%2Fc5kehkcz%28v%3Dvs.100%29.aspx&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/magazine/cc163896.aspx">"ThreadPoolPriority, and MethodImplAttribute"</a>. <a rel="nofollow" class="external free" href="http://msdn.microsoft.com/en-us/magazine/cc163896.aspx">http://msdn.microsoft.com/en-us/magazine/cc163896.aspx</a>: MSDN. p.&#160;??<span class="reference-accessdate">. Retrieved <span class="nowrap">2011-11-22</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=ThreadPoolPriority%2C+and+MethodImplAttribute&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Fmagazine%2Fcc163896.aspx&amp;rft.pages=%3F%3F&amp;rft.place=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Fmagazine%2Fcc163896.aspx&amp;rft.pub=MSDN&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.25hoursaday.com/CsharpVsJava.html#attributes">"C# From a Java Developer's Perspective"</a>. <a rel="nofollow" class="external free" href="http://www.25hoursaday.com/CsharpVsJava.html#attributes">http://www.25hoursaday.com/CsharpVsJava.html#attributes</a><span class="reference-accessdate">. Retrieved <span class="nowrap">2011-11-22</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=C%23+From+a+Java+Developer%27s+Perspective&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.25hoursaday.com%2FCsharpVsJava.html%23attributes&amp;rft.place=http%3A%2F%2Fwww.25hoursaday.com%2FCsharpVsJava.html%23attributes&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/library/ms978496.aspx">"Designing Data Tier Components and Passing Data Through Tiers"</a>. <a href="http://en.wikipedia.org/wiki/Microsoft" title="Microsoft">Microsoft</a>. August 2002<span class="reference-accessdate">. Retrieved <span class="nowrap">2008-05-30</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=Designing+Data+Tier+Components+and+Passing+Data+Through+Tiers&amp;rft.date=August+2002&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Flibrary%2Fms978496.aspx&amp;rft.pub=Microsoft&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><span class="citation web">Marshall, Dave (March 1999). <a rel="nofollow" class="external text" href="http://www.cs.cf.ac.uk/Dave/C/node31.html#SECTION003110000000000000000">"Mutual Exclusion Locks"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">2008-05-30</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.aufirst=Dave&amp;rft.aulast=Marshall&amp;rft.au=Marshall%2C+Dave&amp;rft.btitle=Mutual+Exclusion+Locks&amp;rft.date=March+1999&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.cs.cf.ac.uk%2FDave%2FC%2Fnode31.html%23SECTION003110000000000000000&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/library/34d2s8k3(VS.80).aspx">"Synchronize"</a>. msdn.microsoft.com<span class="reference-accessdate">. Retrieved <span class="nowrap">2008-05-30</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=Synchronize&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Flibrary%2F34d2s8k3%28VS.80%29.aspx&amp;rft.pub=msdn.microsoft.com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocThreading.html">"Apple Threading Reference"</a>. Apple, inc<span class="reference-accessdate">. Retrieved <span class="nowrap">2009-10-17</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=Apple+Threading+Reference&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fdeveloper.apple.com%2Flibrary%2Fmac%2F%23documentation%2FCocoa%2FConceptual%2FObjectiveC%2FChapters%2FocThreading.html&amp;rft.pub=Apple%2C+inc&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Classes/NSLock_Class/Reference/Reference.html">"NSLock Reference"</a>. Apple, inc<span class="reference-accessdate">. Retrieved <span class="nowrap">2009-10-17</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=NSLock+Reference&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fdeveloper.apple.com%2Fmac%2Flibrary%2Fdocumentation%2FCocoa%2FReference%2FFoundation%2FClasses%2FNSLock_Class%2FReference%2FReference.html&amp;rft.pub=Apple%2C+inc&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Classes/NSRecursiveLock_Class/Reference/Reference.html">"NSRecursiveLock Reference"</a>. Apple, inc<span class="reference-accessdate">. Retrieved <span class="nowrap">2009-10-17</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=NSRecursiveLock+Reference&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fdeveloper.apple.com%2Fmac%2Flibrary%2Fdocumentation%2FCocoa%2FReference%2FFoundation%2FClasses%2FNSRecursiveLock_Class%2FReference%2FReference.html&amp;rft.pub=Apple%2C+inc&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/Reference/Reference.html">"NSConditionLock Reference"</a>. Apple, inc<span class="reference-accessdate">. Retrieved <span class="nowrap">2009-10-17</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=NSConditionLock+Reference&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fdeveloper.apple.com%2Fmac%2Flibrary%2Fdocumentation%2FCocoa%2FReference%2FFoundation%2FClasses%2FNSConditionLock_Class%2FReference%2FReference.html&amp;rft.pub=Apple%2C+inc&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Protocols/NSLocking_Protocol/Reference/Reference.html">"NSLocking Protocol Reference"</a>. Apple, inc<span class="reference-accessdate">. Retrieved <span class="nowrap">2009-10-17</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=NSLocking+Protocol+Reference&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fdeveloper.apple.com%2Fmac%2Flibrary%2Fdocumentation%2FCocoa%2FReference%2FFoundation%2FProtocols%2FNSLocking_Protocol%2FReference%2FReference.html&amp;rft.pub=Apple%2C+inc&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-12">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://java.sun.com/docs/books/tutorial/essential/concurrency/sync.html">"Synchronization"</a>. <a href="http://en.wikipedia.org/wiki/Sun_Microsystems" title="Sun Microsystems">Sun Microsystems</a><span class="reference-accessdate">. Retrieved <span class="nowrap">2008-05-30</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=Synchronization&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fjava.sun.com%2Fdocs%2Fbooks%2Ftutorial%2Fessential%2Fconcurrency%2Fsync.html&amp;rft.pub=Sun+Microsystems&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text"><span class="citation web">Lundh, Fredrik (July 2007). <a rel="nofollow" class="external text" href="http://effbot.org/zone/thread-synchronization.htm">"Thread Synchronization Mechanisms in Python"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">2008-05-30</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.aufirst=Fredrik&amp;rft.aulast=Lundh&amp;rft.au=Lundh%2C+Fredrik&amp;rft.btitle=Thread+Synchronization+Mechanisms+in+Python&amp;rft.date=July+2007&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Feffbot.org%2Fzone%2Fthread-synchronization.htm&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.ruby-doc.org/docs/ProgrammingRuby/html/tut_threads.html">"Programming Ruby: Threads and Processes"</a>. 2001<span class="reference-accessdate">. Retrieved <span class="nowrap">2008-05-30</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.btitle=Programming+Ruby%3A+Threads+and+Processes&amp;rft.date=2001&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.ruby-doc.org%2Fdocs%2FProgrammingRuby%2Fhtml%2Ftut_threads.html&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15">^</a></b></span> <span class="reference-text"><span class="citation book">ISO/IEC 8652:2007. <a rel="nofollow" class="external text" href="http://www.adaic.com/standards/1zrm/html/RM-9-4.html">"Protected Units and Protected Objects"</a>. <i>Ada&#160;2005 Reference Manual</i><span class="reference-accessdate">. Retrieved <span class="nowrap">2010-02-27</span></span>. <q>A protected object provides coordinated access to shared data, through calls on its visible protected operations, which can be protected subprograms or protected entries.</q></span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.atitle=Protected+Units+and+Protected+Objects&amp;rft.au=ISO%2FIEC+8652%3A2007&amp;rft.aulast=ISO%2FIEC+8652%3A2007&amp;rft.btitle=Ada%26nbsp%3B2005+Reference+Manual&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fwww.adaic.com%2Fstandards%2F1zrm%2Fhtml%2FRM-9-4.html&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-16">^</a></b></span> <span class="reference-text"><span class="citation book">ISO/IEC 8652:2007. <a rel="nofollow" class="external text" href="http://www.adaic.com/standards/1zrm/html/RM-9-11.html">"Example of Tasking and Synchronization"</a>. <i>Ada&#160;2005 Reference Manual</i><span class="reference-accessdate">. Retrieved <span class="nowrap">2010-02-27</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALock+%28computer+science%29&amp;rft.atitle=Example+of+Tasking+and+Synchronization&amp;rft.au=ISO%2FIEC+8652%3A2007&amp;rft.aulast=ISO%2FIEC+8652%3A2007&amp;rft.btitle=Ada%26nbsp%3B2005+Reference+Manual&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fwww.adaic.com%2Fstandards%2F1zrm%2Fhtml%2FRM-9-11.html&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=edit&amp;section=8" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.futurechips.org/tips-for-power-coders/parallel-programming-understanding-impact-critical-sections.html">Tutorial on Locks and Critical Sections</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1012
+CPU time usage: 0.924 seconds
+Real time usage: 1.004 seconds
+Preprocessor visited node count: 1030/1000000
+Preprocessor generated node count: 4005/1500000
+Post‐expand include size: 27151/2097152 bytes
+Template argument size: 969/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 2/500
+Lua time usage: 0.183/10.000 seconds
+Lua memory usage: 3 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  705.225      1 - -total
+ 50.42%  355.570      1 - Template:Reflist
+ 26.63%  187.834      2 - Template:Citation_needed
+ 22.47%  158.467     14 - Template:Cite_web
+ 19.71%  138.965      2 - Template:Fix
+ 16.92%  119.342      4 - Template:Category_handler
+  4.52%   31.875      2 - Template:Fix/category
+  3.69%   26.003      2 - Template:Cite_book
+  3.05%   21.499      1 - Template:Main
+  2.81%   19.852      1 - Template:Not_a_typo
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:244593-0!*!0!!en!*!* and timestamp 20141218063854 and revision id 638227398
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;oldid=638227398">http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;oldid=638227398</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Concurrency_control" title="Category:Concurrency control">Concurrency control</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Software_design_patterns" title="Category:Software design patterns">Software design patterns</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_July_2011" title="Category:Articles with unsourced statements from July 2011">Articles with unsourced statements from July 2011</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_November_2013" title="Category:Articles with unsourced statements from November 2013">Articles with unsourced statements from November 2013</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Lock+%28computer+science%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Lock+%28computer+science%29" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Lock_(computer_science)"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Lock_(computer_science)"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Lock_(computer_science)" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://en.wikipedia.org/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://en.wikipedia.org/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Lock_(computer_science)" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Lock_(computer_science)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;oldid=638227398" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q1427251" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Lock_%28computer_science%29&amp;id=638227398" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Lock+%28computer+science%29">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Lock+%28computer+science%29&amp;oldid=638227398&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ar"><a href="http://ar.wikipedia.org/wiki/قفل_(حوسبة)" title="قفل (حوسبة) – Arabic" lang="ar" hreflang="ar">العربية</a></li>
+													<li class="interlanguage-link interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Cadenat_(informàtica)" title="Cadenat (informàtica) – Catalan" lang="ca" hreflang="ca">Català</a></li>
+													<li class="interlanguage-link interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Zámek_(informatika)" title="Zámek (informatika) – Czech" lang="cs" hreflang="cs">Čeština</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Lock" title="Lock – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="http://es.wikipedia.org/wiki/Cierre_de_exclusión_mutua" title="Cierre de exclusión mutua – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fa"><a href="http://fa.wikipedia.org/wiki/قفل_(رایانه)" title="قفل (رایانه) – Persian" lang="fa" hreflang="fa">فارسی</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Verrou_(informatique)" title="Verrou (informatique) – French" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="http://it.wikipedia.org/wiki/Lock" title="Lock – Italian" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-he"><a href="http://he.wikipedia.org/wiki/מנעול_(תוכנה)" title="מנעול (תוכנה) – Hebrew" lang="he" hreflang="he">עברית</a></li>
+													<li class="interlanguage-link interwiki-lt"><a href="http://lt.wikipedia.org/wiki/Užraktas_(programavimas)" title="Užraktas (programavimas) – Lithuanian" lang="lt" hreflang="lt">Lietuvių</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/ロック_(情報工学)" title="ロック (情報工学) – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Blokada_(informatyka)" title="Blokada (informatyka) – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Блокировка_(программирование)" title="Блокировка (программирование) – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-zh"><a href="http://zh.wikipedia.org/wiki/锁_(计算机科学)" title="锁 (计算机科学) – Chinese" lang="zh" hreflang="zh">中文</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="http://en.wikipedia.org/wiki/edit" href="http://www.wikidata.org/wiki/Q1427251#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 15 December 2014 at 16:15.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Lock_(computer_science)&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/static-1.25wmf12/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":83,"wgHostname":"mw1244"});
+}</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Lock_(computer_science) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Dec 2014 14:46:49 GMT -->
+</html>
