@@ -39,7 +39,7 @@ public class ProducerConsumerExample {
         for (Thread thread :
                 threads) {
             try {
-                thread.join(200);
+                thread.join();
             } catch (InterruptedException ex) {
 
             }
