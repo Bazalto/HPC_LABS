@@ -3,13 +3,13 @@ package lab_4;
 import java.util.concurrent.*;
 
 public class FibLab {
-    private static void mainRoutine(int tasks, ExecutorService executorService) {
+    private static void mainRoutine(int baseFibnum, int tasks, ExecutorService executorService) {
         int taskCount = tasks;
         Integer[] results = new Integer[taskCount];
         ExecutorService executorServiceTmp = executorService;
 
         for (int i = 1; i <= taskCount; i++) {
-            executorServiceTmp.submit(new Fibonacci(i + 31, i - 1, results));
+            executorServiceTmp.submit(new Fibonacci(i + baseFibnum, i - 1, results));
         }
         executorServiceTmp.shutdown();
         try {
@@ -18,31 +18,48 @@ public class FibLab {
             e.printStackTrace();
         }
 
+        System.out.println("Results:");
         for (int i = 1; i <= taskCount; i++) {
-            System.out.println(i + " : " + results[i - 1]);
+            System.out.println(i + "(fib num " + (baseFibnum + i) + ") : " + results[i - 1]);
         }
     }
 
-    public static void main(String[] args) {
-
-        int taskCount = 3;
+    private static void testRun(int fibnum, int taskNum) {
         ExecutorService executorService = Executors.newFixedThreadPool(4);
-        mainRoutine(taskCount, executorService);
+        System.out.println("Fixed thread Start\n");
+        mainRoutine(fibnum, taskNum, executorService);
+        System.out.println("Fixed thread End\n");
 
-        System.out.println("End1\n");
         executorService = Executors.newSingleThreadExecutor();
-        mainRoutine(taskCount, executorService);
+        System.out.println("Single thread Start\n");
+        mainRoutine(fibnum, taskNum, executorService);
+        System.out.println("Single thread End\n");
 
-        System.out.println("End2\n");
         executorService = Executors.newCachedThreadPool();
-        mainRoutine(taskCount, executorService);
+        System.out.println("Cached thread Start\n");
+        mainRoutine(fibnum, taskNum, executorService);
+        System.out.println("Cached thread End\n");
 
-        System.out.println("End3\n");
         executorService = new ThreadPoolExecutor(2, 4, 50_000L,
                 TimeUnit.MILLISECONDS,
-                new LinkedBlockingQueue<>(taskCount));
-        mainRoutine(taskCount, executorService);
-        System.out.println("End4\n");
+                new LinkedBlockingQueue<>(taskNum));
+        System.out.println("Custom parameters pool Start\n");
+        mainRoutine(fibnum, taskNum, executorService);
+        System.out.println("Custom parameters pool End\n");
+    }
 
+
+    public static void main(String[] args) {
+        int[] taskCountArray = {2, 5, 10};
+        int[] baseFibnumArray = {38, 35, 30};
+
+        for (int i = 0; i < taskCountArray.length; i++) {
+
+            System.err.println("\n\nTEST No " + (i + 1) +
+                    " Base fib: " + baseFibnumArray[i] +
+                    " Tasks : " + taskCountArray[i] + "\n\n");
+
+            testRun(baseFibnumArray[i], taskCountArray[i]);
+        }
     }
 }
