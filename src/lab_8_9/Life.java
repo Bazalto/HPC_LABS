@@ -11,7 +11,7 @@ public class Life {
 //    private static int[] live = {1, 6}, born = {6};
     private static int[] live = {2, 3}, born = {3, 6};
 
-    private static Display display = new Display();
+    private static Display display = null;
 
     public static void main(String[] args) {
         for (int i = 0; i < N; i++) {

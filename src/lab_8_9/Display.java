@@ -9,6 +9,7 @@ public class Display extends JPanel {
     final static int WINDOW_SIZE = N * CELL_SIZE;
 
     Display() {
+        System.out.println("Display generated");
         setPreferredSize(new Dimension(WINDOW_SIZE, WINDOW_SIZE));
         JFrame frame = new JFrame("Life");
 
