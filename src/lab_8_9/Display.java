@@ -1,6 +1,8 @@
 package lab_8_9;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 
 import static lab_8_9.Life.*;
@@ -17,7 +19,7 @@ public class Display extends JPanel {
 
         JSlider slider = new JSlider(0, 1000);
         slider.setPreferredSize(new Dimension(WINDOW_SIZE, 50));
-        slider.addChangeListener(e -> stepSpeed = 1000 - slider.getValue());
+        slider.addChangeListener(changeEvent -> stepSpeed = 1000 - slider.getValue());
         toolBar.add(slider);
 
         add(toolBar, BorderLayout.NORTH);

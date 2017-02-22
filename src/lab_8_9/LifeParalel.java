@@ -1,6 +1,7 @@
 package lab_8_9;
 
 import mpi.MPI;
+import org.jetbrains.annotations.Contract;
 
 public class LifeParalel {
     final static int N = 512;
@@ -85,6 +86,7 @@ public class LifeParalel {
         }
     }
 
+    @Contract(pure = true)
     private static int getCellSumm(int i, int j) {
         int sum = 0;
         for (int k = i - 1; k <= i + 1; k++) {
