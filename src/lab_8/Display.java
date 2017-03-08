@@ -1,9 +1,10 @@
-package lab_8_9;
+package lab_8;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static lab_8_9.Life.*;
+import static lab_8.Life.*;
+
 
 public class Display extends JPanel {
     final static int WINDOW_SIZE = N * CELL_SIZE;

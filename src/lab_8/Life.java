@@ -1,4 +1,4 @@
-package lab_8_9;
+package lab_8;
 
 public class Life {
     final static int N = 256;
@@ -7,11 +7,11 @@ public class Life {
     static int stepSpeed = 200; //default
 
     // different configurations
-//    private static int[] live = {2, 3}, born = {3};
+    private static int[] live = {2, 3}, born = {3};
 //    private static int[] live = {1, 6}, born = {6};
-    private static int[] live = {2, 3}, born = {3, 6};
+//    private static int[] live = {2, 3}, born = {3, 6};
 
-    private static Display display = null;
+    private static Display display = new Display();
 
     public static void main(String[] args) {
         for (int i = 0; i < N; i++) {
@@ -74,7 +74,7 @@ public class Life {
         int sum = 0;
         for (int k = i - 1; k <= i + 1; k++) {
             for (int l = j - 1; l <= j + 1; l++) {
-                if (k < 0 || l < 0) continue;
+                if (k < 0 || k == N || l < 0 || l == N) continue;
                 if (state[k][l] == 1) sum++;
             }
         }

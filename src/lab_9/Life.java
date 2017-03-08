@@ -1,10 +1,8 @@
-package lab_8_9;
+package lab_9;
 
-import mpi.MPI;
-
-public class LifeParalel {
-    final static int N = 512;
-    final static int CELL_SIZE = 2;
+public class Life {
+    final static int N = 256;
+    final static int CELL_SIZE = 4;
     static int[][] state = new int[N][N];
     static int stepSpeed = 200; //default
 
@@ -16,37 +14,24 @@ public class LifeParalel {
     private static Display display = null;
 
     public static void main(String[] args) {
-
-        MPI.Init(args);
-        int me = MPI.COMM_WORLD.Rank();
-        int size = MPI.COMM_WORLD.Size();
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 state[i][j] = Math.random() > 0.5 ? 1 : 0;
             }
         }
 
-        System.out.println("Current me: " + me);
-
-        if (me == 0) {
-            display = new Display();
-        }
-
         int iter = 0;
-        while (iter < 15) {
-            System.out.println("iter = " + iter++);
+        while (true) {
+            System.out.println("iter = " + iter);
 
-            System.out.println("Current me: " + me);
-            if (me == 0) {
-                setNewState(live, born);
-                System.out.println("Current me: " + me);
+            setNewState(live, born);
 
-                display.repaint();
-                pause(stepSpeed);
-            }
+            display.repaint();
+            pause(stepSpeed);
+            iter++;
+
+            if (iter == 50_000) break;
         }
-
-        MPI.Finalize();
     }
 
     // live / born
@@ -89,7 +74,7 @@ public class LifeParalel {
         int sum = 0;
         for (int k = i - 1; k <= i + 1; k++) {
             for (int l = j - 1; l <= j + 1; l++) {
-                if (k < 0 || k == N || l < 0 || l == N) continue;
+                if (k < 0 || l < 0) continue;
                 if (state[k][l] == 1) sum++;
             }
         }
