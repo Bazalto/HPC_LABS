@@ -10,10 +10,11 @@ public class Life {
 //    private static int[] live = {2, 3}, born = {3};
 //    private static int[] live = {1, 6}, born = {6};
     private static int[] live = {2, 3}, born = {3, 6};
+//
 
-    private static Display display = null;
 
     public static void main(String[] args) {
+        Display display = new Display();
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 state[i][j] = Math.random() > 0.5 ? 1 : 0;
@@ -74,7 +75,7 @@ public class Life {
         int sum = 0;
         for (int k = i - 1; k <= i + 1; k++) {
             for (int l = j - 1; l <= j + 1; l++) {
-                if (k < 0 || l < 0) continue;
+                if (k < 0 || k == N || l < 0 || l == N) continue;
                 if (state[k][l] == 1) sum++;
             }
         }
