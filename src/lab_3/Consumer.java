@@ -33,7 +33,6 @@ public class Consumer implements Runnable {
             if (sharedQueue.size() == 0 && !pce.isReadingData()) {
                 break;
             }
-
         }
     }
 }

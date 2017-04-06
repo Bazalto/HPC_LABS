@@ -13,7 +13,11 @@ public class PiCalculations extends Thread {
     public static void main(String[] args) throws Exception {
 
         System.out.println("      | Method  |         PI        | Calc Time | Acceleration");
-        setGlobalValues(10_000_000, 2);
+
+        setGlobalValues(1_000_000_000, 4);
+        mainRoutine();
+
+        setGlobalValues(100_000, 4);
         mainRoutine();
 
         setGlobalValues(10_000_000, 4);
@@ -22,11 +26,11 @@ public class PiCalculations extends Thread {
         setGlobalValues(1_000_000, 4);
         mainRoutine();
 
-        setGlobalValues(100_000, 4);
+
+        setGlobalValues(10_000_000, 2);
         mainRoutine();
 
-        setGlobalValues(1_000_000_000, 4);
-        mainRoutine();
+
 
     }
 

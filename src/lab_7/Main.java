@@ -41,8 +41,7 @@ public class Main {
         long endTime = System.currentTimeMillis();
         if (me == 0) {
             System.out.println("Value of pi: " + pi);
-            System.out.println("Calculated in " +
-                    (endTime - startTime) + " miliseconds");
+            System.out.println("Calculated in " + (endTime - startTime) + " miliseconds");
         }
 
         MPI.Finalize();

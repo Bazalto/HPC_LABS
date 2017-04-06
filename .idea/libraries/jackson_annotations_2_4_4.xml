@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="jackson-annotations-2.4.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/lab_10/libs/jackson-annotations-2.4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lab_10/libs/jackson-core-2.4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lab_10/libs/jackson-databind-2.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lab_10/libs/jackson-databind-2.4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lab_10/libs/jsonrpc4j-1.2-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lab_10/libs/servlet-api-2.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

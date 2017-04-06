@@ -7,12 +7,13 @@ public class LifeParalel {
     final static int N = 512;
     final static int CELL_SIZE = 2;
     static int[][] state = new int[N][N];
-    static int stepSpeed = 200; //default
+    //    static int[][] state = null;
+    static int stepSpeed = 1000; //default
 
     // different configurations
-//    private static int[] live = {2, 3}, born = {3};
+    private static int[] live = {2, 3}, born = {3};
 //    private static int[] live = {1, 6}, born = {6};
-    private static int[] live = {2, 3}, born = {3, 6};
+//    private static int[] live = {2, 3}, born = {3, 6};
 
     private static Display display = null;
 
@@ -21,7 +22,17 @@ public class LifeParalel {
         MPI.Init(args);
         int me = MPI.COMM_WORLD.Rank();
         int size = MPI.COMM_WORLD.Size();
-        for (int i = 0; i < N; i++) {
+
+//        int B = N / size;
+//        state = new int[B + 2][N];
+//
+//        for (int i = 0; i < B + 1; i++) {
+//            for (int j = 0; j < N; j++) {
+//                state[i][j] = Math.random() > 0.5 ? 1 : 0;
+//            }
+//        }
+
+        for (int i = 0; i < N + 1; i++) {
             for (int j = 0; j < N; j++) {
                 state[i][j] = Math.random() > 0.5 ? 1 : 0;
             }
@@ -31,13 +42,22 @@ public class LifeParalel {
 
         if (me == 0) {
             display = new Display();
+            display.repaint();
+            pause(stepSpeed);
         }
 
         int iter = 0;
-        while (iter < 15) {
-            System.out.println("iter = " + iter++);
+        while (iter++ < 1500) {
+            System.out.println("iter = " + iter);
 
-            System.out.println("Current me: " + me);
+//            for (int i = 1; i < B + 1; i++) {
+//                for (int j = 0; j < N; j++) {
+//
+//                    int jp = (j + 1) % N;
+//                    int jm = (j - 1 + N) % N;
+//
+//                }
+//            }
             if (me == 0) {
                 setNewState(live, born);
                 System.out.println("Current me: " + me);

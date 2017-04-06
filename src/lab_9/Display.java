@@ -3,7 +3,7 @@ package lab_9;
 import javax.swing.*;
 import java.awt.*;
 
-import static lab_9.Life.*;
+import static lab_9.LifeParalel.*;
 
 public class Display extends JPanel {
     final static int WINDOW_SIZE = N * CELL_SIZE;
